@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="HeaderReqstRecvd" id="QK7-xk-YCw" customClass="HeaderReqstRecvd">
+            <rect key="frame" x="0.0" y="0.0" width="607" height="131"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requests received" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd6-bc-RTX">
+                    <rect key="frame" x="40" y="20" width="527" height="91"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="50"/>
+                    <color key="textColor" red="0.08235294118" green="0.7725490196" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.60784313729999995" green="0.33725490200000002" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nd6-bc-RTX" firstAttribute="top" secondItem="QK7-xk-YCw" secondAttribute="top" constant="20" id="5ZA-TE-9nH"/>
+                <constraint firstItem="nd6-bc-RTX" firstAttribute="leading" secondItem="QK7-xk-YCw" secondAttribute="leading" constant="40" id="Ovw-Mx-KGP"/>
+                <constraint firstItem="tLU-So-G2X" firstAttribute="trailing" secondItem="nd6-bc-RTX" secondAttribute="trailing" constant="40" id="V7L-r6-pgP"/>
+                <constraint firstAttribute="bottom" secondItem="nd6-bc-RTX" secondAttribute="bottom" constant="20" id="khh-et-e42"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="tLU-So-G2X"/>
+        </view>
+    </objects>
+</document>

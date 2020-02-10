@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DayOfWeekClvCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLw-rH-6oC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YsE-ZF-SoZ">
+                                <rect key="frame" x="46" y="25" width="283" height="350"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iyy-Vf-ad1">
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="350"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQV-UH-sb8">
+                                                <rect key="frame" x="0.0" y="0.0" width="283" height="58"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days of the week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAW-PB-r82">
+                                                        <rect key="frame" x="67.5" y="17" width="148" height="24"/>
+                                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="19"/>
+                                                        <color key="textColor" red="0.0" green="0.65098039220000004" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="WAW-PB-r82" firstAttribute="centerY" secondItem="wQV-UH-sb8" secondAttribute="centerY" id="SgW-yH-wgY"/>
+                                                    <constraint firstAttribute="height" constant="58" id="hc9-eG-8DK"/>
+                                                    <constraint firstItem="WAW-PB-r82" firstAttribute="centerX" secondItem="wQV-UH-sb8" secondAttribute="centerX" id="ovg-xV-37e"/>
+                                                </constraints>
+                                            </view>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-bo-QID">
+                                                <rect key="frame" x="0.0" y="58" width="283" height="292"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="mbR-zq-Nks">
+                                                    <size key="itemSize" width="42" height="261"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="wQV-UH-sb8" firstAttribute="top" secondItem="Iyy-Vf-ad1" secondAttribute="top" id="0Bf-MT-dbd"/>
+                                            <constraint firstItem="XT1-bo-QID" firstAttribute="top" secondItem="wQV-UH-sb8" secondAttribute="bottom" id="7Fo-EC-JJx"/>
+                                            <constraint firstItem="XT1-bo-QID" firstAttribute="leading" secondItem="Iyy-Vf-ad1" secondAttribute="leading" id="LLy-nL-09P"/>
+                                            <constraint firstAttribute="bottom" secondItem="XT1-bo-QID" secondAttribute="bottom" id="Ycu-8t-sAW"/>
+                                            <constraint firstItem="wQV-UH-sb8" firstAttribute="leading" secondItem="Iyy-Vf-ad1" secondAttribute="leading" id="iFB-nb-w1q"/>
+                                            <constraint firstAttribute="trailing" secondItem="wQV-UH-sb8" secondAttribute="trailing" id="uci-NS-cf2"/>
+                                            <constraint firstAttribute="trailing" secondItem="XT1-bo-QID" secondAttribute="trailing" id="vwF-cB-fxV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Iyy-Vf-ad1" firstAttribute="top" secondItem="YsE-ZF-SoZ" secondAttribute="top" id="87E-bl-Nkt"/>
+                                    <constraint firstAttribute="bottom" secondItem="Iyy-Vf-ad1" secondAttribute="bottom" id="EEA-fh-1oZ"/>
+                                    <constraint firstItem="Iyy-Vf-ad1" firstAttribute="leading" secondItem="YsE-ZF-SoZ" secondAttribute="leading" id="Gqo-pB-wK3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Iyy-Vf-ad1" secondAttribute="trailing" id="f5M-NA-pNR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="YsE-ZF-SoZ" secondAttribute="bottom" constant="25" id="48J-hT-9Md"/>
+                            <constraint firstItem="YsE-ZF-SoZ" firstAttribute="top" secondItem="aLw-rH-6oC" secondAttribute="top" constant="25" id="Mnp-Za-uui"/>
+                            <constraint firstItem="YsE-ZF-SoZ" firstAttribute="leading" secondItem="aLw-rH-6oC" secondAttribute="leading" constant="46" id="VIz-HM-hxB"/>
+                            <constraint firstAttribute="trailing" secondItem="YsE-ZF-SoZ" secondAttribute="trailing" constant="46" id="ugA-td-fYw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="aLw-rH-6oC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="55D-fe-zab"/>
+                <constraint firstAttribute="trailing" secondItem="aLw-rH-6oC" secondAttribute="trailing" id="ANw-J4-Ovl"/>
+                <constraint firstItem="aLw-rH-6oC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OWS-9v-LwV"/>
+                <constraint firstAttribute="bottom" secondItem="aLw-rH-6oC" secondAttribute="bottom" id="ygJ-5F-m15"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="375" height="475"/>
+            <connections>
+                <outlet property="clvDayOfWeek" destination="XT1-bo-QID" id="1WN-6z-CIG"/>
+                <outlet property="vwDayOfWeek" destination="Iyy-Vf-ad1" id="nup-kt-NHZ"/>
+                <outlet property="vwDayOfWeekShadow" destination="YsE-ZF-SoZ" id="s4e-0l-ud2"/>
+            </connections>
+            <point key="canvasLocation" x="367.39130434782612" y="250.11160714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>

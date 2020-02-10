@@ -1,0 +1,2337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0314A5262265CB67005C80BF /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0314A5252265CB67005C80BF /* ServiceManager.m */; };
+		0316620A23D9C28D00BE68E1 /* BeepSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0316620823D9C28D00BE68E1 /* BeepSound.wav */; };
+		0316F43A23A0CD73004D47E5 /* UpgradeToProVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0316F43923A0CD73004D47E5 /* UpgradeToProVC.m */; };
+		0316F43F23A0CDB7004D47E5 /* YourSkillLevelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0316F43D23A0CDB7004D47E5 /* YourSkillLevelCell.m */; };
+		0316F44023A0CDB7004D47E5 /* YourSkillLevelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0316F43E23A0CDB7004D47E5 /* YourSkillLevelCell.xib */; };
+		0316F44A23A0CE9B004D47E5 /* AverageWorkoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0316F44823A0CE9B004D47E5 /* AverageWorkoutCell.m */; };
+		0316F44B23A0CE9B004D47E5 /* AverageWorkoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0316F44923A0CE9B004D47E5 /* AverageWorkoutCell.xib */; };
+		0316F44F23A0CEB1004D47E5 /* WorkoutCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0316F44D23A0CEB1004D47E5 /* WorkoutCalendarCell.m */; };
+		0316F45023A0CEB1004D47E5 /* WorkoutCalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0316F44E23A0CEB1004D47E5 /* WorkoutCalendarCell.xib */; };
+		0316F46023A0E470004D47E5 /* TimeOfDayClvCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0316F45E23A0E470004D47E5 /* TimeOfDayClvCell.m */; };
+		0316F46123A0E470004D47E5 /* TimeOfDayClvCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0316F45F23A0E470004D47E5 /* TimeOfDayClvCell.xib */; };
+		0316F46523A0E69D004D47E5 /* DayOfWeekClvCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0316F46323A0E69D004D47E5 /* DayOfWeekClvCell.m */; };
+		0316F46623A0E69D004D47E5 /* DayOfWeekClvCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0316F46423A0E69D004D47E5 /* DayOfWeekClvCell.xib */; };
+		0317D48D23DBFDB6002979AB /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0314A5252265CB67005C80BF /* ServiceManager.m */; };
+		0318EFB92355AAA7006B85FB /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0318EFB82355AAA7006B85FB /* MZTimerLabel.m */; };
+		0319B2F523ED8E9000A72C5F /* LoadingScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0319B2F423ED8E9000A72C5F /* LoadingScreenVC.m */; };
+		031ABB2223D6BA13001DB98D /* SetAndRestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031ABB2123D6BA13001DB98D /* SetAndRestController.m */; };
+		031ABB2623D6CF9B001DB98D /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031ABB2523D6CF9B001DB98D /* MenuController.m */; };
+		031ABB2B23D6F3D4001DB98D /* TutorialController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031ABB2A23D6F3D4001DB98D /* TutorialController.m */; };
+		031B3102239F76A7007F8020 /* TimeOfDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031B3101239F76A7007F8020 /* TimeOfDayCell.m */; };
+		031B3106239F9362007F8020 /* DayOfWeekCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031B3105239F9362007F8020 /* DayOfWeekCell.m */; };
+		031E274323CC376E0051B56F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031E274123CC376E0051B56F /* Interface.storyboard */; };
+		031E274523CC376F0051B56F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031E274423CC376F0051B56F /* Assets.xcassets */; };
+		031E274C23CC376F0051B56F /* GymTimer Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 031E274B23CC376F0051B56F /* GymTimer Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		031E275223CC376F0051B56F /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031E275123CC376F0051B56F /* InterfaceController.m */; };
+		031E275523CC376F0051B56F /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 031E275423CC376F0051B56F /* ExtensionDelegate.m */; };
+		031E275823CC376F0051B56F /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031E275723CC376F0051B56F /* NotificationController.m */; };
+		031E275A23CC37700051B56F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031E275923CC37700051B56F /* Assets.xcassets */; };
+		031E275F23CC37700051B56F /* GymTimer Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 031E273F23CC376E0051B56F /* GymTimer Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		031E278723CC38700051B56F /* Futura.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 03B3524E22659CE1002C47D9 /* Futura.ttc */; };
+		031E278823CC38700051B56F /* Futura.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 03B3524E22659CE1002C47D9 /* Futura.ttc */; };
+		0320B22923D1957100699222 /* WorkoutCompleteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0320B22823D1957100699222 /* WorkoutCompleteController.m */; };
+		0320B22C23D197BE00699222 /* WatchUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0320B22B23D197BE00699222 /* WatchUtils.m */; };
+		0320B22E23D1ABAA00699222 /* Futura.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 0320B22D23D1ABAA00699222 /* Futura.ttc */; };
+		0320B22F23D1ABAA00699222 /* Futura.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 0320B22D23D1ABAA00699222 /* Futura.ttc */; };
+		032142A523D801F1005FBE36 /* WatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 032142A423D801F1005FBE36 /* WatchManager.m */; };
+		0323C87B23261A570028F8F8 /* HeaderReqstAcpt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0323C87923261A570028F8F8 /* HeaderReqstAcpt.m */; };
+		0323C87C23261A570028F8F8 /* HeaderReqstAcpt.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0323C87A23261A570028F8F8 /* HeaderReqstAcpt.xib */; };
+		0323C88023261B9A0028F8F8 /* HeaderReqstRecvd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0323C87E23261B9A0028F8F8 /* HeaderReqstRecvd.m */; };
+		0323C88123261B9A0028F8F8 /* HeaderReqstRecvd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0323C87F23261B9A0028F8F8 /* HeaderReqstRecvd.xib */; };
+		0323C88623261CD20028F8F8 /* RequestAccptedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0323C88423261CD10028F8F8 /* RequestAccptedCell.m */; };
+		0323C88723261CD20028F8F8 /* RequestAccptedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0323C88523261CD10028F8F8 /* RequestAccptedCell.xib */; };
+		0323C88C23261D7F0028F8F8 /* RequestReceivedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0323C88A23261D7F0028F8F8 /* RequestReceivedCell.m */; };
+		0323C88D23261D7F0028F8F8 /* RequestReceivedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0323C88B23261D7F0028F8F8 /* RequestReceivedCell.xib */; };
+		03266D56239E049900244894 /* ProCongratsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 03266D55239E049900244894 /* ProCongratsVC.m */; };
+		03266D5A239E71B600244894 /* StatsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 03266D59239E71B600244894 /* StatsVC.m */; };
+		0328FC5423E3E79C007965A7 /* WarmUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0328FC5323E3E79C007965A7 /* WarmUpView.m */; };
+		0328FC5623E3E7AE007965A7 /* WarmUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0328FC5523E3E7AE007965A7 /* WarmUpView.xib */; };
+		0329649D23D2BE5C0066E364 /* WorkoutTimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0329649C23D2BE5C0066E364 /* WorkoutTimerController.m */; };
+		032C672B232374130087932A /* SearchFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C6729232374130087932A /* SearchFriendCell.m */; };
+		032C672C232374130087932A /* SearchFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032C672A232374130087932A /* SearchFriendCell.xib */; };
+		032F4CA0232108B700E9FFB5 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032F4C9F232108B700E9FFB5 /* RankingViewController.m */; };
+		0334A47F23275931000D9826 /* WorkoutProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0334A47823275931000D9826 /* WorkoutProgressCell.m */; };
+		0334A48023275931000D9826 /* RatingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0334A47A23275931000D9826 /* RatingListViewController.m */; };
+		0334A48123275931000D9826 /* RankListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0334A47C23275931000D9826 /* RankListCell.m */; };
+		0334B92722942126000BF326 /* MCSliceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0334B91B22942124000BF326 /* MCSliceLayer.m */; };
+		0334B92822942126000BF326 /* MCNewCustomLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0334B91D22942125000BF326 /* MCNewCustomLayer.m */; };
+		0334B92922942126000BF326 /* MCUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0334B91F22942125000BF326 /* MCUtil.m */; };
+		0334B92A22942126000BF326 /* MCNewCustomLayeredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0334B92222942125000BF326 /* MCNewCustomLayeredView.m */; };
+		0334B92B22942126000BF326 /* MCPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0334B92522942126000BF326 /* MCPieChartView.m */; };
+		0335CDF623A2187000048A4A /* TimeOfTheDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0335CDF423A2187000048A4A /* TimeOfTheDayCell.m */; };
+		0335CDF723A2187000048A4A /* TimeOfTheDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0335CDF523A2187000048A4A /* TimeOfTheDayCell.xib */; };
+		0335CDFC23A2221C00048A4A /* DaysOfTheWeekCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0335CDFA23A2221C00048A4A /* DaysOfTheWeekCell.m */; };
+		0335CDFD23A2221C00048A4A /* DaysOfTheWeekCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0335CDFB23A2221C00048A4A /* DaysOfTheWeekCell.xib */; };
+		0346D26022674FCC00DC607D /* HomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0346D25F22674FCC00DC607D /* HomeScreenViewController.m */; };
+		0346D2662267537200DC607D /* WorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0346D2652267537200DC607D /* WorkoutViewController.m */; };
+		0346D26C2267541B00DC607D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0346D26B2267541B00DC607D /* SettingsViewController.m */; };
+		0346D27122675A5F00DC607D /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0346D26F22675A5F00DC607D /* SettingsTableViewCell.m */; };
+		0346D27222675A5F00DC607D /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0346D27022675A5F00DC607D /* SettingsTableViewCell.xib */; };
+		03481F8A22B2726C00BCAEE8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03481F8922B2726C00BCAEE8 /* Charts.framework */; };
+		03601021235F169A004C1F4D /* LoginOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03601020235F169A004C1F4D /* LoginOptionViewController.m */; };
+		0382890F226F166400ACA6DB /* CalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0382890D226F166400ACA6DB /* CalendarCollectionViewCell.m */; };
+		03828910226F166400ACA6DB /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0382890E226F166400ACA6DB /* CalendarCollectionViewCell.xib */; };
+		038B08F3226847EC001B5063 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038B08F2226847EC001B5063 /* ProfileViewController.m */; };
+		038B08F72268813D001B5063 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038B08F62268813D001B5063 /* PrivacyPolicyViewController.m */; };
+		038B08FB22688301001B5063 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038B08FA22688301001B5063 /* ContactUsViewController.m */; };
+		038B08FF2268A753001B5063 /* WorkoutAdviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038B08FE2268A753001B5063 /* WorkoutAdviceViewController.m */; };
+		039C9E9222DC62A60045403A /* TermsOfUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C9E9122DC62A60045403A /* TermsOfUseViewController.m */; };
+		03B35239226599AC002C47D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B35238226599AC002C47D9 /* AppDelegate.m */; };
+		03B3523F226599AC002C47D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B3523D226599AC002C47D9 /* Main.storyboard */; };
+		03B35247226599AD002C47D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B35246226599AD002C47D9 /* main.m */; };
+		03B3524F22659CE1002C47D9 /* Futura.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 03B3524E22659CE1002C47D9 /* Futura.ttc */; };
+		03B3525422659CFD002C47D9 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3525322659CFD002C47D9 /* Utils.m */; };
+		03B3525E22659D6C002C47D9 /* OnBoardingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3525922659D6C002C47D9 /* OnBoardingCollectionViewCell.m */; };
+		03B3525F22659D6C002C47D9 /* OnBoardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B3525B22659D6C002C47D9 /* OnBoardingCollectionViewCell.xib */; };
+		03B3526622659E6D002C47D9 /* OnBoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3526422659E6D002C47D9 /* OnBoardingViewController.m */; };
+		03B9C7FB22718B6A002ECCD1 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B9C7FA22718B6A002ECCD1 /* RegistrationViewController.m */; };
+		03B9C7FF2271BBA8002ECCD1 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B9C7FE2271BBA8002ECCD1 /* ForgotPasswordViewController.m */; };
+		03C02358228D6C74004A06B1 /* beep_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03C02357228D6C73004A06B1 /* beep_sound.mp3 */; };
+		03C0235A228D7728004A06B1 /* beep_sound_new.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03C02359228D7728004A06B1 /* beep_sound_new.mp3 */; };
+		03C1F5D0232CA02600246941 /* NoRequestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C1F5CE232CA02600246941 /* NoRequestTableViewCell.m */; };
+		03C1F5D1232CA02600246941 /* NoRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C1F5CF232CA02600246941 /* NoRequestTableViewCell.xib */; };
+		03CACAC5236A98D100D9B2D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B35240226599AD002C47D9 /* Assets.xcassets */; };
+		03CACACA236AEE7200D9B2D8 /* OnBoardingCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CACAC8236AEE7200D9B2D8 /* OnBoardingCVC.m */; };
+		03CACACB236AEE7200D9B2D8 /* OnBoardingCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03CACAC9236AEE7200D9B2D8 /* OnBoardingCVC.xib */; };
+		03CE6B82238D3F4800D0EB02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03CE6B81238D3F4800D0EB02 /* GoogleService-Info.plist */; };
+		03CF340122C0DD7B00F80F76 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CF340022C0DD7B00F80F76 /* StoreKit.framework */; };
+		03D6A3A0228EE423009E6649 /* beep_sound_latest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03D6A39F228EE423009E6649 /* beep_sound_latest.mp3 */; };
+		03D94B8F22A8E9CF008A054C /* NewOnBoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D94B8E22A8E9CF008A054C /* NewOnBoardingViewController.m */; };
+		7D679A05744290339437152C /* Pods_GymTimer_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C26438B6946E65A6063668 /* Pods_GymTimer_Watch_Extension.framework */; };
+		F17F3F74DF1EED174EC1C6E3 /* Pods_GymTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8BB3AB96F5CD42D5D91B93 /* Pods_GymTimer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0317D4AF23DBFDB6002979AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8F3ED8EEDABC520A9D7C4646CE8C9C4;
+			remoteInfo = "AFNetworking.root-NSURLSession-Security-Serialization";
+		};
+		0317D4B123DBFDB6002979AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65DA9B4DA5CD4301586AFD7BD5B9393E;
+			remoteInfo = "Pods-GymTimer Watch Extension";
+		};
+		031E274D23CC376F0051B56F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03B3522C226599AC002C47D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 031E274A23CC376F0051B56F;
+			remoteInfo = "GymTimer Watch Extension";
+		};
+		031E275D23CC37700051B56F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03B3522C226599AC002C47D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 031E273E23CC376E0051B56F;
+			remoteInfo = "GymTimer Watch";
+		};
+		03CE6B52238D360500D0EB02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0AC60DB90A56A83CE55FCF03418574B4;
+			remoteInfo = FirebaseCore;
+		};
+		03CE6B54238D360500D0EB02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 187F2B5C1625ACDCEA8837E5A9B7AE52;
+			remoteInfo = FirebaseCoreDiagnostics;
+		};
+		03CE6B56238D360500D0EB02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5CC6CF8F6FF7235AA5ADDE2CA02ED580;
+			remoteInfo = FirebaseInstanceID;
+		};
+		03CE6B58238D360500D0EB02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5560A95DDAD13888828353B08612D877;
+			remoteInfo = GoogleDataTransport;
+		};
+		03CE6B5A238D360500D0EB02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 158B5E75311D9661702F37EE8F6A5044;
+			remoteInfo = GoogleDataTransportCCTSupport;
+		};
+		03CE6B5C238D360500D0EB02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F68F2A708396AEF6C0273966E30B471F;
+			remoteInfo = GoogleUtilities;
+		};
+		03CE6B5E238D360500D0EB02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 66F107C87A76212218EED7E909254BC6;
+			remoteInfo = nanopb;
+		};
+		03EDB6782369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F1A0E06D656D946493082A3AA24EB690;
+			remoteInfo = AFNetworking;
+		};
+		03EDB67A2369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CA52E50E32D0E6FC3DDDB2C3A6100FB1;
+			remoteInfo = "Calendar-iOS";
+		};
+		03EDB67C2369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC95E295BA1AD4803D1628AC252FCDEB;
+			remoteInfo = Charts;
+		};
+		03EDB67E2369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F4D661C92E04B10B6473FC42A53A3258;
+			remoteInfo = DYPieChartView;
+		};
+		03EDB6802369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CFD2D3F4DEFEB4A701A370CAB7A813E9;
+			remoteInfo = FBSDKCoreKit;
+		};
+		03EDB6822369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F92E0191D0486AAAE577B96B696945B;
+			remoteInfo = FBSDKLoginKit;
+		};
+		03EDB6842369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FDB869F622A09FAA4B31972AED1F1D2D;
+			remoteInfo = FSCalendar;
+		};
+		03EDB6862369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7F8E03031CC8F2F92F47829172C1FDA3;
+			remoteInfo = IQKeyboardManager;
+		};
+		03EDB6882369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3AD1FF0D9C69D7EB9DC8E6024A545438;
+			remoteInfo = JGProgressHUD;
+		};
+		03EDB68A2369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AAF94688DBD4DD6707880D54EF64FE60;
+			remoteInfo = "JGProgressHUD-JGProgressHUD";
+		};
+		03EDB68C2369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 126B796C0E37D704C8BC997816CAE994;
+			remoteInfo = JTCalendar;
+		};
+		03EDB68E2369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B2E642C91EE2CDC87A2F04910AA74D48;
+			remoteInfo = KSToastView;
+		};
+		03EDB6902369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55E672AABFF88F9D0AFE6CA8E7F397B0;
+			remoteInfo = MBCalendarKit;
+		};
+		03EDB6922369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C3479953C608B46EA58E21BF3C97994A;
+			remoteInfo = MBCircularProgressBar;
+		};
+		03EDB6942369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2106F5336FB785E84831F2A636814157;
+			remoteInfo = "MBCircularProgressBar-MBCircularProgressBar";
+		};
+		03EDB6962369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1A0E5EAA602CFE1E01588BC0C8AABB4F;
+			remoteInfo = "Pods-GymTimer";
+		};
+		03EDB6982369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9B84C503D4E0D55B509C25B2296E82CC;
+			remoteInfo = pop;
+		};
+		03EDB69A2369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 26D97E3B258B2B8868D8C0C90C4B27DF;
+			remoteInfo = Reachability;
+		};
+		03EDB69C2369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E32C05D957CCE330F20DA3A79C89DE7E;
+			remoteInfo = SDWebImage;
+		};
+		03EDB69E2369A4D700A23FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E251FB0C47410EED2D6ACA762D6373B2;
+			remoteInfo = UICountingLabel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		031E276023CC37700051B56F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				031E275F23CC37700051B56F /* GymTimer Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		031E276323CC37700051B56F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				031E274C23CC376F0051B56F /* GymTimer Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0314A5242265CB67005C80BF /* ServiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceManager.h; sourceTree = "<group>"; };
+		0314A5252265CB67005C80BF /* ServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceManager.m; sourceTree = "<group>"; };
+		0314A5272265D4CD005C80BF /* CommonImports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonImports.h; sourceTree = "<group>"; };
+		0316620823D9C28D00BE68E1 /* BeepSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BeepSound.wav; sourceTree = "<group>"; };
+		0316F43823A0CD73004D47E5 /* UpgradeToProVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpgradeToProVC.h; sourceTree = "<group>"; };
+		0316F43923A0CD73004D47E5 /* UpgradeToProVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpgradeToProVC.m; sourceTree = "<group>"; };
+		0316F43C23A0CDB7004D47E5 /* YourSkillLevelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourSkillLevelCell.h; sourceTree = "<group>"; };
+		0316F43D23A0CDB7004D47E5 /* YourSkillLevelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourSkillLevelCell.m; sourceTree = "<group>"; };
+		0316F43E23A0CDB7004D47E5 /* YourSkillLevelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourSkillLevelCell.xib; sourceTree = "<group>"; };
+		0316F44723A0CE9B004D47E5 /* AverageWorkoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AverageWorkoutCell.h; sourceTree = "<group>"; };
+		0316F44823A0CE9B004D47E5 /* AverageWorkoutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AverageWorkoutCell.m; sourceTree = "<group>"; };
+		0316F44923A0CE9B004D47E5 /* AverageWorkoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AverageWorkoutCell.xib; sourceTree = "<group>"; };
+		0316F44C23A0CEB1004D47E5 /* WorkoutCalendarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkoutCalendarCell.h; sourceTree = "<group>"; };
+		0316F44D23A0CEB1004D47E5 /* WorkoutCalendarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkoutCalendarCell.m; sourceTree = "<group>"; };
+		0316F44E23A0CEB1004D47E5 /* WorkoutCalendarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutCalendarCell.xib; sourceTree = "<group>"; };
+		0316F45D23A0E470004D47E5 /* TimeOfDayClvCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeOfDayClvCell.h; sourceTree = "<group>"; };
+		0316F45E23A0E470004D47E5 /* TimeOfDayClvCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeOfDayClvCell.m; sourceTree = "<group>"; };
+		0316F45F23A0E470004D47E5 /* TimeOfDayClvCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeOfDayClvCell.xib; sourceTree = "<group>"; };
+		0316F46223A0E69D004D47E5 /* DayOfWeekClvCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DayOfWeekClvCell.h; sourceTree = "<group>"; };
+		0316F46323A0E69D004D47E5 /* DayOfWeekClvCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayOfWeekClvCell.m; sourceTree = "<group>"; };
+		0316F46423A0E69D004D47E5 /* DayOfWeekClvCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayOfWeekClvCell.xib; sourceTree = "<group>"; };
+		0318EFB72355AAA6006B85FB /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
+		0318EFB82355AAA7006B85FB /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
+		0319B2F323ED8E9000A72C5F /* LoadingScreenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingScreenVC.h; sourceTree = "<group>"; };
+		0319B2F423ED8E9000A72C5F /* LoadingScreenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingScreenVC.m; sourceTree = "<group>"; };
+		031ABB2023D6BA13001DB98D /* SetAndRestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetAndRestController.h; sourceTree = "<group>"; };
+		031ABB2123D6BA13001DB98D /* SetAndRestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetAndRestController.m; sourceTree = "<group>"; };
+		031ABB2423D6CF9B001DB98D /* MenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
+		031ABB2523D6CF9B001DB98D /* MenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
+		031ABB2923D6F3D4001DB98D /* TutorialController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialController.h; sourceTree = "<group>"; };
+		031ABB2A23D6F3D4001DB98D /* TutorialController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialController.m; sourceTree = "<group>"; };
+		031B3100239F76A7007F8020 /* TimeOfDayCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeOfDayCell.h; sourceTree = "<group>"; };
+		031B3101239F76A7007F8020 /* TimeOfDayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeOfDayCell.m; sourceTree = "<group>"; };
+		031B3104239F9362007F8020 /* DayOfWeekCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DayOfWeekCell.h; sourceTree = "<group>"; };
+		031B3105239F9362007F8020 /* DayOfWeekCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayOfWeekCell.m; sourceTree = "<group>"; };
+		031E273F23CC376E0051B56F /* GymTimer Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymTimer Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		031E274223CC376E0051B56F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		031E274423CC376F0051B56F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		031E274623CC376F0051B56F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		031E274B23CC376F0051B56F /* GymTimer Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GymTimer Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		031E275023CC376F0051B56F /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		031E275123CC376F0051B56F /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		031E275323CC376F0051B56F /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		031E275423CC376F0051B56F /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		031E275623CC376F0051B56F /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		031E275723CC376F0051B56F /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		031E275923CC37700051B56F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		031E275B23CC37700051B56F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		031E275C23CC37700051B56F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		0320B22723D1957100699222 /* WorkoutCompleteController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkoutCompleteController.h; sourceTree = "<group>"; };
+		0320B22823D1957100699222 /* WorkoutCompleteController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkoutCompleteController.m; sourceTree = "<group>"; };
+		0320B22A23D197BE00699222 /* WatchUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchUtils.h; sourceTree = "<group>"; };
+		0320B22B23D197BE00699222 /* WatchUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchUtils.m; sourceTree = "<group>"; };
+		0320B22D23D1ABAA00699222 /* Futura.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Futura.ttc; sourceTree = "<group>"; };
+		032142A323D801F1005FBE36 /* WatchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchManager.h; sourceTree = "<group>"; };
+		032142A423D801F1005FBE36 /* WatchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchManager.m; sourceTree = "<group>"; };
+		0323C87823261A570028F8F8 /* HeaderReqstAcpt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderReqstAcpt.h; sourceTree = "<group>"; };
+		0323C87923261A570028F8F8 /* HeaderReqstAcpt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderReqstAcpt.m; sourceTree = "<group>"; };
+		0323C87A23261A570028F8F8 /* HeaderReqstAcpt.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderReqstAcpt.xib; sourceTree = "<group>"; };
+		0323C87D23261B9A0028F8F8 /* HeaderReqstRecvd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderReqstRecvd.h; sourceTree = "<group>"; };
+		0323C87E23261B9A0028F8F8 /* HeaderReqstRecvd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderReqstRecvd.m; sourceTree = "<group>"; };
+		0323C87F23261B9A0028F8F8 /* HeaderReqstRecvd.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderReqstRecvd.xib; sourceTree = "<group>"; };
+		0323C88323261CD10028F8F8 /* RequestAccptedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestAccptedCell.h; sourceTree = "<group>"; };
+		0323C88423261CD10028F8F8 /* RequestAccptedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestAccptedCell.m; sourceTree = "<group>"; };
+		0323C88523261CD10028F8F8 /* RequestAccptedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestAccptedCell.xib; sourceTree = "<group>"; };
+		0323C88923261D7F0028F8F8 /* RequestReceivedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestReceivedCell.h; sourceTree = "<group>"; };
+		0323C88A23261D7F0028F8F8 /* RequestReceivedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestReceivedCell.m; sourceTree = "<group>"; };
+		0323C88B23261D7F0028F8F8 /* RequestReceivedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestReceivedCell.xib; sourceTree = "<group>"; };
+		03266D54239E049900244894 /* ProCongratsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProCongratsVC.h; sourceTree = "<group>"; };
+		03266D55239E049900244894 /* ProCongratsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProCongratsVC.m; sourceTree = "<group>"; };
+		03266D58239E71B600244894 /* StatsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatsVC.h; sourceTree = "<group>"; };
+		03266D59239E71B600244894 /* StatsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatsVC.m; sourceTree = "<group>"; };
+		0328FC5223E3E79C007965A7 /* WarmUpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WarmUpView.h; sourceTree = "<group>"; };
+		0328FC5323E3E79C007965A7 /* WarmUpView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WarmUpView.m; sourceTree = "<group>"; };
+		0328FC5523E3E7AE007965A7 /* WarmUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WarmUpView.xib; sourceTree = "<group>"; };
+		0329649B23D2BE5C0066E364 /* WorkoutTimerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkoutTimerController.h; sourceTree = "<group>"; };
+		0329649C23D2BE5C0066E364 /* WorkoutTimerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkoutTimerController.m; sourceTree = "<group>"; };
+		032C6728232374130087932A /* SearchFriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchFriendCell.h; sourceTree = "<group>"; };
+		032C6729232374130087932A /* SearchFriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchFriendCell.m; sourceTree = "<group>"; };
+		032C672A232374130087932A /* SearchFriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFriendCell.xib; sourceTree = "<group>"; };
+		032F4C9E232108B700E9FFB5 /* RankingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
+		032F4C9F232108B700E9FFB5 /* RankingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
+		0334A47823275931000D9826 /* WorkoutProgressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutProgressCell.m; sourceTree = "<group>"; };
+		0334A47923275931000D9826 /* WorkoutProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutProgressCell.h; sourceTree = "<group>"; };
+		0334A47A23275931000D9826 /* RatingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingListViewController.m; sourceTree = "<group>"; };
+		0334A47C23275931000D9826 /* RankListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankListCell.m; sourceTree = "<group>"; };
+		0334A47D23275931000D9826 /* RankListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankListCell.h; sourceTree = "<group>"; };
+		0334A47E23275931000D9826 /* RatingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingListViewController.h; sourceTree = "<group>"; };
+		0334B91B22942124000BF326 /* MCSliceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSliceLayer.m; sourceTree = "<group>"; };
+		0334B91C22942124000BF326 /* MCNewCustomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNewCustomLayer.h; sourceTree = "<group>"; };
+		0334B91D22942125000BF326 /* MCNewCustomLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNewCustomLayer.m; sourceTree = "<group>"; };
+		0334B91E22942125000BF326 /* MCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCore.h; sourceTree = "<group>"; };
+		0334B91F22942125000BF326 /* MCUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCUtil.m; sourceTree = "<group>"; };
+		0334B92022942125000BF326 /* MCPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPieChartView.h; sourceTree = "<group>"; };
+		0334B92122942125000BF326 /* MCSliceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSliceLayer.h; sourceTree = "<group>"; };
+		0334B92222942125000BF326 /* MCNewCustomLayeredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNewCustomLayeredView.m; sourceTree = "<group>"; };
+		0334B92322942126000BF326 /* MCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCUtil.h; sourceTree = "<group>"; };
+		0334B92422942126000BF326 /* MCNewCustomLayeredView+MCCustomLayeredViewSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MCNewCustomLayeredView+MCCustomLayeredViewSubclass.h"; sourceTree = "<group>"; };
+		0334B92522942126000BF326 /* MCPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPieChartView.m; sourceTree = "<group>"; };
+		0334B92622942126000BF326 /* MCNewCustomLayeredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNewCustomLayeredView.h; sourceTree = "<group>"; };
+		0335CDF323A2187000048A4A /* TimeOfTheDayCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeOfTheDayCell.h; sourceTree = "<group>"; };
+		0335CDF423A2187000048A4A /* TimeOfTheDayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeOfTheDayCell.m; sourceTree = "<group>"; };
+		0335CDF523A2187000048A4A /* TimeOfTheDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeOfTheDayCell.xib; sourceTree = "<group>"; };
+		0335CDF923A2221C00048A4A /* DaysOfTheWeekCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaysOfTheWeekCell.h; sourceTree = "<group>"; };
+		0335CDFA23A2221C00048A4A /* DaysOfTheWeekCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaysOfTheWeekCell.m; sourceTree = "<group>"; };
+		0335CDFB23A2221C00048A4A /* DaysOfTheWeekCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaysOfTheWeekCell.xib; sourceTree = "<group>"; };
+		0346D25C2267336100DC607D /* GymTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GymTimer.entitlements; sourceTree = "<group>"; };
+		0346D25E22674FCC00DC607D /* HomeScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
+		0346D25F22674FCC00DC607D /* HomeScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
+		0346D2642267537200DC607D /* WorkoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkoutViewController.h; sourceTree = "<group>"; };
+		0346D2652267537200DC607D /* WorkoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkoutViewController.m; sourceTree = "<group>"; };
+		0346D26A2267541B00DC607D /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		0346D26B2267541B00DC607D /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		0346D26E22675A5F00DC607D /* SettingsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewCell.h; sourceTree = "<group>"; };
+		0346D26F22675A5F00DC607D /* SettingsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewCell.m; sourceTree = "<group>"; };
+		0346D27022675A5F00DC607D /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		03481F8922B2726C00BCAEE8 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0360101F235F169A004C1F4D /* LoginOptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginOptionViewController.h; sourceTree = "<group>"; };
+		03601020235F169A004C1F4D /* LoginOptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginOptionViewController.m; sourceTree = "<group>"; };
+		0370DEAE23CC517D000CCD4F /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		0382890C226F166400ACA6DB /* CalendarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarCollectionViewCell.h; sourceTree = "<group>"; };
+		0382890D226F166400ACA6DB /* CalendarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarCollectionViewCell.m; sourceTree = "<group>"; };
+		0382890E226F166400ACA6DB /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
+		038B08F1226847EC001B5063 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		038B08F2226847EC001B5063 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		038B08F52268813D001B5063 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
+		038B08F62268813D001B5063 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
+		038B08F922688301001B5063 /* ContactUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
+		038B08FA22688301001B5063 /* ContactUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
+		038B08FD2268A753001B5063 /* WorkoutAdviceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkoutAdviceViewController.h; sourceTree = "<group>"; };
+		038B08FE2268A753001B5063 /* WorkoutAdviceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkoutAdviceViewController.m; sourceTree = "<group>"; };
+		039C9E9022DC62A60045403A /* TermsOfUseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsOfUseViewController.h; sourceTree = "<group>"; };
+		039C9E9122DC62A60045403A /* TermsOfUseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsOfUseViewController.m; sourceTree = "<group>"; };
+		03B35234226599AC002C47D9 /* GymTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03B35237226599AC002C47D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		03B35238226599AC002C47D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		03B3523E226599AC002C47D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03B35240226599AD002C47D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03B35245226599AD002C47D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03B35246226599AD002C47D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		03B3524E22659CE1002C47D9 /* Futura.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Futura.ttc; sourceTree = "<group>"; };
+		03B3525122659CFD002C47D9 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		03B3525222659CFD002C47D9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		03B3525322659CFD002C47D9 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		03B3525922659D6C002C47D9 /* OnBoardingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnBoardingCollectionViewCell.m; sourceTree = "<group>"; };
+		03B3525A22659D6C002C47D9 /* OnBoardingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnBoardingCollectionViewCell.h; sourceTree = "<group>"; };
+		03B3525B22659D6C002C47D9 /* OnBoardingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnBoardingCollectionViewCell.xib; sourceTree = "<group>"; };
+		03B3526422659E6D002C47D9 /* OnBoardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnBoardingViewController.m; sourceTree = "<group>"; };
+		03B3526522659E6D002C47D9 /* OnBoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnBoardingViewController.h; sourceTree = "<group>"; };
+		03B9C7F922718B6A002ECCD1 /* RegistrationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		03B9C7FA22718B6A002ECCD1 /* RegistrationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		03B9C7FD2271BBA8002ECCD1 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		03B9C7FE2271BBA8002ECCD1 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		03C02357228D6C73004A06B1 /* beep_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep_sound.mp3; sourceTree = "<group>"; };
+		03C02359228D7728004A06B1 /* beep_sound_new.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep_sound_new.mp3; sourceTree = "<group>"; };
+		03C1F5CD232CA02600246941 /* NoRequestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoRequestTableViewCell.h; sourceTree = "<group>"; };
+		03C1F5CE232CA02600246941 /* NoRequestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoRequestTableViewCell.m; sourceTree = "<group>"; };
+		03C1F5CF232CA02600246941 /* NoRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoRequestTableViewCell.xib; sourceTree = "<group>"; };
+		03CACAC7236AEE7200D9B2D8 /* OnBoardingCVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnBoardingCVC.h; sourceTree = "<group>"; };
+		03CACAC8236AEE7200D9B2D8 /* OnBoardingCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnBoardingCVC.m; sourceTree = "<group>"; };
+		03CACAC9236AEE7200D9B2D8 /* OnBoardingCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingCVC.xib; sourceTree = "<group>"; };
+		03CE6B81238D3F4800D0EB02 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		03CF340022C0DD7B00F80F76 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		03D6A39F228EE423009E6649 /* beep_sound_latest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep_sound_latest.mp3; sourceTree = "<group>"; };
+		03D94B8D22A8E9CF008A054C /* NewOnBoardingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewOnBoardingViewController.h; sourceTree = "<group>"; };
+		03D94B8E22A8E9CF008A054C /* NewOnBoardingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewOnBoardingViewController.m; sourceTree = "<group>"; };
+		03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		2C8BB3AB96F5CD42D5D91B93 /* Pods_GymTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C298C3D6D74C95265B59F05 /* Pods-GymTimer Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTimer Watch Extension.release.xcconfig"; path = "Target Support Files/Pods-GymTimer Watch Extension/Pods-GymTimer Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		3F68E798D4CC38F276E2BB1D /* Pods-GymTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTimer.debug.xcconfig"; path = "Target Support Files/Pods-GymTimer/Pods-GymTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		6BFF316C28BDB81CEE75A24E /* Pods-GymTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GymTimer/Pods-GymTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		B9C26438B6946E65A6063668 /* Pods_GymTimer_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymTimer_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA2E345A7990383F0CE865FF /* Pods-GymTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-GymTimer/Pods-GymTimer.release.xcconfig"; sourceTree = "<group>"; };
+		FB14F3385CEAE82C1CB527A1 /* Pods-GymTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTimer.release.xcconfig"; path = "Target Support Files/Pods-GymTimer/Pods-GymTimer.release.xcconfig"; sourceTree = "<group>"; };
+		FDE51FB7DCEC7C62AFCC7E6D /* Pods-GymTimer Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTimer Watch Extension.debug.xcconfig"; path = "Target Support Files/Pods-GymTimer Watch Extension/Pods-GymTimer Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		031E274823CC376F0051B56F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D679A05744290339437152C /* Pods_GymTimer_Watch_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03B35231226599AC002C47D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03CF340122C0DD7B00F80F76 /* StoreKit.framework in Frameworks */,
+				03481F8A22B2726C00BCAEE8 /* Charts.framework in Frameworks */,
+				F17F3F74DF1EED174EC1C6E3 /* Pods_GymTimer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4701980F149CA2506FBC912E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0314A5202265CAD5005C80BF /* Service Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0314A5242265CB67005C80BF /* ServiceManager.h */,
+				0314A5252265CB67005C80BF /* ServiceManager.m */,
+			);
+			path = "Service Manager";
+			sourceTree = "<group>";
+		};
+		0316F41823A0CD41004D47E5 /* UpgradeToPro */ = {
+			isa = PBXGroup;
+			children = (
+				0335CDD323A2185600048A4A /* Table Cell */,
+				0316F43B23A0CD77004D47E5 /* Collection Cell */,
+				0316F43823A0CD73004D47E5 /* UpgradeToProVC.h */,
+				0316F43923A0CD73004D47E5 /* UpgradeToProVC.m */,
+			);
+			path = UpgradeToPro;
+			sourceTree = "<group>";
+		};
+		0316F43B23A0CD77004D47E5 /* Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0335CDF823A221EE00048A4A /* Day Of Week Clv Cell */,
+				0316F45723A0CEDD004D47E5 /* Day Of Week */,
+				0316F45123A0CEBA004D47E5 /* Time Of Day */,
+				0316F44623A0CE80004D47E5 /* Average Workout */,
+				0316F44223A0CDE0004D47E5 /* Workout Calendar */,
+				0316F44123A0CDD0004D47E5 /* Your Skill Level */,
+			);
+			path = "Collection Cell";
+			sourceTree = "<group>";
+		};
+		0316F44123A0CDD0004D47E5 /* Your Skill Level */ = {
+			isa = PBXGroup;
+			children = (
+				0316F43C23A0CDB7004D47E5 /* YourSkillLevelCell.h */,
+				0316F43D23A0CDB7004D47E5 /* YourSkillLevelCell.m */,
+				0316F43E23A0CDB7004D47E5 /* YourSkillLevelCell.xib */,
+			);
+			path = "Your Skill Level";
+			sourceTree = "<group>";
+		};
+		0316F44223A0CDE0004D47E5 /* Workout Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				0316F44C23A0CEB1004D47E5 /* WorkoutCalendarCell.h */,
+				0316F44D23A0CEB1004D47E5 /* WorkoutCalendarCell.m */,
+				0316F44E23A0CEB1004D47E5 /* WorkoutCalendarCell.xib */,
+			);
+			path = "Workout Calendar";
+			sourceTree = "<group>";
+		};
+		0316F44623A0CE80004D47E5 /* Average Workout */ = {
+			isa = PBXGroup;
+			children = (
+				0316F44723A0CE9B004D47E5 /* AverageWorkoutCell.h */,
+				0316F44823A0CE9B004D47E5 /* AverageWorkoutCell.m */,
+				0316F44923A0CE9B004D47E5 /* AverageWorkoutCell.xib */,
+			);
+			path = "Average Workout";
+			sourceTree = "<group>";
+		};
+		0316F45123A0CEBA004D47E5 /* Time Of Day */ = {
+			isa = PBXGroup;
+			children = (
+				0316F45D23A0E470004D47E5 /* TimeOfDayClvCell.h */,
+				0316F45E23A0E470004D47E5 /* TimeOfDayClvCell.m */,
+				0316F45F23A0E470004D47E5 /* TimeOfDayClvCell.xib */,
+			);
+			path = "Time Of Day";
+			sourceTree = "<group>";
+		};
+		0316F45723A0CEDD004D47E5 /* Day Of Week */ = {
+			isa = PBXGroup;
+			children = (
+				0316F46223A0E69D004D47E5 /* DayOfWeekClvCell.h */,
+				0316F46323A0E69D004D47E5 /* DayOfWeekClvCell.m */,
+				0316F46423A0E69D004D47E5 /* DayOfWeekClvCell.xib */,
+			);
+			path = "Day Of Week";
+			sourceTree = "<group>";
+		};
+		0318769B23D9A7EE00738AF7 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				0316620823D9C28D00BE68E1 /* BeepSound.wav */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		0318EFB62355AA97006B85FB /* MZTimerLabel */ = {
+			isa = PBXGroup;
+			children = (
+				0318EFB72355AAA6006B85FB /* MZTimerLabel.h */,
+				0318EFB82355AAA7006B85FB /* MZTimerLabel.m */,
+			);
+			path = MZTimerLabel;
+			sourceTree = "<group>";
+		};
+		0319B2D123ED8E6B00A72C5F /* Loading Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0319B2F323ED8E9000A72C5F /* LoadingScreenVC.h */,
+				0319B2F423ED8E9000A72C5F /* LoadingScreenVC.m */,
+			);
+			path = "Loading Screen";
+			sourceTree = "<group>";
+		};
+		031ABB0023D6B9FD001DB98D /* Set And Rest */ = {
+			isa = PBXGroup;
+			children = (
+				031ABB2023D6BA13001DB98D /* SetAndRestController.h */,
+				031ABB2123D6BA13001DB98D /* SetAndRestController.m */,
+			);
+			path = "Set And Rest";
+			sourceTree = "<group>";
+		};
+		031ABB2323D6CF3F001DB98D /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				031ABB2423D6CF9B001DB98D /* MenuController.h */,
+				031ABB2523D6CF9B001DB98D /* MenuController.m */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		031ABB2823D6F3BC001DB98D /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				031ABB2923D6F3D4001DB98D /* TutorialController.h */,
+				031ABB2A23D6F3D4001DB98D /* TutorialController.m */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		031ABB2D23D6F76A001DB98D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				031E275023CC376F0051B56F /* InterfaceController.h */,
+				031E275123CC376F0051B56F /* InterfaceController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		031B30E0239F7683007F8020 /* Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				031B3100239F76A7007F8020 /* TimeOfDayCell.h */,
+				031B3101239F76A7007F8020 /* TimeOfDayCell.m */,
+			);
+			path = "Table Cell";
+			sourceTree = "<group>";
+		};
+		031B3103239F9342007F8020 /* Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				031B3104239F9362007F8020 /* DayOfWeekCell.h */,
+				031B3105239F9362007F8020 /* DayOfWeekCell.m */,
+			);
+			path = "Collection Cell";
+			sourceTree = "<group>";
+		};
+		031E274023CC376E0051B56F /* GymTimer Watch */ = {
+			isa = PBXGroup;
+			children = (
+				0320B22D23D1ABAA00699222 /* Futura.ttc */,
+				031E274123CC376E0051B56F /* Interface.storyboard */,
+				031E274423CC376F0051B56F /* Assets.xcassets */,
+				031E274623CC376F0051B56F /* Info.plist */,
+			);
+			path = "GymTimer Watch";
+			sourceTree = "<group>";
+		};
+		031E274F23CC376F0051B56F /* GymTimer Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				031ABB2823D6F3BC001DB98D /* Tutorial */,
+				031ABB2323D6CF3F001DB98D /* Menu */,
+				031ABB0023D6B9FD001DB98D /* Set And Rest */,
+				0329647B23D2BDB70066E364 /* Workout Timer  */,
+				0320B20723D1952700699222 /* Workout Complete */,
+				031ABB2D23D6F76A001DB98D /* Home */,
+				0370DE8B23CC4F97000CCD4F /* Helper */,
+				0318769B23D9A7EE00738AF7 /* Sound */,
+				031E275323CC376F0051B56F /* ExtensionDelegate.h */,
+				031E275423CC376F0051B56F /* ExtensionDelegate.m */,
+				031E275623CC376F0051B56F /* NotificationController.h */,
+				031E275723CC376F0051B56F /* NotificationController.m */,
+				031E275923CC37700051B56F /* Assets.xcassets */,
+				031E275B23CC37700051B56F /* Info.plist */,
+				031E275C23CC37700051B56F /* PushNotificationPayload.apns */,
+			);
+			path = "GymTimer Watch Extension";
+			sourceTree = "<group>";
+		};
+		0320B20723D1952700699222 /* Workout Complete */ = {
+			isa = PBXGroup;
+			children = (
+				0320B22723D1957100699222 /* WorkoutCompleteController.h */,
+				0320B22823D1957100699222 /* WorkoutCompleteController.m */,
+			);
+			path = "Workout Complete";
+			sourceTree = "<group>";
+		};
+		0323C874232619760028F8F8 /* Search Friend */ = {
+			isa = PBXGroup;
+			children = (
+				032C6728232374130087932A /* SearchFriendCell.h */,
+				032C6729232374130087932A /* SearchFriendCell.m */,
+				032C672A232374130087932A /* SearchFriendCell.xib */,
+			);
+			path = "Search Friend";
+			sourceTree = "<group>";
+		};
+		0323C875232619880028F8F8 /* Requst Header */ = {
+			isa = PBXGroup;
+			children = (
+				0323C87823261A570028F8F8 /* HeaderReqstAcpt.h */,
+				0323C87923261A570028F8F8 /* HeaderReqstAcpt.m */,
+				0323C87A23261A570028F8F8 /* HeaderReqstAcpt.xib */,
+				0323C87D23261B9A0028F8F8 /* HeaderReqstRecvd.h */,
+				0323C87E23261B9A0028F8F8 /* HeaderReqstRecvd.m */,
+				0323C87F23261B9A0028F8F8 /* HeaderReqstRecvd.xib */,
+			);
+			path = "Requst Header";
+			sourceTree = "<group>";
+		};
+		0323C88223261C950028F8F8 /* RequestAcceptedCell */ = {
+			isa = PBXGroup;
+			children = (
+				0323C88323261CD10028F8F8 /* RequestAccptedCell.h */,
+				0323C88423261CD10028F8F8 /* RequestAccptedCell.m */,
+				0323C88523261CD10028F8F8 /* RequestAccptedCell.xib */,
+			);
+			path = RequestAcceptedCell;
+			sourceTree = "<group>";
+		};
+		0323C88823261D550028F8F8 /* RequestReceivedCell */ = {
+			isa = PBXGroup;
+			children = (
+				0323C88923261D7F0028F8F8 /* RequestReceivedCell.h */,
+				0323C88A23261D7F0028F8F8 /* RequestReceivedCell.m */,
+				0323C88B23261D7F0028F8F8 /* RequestReceivedCell.xib */,
+			);
+			path = RequestReceivedCell;
+			sourceTree = "<group>";
+		};
+		0323C88E232632210028F8F8 /* Request Header */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Request Header";
+			sourceTree = "<group>";
+		};
+		03266D34239E042400244894 /* Pro Congrats */ = {
+			isa = PBXGroup;
+			children = (
+				03266D54239E049900244894 /* ProCongratsVC.h */,
+				03266D55239E049900244894 /* ProCongratsVC.m */,
+			);
+			path = "Pro Congrats";
+			sourceTree = "<group>";
+		};
+		03266D57239E71A400244894 /* Stats VC */ = {
+			isa = PBXGroup;
+			children = (
+				031B3103239F9342007F8020 /* Collection Cell */,
+				031B30E0239F7683007F8020 /* Table Cell */,
+				03266D58239E71B600244894 /* StatsVC.h */,
+				03266D59239E71B600244894 /* StatsVC.m */,
+			);
+			path = "Stats VC";
+			sourceTree = "<group>";
+		};
+		0328FC3023E3E610007965A7 /* WarmUp View */ = {
+			isa = PBXGroup;
+			children = (
+				0328FC5223E3E79C007965A7 /* WarmUpView.h */,
+				0328FC5323E3E79C007965A7 /* WarmUpView.m */,
+				0328FC5523E3E7AE007965A7 /* WarmUpView.xib */,
+			);
+			path = "WarmUp View";
+			sourceTree = "<group>";
+		};
+		0329647B23D2BDB70066E364 /* Workout Timer  */ = {
+			isa = PBXGroup;
+			children = (
+				0329649B23D2BE5C0066E364 /* WorkoutTimerController.h */,
+				0329649C23D2BE5C0066E364 /* WorkoutTimerController.m */,
+			);
+			path = "Workout Timer ";
+			sourceTree = "<group>";
+		};
+		032C67272323730B0087932A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				03C1F5CC232C9FFC00246941 /* No Request Cell */,
+				0323C88E232632210028F8F8 /* Request Header */,
+				0323C88823261D550028F8F8 /* RequestReceivedCell */,
+				0323C88223261C950028F8F8 /* RequestAcceptedCell */,
+				0323C875232619880028F8F8 /* Requst Header */,
+				0323C874232619760028F8F8 /* Search Friend */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		032F4C9D2321086600E9FFB5 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				0334A47623275931000D9826 /* RatingList */,
+				032C67272323730B0087932A /* Cell */,
+				032F4C9E232108B700E9FFB5 /* RankingViewController.h */,
+				032F4C9F232108B700E9FFB5 /* RankingViewController.m */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
+		0334A47623275931000D9826 /* RatingList */ = {
+			isa = PBXGroup;
+			children = (
+				0334A47723275931000D9826 /* Collection Cell */,
+				0334A47B23275931000D9826 /* Table Cell */,
+				0334A47E23275931000D9826 /* RatingListViewController.h */,
+				0334A47A23275931000D9826 /* RatingListViewController.m */,
+			);
+			path = RatingList;
+			sourceTree = "<group>";
+		};
+		0334A47723275931000D9826 /* Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0334A47823275931000D9826 /* WorkoutProgressCell.m */,
+				0334A47923275931000D9826 /* WorkoutProgressCell.h */,
+			);
+			path = "Collection Cell";
+			sourceTree = "<group>";
+		};
+		0334A47B23275931000D9826 /* Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0334A47C23275931000D9826 /* RankListCell.m */,
+				0334A47D23275931000D9826 /* RankListCell.h */,
+			);
+			path = "Table Cell";
+			sourceTree = "<group>";
+		};
+		0334B8E022941C18000BF326 /* Third-Party Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0318EFB62355AA97006B85FB /* MZTimerLabel */,
+				0334B91A22942107000BF326 /* ios-pie-chart-view */,
+			);
+			path = "Third-Party Frameworks";
+			sourceTree = "<group>";
+		};
+		0334B91A22942107000BF326 /* ios-pie-chart-view */ = {
+			isa = PBXGroup;
+			children = (
+				0334B91E22942125000BF326 /* MCCore.h */,
+				0334B91C22942124000BF326 /* MCNewCustomLayer.h */,
+				0334B91D22942125000BF326 /* MCNewCustomLayer.m */,
+				0334B92622942126000BF326 /* MCNewCustomLayeredView.h */,
+				0334B92222942125000BF326 /* MCNewCustomLayeredView.m */,
+				0334B92422942126000BF326 /* MCNewCustomLayeredView+MCCustomLayeredViewSubclass.h */,
+				0334B92022942125000BF326 /* MCPieChartView.h */,
+				0334B92522942126000BF326 /* MCPieChartView.m */,
+				0334B92122942125000BF326 /* MCSliceLayer.h */,
+				0334B91B22942124000BF326 /* MCSliceLayer.m */,
+				0334B92322942126000BF326 /* MCUtil.h */,
+				0334B91F22942125000BF326 /* MCUtil.m */,
+			);
+			path = "ios-pie-chart-view";
+			sourceTree = "<group>";
+		};
+		0335CDD323A2185600048A4A /* Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0335CDF323A2187000048A4A /* TimeOfTheDayCell.h */,
+				0335CDF423A2187000048A4A /* TimeOfTheDayCell.m */,
+				0335CDF523A2187000048A4A /* TimeOfTheDayCell.xib */,
+			);
+			path = "Table Cell";
+			sourceTree = "<group>";
+		};
+		0335CDF823A221EE00048A4A /* Day Of Week Clv Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0335CDF923A2221C00048A4A /* DaysOfTheWeekCell.h */,
+				0335CDFA23A2221C00048A4A /* DaysOfTheWeekCell.m */,
+				0335CDFB23A2221C00048A4A /* DaysOfTheWeekCell.xib */,
+			);
+			path = "Day Of Week Clv Cell";
+			sourceTree = "<group>";
+		};
+		0346D25D22674F8E00DC607D /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0346D25E22674FCC00DC607D /* HomeScreenViewController.h */,
+				0346D25F22674FCC00DC607D /* HomeScreenViewController.m */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
+		0346D2612267532300DC607D /* Workout Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0346D2642267537200DC607D /* WorkoutViewController.h */,
+				0346D2652267537200DC607D /* WorkoutViewController.m */,
+			);
+			path = "Workout Screen";
+			sourceTree = "<group>";
+		};
+		0346D2632267533400DC607D /* Settings Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0346D26A2267541B00DC607D /* SettingsViewController.h */,
+				0346D26B2267541B00DC607D /* SettingsViewController.m */,
+			);
+			path = "Settings Screen";
+			sourceTree = "<group>";
+		};
+		0346D26D22675A0600DC607D /* Settings Screen Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0346D26E22675A5F00DC607D /* SettingsTableViewCell.h */,
+				0346D26F22675A5F00DC607D /* SettingsTableViewCell.m */,
+				0346D27022675A5F00DC607D /* SettingsTableViewCell.xib */,
+			);
+			path = "Settings Screen Cell";
+			sourceTree = "<group>";
+		};
+		0360101E235F1680004C1F4D /* Login Option */ = {
+			isa = PBXGroup;
+			children = (
+				0360101F235F169A004C1F4D /* LoginOptionViewController.h */,
+				03601020235F169A004C1F4D /* LoginOptionViewController.m */,
+			);
+			path = "Login Option";
+			sourceTree = "<group>";
+		};
+		0370DE8B23CC4F97000CCD4F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0370DEAE23CC517D000CCD4F /* Common.h */,
+				0320B22A23D197BE00699222 /* WatchUtils.h */,
+				0320B22B23D197BE00699222 /* WatchUtils.m */,
+				032142A323D801F1005FBE36 /* WatchManager.h */,
+				032142A423D801F1005FBE36 /* WatchManager.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		03828911226F166C00ACA6DB /* Calendar Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0382890C226F166400ACA6DB /* CalendarCollectionViewCell.h */,
+				0382890D226F166400ACA6DB /* CalendarCollectionViewCell.m */,
+				0382890E226F166400ACA6DB /* CalendarCollectionViewCell.xib */,
+			);
+			path = "Calendar Cell";
+			sourceTree = "<group>";
+		};
+		038B08EF22684778001B5063 /* Profile Screen */ = {
+			isa = PBXGroup;
+			children = (
+				038B08F1226847EC001B5063 /* ProfileViewController.h */,
+				038B08F2226847EC001B5063 /* ProfileViewController.m */,
+			);
+			path = "Profile Screen";
+			sourceTree = "<group>";
+		};
+		038B08F42268811A001B5063 /* Privacy Policy Screen */ = {
+			isa = PBXGroup;
+			children = (
+				038B08F52268813D001B5063 /* PrivacyPolicyViewController.h */,
+				038B08F62268813D001B5063 /* PrivacyPolicyViewController.m */,
+			);
+			path = "Privacy Policy Screen";
+			sourceTree = "<group>";
+		};
+		038B08F8226882E4001B5063 /* Contact Us Screen */ = {
+			isa = PBXGroup;
+			children = (
+				038B08F922688301001B5063 /* ContactUsViewController.h */,
+				038B08FA22688301001B5063 /* ContactUsViewController.m */,
+			);
+			path = "Contact Us Screen";
+			sourceTree = "<group>";
+		};
+		038B08FC2268A724001B5063 /* Workout Advice Screen */ = {
+			isa = PBXGroup;
+			children = (
+				038B08FD2268A753001B5063 /* WorkoutAdviceViewController.h */,
+				038B08FE2268A753001B5063 /* WorkoutAdviceViewController.m */,
+			);
+			path = "Workout Advice Screen";
+			sourceTree = "<group>";
+		};
+		039C9E8F22DC62770045403A /* Terms Of Use */ = {
+			isa = PBXGroup;
+			children = (
+				039C9E9022DC62A60045403A /* TermsOfUseViewController.h */,
+				039C9E9122DC62A60045403A /* TermsOfUseViewController.m */,
+			);
+			path = "Terms Of Use";
+			sourceTree = "<group>";
+		};
+		03B3522B226599AC002C47D9 = {
+			isa = PBXGroup;
+			children = (
+				03B35236226599AC002C47D9 /* GymTimer */,
+				031E274023CC376E0051B56F /* GymTimer Watch */,
+				031E274F23CC376F0051B56F /* GymTimer Watch Extension */,
+				03B35235226599AC002C47D9 /* Products */,
+				1DBFB7E79DADEEA243D8A413 /* Pods */,
+				0625C9B18FBF36A46C4321F0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		03B35235226599AC002C47D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03B35234226599AC002C47D9 /* GymTimer.app */,
+				031E273F23CC376E0051B56F /* GymTimer Watch.app */,
+				031E274B23CC376F0051B56F /* GymTimer Watch Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03B35236226599AC002C47D9 /* GymTimer */ = {
+			isa = PBXGroup;
+			children = (
+				0346D25C2267336100DC607D /* GymTimer.entitlements */,
+				03B35237226599AC002C47D9 /* AppDelegate.h */,
+				03B35238226599AC002C47D9 /* AppDelegate.m */,
+				03B3523D226599AC002C47D9 /* Main.storyboard */,
+				03B35240226599AD002C47D9 /* Assets.xcassets */,
+				03B3526122659DB1002C47D9 /* Views */,
+				03B3526222659E35002C47D9 /* Controllers */,
+				03B3524D22659CE1002C47D9 /* Fonts */,
+				03D6A39E228EE403009E6649 /* Sounds */,
+				03B3525022659CFD002C47D9 /* Utilities */,
+				0314A5202265CAD5005C80BF /* Service Manager */,
+				03B3525522659D31002C47D9 /* Suppoting files */,
+				0334B8E022941C18000BF326 /* Third-Party Frameworks */,
+			);
+			path = GymTimer;
+			sourceTree = "<group>";
+		};
+		03B3524D22659CE1002C47D9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				03B3524E22659CE1002C47D9 /* Futura.ttc */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		03B3525022659CFD002C47D9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				03B3525222659CFD002C47D9 /* Constants.h */,
+				03B3525122659CFD002C47D9 /* Utils.h */,
+				03B3525322659CFD002C47D9 /* Utils.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		03B3525522659D31002C47D9 /* Suppoting files */ = {
+			isa = PBXGroup;
+			children = (
+				03CE6B81238D3F4800D0EB02 /* GoogleService-Info.plist */,
+				03B35245226599AD002C47D9 /* Info.plist */,
+				03B35246226599AD002C47D9 /* main.m */,
+				0314A5272265D4CD005C80BF /* CommonImports.h */,
+			);
+			path = "Suppoting files";
+			sourceTree = "<group>";
+		};
+		03B3525822659D6C002C47D9 /* OnBoardingCell */ = {
+			isa = PBXGroup;
+			children = (
+				03B3525922659D6C002C47D9 /* OnBoardingCollectionViewCell.m */,
+				03B3525A22659D6C002C47D9 /* OnBoardingCollectionViewCell.h */,
+				03B3525B22659D6C002C47D9 /* OnBoardingCollectionViewCell.xib */,
+			);
+			path = OnBoardingCell;
+			sourceTree = "<group>";
+		};
+		03B3526122659DB1002C47D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03CACAC6236AEE3F00D9B2D8 /* On Boarding New Cell */,
+				03B3525822659D6C002C47D9 /* OnBoardingCell */,
+				0346D26D22675A0600DC607D /* Settings Screen Cell */,
+				03828911226F166C00ACA6DB /* Calendar Cell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		03B3526222659E35002C47D9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0319B2D123ED8E6B00A72C5F /* Loading Screen */,
+				0328FC3023E3E610007965A7 /* WarmUp View */,
+				0316F41823A0CD41004D47E5 /* UpgradeToPro */,
+				03266D57239E71A400244894 /* Stats VC */,
+				03266D34239E042400244894 /* Pro Congrats */,
+				0360101E235F1680004C1F4D /* Login Option */,
+				03D94B8922A8E8D4008A054C /* New OnBoarding */,
+				03B3526322659E58002C47D9 /* OnBoarding Screen */,
+				03B9C8002271BBC4002ECCD1 /* Registration Screen */,
+				03B9C7FC2271BB94002ECCD1 /* Forgot Password Screen */,
+				0346D25D22674F8E00DC607D /* Home Screen */,
+				0346D2612267532300DC607D /* Workout Screen */,
+				032F4C9D2321086600E9FFB5 /* Ranking */,
+				0346D2632267533400DC607D /* Settings Screen */,
+				038B08FC2268A724001B5063 /* Workout Advice Screen */,
+				038B08EF22684778001B5063 /* Profile Screen */,
+				039C9E8F22DC62770045403A /* Terms Of Use */,
+				038B08F42268811A001B5063 /* Privacy Policy Screen */,
+				038B08F8226882E4001B5063 /* Contact Us Screen */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		03B3526322659E58002C47D9 /* OnBoarding Screen */ = {
+			isa = PBXGroup;
+			children = (
+				03B3526522659E6D002C47D9 /* OnBoardingViewController.h */,
+				03B3526422659E6D002C47D9 /* OnBoardingViewController.m */,
+			);
+			path = "OnBoarding Screen";
+			sourceTree = "<group>";
+		};
+		03B9C7FC2271BB94002ECCD1 /* Forgot Password Screen */ = {
+			isa = PBXGroup;
+			children = (
+				03B9C7FD2271BBA8002ECCD1 /* ForgotPasswordViewController.h */,
+				03B9C7FE2271BBA8002ECCD1 /* ForgotPasswordViewController.m */,
+			);
+			path = "Forgot Password Screen";
+			sourceTree = "<group>";
+		};
+		03B9C8002271BBC4002ECCD1 /* Registration Screen */ = {
+			isa = PBXGroup;
+			children = (
+				03B9C7F922718B6A002ECCD1 /* RegistrationViewController.h */,
+				03B9C7FA22718B6A002ECCD1 /* RegistrationViewController.m */,
+			);
+			path = "Registration Screen";
+			sourceTree = "<group>";
+		};
+		03C1F5CC232C9FFC00246941 /* No Request Cell */ = {
+			isa = PBXGroup;
+			children = (
+				03C1F5CD232CA02600246941 /* NoRequestTableViewCell.h */,
+				03C1F5CE232CA02600246941 /* NoRequestTableViewCell.m */,
+				03C1F5CF232CA02600246941 /* NoRequestTableViewCell.xib */,
+			);
+			path = "No Request Cell";
+			sourceTree = "<group>";
+		};
+		03CACAC6236AEE3F00D9B2D8 /* On Boarding New Cell */ = {
+			isa = PBXGroup;
+			children = (
+				03CACAC7236AEE7200D9B2D8 /* OnBoardingCVC.h */,
+				03CACAC8236AEE7200D9B2D8 /* OnBoardingCVC.m */,
+				03CACAC9236AEE7200D9B2D8 /* OnBoardingCVC.xib */,
+			);
+			path = "On Boarding New Cell";
+			sourceTree = "<group>";
+		};
+		03D6A39E228EE403009E6649 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				03D6A39F228EE423009E6649 /* beep_sound_latest.mp3 */,
+				03C02359228D7728004A06B1 /* beep_sound_new.mp3 */,
+				03C02357228D6C73004A06B1 /* beep_sound.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		03D94B8922A8E8D4008A054C /* New OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				03D94B8D22A8E9CF008A054C /* NewOnBoardingViewController.h */,
+				03D94B8E22A8E9CF008A054C /* NewOnBoardingViewController.m */,
+			);
+			path = "New OnBoarding";
+			sourceTree = "<group>";
+		};
+		03EDB6622369A4D700A23FE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03EDB6792369A4D700A23FE2 /* AFNetworking.framework */,
+				0317D4B023DBFDB6002979AB /* AFNetworking.framework */,
+				03EDB67B2369A4D700A23FE2 /* Calendar_iOS.framework */,
+				03EDB67D2369A4D700A23FE2 /* Charts.framework */,
+				03EDB67F2369A4D700A23FE2 /* DYPieChartView.framework */,
+				03EDB6812369A4D700A23FE2 /* FBSDKCoreKit.framework */,
+				03EDB6832369A4D700A23FE2 /* FBSDKLoginKit.framework */,
+				03CE6B53238D360500D0EB02 /* FirebaseCore.framework */,
+				03CE6B55238D360500D0EB02 /* FirebaseCoreDiagnostics.framework */,
+				03CE6B57238D360500D0EB02 /* FirebaseInstanceID.framework */,
+				03EDB6852369A4D700A23FE2 /* FSCalendar.framework */,
+				03CE6B59238D360500D0EB02 /* GoogleDataTransport.framework */,
+				03CE6B5B238D360500D0EB02 /* GoogleDataTransportCCTSupport.framework */,
+				03CE6B5D238D360500D0EB02 /* GoogleUtilities.framework */,
+				03EDB6872369A4D700A23FE2 /* IQKeyboardManager.framework */,
+				03EDB6892369A4D700A23FE2 /* JGProgressHUD.framework */,
+				03EDB68B2369A4D700A23FE2 /* JGProgressHUD.bundle */,
+				03EDB68D2369A4D700A23FE2 /* JTCalendar.framework */,
+				03EDB68F2369A4D700A23FE2 /* KSToastView.framework */,
+				03EDB6912369A4D700A23FE2 /* MBCalendarKit.framework */,
+				03EDB6932369A4D700A23FE2 /* MBCircularProgressBar.framework */,
+				03EDB6952369A4D700A23FE2 /* MBCircularProgressBar.bundle */,
+				03CE6B5F238D360500D0EB02 /* nanopb.framework */,
+				03EDB6972369A4D700A23FE2 /* Pods_GymTimer.framework */,
+				0317D4B223DBFDB6002979AB /* Pods_GymTimer_Watch_Extension.framework */,
+				03EDB6992369A4D700A23FE2 /* pop.framework */,
+				03EDB69B2369A4D700A23FE2 /* Reachability.framework */,
+				03EDB69D2369A4D700A23FE2 /* SDWebImage.framework */,
+				03EDB69F2369A4D700A23FE2 /* UICountingLabel.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0625C9B18FBF36A46C4321F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */,
+				03CF340022C0DD7B00F80F76 /* StoreKit.framework */,
+				03481F8922B2726C00BCAEE8 /* Charts.framework */,
+				2C8BB3AB96F5CD42D5D91B93 /* Pods_GymTimer.framework */,
+				B9C26438B6946E65A6063668 /* Pods_GymTimer_Watch_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DBFB7E79DADEEA243D8A413 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F68E798D4CC38F276E2BB1D /* Pods-GymTimer.debug.xcconfig */,
+				FB14F3385CEAE82C1CB527A1 /* Pods-GymTimer.release.xcconfig */,
+				6BFF316C28BDB81CEE75A24E /* Pods-GymTimer.debug.xcconfig */,
+				FA2E345A7990383F0CE865FF /* Pods-GymTimer.release.xcconfig */,
+				FDE51FB7DCEC7C62AFCC7E6D /* Pods-GymTimer Watch Extension.debug.xcconfig */,
+				3C298C3D6D74C95265B59F05 /* Pods-GymTimer Watch Extension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		031E273E23CC376E0051B56F /* GymTimer Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 031E278623CC37700051B56F /* Build configuration list for PBXNativeTarget "GymTimer Watch" */;
+			buildPhases = (
+				031E273D23CC376E0051B56F /* Resources */,
+				031E276323CC37700051B56F /* Embed App Extensions */,
+				4701980F149CA2506FBC912E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				031E274E23CC376F0051B56F /* PBXTargetDependency */,
+			);
+			name = "GymTimer Watch";
+			productName = "GymTimer Watch";
+			productReference = 031E273F23CC376E0051B56F /* GymTimer Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		031E274A23CC376F0051B56F /* GymTimer Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 031E278523CC37700051B56F /* Build configuration list for PBXNativeTarget "GymTimer Watch Extension" */;
+			buildPhases = (
+				8C9CEE19AF31FD374CD7F9F1 /* [CP] Check Pods Manifest.lock */,
+				031E274723CC376F0051B56F /* Sources */,
+				031E274823CC376F0051B56F /* Frameworks */,
+				031E274923CC376F0051B56F /* Resources */,
+				9E96D0438656083F0ED1EE0F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GymTimer Watch Extension";
+			productName = "GymTimer Watch Extension";
+			productReference = 031E274B23CC376F0051B56F /* GymTimer Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		03B35233226599AC002C47D9 /* GymTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03B3524A226599AD002C47D9 /* Build configuration list for PBXNativeTarget "GymTimer" */;
+			buildPhases = (
+				E71CF0DDF38939A8B72371A4 /* [CP] Check Pods Manifest.lock */,
+				03B35230226599AC002C47D9 /* Sources */,
+				03B35231226599AC002C47D9 /* Frameworks */,
+				03B35232226599AC002C47D9 /* Resources */,
+				807772D45E05F3FBBE63DABB /* [CP] Embed Pods Frameworks */,
+				031E276023CC37700051B56F /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				031E275E23CC37700051B56F /* PBXTargetDependency */,
+			);
+			name = GymTimer;
+			productName = GymTimer;
+			productReference = 03B35234226599AC002C47D9 /* GymTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03B3522C226599AC002C47D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "EbitNHP-i1";
+				TargetAttributes = {
+					031E273E23CC376E0051B56F = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					031E274A23CC376F0051B56F = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					03B35233226599AC002C47D9 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 03B3522F226599AC002C47D9 /* Build configuration list for PBXProject "GymTimer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 03B3522B226599AC002C47D9;
+			productRefGroup = 03B35235226599AC002C47D9 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 03EDB6622369A4D700A23FE2 /* Products */;
+					ProjectRef = 03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				03B35233226599AC002C47D9 /* GymTimer */,
+				031E273E23CC376E0051B56F /* GymTimer Watch */,
+				031E274A23CC376F0051B56F /* GymTimer Watch Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0317D4B023DBFDB6002979AB /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 0317D4AF23DBFDB6002979AB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0317D4B223DBFDB6002979AB /* Pods_GymTimer_Watch_Extension.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_GymTimer_Watch_Extension.framework;
+			remoteRef = 0317D4B123DBFDB6002979AB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03CE6B53238D360500D0EB02 /* FirebaseCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseCore.framework;
+			remoteRef = 03CE6B52238D360500D0EB02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03CE6B55238D360500D0EB02 /* FirebaseCoreDiagnostics.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseCoreDiagnostics.framework;
+			remoteRef = 03CE6B54238D360500D0EB02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03CE6B57238D360500D0EB02 /* FirebaseInstanceID.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseInstanceID.framework;
+			remoteRef = 03CE6B56238D360500D0EB02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03CE6B59238D360500D0EB02 /* GoogleDataTransport.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleDataTransport.framework;
+			remoteRef = 03CE6B58238D360500D0EB02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03CE6B5B238D360500D0EB02 /* GoogleDataTransportCCTSupport.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleDataTransportCCTSupport.framework;
+			remoteRef = 03CE6B5A238D360500D0EB02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03CE6B5D238D360500D0EB02 /* GoogleUtilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleUtilities.framework;
+			remoteRef = 03CE6B5C238D360500D0EB02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03CE6B5F238D360500D0EB02 /* nanopb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = nanopb.framework;
+			remoteRef = 03CE6B5E238D360500D0EB02 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB6792369A4D700A23FE2 /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 03EDB6782369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB67B2369A4D700A23FE2 /* Calendar_iOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Calendar_iOS.framework;
+			remoteRef = 03EDB67A2369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB67D2369A4D700A23FE2 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 03EDB67C2369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB67F2369A4D700A23FE2 /* DYPieChartView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DYPieChartView.framework;
+			remoteRef = 03EDB67E2369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB6812369A4D700A23FE2 /* FBSDKCoreKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FBSDKCoreKit.framework;
+			remoteRef = 03EDB6802369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB6832369A4D700A23FE2 /* FBSDKLoginKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FBSDKLoginKit.framework;
+			remoteRef = 03EDB6822369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB6852369A4D700A23FE2 /* FSCalendar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FSCalendar.framework;
+			remoteRef = 03EDB6842369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB6872369A4D700A23FE2 /* IQKeyboardManager.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IQKeyboardManager.framework;
+			remoteRef = 03EDB6862369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB6892369A4D700A23FE2 /* JGProgressHUD.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JGProgressHUD.framework;
+			remoteRef = 03EDB6882369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB68B2369A4D700A23FE2 /* JGProgressHUD.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = JGProgressHUD.bundle;
+			remoteRef = 03EDB68A2369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB68D2369A4D700A23FE2 /* JTCalendar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JTCalendar.framework;
+			remoteRef = 03EDB68C2369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB68F2369A4D700A23FE2 /* KSToastView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = KSToastView.framework;
+			remoteRef = 03EDB68E2369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB6912369A4D700A23FE2 /* MBCalendarKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MBCalendarKit.framework;
+			remoteRef = 03EDB6902369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB6932369A4D700A23FE2 /* MBCircularProgressBar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MBCircularProgressBar.framework;
+			remoteRef = 03EDB6922369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB6952369A4D700A23FE2 /* MBCircularProgressBar.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MBCircularProgressBar.bundle;
+			remoteRef = 03EDB6942369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB6972369A4D700A23FE2 /* Pods_GymTimer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_GymTimer.framework;
+			remoteRef = 03EDB6962369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB6992369A4D700A23FE2 /* pop.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = pop.framework;
+			remoteRef = 03EDB6982369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB69B2369A4D700A23FE2 /* Reachability.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Reachability.framework;
+			remoteRef = 03EDB69A2369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB69D2369A4D700A23FE2 /* SDWebImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDWebImage.framework;
+			remoteRef = 03EDB69C2369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EDB69F2369A4D700A23FE2 /* UICountingLabel.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UICountingLabel.framework;
+			remoteRef = 03EDB69E2369A4D700A23FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		031E273D23CC376E0051B56F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				031E278723CC38700051B56F /* Futura.ttc in Resources */,
+				031E274523CC376F0051B56F /* Assets.xcassets in Resources */,
+				0320B22E23D1ABAA00699222 /* Futura.ttc in Resources */,
+				031E274323CC376E0051B56F /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		031E274923CC376F0051B56F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0320B22F23D1ABAA00699222 /* Futura.ttc in Resources */,
+				031E278823CC38700051B56F /* Futura.ttc in Resources */,
+				0316620A23D9C28D00BE68E1 /* BeepSound.wav in Resources */,
+				031E275A23CC37700051B56F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03B35232226599AC002C47D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03C1F5D1232CA02600246941 /* NoRequestTableViewCell.xib in Resources */,
+				0346D27222675A5F00DC607D /* SettingsTableViewCell.xib in Resources */,
+				0316F46123A0E470004D47E5 /* TimeOfDayClvCell.xib in Resources */,
+				03C02358228D6C74004A06B1 /* beep_sound.mp3 in Resources */,
+				0335CDF723A2187000048A4A /* TimeOfTheDayCell.xib in Resources */,
+				032C672C232374130087932A /* SearchFriendCell.xib in Resources */,
+				03B3525F22659D6C002C47D9 /* OnBoardingCollectionViewCell.xib in Resources */,
+				03CACAC5236A98D100D9B2D8 /* Assets.xcassets in Resources */,
+				03828910226F166400ACA6DB /* CalendarCollectionViewCell.xib in Resources */,
+				0316F46623A0E69D004D47E5 /* DayOfWeekClvCell.xib in Resources */,
+				03B3524F22659CE1002C47D9 /* Futura.ttc in Resources */,
+				0323C88D23261D7F0028F8F8 /* RequestReceivedCell.xib in Resources */,
+				03B3523F226599AC002C47D9 /* Main.storyboard in Resources */,
+				0316F44B23A0CE9B004D47E5 /* AverageWorkoutCell.xib in Resources */,
+				03CE6B82238D3F4800D0EB02 /* GoogleService-Info.plist in Resources */,
+				0323C88723261CD20028F8F8 /* RequestAccptedCell.xib in Resources */,
+				03C0235A228D7728004A06B1 /* beep_sound_new.mp3 in Resources */,
+				0328FC5623E3E7AE007965A7 /* WarmUpView.xib in Resources */,
+				03D6A3A0228EE423009E6649 /* beep_sound_latest.mp3 in Resources */,
+				0323C87C23261A570028F8F8 /* HeaderReqstAcpt.xib in Resources */,
+				0335CDFD23A2221C00048A4A /* DaysOfTheWeekCell.xib in Resources */,
+				0316F44023A0CDB7004D47E5 /* YourSkillLevelCell.xib in Resources */,
+				0323C88123261B9A0028F8F8 /* HeaderReqstRecvd.xib in Resources */,
+				03CACACB236AEE7200D9B2D8 /* OnBoardingCVC.xib in Resources */,
+				0316F45023A0CEB1004D47E5 /* WorkoutCalendarCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		807772D45E05F3FBBE63DABB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymTimer/Pods-GymTimer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymTimer/Pods-GymTimer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GymTimer/Pods-GymTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C9CEE19AF31FD374CD7F9F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GymTimer Watch Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E96D0438656083F0ED1EE0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymTimer Watch Extension/Pods-GymTimer Watch Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymTimer Watch Extension/Pods-GymTimer Watch Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GymTimer Watch Extension/Pods-GymTimer Watch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E71CF0DDF38939A8B72371A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GymTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		031E274723CC376F0051B56F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				031E275523CC376F0051B56F /* ExtensionDelegate.m in Sources */,
+				031E275223CC376F0051B56F /* InterfaceController.m in Sources */,
+				0320B22923D1957100699222 /* WorkoutCompleteController.m in Sources */,
+				0317D48D23DBFDB6002979AB /* ServiceManager.m in Sources */,
+				031E275823CC376F0051B56F /* NotificationController.m in Sources */,
+				031ABB2623D6CF9B001DB98D /* MenuController.m in Sources */,
+				031ABB2B23D6F3D4001DB98D /* TutorialController.m in Sources */,
+				0320B22C23D197BE00699222 /* WatchUtils.m in Sources */,
+				031ABB2223D6BA13001DB98D /* SetAndRestController.m in Sources */,
+				032142A523D801F1005FBE36 /* WatchManager.m in Sources */,
+				0329649D23D2BE5C0066E364 /* WorkoutTimerController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03B35230226599AC002C47D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0316F46023A0E470004D47E5 /* TimeOfDayClvCell.m in Sources */,
+				0334B92922942126000BF326 /* MCUtil.m in Sources */,
+				0346D26022674FCC00DC607D /* HomeScreenViewController.m in Sources */,
+				032F4CA0232108B700E9FFB5 /* RankingViewController.m in Sources */,
+				03B35247226599AD002C47D9 /* main.m in Sources */,
+				03CACACA236AEE7200D9B2D8 /* OnBoardingCVC.m in Sources */,
+				0346D2662267537200DC607D /* WorkoutViewController.m in Sources */,
+				0316F43F23A0CDB7004D47E5 /* YourSkillLevelCell.m in Sources */,
+				0334B92A22942126000BF326 /* MCNewCustomLayeredView.m in Sources */,
+				0323C88C23261D7F0028F8F8 /* RequestReceivedCell.m in Sources */,
+				0334A47F23275931000D9826 /* WorkoutProgressCell.m in Sources */,
+				0346D26C2267541B00DC607D /* SettingsViewController.m in Sources */,
+				038B08F3226847EC001B5063 /* ProfileViewController.m in Sources */,
+				0316F44F23A0CEB1004D47E5 /* WorkoutCalendarCell.m in Sources */,
+				0328FC5423E3E79C007965A7 /* WarmUpView.m in Sources */,
+				0334B92722942126000BF326 /* MCSliceLayer.m in Sources */,
+				0319B2F523ED8E9000A72C5F /* LoadingScreenVC.m in Sources */,
+				0334A48023275931000D9826 /* RatingListViewController.m in Sources */,
+				038B08FF2268A753001B5063 /* WorkoutAdviceViewController.m in Sources */,
+				0335CDFC23A2221C00048A4A /* DaysOfTheWeekCell.m in Sources */,
+				03D94B8F22A8E9CF008A054C /* NewOnBoardingViewController.m in Sources */,
+				0334B92B22942126000BF326 /* MCPieChartView.m in Sources */,
+				0323C87B23261A570028F8F8 /* HeaderReqstAcpt.m in Sources */,
+				038B08F72268813D001B5063 /* PrivacyPolicyViewController.m in Sources */,
+				0334A48123275931000D9826 /* RankListCell.m in Sources */,
+				038B08FB22688301001B5063 /* ContactUsViewController.m in Sources */,
+				0323C88623261CD20028F8F8 /* RequestAccptedCell.m in Sources */,
+				03266D56239E049900244894 /* ProCongratsVC.m in Sources */,
+				031B3106239F9362007F8020 /* DayOfWeekCell.m in Sources */,
+				0323C88023261B9A0028F8F8 /* HeaderReqstRecvd.m in Sources */,
+				0346D27122675A5F00DC607D /* SettingsTableViewCell.m in Sources */,
+				03B35239226599AC002C47D9 /* AppDelegate.m in Sources */,
+				03B3525422659CFD002C47D9 /* Utils.m in Sources */,
+				03C1F5D0232CA02600246941 /* NoRequestTableViewCell.m in Sources */,
+				0316F44A23A0CE9B004D47E5 /* AverageWorkoutCell.m in Sources */,
+				0316F43A23A0CD73004D47E5 /* UpgradeToProVC.m in Sources */,
+				03B3526622659E6D002C47D9 /* OnBoardingViewController.m in Sources */,
+				03B3525E22659D6C002C47D9 /* OnBoardingCollectionViewCell.m in Sources */,
+				03B9C7FB22718B6A002ECCD1 /* RegistrationViewController.m in Sources */,
+				03266D5A239E71B600244894 /* StatsVC.m in Sources */,
+				031B3102239F76A7007F8020 /* TimeOfDayCell.m in Sources */,
+				03B9C7FF2271BBA8002ECCD1 /* ForgotPasswordViewController.m in Sources */,
+				0335CDF623A2187000048A4A /* TimeOfTheDayCell.m in Sources */,
+				03601021235F169A004C1F4D /* LoginOptionViewController.m in Sources */,
+				032C672B232374130087932A /* SearchFriendCell.m in Sources */,
+				0314A5262265CB67005C80BF /* ServiceManager.m in Sources */,
+				0318EFB92355AAA7006B85FB /* MZTimerLabel.m in Sources */,
+				0382890F226F166400ACA6DB /* CalendarCollectionViewCell.m in Sources */,
+				0334B92822942126000BF326 /* MCNewCustomLayer.m in Sources */,
+				0316F46523A0E69D004D47E5 /* DayOfWeekClvCell.m in Sources */,
+				039C9E9222DC62A60045403A /* TermsOfUseViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		031E274E23CC376F0051B56F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 031E274A23CC376F0051B56F /* GymTimer Watch Extension */;
+			targetProxy = 031E274D23CC376F0051B56F /* PBXContainerItemProxy */;
+		};
+		031E275E23CC37700051B56F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 031E273E23CC376E0051B56F /* GymTimer Watch */;
+			targetProxy = 031E275D23CC37700051B56F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		031E274123CC376E0051B56F /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				031E274223CC376E0051B56F /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		03B3523D226599AC002C47D9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03B3523E226599AC002C47D9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		031E276123CC37700051B56F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VDF53454H3;
+				IBSC_MODULE = GymTimer_Watch_Extension;
+				INFOPLIST_FILE = "GymTimer Watch/Info.plist";
+				MARKETING_VERSION = 5.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_AdHoc;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		031E276223CC37700051B56F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VDF53454H3;
+				IBSC_MODULE = GymTimer_Watch_Extension;
+				INFOPLIST_FILE = "GymTimer Watch/Info.plist";
+				MARKETING_VERSION = 5.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_AdHoc;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		031E276423CC37700051B56F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDE51FB7DCEC7C62AFCC7E6D /* Pods-GymTimer Watch Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VDF53454H3;
+				INFOPLIST_FILE = "GymTimer Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 5.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_Extension_AdHoc;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		031E276523CC37700051B56F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C298C3D6D74C95265B59F05 /* Pods-GymTimer Watch Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VDF53454H3;
+				INFOPLIST_FILE = "GymTimer Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 5.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_Extension_AdHoc;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		03B35248226599AD002C47D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		03B35249226599AD002C47D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03B3524B226599AD002C47D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F68E798D4CC38F276E2BB1D /* Pods-GymTimer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = GymTimer/GymTimer.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VDF53454H3;
+				INFOPLIST_FILE = "$(SRCROOT)/GymTimer/Suppoting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.5;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"Calendar_iOS\"",
+					"-framework",
+					"\"Charts\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"DYPieChartView\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JGProgressHUD\"",
+					"-framework",
+					"\"JTCalendar\"",
+					"-framework",
+					"\"KSToastView\"",
+					"-framework",
+					"\"MBCalendarKit\"",
+					"-framework",
+					"\"MBCircularProgressBar\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Reachability\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UICountingLabel\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"pop\"",
+					"-weak_framework",
+					"\"Accounts\"",
+					"-weak_framework",
+					"\"AudioToolbox\"",
+					"-weak_framework",
+					"\"CoreGraphics\"",
+					"-weak_framework",
+					"\"CoreLocation\"",
+					"-weak_framework",
+					"\"Foundation\"",
+					"-weak_framework",
+					"\"QuartzCore\"",
+					"-weak_framework",
+					"\"Security\"",
+					"-weak_framework",
+					"\"Social\"",
+					"-weak_framework",
+					"\"UIKit\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_dev_profile_17/4/19;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		03B3524C226599AD002C47D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB14F3385CEAE82C1CB527A1 /* Pods-GymTimer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = GymTimer/GymTimer.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VDF53454H3;
+				INFOPLIST_FILE = "$(SRCROOT)/GymTimer/Suppoting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.5;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"Calendar_iOS\"",
+					"-framework",
+					"\"Charts\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"DYPieChartView\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JGProgressHUD\"",
+					"-framework",
+					"\"JTCalendar\"",
+					"-framework",
+					"\"KSToastView\"",
+					"-framework",
+					"\"MBCalendarKit\"",
+					"-framework",
+					"\"MBCircularProgressBar\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Reachability\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UICountingLabel\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"pop\"",
+					"-weak_framework",
+					"\"Accounts\"",
+					"-weak_framework",
+					"\"AudioToolbox\"",
+					"-weak_framework",
+					"\"CoreGraphics\"",
+					"-weak_framework",
+					"\"CoreLocation\"",
+					"-weak_framework",
+					"\"Foundation\"",
+					"-weak_framework",
+					"\"QuartzCore\"",
+					"-weak_framework",
+					"\"Security\"",
+					"-weak_framework",
+					"\"Social\"",
+					"-weak_framework",
+					"\"UIKit\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_dis_profile_17/4/19;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		031E278523CC37700051B56F /* Build configuration list for PBXNativeTarget "GymTimer Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				031E276423CC37700051B56F /* Debug */,
+				031E276523CC37700051B56F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		031E278623CC37700051B56F /* Build configuration list for PBXNativeTarget "GymTimer Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				031E276123CC37700051B56F /* Debug */,
+				031E276223CC37700051B56F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03B3522F226599AC002C47D9 /* Build configuration list for PBXProject "GymTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03B35248226599AD002C47D9 /* Debug */,
+				03B35249226599AD002C47D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03B3524A226599AD002C47D9 /* Build configuration list for PBXNativeTarget "GymTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03B3524B226599AD002C47D9 /* Debug */,
+				03B3524C226599AD002C47D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 03B3522C226599AC002C47D9 /* Project object */;
+}

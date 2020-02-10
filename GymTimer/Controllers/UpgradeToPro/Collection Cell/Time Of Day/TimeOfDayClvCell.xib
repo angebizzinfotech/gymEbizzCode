@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TimeOfDayClvCell" id="gTV-IL-0wX" customClass="TimeOfDayClvCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-E6-xEO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pw0-uL-Cri">
+                                <rect key="frame" x="46" y="25" width="283" height="350"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OfN-H5-FrV">
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="350"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ru-6y-aR3">
+                                                <rect key="frame" x="0.0" y="0.0" width="283" height="58"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Times of the day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2D-zV-Myu">
+                                                        <rect key="frame" x="70.5" y="17" width="142" height="24"/>
+                                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="19"/>
+                                                        <color key="textColor" red="0.0" green="0.65098039220000004" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="58" id="80m-4U-9In"/>
+                                                    <constraint firstItem="K2D-zV-Myu" firstAttribute="centerX" secondItem="6Ru-6y-aR3" secondAttribute="centerX" id="DrC-1G-tiq"/>
+                                                    <constraint firstItem="K2D-zV-Myu" firstAttribute="centerY" secondItem="6Ru-6y-aR3" secondAttribute="centerY" id="Qpz-Ac-sNe"/>
+                                                </constraints>
+                                            </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="25" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MBF-UK-iol">
+                                                <rect key="frame" x="0.0" y="82" width="283" height="260"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="MBF-UK-iol" secondAttribute="bottom" constant="8" id="0jK-FF-NE7"/>
+                                            <constraint firstItem="MBF-UK-iol" firstAttribute="leading" secondItem="OfN-H5-FrV" secondAttribute="leading" id="QLs-5M-KRS"/>
+                                            <constraint firstItem="6Ru-6y-aR3" firstAttribute="leading" secondItem="OfN-H5-FrV" secondAttribute="leading" id="c2j-ac-b3b"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Ru-6y-aR3" secondAttribute="trailing" id="kPp-71-A7j"/>
+                                            <constraint firstItem="6Ru-6y-aR3" firstAttribute="top" secondItem="OfN-H5-FrV" secondAttribute="top" id="o2l-Bm-Bx0"/>
+                                            <constraint firstAttribute="trailing" secondItem="MBF-UK-iol" secondAttribute="trailing" id="otK-8D-s6I"/>
+                                            <constraint firstItem="MBF-UK-iol" firstAttribute="top" secondItem="6Ru-6y-aR3" secondAttribute="bottom" constant="24" id="pn8-Ov-PUm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="OfN-H5-FrV" secondAttribute="bottom" id="JOd-UF-KVi"/>
+                                    <constraint firstItem="OfN-H5-FrV" firstAttribute="leading" secondItem="pw0-uL-Cri" secondAttribute="leading" id="THr-wC-CEL"/>
+                                    <constraint firstItem="OfN-H5-FrV" firstAttribute="top" secondItem="pw0-uL-Cri" secondAttribute="top" id="fif-jh-GDF"/>
+                                    <constraint firstAttribute="trailing" secondItem="OfN-H5-FrV" secondAttribute="trailing" id="lG4-UL-SBH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pw0-uL-Cri" secondAttribute="trailing" constant="46" id="Q7x-oK-H2J"/>
+                            <constraint firstItem="pw0-uL-Cri" firstAttribute="top" secondItem="7wA-E6-xEO" secondAttribute="top" constant="25" id="dRU-Wz-iz7"/>
+                            <constraint firstItem="pw0-uL-Cri" firstAttribute="leading" secondItem="7wA-E6-xEO" secondAttribute="leading" constant="46" id="hRc-kV-MCQ"/>
+                            <constraint firstAttribute="bottom" secondItem="pw0-uL-Cri" secondAttribute="bottom" constant="25" id="tbR-0p-PbT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="7wA-E6-xEO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0iZ-KR-VC3"/>
+                <constraint firstAttribute="trailing" secondItem="7wA-E6-xEO" secondAttribute="trailing" id="66L-If-eFe"/>
+                <constraint firstItem="7wA-E6-xEO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SIR-c4-RwK"/>
+                <constraint firstAttribute="bottom" secondItem="7wA-E6-xEO" secondAttribute="bottom" id="dgW-cv-wn3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="375" height="465"/>
+            <connections>
+                <outlet property="tblTimeOfDay" destination="MBF-UK-iol" id="dJU-TL-35J"/>
+                <outlet property="vwTimeOfDay" destination="OfN-H5-FrV" id="nEa-DZ-qne"/>
+                <outlet property="vwTimeOfDayShadow" destination="pw0-uL-Cri" id="lLD-uG-q1k"/>
+            </connections>
+            <point key="canvasLocation" x="367.39130434782612" y="246.76339285714283"/>
+        </collectionViewCell>
+    </objects>
+</document>
