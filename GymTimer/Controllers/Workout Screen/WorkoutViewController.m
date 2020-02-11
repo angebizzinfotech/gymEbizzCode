@@ -50,7 +50,8 @@
     NSInteger selectedSlideUpImage;
     Boolean allUp;
     WarmUpView *warmUpView;
-    BOOL isFromNextExercise;
+    BOOL isFromNextExercise, isNextExerciseStart;
+    UIColor *colorClickAnywhere;
 }
 
 @end
@@ -62,6 +63,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
         
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            colorClickAnywhere = self.lblClickAnywhereToRestLabel.textColor;
+    });
+    
+    isNextExerciseStart = NO;
     warmUpView = [[WarmUpView alloc] init];
     
     slideDown = 1;
@@ -893,6 +899,15 @@
 - (IBAction)btnNextExerciseButtonTapped:(UIButton *)sender {
     //[_viewSetAndRestScreenProgressBackgroundView setHidden:NO];
     self.lblClickAnywhereToRestLabel.text = @"(click anywhere to start your next exercise)";
+    [self.lblClickAnywhereToRestLabel setTextColor:GreenTextColor];
+    
+    //DINAL-11-02-2020
+    lastExerciseSec = 0;
+    lastExerciseMin = 0;
+    lastExerciseHour = 0;
+    self.lblTimeSince.text = @"00:00";
+    isNextExerciseStart = YES;
+    
     
     AudioServicesPlaySystemSoundWithCompletion( 1520, nil);
         
@@ -964,11 +979,13 @@
 
     if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
     {
+        [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
         [_viewNextExerciseButtonContentView setAlpha: 0.3];
         [_btnNextExerciseButton setEnabled: false];
     }
     else
     {
+        [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGreenNext"]];
         [_viewNextExerciseButtonContentView setAlpha: 1];
         [_btnNextExerciseButton setEnabled: true];
     }
@@ -1200,6 +1217,9 @@
 
 - (IBAction)btnStartRestButtonTapped:(UIButton *)sender {
     //[_viewSetAndRestScreenProgressBackgroundView setHidden:NO];
+    
+    [self.lblClickAnywhereToRestLabel setTextColor:colorClickAnywhere];
+    
     AudioServicesPlaySystemSoundWithCompletion(1520, nil);
     int totoalExerciseCount = [[[NSUserDefaults standardUserDefaults] valueForKey: kTOTAL_EXERCISE_COUNT] intValue];
     if (totoalExerciseCount == 0) {
@@ -1213,11 +1233,13 @@
 
         if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
         {
+            [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
             [_viewNextExerciseButtonContentView setAlpha: 0.3];
             [_btnNextExerciseButton setEnabled: false];
         }
         else
         {
+            [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGreenNext"]];
             [_viewNextExerciseButtonContentView setAlpha: 1];
             [_btnNextExerciseButton setEnabled: true];
         }
@@ -1247,11 +1269,13 @@
         
         if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
         {
+            [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
             [_viewNextExerciseButtonContentView setAlpha: 0.3];
             [_btnNextExerciseButton setEnabled: false];
         }
         else
         {
+            [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGreenNext"]];
             [_viewNextExerciseButtonContentView setAlpha: 1];
             [_btnNextExerciseButton setEnabled: true];
         }
@@ -1768,11 +1792,13 @@
     
     if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
     {
+        [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
         [_viewNextExerciseButtonContentView setAlpha: 0.3];
         [_btnNextExerciseButton setEnabled: false];
     }
     else
     {
+        [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGreenNext"]];
         [_viewNextExerciseButtonContentView setAlpha: 1];
         [_btnNextExerciseButton setEnabled: true];
     }
@@ -5344,11 +5370,13 @@
         } completion:^(BOOL finished) {
             if([[self->_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
             {
+                [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
                 [self->_viewNextExerciseButtonContentView setAlpha: 0.3];
                 [self->_btnNextExerciseButton setEnabled: false];
             }
             else
             {
+                [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGreenNext"]];
                 [self->_viewNextExerciseButtonContentView setAlpha: 1];
                 [self->_btnNextExerciseButton setEnabled: true];
             }
@@ -5459,16 +5487,18 @@
         [UIView transitionWithView: _viewTotalTimeContentView duration: 0.3 options: UIViewAnimationOptionTransitionCrossDissolve animations:^{
             [self->_viewTotalTimeContentView setBackgroundColor: cDARK_RED_2];
         } completion:^(BOOL finished) {
-            if([[self->_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
+            /*if([[self->_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
             {
+                [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
                 [self->_viewNextExerciseButtonContentView setAlpha: 0.3];
                 [self->_btnNextExerciseButton setEnabled: false];
             }
             else
             {
+                [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGreenNext"]];
                 [self->_viewNextExerciseButtonContentView setAlpha: 1];
                 [self->_btnNextExerciseButton setEnabled: true];
-            }
+            }*/
         }];
         
         [UIView transitionWithView: _lblExerciseLabel duration: 0.3 options: UIViewAnimationOptionTransitionCrossDissolve animations:^{
@@ -6927,6 +6957,7 @@
 - (void) startLastExerciseTimeTimer {
     
     NSString *strLastExerciseTime = [[NSUserDefaults standardUserDefaults] valueForKey: kLAST_EXERCISE_TIME];
+        
     [self convertLastExerciseTimeToSecondsFrom: strLastExerciseTime];
     [self startRecordingLastExerciseTime];
     
@@ -7038,8 +7069,23 @@
     
     self.lblTimeSince.text = timeNow;
     
+    //DINAL-11-02-2020
+    if(isNextExerciseStart){
+        lastExerciseSec = 0;
+        lastExerciseMin = 0;
+        lastExerciseHour = 0;
+        self.lblTimeSince.text = @"00:00";
+        
+        [[NSUserDefaults standardUserDefaults] setValue: @"00:00:00" forKey: kLAST_EXERCISE_TIME];
+
+        isNextExerciseStart = NO;
+    }
+    
     NSString *time = [NSString stringWithFormat:@"%02d:%02d:%02d", lastExerciseHour, lastExerciseMin, lastExerciseSec];
-    [[NSUserDefaults standardUserDefaults] setValue: time forKey: kLAST_EXERCISE_TIME];
+
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:kIsAppInBackGround]){
+        [[NSUserDefaults standardUserDefaults] setValue: time forKey: kLAST_EXERCISE_TIME];
+    }
 }
 
 

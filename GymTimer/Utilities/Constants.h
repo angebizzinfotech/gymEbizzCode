@@ -155,6 +155,8 @@
 #define cPROGRESS_BAR_GREEN [UIColor colorWithRed: 20.0/255.0 green:197.0/255.0 blue:89.0/255.0 alpha:1.0]
 #define cGREEN_SHADOW [UIColor colorWithRed: 6.0/255.0 green: 48.0/255.0 blue: 26.0/255.0 alpha: 1.0]
 #define cNEW_GREEN [UIColor colorWithRed:21.0/255.0 green:197.0/255.0 blue:89.0/255.0 alpha:1.0]
+#define GreenTextColor [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1.0]
+#define GrayTextColor [UIColor colorWithRed:21.0/255.0 green:197.0/255.0 blue:89.0/255.0 alpha:1.0]
 #define cRED_SHADOW [UIColor colorWithRed: 48.0/255.0 green: 6.0/255.0 blue: 6.0/255.0 alpha: 1.0]
 #define cRED_TEXT [UIColor colorWithRed: 230.0/255.0 green: 23.0/255.0 blue: 23.0/255.0 alpha: 1.0]
 #define cLIGHT_GRAY [UIColor colorWithRed: 227.0/255.0 green: 228.0/255.0 blue: 228.0/255.0 alpha: 1.0]
@@ -212,6 +214,7 @@
 #define kIS_WORKOUTS_SAVED_ON_SERVER     @"IsWorkoutsSavedOnServer"
 #define kIS_FOR_OFFLINE_SAVE    @"ISForOfflineWorkoutsSaveAPICalled"
 #define kTIME_NOW               @"TimeNow"
+#define kIsAppInBackGround      @"ApplicationState"
 
 //MARK:-  CollectionView Identifier Constant
 #define cvONBOARDING_CELL       @"OnBoardingCollectionViewCell"

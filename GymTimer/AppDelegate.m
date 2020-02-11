@@ -36,6 +36,8 @@
         
     }
     
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kIsAppInBackGround];
+    
     workoutVC = [[WorkoutViewController alloc] init];
     serviceManager = [[ServiceManager alloc] init];
     [serviceManager setDelegate: self];
@@ -197,6 +199,8 @@
         [app endBackgroundTask:self.bgTask];
     }];
     
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kIsAppInBackGround];
+    
     //For Rest Timer
     if ([[[NSUserDefaults standardUserDefaults] valueForKey: kREST_TIMER_STATUS] isEqualToString: @"YES"]) {
         [[NSUserDefaults standardUserDefaults] setValue: [NSDate date] forKey: @"RestTimerStopDate"];
@@ -228,6 +232,8 @@
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     
     NSLog(@"will enter fg...");
+    
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kIsAppInBackGround];
     
     application.applicationIconBadgeNumber = 0;
     
@@ -294,7 +300,7 @@
     lastExerciseTimeDifference += [Utils convertTotalTimeToSecondsFrom: [[NSUserDefaults standardUserDefaults] valueForKey: kLAST_EXERCISE_TIME]];
 
     NSString *strLastExerciseTime = [Utils stringFromTotalTimeInterval: lastExerciseTimeDifference - 1];
-
+    
     [[NSUserDefaults standardUserDefaults] setValue: strLastExerciseTime forKey: kLAST_EXERCISE_TIME];
 
     [[NSNotificationCenter defaultCenter] postNotificationName: nSET_LAST_EXERCISE_TIME object: nil];
