@@ -962,6 +962,17 @@
     [_viewExerciseContentView setBackgroundColor: cWARMUP_BLACK];
     [_viewTotalTimeContentView setBackgroundColor: cWARMUP_BLACK];
 
+    if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
+    {
+        [_viewNextExerciseButtonContentView setAlpha: 0.3];
+        [_btnNextExerciseButton setEnabled: false];
+    }
+    else
+    {
+        [_viewNextExerciseButtonContentView setAlpha: 1];
+        [_btnNextExerciseButton setEnabled: true];
+    }
+    
     [_lblExerciseLabel setTextColor: cEXERCISE_BLACK];
     [_lblTotalTimeLabel setTextColor: cEXERCISE_BLACK];
 
@@ -1200,6 +1211,17 @@
         [_viewExerciseContentView setBackgroundColor: cDARK_GREEN_2];
         [_viewTotalTimeContentView setBackgroundColor: cDARK_GREEN_2];
 
+        if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
+        {
+            [_viewNextExerciseButtonContentView setAlpha: 0.3];
+            [_btnNextExerciseButton setEnabled: false];
+        }
+        else
+        {
+            [_viewNextExerciseButtonContentView setAlpha: 1];
+            [_btnNextExerciseButton setEnabled: true];
+        }
+        
         [_lblExerciseLabel setTextColor: cLIGHT_GREEN_2];
         [_lblTotalTimeLabel setTextColor: cLIGHT_GREEN_2];
 
@@ -1222,6 +1244,17 @@
         [_viewSetAndRestBackgroundView setBackgroundColor: cDARK_GREEN_BACKGROUND];
         [_viewExerciseContentView setBackgroundColor: cDARK_GREEN_2];
         [_viewTotalTimeContentView setBackgroundColor: cDARK_GREEN_2];
+        
+        if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
+        {
+            [_viewNextExerciseButtonContentView setAlpha: 0.3];
+            [_btnNextExerciseButton setEnabled: false];
+        }
+        else
+        {
+            [_viewNextExerciseButtonContentView setAlpha: 1];
+            [_btnNextExerciseButton setEnabled: true];
+        }
 
         [_lblExerciseLabel setTextColor: cLIGHT_GREEN_2];
         [_lblTotalTimeLabel setTextColor: cLIGHT_GREEN_2];
@@ -1672,6 +1705,7 @@
     [_scrollViewWorkoutScreen setDelegate: self];
     
     [_lblGymTimerTitleLabel setTextColor: cGYM_TIMER_LABEL];
+    NSMutableAttributedString *lblBoostYourWorkoutText = [[NSMutableAttributedString alloc] initWithString:@"Boost your workouts"];
     [_lblBoostYourWorkoutsSetScreenLabel setTextColor: cGYM_TIMER_LABEL];
     
     [_viewWorkoutContentView setClipsToBounds: YES];
@@ -1731,6 +1765,18 @@
     
     [_viewExerciseContentView setBackgroundColor: cWARMUP_BLACK];
     [_viewTotalTimeContentView setBackgroundColor: cWARMUP_BLACK];
+    
+    if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
+    {
+        [_viewNextExerciseButtonContentView setAlpha: 0.3];
+        [_btnNextExerciseButton setEnabled: false];
+    }
+    else
+    {
+        [_viewNextExerciseButtonContentView setAlpha: 1];
+        [_btnNextExerciseButton setEnabled: true];
+    }
+    
     [_lblExerciseLabel setTextColor: cLIGHT_GREEN_2];
     [_lblTotalTimeLabel setTextColor: cLIGHT_GREEN_2];
     /*--------------------------------------------------------------------------------*/
@@ -1771,7 +1817,11 @@
         UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 64.7];
         [_lblGymTimerTitleLabel setFont: fontGymTimer];
         
-        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 146.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+        // Vsn - 11/02/2020
+        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 172.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+//        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 146.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+        [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
         UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 16.0];
         [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
         
@@ -2279,7 +2329,11 @@
         UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 64.7];
         [_lblGymTimerTitleLabel setFont: fontGymTimer];
         
-        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 121.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+        // Vsn - 11/02/2020
+        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 153.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+//        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 121.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3.4 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+        [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
         UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 15.0];
         [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
         
@@ -2773,8 +2827,12 @@
             [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, 7.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
             UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 64.7];
             [_lblGymTimerTitleLabel setFont: fontGymTimer];
-            
-            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 140.1, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+
+            // Vsn - 11/02/2020
+            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 170.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+//            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 140.1, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3.45 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
             UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 15.0];
             [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
             
@@ -3268,7 +3326,11 @@
             UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 60.7];
             [_lblGymTimerTitleLabel setFont: fontGymTimer];
             
-            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 130.0, 30.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            // Vsn - 11/02/2020
+            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 154.0, 30.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+//            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 130.0, 30.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@2.9 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
             UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 15.0];
             [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
             
@@ -3756,7 +3818,11 @@
             UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 50.0];
             [_lblGymTimerTitleLabel setFont: fontGymTimer];
             
-            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 115.1, 32.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            // Vsn - 11/02/2020
+            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 133, 32.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+//            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 115.1, 32.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@2 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
             UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 13.0];
             [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
             
@@ -5275,7 +5341,18 @@
             } else {
                 [self->_viewTotalTimeContentView setBackgroundColor: cDARK_GREEN_2];
             }
-        } completion:^(BOOL finished) {}];
+        } completion:^(BOOL finished) {
+            if([[self->_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
+            {
+                [self->_viewNextExerciseButtonContentView setAlpha: 0.3];
+                [self->_btnNextExerciseButton setEnabled: false];
+            }
+            else
+            {
+                [self->_viewNextExerciseButtonContentView setAlpha: 1];
+                [self->_btnNextExerciseButton setEnabled: true];
+            }
+        }];
         
         [UIView transitionWithView: _lblExerciseLabel duration: 0.3 options: UIViewAnimationOptionTransitionCrossDissolve animations:^{
             int totoalExerciseCount = [[[NSUserDefaults standardUserDefaults] valueForKey: kTOTAL_EXERCISE_COUNT] intValue];
@@ -5381,7 +5458,18 @@
         
         [UIView transitionWithView: _viewTotalTimeContentView duration: 0.3 options: UIViewAnimationOptionTransitionCrossDissolve animations:^{
             [self->_viewTotalTimeContentView setBackgroundColor: cDARK_RED_2];
-        } completion:^(BOOL finished) {}];
+        } completion:^(BOOL finished) {
+            if([[self->_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
+            {
+                [self->_viewNextExerciseButtonContentView setAlpha: 0.3];
+                [self->_btnNextExerciseButton setEnabled: false];
+            }
+            else
+            {
+                [self->_viewNextExerciseButtonContentView setAlpha: 1];
+                [self->_btnNextExerciseButton setEnabled: true];
+            }
+        }];
         
         [UIView transitionWithView: _lblExerciseLabel duration: 0.3 options: UIViewAnimationOptionTransitionCrossDissolve animations:^{
             [self->_lblExerciseLabel setTextColor: cLIGHT_RED_2];
