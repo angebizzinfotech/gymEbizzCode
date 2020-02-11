@@ -2318,28 +2318,28 @@ beetween sets for this workout</string>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zBx-q8-ipq">
-                                                        <rect key="frame" x="10" y="18" width="268" height="160"/>
+                                                        <rect key="frame" x="10" y="18" width="268" height="150"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="endurance" translatesAutoresizingMaskIntoConstraints="NO" id="84v-sq-zSM">
-                                                                <rect key="frame" x="20" y="80" width="76" height="80"/>
+                                                                <rect key="frame" x="20" y="70" width="76" height="80"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="muscle" translatesAutoresizingMaskIntoConstraints="NO" id="pJ1-jb-640">
-                                                                <rect key="frame" x="96" y="80" width="76" height="80"/>
+                                                                <rect key="frame" x="96" y="70" width="76" height="80"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="power1" translatesAutoresizingMaskIntoConstraints="NO" id="YQh-K0-sJR">
-                                                                <rect key="frame" x="172" y="80" width="76" height="80"/>
+                                                                <rect key="frame" x="172" y="70" width="76" height="80"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nnq-16-ITM">
-                                                                <rect key="frame" x="0.0" y="82" width="268" height="82"/>
+                                                                <rect key="frame" x="0.0" y="82" width="268" height="72"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O17-NU-Ga4">
-                                                                <rect key="frame" x="20" y="81" width="228" height="51"/>
+                                                                <rect key="frame" x="20" y="10" width="228" height="51"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SGK-AV-wOZ">
@@ -2494,14 +2494,14 @@ beetween sets for this workout</string>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             </view>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Scientifically proven" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izw-8r-D4U">
-                                                                <rect key="frame" x="28" y="135" width="117" height="18"/>
+                                                                <rect key="frame" x="28" y="71" width="117" height="18"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11.5"/>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.80000000000000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvA-a8-GZL">
-                                                                <rect key="frame" x="147" y="140" width="10" height="9"/>
+                                                                <rect key="frame" x="146" y="76" width="10" height="9"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <state key="normal" image="arrow"/>
                                                             </button>

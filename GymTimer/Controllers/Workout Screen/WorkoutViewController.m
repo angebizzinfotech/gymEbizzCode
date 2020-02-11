@@ -74,6 +74,13 @@
     selectedSlideUpImage = 0;
     allUp = true;
     
+    
+    //DINAL-11-02-2020
+    [self.imgMuscle setHidden:YES];
+    [self.imgEndurance setHidden:YES];
+    [self.imgPower setHidden:YES];
+    
+        
     [self.lblRange1 setFormat:@"%d"];
     [self.lblRange11 setFormat:@"%d"];
     [self.lblRange2 setFormat:@"%d"];
@@ -1879,7 +1886,7 @@
         [_lblMinuteLabel setFont: fontMinSec];
         [_lblSecondsLabel setFont: fontMinSec];
         
-        {//Dinal1 - Done
+        {//Dinal1-done
             
             UIFont *newBtnFont = [UIFont fontWithName: fFUTURA_BOLD size: 13.0];
             [_btnEndurance.titleLabel setFont:newBtnFont];
@@ -2382,11 +2389,11 @@
         
         // Vsn - 10/02/2020
         //Rest time picker view
-        [_pickerWorkoutRestTimePickerView setFrame: CGRectMake(32.0, (_lblChooseDefaultTimeLabel.frame.origin.y + _lblChooseDefaultTimeLabel.frame.size.height + 30.0), (workoutContentViewWidth - 64.0), 258.0)];
+        [_pickerWorkoutRestTimePickerView setFrame: CGRectMake(32.0, (_lblChooseDefaultTimeLabel.frame.origin.y + _lblChooseDefaultTimeLabel.frame.size.height + 10.0), (workoutContentViewWidth - 64.0), 270.0)];
 //        [_pickerWorkoutRestTimePickerView setFrame: CGRectMake(32.0, (_lblChooseDefaultTimeLabel.frame.origin.y + _lblChooseDefaultTimeLabel.frame.size.height + 30.0), (workoutContentViewWidth - 64.0), 308.0)];
         
         //Minute and seconds view
-        [_viewMinutesSecondsContentView setFrame: CGRectMake(0.0, (_lblChooseDefaultTimeLabel.frame.origin.y + _lblChooseDefaultTimeLabel.frame.size.height + 177.0 - 25.0), workoutContentViewWidth, 22.0)];
+        [_viewMinutesSecondsContentView setFrame: CGRectMake(0.0, (_lblChooseDefaultTimeLabel.frame.origin.y + _lblChooseDefaultTimeLabel.frame.size.height + 130.0), workoutContentViewWidth, 22.0)];
         [_lblMinuteLabel setFrame: CGRectMake(143.0, 0.0, 30.0, 21.0)];
         [_lblSecondsLabel setFrame: CGRectMake(246.0, 0.0, 15.0, 21.0)];
         [_lblMinuteLabel setFont: fontMinSec];
@@ -2488,7 +2495,7 @@
         //Start workout button
         // Vsn - 05/02/2020
         // Vsn - 10/02/2020
-        [_btnStartWorkoutButton setFrame: CGRectMake(50.0, (_viewWorkoutContentView.frame.size.height - 150.0), (workoutContentViewWidth - 100.0), 60.0)];
+        [_btnStartWorkoutButton setFrame: CGRectMake(50.0, (_viewWorkoutContentView.frame.size.height - 150.0)-10, (workoutContentViewWidth - 100.0), 60.0)];
         [_btnStartWorkoutButton setBackgroundColor: UIColorFromRGB(0x14CC64)];
         UIFont *fontStartButton = [UIFont fontWithName: fFUTURA_BOLD size: 22.0];
         dicStartButtonAttributes = [[NSDictionary alloc] init];
@@ -2880,7 +2887,7 @@
             
             // Vsn - 10/02/2020
             //Rest time picker view
-            [_pickerWorkoutRestTimePickerView setFrame: CGRectMake(32.0, (_lblChooseDefaultTimeLabel.frame.origin.y + _lblChooseDefaultTimeLabel.frame.size.height + 0.0), (workoutContentViewWidth - 64.0), 260.0)];
+            [_pickerWorkoutRestTimePickerView setFrame: CGRectMake(32.0, (_lblChooseDefaultTimeLabel.frame.origin.y + _lblChooseDefaultTimeLabel.frame.size.height + 20.0), (workoutContentViewWidth - 64.0), 220.0)];
 //            [_pickerWorkoutRestTimePickerView setFrame: CGRectMake(32.0, (_lblChooseDefaultTimeLabel.frame.origin.y + _lblChooseDefaultTimeLabel.frame.size.height + 0.0), (workoutContentViewWidth - 64.0), 280.0)];
             
             //Minute and seconds view
@@ -2890,7 +2897,7 @@
             [_lblMinuteLabel setFont: fontMinSec];
             [_lblSecondsLabel setFont: fontMinSec];
             
-            {//Dinal3 - Done
+            {//Dinal3-done
                 
                 UIFont *newBtnFont = [UIFont fontWithName: fFUTURA_BOLD size: 13.0];
                 [_btnEndurance.titleLabel setFont:newBtnFont];
@@ -2987,7 +2994,7 @@
             
             // Vsn - 10/02/2020
             //Start workout button
-            [_btnStartWorkoutButton setFrame: CGRectMake(40.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y) - 10.0, (workoutContentViewWidth - 80.0), 65.0)];
+            [_btnStartWorkoutButton setFrame: CGRectMake(40.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y) + 15.0, (workoutContentViewWidth - 80.0), 65.0)];
 //            [_btnStartWorkoutButton setFrame: CGRectMake(40.0, (_viewWorkoutContentView.frame.size.height - 140.0), (workoutContentViewWidth - 80.0), 60.0)];
             [_btnStartWorkoutButton setBackgroundColor: UIColorFromRGB(0x14CC64)];
             UIFont *fontStartButton = [UIFont fontWithName: fFUTURA_BOLD size: 25.0];
@@ -3378,7 +3385,7 @@
             
             // Vsn - 10/02/2020
             //Rest time picker view
-            [_pickerWorkoutRestTimePickerView setFrame: CGRectMake(32.0, (_lblChooseDefaultTimeLabel.frame.origin.y + _lblChooseDefaultTimeLabel.frame.size.height + 10), (workoutContentViewWidth - 64.0), 240.0)];
+            [_pickerWorkoutRestTimePickerView setFrame: CGRectMake(32.0, (_lblChooseDefaultTimeLabel.frame.origin.y + _lblChooseDefaultTimeLabel.frame.size.height + 30), (workoutContentViewWidth - 64.0), 210.0)];
 //            [_pickerWorkoutRestTimePickerView setFrame: CGRectMake(32.0, (_lblChooseDefaultTimeLabel.frame.origin.y + _lblChooseDefaultTimeLabel.frame.size.height + 10), (workoutContentViewWidth - 64.0), 260.0)];
 
             //Minute and seconds view
@@ -3388,7 +3395,7 @@
             [_lblMinuteLabel setFont: fontMinSec];
             [_lblSecondsLabel setFont: fontMinSec];
             
-            {//Dinal4 - done
+            {//Dinal4-done
                 
                 UIFont *newBtnFont = [UIFont fontWithName: fFUTURA_BOLD size: 11.0];
                 [_btnEndurance.titleLabel setFont:newBtnFont];
@@ -3479,7 +3486,7 @@
             
             // Vsn - 10/02/2020
             //Start workout button
-            [_btnStartWorkoutButton setFrame: CGRectMake(40.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y - 10), (workoutContentViewWidth - 80.0), 55.0)];
+            [_btnStartWorkoutButton setFrame: CGRectMake(40.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y + 05.0), (workoutContentViewWidth - 80.0), 55.0)];
 //            [_btnStartWorkoutButton setFrame: CGRectMake(40.0, (_viewWorkoutContentView.frame.size.height - 115.0), (workoutContentViewWidth - 80.0), 50.0)];
             [_btnStartWorkoutButton setBackgroundColor: UIColorFromRGB(0x14CC64)];
             UIFont *fontStartButton = [UIFont fontWithName: fFUTURA_BOLD size: 20.0];
@@ -3880,7 +3887,7 @@
             [_lblMinuteLabel setFont: fontMinSec];
             [_lblSecondsLabel setFont: fontMinSec];
             
-            {//Dinal5 - done
+            {//Dinal5-done
                 
                 UIFont *newBtnFont = [UIFont fontWithName: fFUTURA_BOLD size: 10.0];
                 [_btnEndurance.titleLabel setFont:newBtnFont];
