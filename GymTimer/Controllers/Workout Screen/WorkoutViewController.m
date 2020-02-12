@@ -34,6 +34,7 @@
     CAShapeLayer *cellBlackBorder;
     
     CGFloat width;
+    CGFloat nextExerciseOpacity;
     
     CGRect enduranceFrame;
     CGRect muscleFrame;
@@ -63,6 +64,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
         
+    nextExerciseOpacity = 0.5;
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             colorClickAnywhere = self.lblClickAnywhereToRestLabel.textColor;
     });
@@ -987,7 +990,7 @@
     if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
     {
         [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
-        [_viewNextExerciseButtonContentView setAlpha: 0.3];
+        [_viewNextExerciseButtonContentView setAlpha: nextExerciseOpacity];
         [_btnNextExerciseButton setEnabled: false];
     }
     else
@@ -1241,7 +1244,7 @@
         if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
         {
             [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
-            [_viewNextExerciseButtonContentView setAlpha: 0.3];
+            [_viewNextExerciseButtonContentView setAlpha: nextExerciseOpacity];
             [_btnNextExerciseButton setEnabled: false];
         }
         else
@@ -1277,7 +1280,7 @@
         if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
         {
             [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
-            [_viewNextExerciseButtonContentView setAlpha: 0.3];
+            [_viewNextExerciseButtonContentView setAlpha: nextExerciseOpacity];
             [_btnNextExerciseButton setEnabled: false];
         }
         else
@@ -1800,7 +1803,7 @@
     if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
     {
         [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
-        [_viewNextExerciseButtonContentView setAlpha: 0.3];
+        [_viewNextExerciseButtonContentView setAlpha: nextExerciseOpacity];
         [_btnNextExerciseButton setEnabled: false];
     }
     else
@@ -1853,9 +1856,9 @@
         // Vsn - 11/02/2020
         [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 172.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 146.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
-        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@0.0 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];//3
         [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
-        UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 16.0];
+        UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 20.0];
         [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
         
         
@@ -2365,9 +2368,9 @@
         // Vsn - 11/02/2020
         [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 153.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 121.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
-        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3.4 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@0.0 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];//3.4
         [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
-        UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 15.0];
+        UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 19.0];
         [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
         
         //Start Workout content view
@@ -2864,9 +2867,9 @@
             // Vsn - 11/02/2020
             [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 170.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 140.1, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
-            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3.45 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@0.0 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];//3.45
             [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
-            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 15.0];
+            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 19.0];
             [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
             
             
@@ -3362,9 +3365,9 @@
             // Vsn - 11/02/2020
             [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 154.0, 30.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 130.0, 30.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
-            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@2.9 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@0.0 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];//2.9
             [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
-            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 15.0];
+            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 19.0];
             [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
             
             
@@ -3854,9 +3857,9 @@
             // Vsn - 11/02/2020
             [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 133, 32.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 115.1, 32.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
-            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@2 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@0.0 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];//2
             [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
-            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 13.0];
+            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 17.0];
             [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
             
             
@@ -5378,7 +5381,7 @@
             if([[self->_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
             {
                 [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
-                [self->_viewNextExerciseButtonContentView setAlpha: 0.3];
+                [self->_viewNextExerciseButtonContentView setAlpha: nextExerciseOpacity];
                 [self->_btnNextExerciseButton setEnabled: false];
             }
             else
@@ -5497,7 +5500,7 @@
             /*if([[self->_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
             {
                 [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
-                [self->_viewNextExerciseButtonContentView setAlpha: 0.3];
+                [self->_viewNextExerciseButtonContentView setAlpha: nextExerciseOpacity];
                 [self->_btnNextExerciseButton setEnabled: false];
             }
             else
