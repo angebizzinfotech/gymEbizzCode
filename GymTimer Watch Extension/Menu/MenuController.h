@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MenuController : WKInterfaceController
 
+@property (weak, nonatomic) IBOutlet WKInterfaceGroup *grpSoundBackground;
 @property (strong, nonatomic) IBOutlet WKInterfaceImage *imgNextExercise;
 @property (strong, nonatomic) IBOutlet WKInterfaceImage *imgSound;
 @property (strong, nonatomic) IBOutlet WKInterfaceImage *imgClose;

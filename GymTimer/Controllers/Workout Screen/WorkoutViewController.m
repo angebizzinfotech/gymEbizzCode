@@ -53,6 +53,8 @@
     WarmUpView *warmUpView;
     BOOL isFromNextExercise, isNextExerciseStart;
     UIColor *colorClickAnywhere;
+    
+    BOOL isWarmUpFlag;
 }
 
 @end
@@ -152,6 +154,7 @@
     if (@available(iOS 11.0, *)) {
          [self setNeedsUpdateOfHomeIndicatorAutoHidden];
     }
+    isWarmUpFlag = false;
 }
 -(BOOL)prefersHomeIndicatorAutoHidden{
     return true;
@@ -867,6 +870,12 @@
         
     } completion:^(BOOL finished) {}];
     //[[NSUserDefaults standardUserDefaults] setValue: @"00:00:00" forKey: kTOTAL_TIME];
+    
+    // Vsn - 12/02/2020
+    if(isWarmUpFlag)
+    {
+        [self btnNextExerciseButtonTapped: [[UIButton alloc] init]];
+    }
 }
 
 - (IBAction)btnSwipeButtonTapped:(UIButton *)sender {
@@ -917,7 +926,6 @@
     lastExerciseHour = 0;
     self.lblTimeSince.text = @"00:00";
     isNextExerciseStart = YES;
-    
     
     AudioServicesPlaySystemSoundWithCompletion( 1520, nil);
         
@@ -990,12 +998,14 @@
     if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
     {
         [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
+        [_lblNextExerciseLabel setTextColor: [UIColor colorWithRed:97/255 green:97/255 blue:97/255 alpha:1]];
         [_viewNextExerciseButtonContentView setAlpha: nextExerciseOpacity];
         [_btnNextExerciseButton setEnabled: false];
     }
     else
     {
         [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGreenNext"]];
+        [_lblNextExerciseLabel setTextColor: [UIColor whiteColor]];
         [_viewNextExerciseButtonContentView setAlpha: 1];
         [_btnNextExerciseButton setEnabled: true];
     }
@@ -1013,6 +1023,15 @@
 }
 
 - (IBAction)btnChangeRestButtonTapped:(UIButton *)sender {
+    
+    if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
+    {
+        isWarmUpFlag = true;
+    }
+    else
+    {
+        isWarmUpFlag = false;
+    }
     
     AudioServicesPlaySystemSoundWithCompletion( 1520, nil);
     
@@ -1245,11 +1264,13 @@
         {
             [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
             [_viewNextExerciseButtonContentView setAlpha: nextExerciseOpacity];
+            [_lblNextExerciseLabel setTextColor: [UIColor colorWithRed:97/255 green:97/255 blue:97/255 alpha:1]];
             [_btnNextExerciseButton setEnabled: false];
         }
         else
         {
             [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGreenNext"]];
+            [_lblNextExerciseLabel setTextColor: [UIColor whiteColor]];
             [_viewNextExerciseButtonContentView setAlpha: 1];
             [_btnNextExerciseButton setEnabled: true];
         }
@@ -1280,12 +1301,14 @@
         if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
         {
             [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
+            [_lblNextExerciseLabel setTextColor: [UIColor colorWithRed:97/255 green:97/255 blue:97/255 alpha:1]];
             [_viewNextExerciseButtonContentView setAlpha: nextExerciseOpacity];
             [_btnNextExerciseButton setEnabled: false];
         }
         else
         {
             [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGreenNext"]];
+            [_lblNextExerciseLabel setTextColor: [UIColor whiteColor]];
             [_viewNextExerciseButtonContentView setAlpha: 1];
             [_btnNextExerciseButton setEnabled: true];
         }
@@ -1804,11 +1827,13 @@
     {
         [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
         [_viewNextExerciseButtonContentView setAlpha: nextExerciseOpacity];
+        [_lblNextExerciseLabel setTextColor: [UIColor colorWithRed:97/255 green:97/255 blue:97/255 alpha:1]];
         [_btnNextExerciseButton setEnabled: false];
     }
     else
     {
         [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGreenNext"]];
+        [_lblNextExerciseLabel setTextColor: [UIColor whiteColor]];
         [_viewNextExerciseButtonContentView setAlpha: 1];
         [_btnNextExerciseButton setEnabled: true];
     }
@@ -1992,7 +2017,7 @@
         
         // Vsn - 10/02/2020
         //Start workout button
-        [_btnStartWorkoutButton setFrame: CGRectMake(50.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y), (workoutContentViewWidth - 100.0), 70.0)];
+        [_btnStartWorkoutButton setFrame: CGRectMake(60.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y) + 5, (workoutContentViewWidth - 100.0) - 20, 60.0)];
 //        [_btnStartWorkoutButton setFrame: CGRectMake(50.0, (_viewWorkoutContentView.frame.size.height - 160.0), (workoutContentViewWidth - 100.0), 60.0)];
         [_btnStartWorkoutButton setBackgroundColor: UIColorFromRGB(0x14CC64)];
         UIFont *fontStartButton = [UIFont fontWithName: fFUTURA_BOLD size: 25.0];
@@ -2498,7 +2523,7 @@
         //Start workout button
         // Vsn - 05/02/2020
         // Vsn - 10/02/2020
-        [_btnStartWorkoutButton setFrame: CGRectMake(50.0, (_viewWorkoutContentView.frame.size.height - 150.0)-10, (workoutContentViewWidth - 100.0), 60.0)];
+        [_btnStartWorkoutButton setFrame: CGRectMake(60.0, (_viewWorkoutContentView.frame.size.height - 150.0)-10+5, (workoutContentViewWidth - 100.0) - 20.0, 60.0 - 10)];
         [_btnStartWorkoutButton setBackgroundColor: UIColorFromRGB(0x14CC64)];
         UIFont *fontStartButton = [UIFont fontWithName: fFUTURA_BOLD size: 22.0];
         dicStartButtonAttributes = [[NSDictionary alloc] init];
@@ -2997,7 +3022,7 @@
             
             // Vsn - 10/02/2020
             //Start workout button
-            [_btnStartWorkoutButton setFrame: CGRectMake(40.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y) + 15.0, (workoutContentViewWidth - 80.0), 65.0)];
+            [_btnStartWorkoutButton setFrame: CGRectMake(50.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y) + 15.0 + 5, (workoutContentViewWidth - 80.0)-20, 65.0-10)];
 //            [_btnStartWorkoutButton setFrame: CGRectMake(40.0, (_viewWorkoutContentView.frame.size.height - 140.0), (workoutContentViewWidth - 80.0), 60.0)];
             [_btnStartWorkoutButton setBackgroundColor: UIColorFromRGB(0x14CC64)];
             UIFont *fontStartButton = [UIFont fontWithName: fFUTURA_BOLD size: 25.0];
@@ -3489,7 +3514,7 @@
             
             // Vsn - 10/02/2020
             //Start workout button
-            [_btnStartWorkoutButton setFrame: CGRectMake(40.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y + 05.0), (workoutContentViewWidth - 80.0), 55.0)];
+            [_btnStartWorkoutButton setFrame: CGRectMake(50.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y + 05.0)+5, (workoutContentViewWidth - 80.0)-20, 55.0-10)];
 //            [_btnStartWorkoutButton setFrame: CGRectMake(40.0, (_viewWorkoutContentView.frame.size.height - 115.0), (workoutContentViewWidth - 80.0), 50.0)];
             [_btnStartWorkoutButton setBackgroundColor: UIColorFromRGB(0x14CC64)];
             UIFont *fontStartButton = [UIFont fontWithName: fFUTURA_BOLD size: 20.0];
@@ -3992,7 +4017,7 @@
             
             // Vsn - 10/02/2020
             //Start workout button
-            [_btnStartWorkoutButton setFrame: CGRectMake(35.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y - 5.0), (workoutContentViewWidth - 70.0), 50.0)];
+            [_btnStartWorkoutButton setFrame: CGRectMake(45.0, (_pickerWorkoutRestTimePickerView.frame.size.height + _pickerWorkoutRestTimePickerView.frame.origin.y - 5.0)+5, (workoutContentViewWidth - 70.0)-20, 50.0-5)];
 //            [_btnStartWorkoutButton setFrame: CGRectMake(35.0, (_viewWorkoutContentView.frame.size.height - 105.0), (workoutContentViewWidth - 70.0), 50.0)];
             
             [_btnStartWorkoutButton setBackgroundColor: UIColorFromRGB(0x14CC64)];
@@ -5381,12 +5406,14 @@
             if([[self->_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
             {
                 [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGrayNext"]];
+                [_lblNextExerciseLabel setTextColor: [UIColor colorWithRed:97/255 green:97/255 blue:97/255 alpha:1]];
                 [self->_viewNextExerciseButtonContentView setAlpha: nextExerciseOpacity];
                 [self->_btnNextExerciseButton setEnabled: false];
             }
             else
             {
                 [_imgNextExerciseImage setImage:[UIImage imageNamed:@"imgGreenNext"]];
+                [_lblNextExerciseLabel setTextColor: [UIColor whiteColor]];
                 [self->_viewNextExerciseButtonContentView setAlpha: 1];
                 [self->_btnNextExerciseButton setEnabled: true];
             }

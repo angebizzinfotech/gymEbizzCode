@@ -71,15 +71,15 @@
     // Rest screen setup
     [[self lblRestMin] setAttributedText:[WatchUtils getAttributedString:@"00" withFontSize:SetAndRestFontSize andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
-    [[self lblRestMinTitle] setAttributedText:[WatchUtils getAttributedString:@"min" withFontSize:10 andFontName:fFUTURA_MEDIUM]];
+    [[self lblRestMinTitle] setAttributedText:[WatchUtils getAttributedString:@"min" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
     
     [[self lblRestSec] setAttributedText:[WatchUtils getAttributedString:@"00" withFontSize:SetAndRestFontSize andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
-    [[self lblRestSecTitle] setAttributedText:[WatchUtils getAttributedString:@"sec" withFontSize:10 andFontName:fFUTURA_MEDIUM]];
+    [[self lblRestSecTitle] setAttributedText:[WatchUtils getAttributedString:@"sec" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
     
-    [[self lblNextSet] setAttributedText:[WatchUtils getAttributedString:@"0" withFontSize:24 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    [[self lblNextSet] setAttributedText:[WatchUtils getAttributedString:@"0" withFontSize:35 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
-    [[self lblNextSetTitle] setAttributedText:[WatchUtils getAttributedString:@"next set" withFontSize:10 andFontName:fFUTURA_MEDIUM]];
+    [[self lblNextSetTitle] setAttributedText:[WatchUtils getAttributedString:@"next set" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
 }
 
 - (void)setFontSize {
@@ -158,7 +158,7 @@
         setCount = setCount + 1;
         [WatchUtils setExerciseSetCount:[NSString stringWithFormat:@"%d",setCount]];
         
-        [[self lblNextSet] setAttributedText:[WatchUtils getAttributedString:[WatchUtils getExerciseSetCount] withFontSize:24 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+        [[self lblNextSet] setAttributedText:[WatchUtils getAttributedString:[WatchUtils getExerciseSetCount] withFontSize:35 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
         
         // Show rest group
         [self.setGroup setAlpha:0];

@@ -46,7 +46,7 @@
     [self changeColor];
     
     // Set Exercise Count
-    NSString *exerciseText = [NSString stringWithFormat:@"%@.", [WatchUtils getExerciseCount]];
+    NSString *exerciseText = [NSString stringWithFormat:@" %@.", [WatchUtils getExerciseCount]];
     [[self lblExercise] setAttributedText:[WatchUtils getAttributedString:exerciseText withFontSize:exerciseSize andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
 }
 
@@ -76,7 +76,7 @@
 - (void)setupLayout {
     [[self lblExerciseTitle] setAttributedText:[WatchUtils getAttributedString:@"exercise" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
     
-    [[self lblTotalTime] setAttributedText:[WatchUtils getAttributedString:@"00:00" withFontSize:40 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    [[self lblTotalTime] setAttributedText:[WatchUtils getAttributedString:@"00:00" withFontSize:38 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
     [[self lblTotalTimeTitle] setAttributedText:[WatchUtils getAttributedString:@"total time" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
 }
@@ -106,7 +106,7 @@
 // MARK:- ExerciseTime Delegate
 
 - (void)totalExerciseTime:(int)time {
-    [[self lblTotalTime] setAttributedText:[WatchUtils getAttributedString:[WatchUtils timeStringForSeconds:time] withFontSize:40 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    [[self lblTotalTime] setAttributedText:[WatchUtils getAttributedString:[WatchUtils timeStringForSeconds:time] withFontSize:38 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
     [WatchUtils setExerciseTotalTime:[WatchUtils hourlyFormatFromSeconds:time]];
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15702" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38"/>
     <dependencies>
         <deployment version="784" identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
@@ -278,7 +278,7 @@
                                             <items>
                                                 <group width="1" height="0.69999999999999996" alignment="left" spacing="0.0" id="joI-Nu-Y6j">
                                                     <items>
-                                                        <label height="0.80000000000000004" alignment="center" verticalAlignment="bottom" text="8" textAlignment="center" id="ffe-X4-VrY">
+                                                        <label height="0.80000000000000004" alignment="center" verticalAlignment="bottom" text="10" textAlignment="center" id="ffe-X4-VrY">
                                                             <fontDescription key="font" type="system" pointSize="40"/>
                                                         </label>
                                                     </items>
@@ -572,6 +572,7 @@
                     </items>
                     <connections>
                         <outlet property="btnChangeRest" destination="3es-mB-xNq" id="79C-oW-Hnr"/>
+                        <outlet property="grpSoundBackground" destination="8Kf-hp-iiI" id="af6-nf-E8r"/>
                         <outlet property="imgClose" destination="z7B-9f-2xR" id="ebZ-Dl-xNB"/>
                         <outlet property="imgNextExercise" destination="aKa-Vf-9tP" id="sf5-3d-4qP"/>
                         <outlet property="imgSound" destination="JW2-rD-9Cv" id="CZW-Ei-dAN"/>
@@ -630,7 +631,7 @@
         <image name="RestCharacter" width="62" height="62"/>
         <image name="RightArrow" width="15" height="25.5"/>
         <image name="SetCharacter" width="62" height="62"/>
-        <image name="Sound_On" width="23.5" height="20.5"/>
+        <image name="Sound_On" width="23.5" height="20"/>
         <image name="WhiteCircle" width="62" height="62"/>
     </resources>
     <color key="tintColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>

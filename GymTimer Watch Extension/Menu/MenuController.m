@@ -30,10 +30,12 @@
     
     if ([[WatchUtils isSoundOn] isEqualToString:@"YES"]) {
         [self.imgSound setImageNamed:@"Sound_On"];
-        [[self lblSoundTitle] setAttributedText:[WatchUtils getAttributedString:@"Sound: on" withFontSize:8 andFontName:fFUTURA_MEDIUM]];
+        [self.imgSound setAlpha: 1];
+        [[self lblSoundTitle] setAttributedText:[WatchUtils getAttributedString:@"Sound: on" withFontSize:9 fontName:fFUTURA_MEDIUM color:[UIColor whiteColor]]];
     } else {
         [self.imgSound setImageNamed:@"Sound_Off"];
-        [[self lblSoundTitle] setAttributedText:[WatchUtils getAttributedString:@"Sound: off" withFontSize:8 andFontName:fFUTURA_MEDIUM]];
+        [self.imgSound setAlpha: 0.7];
+        [[self lblSoundTitle] setAttributedText:[WatchUtils getAttributedString:@"Sound: off" withFontSize:9 fontName:fFUTURA_MEDIUM color:[UIColor whiteColor]]];
     }
 }
 
@@ -46,11 +48,11 @@
 
 - (void)setupLayout {
     // Set screen setup
-    [[self lblNextExerciseTitle] setAttributedText:[WatchUtils getAttributedString:@"Next exercise" withFontSize:8 andFontName:fFUTURA_MEDIUM]];
+    [[self lblNextExerciseTitle] setAttributedText:[WatchUtils getAttributedString:@"Next exercise" withFontSize:9 fontName:fFUTURA_MEDIUM color:[UIColor whiteColor]]];
     
-    [[self lblChangeRestTitle] setAttributedText:[WatchUtils getAttributedString:@"Change rest" withFontSize:8 andFontName:fFUTURA_MEDIUM]];
+    [[self lblChangeRestTitle] setAttributedText:[WatchUtils getAttributedString:@"Change rest" withFontSize:9 fontName:fFUTURA_MEDIUM color:[UIColor whiteColor]]];
     
-    [[self lblEndWorkoutTitle] setAttributedText:[WatchUtils getAttributedString:@"End workout" withFontSize:8 andFontName:fFUTURA_MEDIUM]];
+    [[self lblEndWorkoutTitle] setAttributedText:[WatchUtils getAttributedString:@"End workout" withFontSize:9 fontName:fFUTURA_MEDIUM color:[UIColor whiteColor]]];
 }
 
 // MARK:- IBAction
@@ -93,12 +95,14 @@
     
     if ([[WatchUtils isSoundOn] isEqualToString:@"YES"]) {
         [self.imgSound setImageNamed:@"Sound_Off"];
+        [self.imgSound setAlpha: 0.7];
         [WatchUtils setSoundStatus:@"NO"];
-        [[self lblSoundTitle] setAttributedText:[WatchUtils getAttributedString:@"Sound: off" withFontSize:8 andFontName:fFUTURA_MEDIUM]];
+        [[self lblSoundTitle] setAttributedText:[WatchUtils getAttributedString:@"Sound: off" withFontSize:9 fontName:fFUTURA_MEDIUM color:[UIColor whiteColor]]];
     } else {
         [self.imgSound setImageNamed:@"Sound_On"];
+        [self.imgSound setAlpha: 1];
         [WatchUtils setSoundStatus:@"YES"];
-        [[self lblSoundTitle] setAttributedText:[WatchUtils getAttributedString:@"Sound: on" withFontSize:8 andFontName:fFUTURA_MEDIUM]];
+        [[self lblSoundTitle] setAttributedText:[WatchUtils getAttributedString:@"Sound: on" withFontSize:9 fontName:fFUTURA_MEDIUM color:[UIColor whiteColor]]];
     }
 }
 
