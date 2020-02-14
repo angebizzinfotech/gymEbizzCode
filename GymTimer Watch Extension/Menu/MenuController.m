@@ -115,7 +115,11 @@
     [[WatchManager sharedInstance] stopExerciseTimer];
     [[WatchManager sharedInstance] stopRestTimer];
     
-    [self pushControllerWithName:@"WorkoutCompleteController" context:nil];
+//    [self pushControllerWithName:@"WorkoutCompleteController" context:nil];
+    
+    NSMutableArray* controllerNames = [NSMutableArray new];
+    [controllerNames addObject:@"WorkoutCompleteController"];
+    [WKInterfaceController reloadRootControllersWithNames:controllerNames contexts: nil];
 }
 
 @end

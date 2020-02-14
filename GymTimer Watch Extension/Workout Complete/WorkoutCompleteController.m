@@ -32,6 +32,8 @@
     
     [[self lblExercises] setAttributedText:[WatchUtils getAttributedString:[WatchUtils getExerciseCount] withFontSize:50 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
+    [self setTitle:@"Click to exit"];
+
     // Workout Quality
     [self calculateAndAnimateWorkoutQuality];
     
@@ -53,16 +55,16 @@
 // MARK:- Custom Methods
 
 - (void)setupLayout {
-    [[self lblWorkoutComplete] setAttributedText:[WatchUtils getAttributedString:@"Workout complete !" withFontSize:12 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    [[self lblWorkoutComplete] setAttributedText:[WatchUtils getAttributedString:@"Workout complete !" withFontSize:15 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
-    [[self lblTotalTimeTitle] setAttributedText:[WatchUtils getAttributedString:@"Total time" withFontSize:8 andFontName:fFUTURA_MEDIUM]];
+    [[self lblTotalTimeTitle] setAttributedText:[WatchUtils getAttributedString:@"Total time" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
     
-    [[self lblExercisesTitle] setAttributedText:[WatchUtils getAttributedString:@"Exercises" withFontSize:8 andFontName:fFUTURA_MEDIUM]];
+    [[self lblExercisesTitle] setAttributedText:[WatchUtils getAttributedString:@"Exercises" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
     
-    [[self lblQualityTitle] setAttributedText:[WatchUtils getAttributedString:@"Quality" withFontSize:8 andFontName:fFUTURA_MEDIUM]];
+    [[self lblQualityTitle] setAttributedText:[WatchUtils getAttributedString:@"  Quality" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
     
     // Quality Percentage
-    NSAttributedString *quality = [WatchUtils getAttributedString:@"0" withFontSize:16 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD];
+    NSAttributedString *quality = [WatchUtils getAttributedString:@"0" withFontSize:18 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD];
     NSAttributedString *percentage = [WatchUtils getAttributedString:@"%" withFontSize:8 andFontName:fFUTURA_MEDIUM];
     NSMutableAttributedString *strQuality = [[NSMutableAttributedString alloc] initWithAttributedString:quality];
     [strQuality appendAttributedString:percentage];

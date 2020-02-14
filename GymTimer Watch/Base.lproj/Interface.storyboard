@@ -114,13 +114,13 @@
         <!--Click to exit-->
         <scene sceneID="yli-rd-1eL">
             <objects>
-                <controller identifier="WorkoutCompleteController" title="Click to exit" fullScreen="YES" id="qrR-Wd-dFP" customClass="WorkoutCompleteController">
+                <controller identifier="WorkoutCompleteController" title="Click to exit" fullBounds="YES" id="qrR-Wd-dFP" customClass="WorkoutCompleteController">
                     <items>
-                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="overlap" spacing="0.0" id="SSU-2l-tCg">
+                        <group width="1" height="1" alignment="left" layout="overlap" spacing="0.0" id="SSU-2l-tCg">
                             <items>
-                                <group width="1" height="1" alignment="left" layout="vertical" id="meF-lZ-ryA">
+                                <group width="0.94999999999999996" height="0.94999999999999996" alignment="center" verticalAlignment="center" layout="vertical" id="meF-lZ-ryA">
                                     <items>
-                                        <group width="1" height="0.10000000000000001" alignment="center" layout="vertical" spacing="0.0" id="5x4-5H-B1Z">
+                                        <group width="1" height="0.10000000000000001" alignment="center" hidden="YES" layout="vertical" spacing="0.0" id="5x4-5H-B1Z">
                                             <items>
                                                 <group width="0.80000000000000004" alignment="center" verticalAlignment="bottom" id="sFg-na-Xmm">
                                                     <items>
@@ -132,7 +132,7 @@
                                                 </group>
                                             </items>
                                         </group>
-                                        <group width="1" height="0.85999999999999999" alignment="left" layout="vertical" radius="16" id="gJy-76-ANI">
+                                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" radius="16" spacing="0.0" id="gJy-76-ANI">
                                             <items>
                                                 <group width="1" height="0.20000000000000001" alignment="center" verticalAlignment="bottom" spacing="0.0" id="Yp3-l4-bNJ">
                                                     <items>
@@ -143,7 +143,7 @@
                                                     </items>
                                                     <color key="backgroundColor" red="0.078431372550000003" green="0.80000000000000004" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </group>
-                                                <group width="0.90000000000000002" height="0.80000000000000004" alignment="center" verticalAlignment="bottom" layout="vertical" radius="20" spacing="0.0" id="LMO-g6-npy">
+                                                <group width="0.90000000000000002" height="0.80000000000000004" alignment="center" verticalAlignment="bottom" layout="vertical" spacing="0.0" id="LMO-g6-npy">
                                                     <items>
                                                         <group width="0.80000000000000004" height="0.14000000000000001" alignment="center" layout="vertical" spacing="0.0" id="gZI-k1-dSt">
                                                             <items>
@@ -228,6 +228,7 @@
                         <outlet property="groupActivity" destination="zzD-hz-i9D" id="Ojg-nd-s2I"/>
                         <outlet property="imgActivity" destination="zCw-cr-7ji" id="W47-Bl-Q02"/>
                         <outlet property="imgQuality" destination="vZf-yx-zSR" id="4GN-ra-HXr"/>
+                        <outlet property="lblClickToExit" destination="hXL-BR-CEv" id="wEh-Fc-SwU"/>
                         <outlet property="lblExercises" destination="s8T-1h-nMa" id="V9f-FK-qMc"/>
                         <outlet property="lblExercisesTitle" destination="FLj-Xd-b2p" id="4wj-LB-bf1"/>
                         <outlet property="lblQuality" destination="GPe-KX-ed5" id="APX-Vz-3Va"/>

@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet WKInterfaceGroup *groupActivity;
 @property (strong, nonatomic) IBOutlet WKInterfaceImage *imgActivity;
 @property (strong, nonatomic) IBOutlet WKInterfaceButton *btnExit;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *lblClickToExit;
 
 @end
 
