@@ -1504,7 +1504,7 @@
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWv-IB-hj1">
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWv-IB-hj1">
                                                         <rect key="frame" x="0.0" y="94" width="240" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <subviews>
@@ -2339,7 +2339,7 @@ beetween sets for this workout</string>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O17-NU-Ga4">
-                                                                <rect key="frame" x="20" y="10" width="228" height="75"/>
+                                                                <rect key="frame" x="20" y="10" width="228" height="70"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SGK-AV-wOZ">
@@ -2472,19 +2472,19 @@ beetween sets for this workout</string>
                                                                         <state key="normal" image="dumbell_muscle"/>
                                                                     </button>
                                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Scientifically proven" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izw-8r-D4U">
-                                                                        <rect key="frame" x="6" y="51" width="117" height="18"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <rect key="frame" x="6" y="76" width="117" height="18"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11.5"/>
                                                                         <color key="textColor" red="0.078431372550000003" green="0.80000000000000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvA-a8-GZL">
-                                                                        <rect key="frame" x="124" y="56" width="10" height="9"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <rect key="frame" x="124" y="81" width="10" height="9"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <state key="normal" image="arrow"/>
                                                                     </button>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhv-hP-6g9">
-                                                                        <rect key="frame" x="-1" y="-1" width="229" height="76"/>
+                                                                        <rect key="frame" x="-1" y="-1" width="229" height="71"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose your default rest time between sets." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyr-Xp-OSc">
@@ -5234,13 +5234,13 @@ membership</string>
                                                         <rect key="frame" x="16" y="209.99999999999997" width="343" height="322.33333333333326"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="giftgreenbig" translatesAutoresizingMaskIntoConstraints="NO" id="IBp-Vg-A74">
-                                                                <rect key="frame" x="153.33333333333334" y="27.999999999999996" width="36.666666666666657" height="42.666666666666657"/>
+                                                                <rect key="frame" x="135" y="28" width="73" height="85"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="IBp-Vg-A74" secondAttribute="height" multiplier="6:7" id="H1T-Lv-YnL"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get 6 months PRO membership for free !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="i0n-dU-UBr">
-                                                                <rect key="frame" x="10" y="78.666666666666671" width="323" height="135.66666666666663"/>
+                                                                <rect key="frame" x="10" y="121" width="323" height="93.333333333333314"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32"/>
                                                                 <color key="textColor" red="0.082352941176470587" green="0.77254901960784317" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -6928,7 +6928,7 @@ over the last week</string>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift" translatesAutoresizingMaskIntoConstraints="NO" id="pKQ-w4-P9I">
-                                                                                <rect key="frame" x="107" y="5.3333333333333712" width="13" height="15.000000000000004"/>
+                                                                                <rect key="frame" x="107" y="5.3333333333333712" width="13" height="15"/>
                                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="13" id="CB5-x9-Trs"/>

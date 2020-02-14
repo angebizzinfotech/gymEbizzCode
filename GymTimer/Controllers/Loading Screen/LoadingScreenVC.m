@@ -107,13 +107,13 @@
         [vwImgBackgound addSubview:bgImage];
     
     } else {
-        UIView *contentView = [[UIView alloc] initWithFrame: CGRectMake(0.0, 10.0, DEVICE_WIDTH, (DEVICE_HEIGHT + 36.0))];
+        UIView *contentView = [[UIView alloc] initWithFrame: CGRectMake(0.0, 15.0, DEVICE_WIDTH, (DEVICE_HEIGHT + 26.0))];
         [self.view addSubview: contentView];
         
         CGFloat contentViewWidth = contentView.frame.size.width;
         CGFloat contentViewHeight = contentView.frame.size.height;
         
-        UIView *lblView = [[UIView alloc] initWithFrame: CGRectMake(0.0, 7.0, (contentView.frame.size.width), 80.0)];
+        UIView *lblView = [[UIView alloc] initWithFrame: CGRectMake(0.0, -2.0, (contentView.frame.size.width), 85.0)];
         [contentView addSubview: lblView];
         
         CGFloat gymtimerY = lblView.frame.origin.y;

@@ -921,13 +921,17 @@
     [self.lblClickAnywhereToRestLabel setTextColor:GreenTextColor];
     
     //DINAL-11-02-2020
-    lastExerciseSec = 0;
-    lastExerciseMin = 0;
-    lastExerciseHour = 0;
-    self.lblTimeSince.text = @"00:00";
-    isNextExerciseStart = YES;
+    // Vsn - 14/02/2020
+    if(!self->isWarmUpFlag)
+    {
+        lastExerciseSec = 0;
+        lastExerciseMin = 0;
+        lastExerciseHour = 0;
+        self.lblTimeSince.text = @"00:00";
+        isNextExerciseStart = YES;
+    }
     
-    AudioServicesPlaySystemSoundWithCompletion( 1520, nil);
+    AudioServicesPlaySystemSoundWithCompletion(1520, nil);
         
     isScrollingByButtons = @"YES";
     isBottomButtonsViewOpen = @"NO";
@@ -981,10 +985,13 @@
         [[NSUserDefaults standardUserDefaults] setValue: [NSString stringWithFormat: @"%d", (strTotalExerciseCount + 1)] forKey: kTOTAL_EXERCISE_COUNT];
         [self->_lblExerciseCountLabel setText: [NSString stringWithFormat: @"%@.", [[NSUserDefaults standardUserDefaults] valueForKey: kTOTAL_EXERCISE_COUNT]]];
         
-        [self->_lblLastExerciseSecondMinLabel setText: [NSString stringWithFormat: @"00"]];
-        [self->_lblLastExerciseSecondSecLabel setText: [NSString stringWithFormat: @"00"]];
-        [[NSUserDefaults standardUserDefaults] setValue: @"00:00:00" forKey: kLAST_EXERCISE_TIME];
-        [self startLastExerciseTimeTimer];
+        if(!self->isWarmUpFlag)
+        {
+            [self->_lblLastExerciseSecondMinLabel setText: [NSString stringWithFormat: @"00"]];
+            [self->_lblLastExerciseSecondSecLabel setText: [NSString stringWithFormat: @"00"]];
+            [[NSUserDefaults standardUserDefaults] setValue: @"00:00:00" forKey: kLAST_EXERCISE_TIME];
+            [self startLastExerciseTimeTimer];
+        }
     }];
     
     [UIView transitionWithView: _imgAppBackgroundImage duration: 0.3 options: UIViewAnimationOptionTransitionCrossDissolve animations:^{
@@ -1246,6 +1253,7 @@
 - (IBAction)btnStartRestButtonTapped:(UIButton *)sender {
     //[_viewSetAndRestScreenProgressBackgroundView setHidden:NO];
     
+    self.lblClickAnywhereToRestLabel.text = @"(click anywhere to rest)";
     [self.lblClickAnywhereToRestLabel setTextColor:colorClickAnywhere];
     
     AudioServicesPlaySystemSoundWithCompletion(1520, nil);
@@ -1323,6 +1331,15 @@
     } else {
         isSetScreen = @"NO";
         [self initializeRestScreenData];
+    }
+    
+    if([[_viewTotalTimeContentView backgroundColor] isEqual: cWARMUP_BLACK])
+    {
+        isWarmUpFlag = true;
+    }
+    else
+    {
+        isWarmUpFlag = false;
     }
 }
 
@@ -1875,11 +1892,11 @@
         [_lblGymTimerTitleLabel setFont: fontGymTimer];
         
         // Vsn - 11/02/2020
-        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 172.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 172.0, 43.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 146.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
-        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
-        [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
-        UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 16.0];
+//        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+//        [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
+        UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 22.0];
         [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
         
         
@@ -2084,7 +2101,6 @@
         [_lblRestTimerMinutesLabel setFont: fontRestTimeLabel];
         [_lblRestTimerColonLabel setFont: fontRestTimeLabel];
         [_lblRestTimerSecondsLabel setFont: fontRestTimeLabel];
-        
         
         //View last exercise
         CGFloat viewProgressBarHeight = _viewSetAndRestScreenProgressBackgroundView.frame.size.height;
@@ -2387,11 +2403,11 @@
         [_lblGymTimerTitleLabel setFont: fontGymTimer];
         
         // Vsn - 11/02/2020
-        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 153.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 154.0, 43.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 121.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
-        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3.4 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
-        [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
-        UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 15.0];
+//        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3.4 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+//        [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
+        UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 22.0];
         [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
         
         //Start Workout content view
@@ -2886,11 +2902,11 @@
             [_lblGymTimerTitleLabel setFont: fontGymTimer];
 
             // Vsn - 11/02/2020
-            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 170.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 173.0, 43.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 140.1, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
-            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3.45 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
-            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
-            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 15.0];
+//            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3.45 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+//            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
+            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 22.0];
             [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
             
             
@@ -3373,22 +3389,23 @@
             [_viewLoaderContentView setFrame: CGRectMake(0.0, 102.0, DEVICE_WIDTH, DEVICE_HEIGHT - 102.0)];
             
             //Scroll and Content view
+            // Vsn - 14/02/2020
             [_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 30.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
             [_contentViewWorkoutScreen setFrame: CGRectMake(0.0, 0.0, (_scrollViewWorkoutScreen.frame.size.width), (_scrollViewWorkoutScreen.frame.size.height))];
             CGFloat contentViewWidth = _contentViewWorkoutScreen.frame.size.width;
             CGFloat contentViewHeight = _contentViewWorkoutScreen.frame.size.height;
             
             //GymTimer label
-            [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, 0.0, (_contentViewWorkoutScreen.frame.size.width), 78.0)];
+            [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, 0.0, (_contentViewWorkoutScreen.frame.size.width), 83.0)];
             UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 60.7];
             [_lblGymTimerTitleLabel setFont: fontGymTimer];
             
             // Vsn - 11/02/2020
-            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 154.0, 30.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 157.0, 35.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 130.0, 30.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
-            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@2.9 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
-            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
-            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 15.0];
+//            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@2.9 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+//            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
+            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 20.5];
             [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
             
             
@@ -3866,21 +3883,21 @@
             
             //Scroll and Content view
             [_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 10.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
-            [_contentViewWorkoutScreen setFrame: CGRectMake(0.0, 0.0, (_scrollViewWorkoutScreen.frame.size.width), (_scrollViewWorkoutScreen.frame.size.height + 80))];
+            [_contentViewWorkoutScreen setFrame: CGRectMake(0.0, 5.0, (_scrollViewWorkoutScreen.frame.size.width), (_scrollViewWorkoutScreen.frame.size.height + 80-10))];
             CGFloat contentViewWidth = _contentViewWorkoutScreen.frame.size.width;
             CGFloat contentViewHeight = _contentViewWorkoutScreen.frame.size.height;
             
             //GymTimer label
-            [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, 7.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, -2.0, (_contentViewWorkoutScreen.frame.size.width), 85.0)];
             UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 50.0];
             [_lblGymTimerTitleLabel setFont: fontGymTimer];
             
             // Vsn - 11/02/2020
-            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 133, 32.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 134, 28.5, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 115.1, 32.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
-            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@2 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
-            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
-            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 13.0];
+//            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@2 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
+//            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
+            UIFont *fontGymTimer1 = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 17.0];
             [_lblBoostYourWorkoutsSetScreenLabel setFont: fontGymTimer1];
             
             
