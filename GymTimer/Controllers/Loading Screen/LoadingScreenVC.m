@@ -93,7 +93,7 @@
 
         CGFloat contentViewWidth = contentView.frame.size.width;
         CGFloat contentViewHeight = contentView.frame.size.height;
-        UIView *lblView = [[UIView alloc] initWithFrame: CGRectMake(0.0, 0.0, (contentView.frame.size.width), 78.0)];
+        UIView *lblView = [[UIView alloc] initWithFrame: CGRectMake(0.0, -27.0, (contentView.frame.size.width), 113.0)];
         [contentView addSubview: lblView];
 
         CGFloat gymtimerY = lblView.frame.origin.y;

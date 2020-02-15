@@ -30,7 +30,7 @@
         
     [[self lblTotalTime] setAttributedText:[WatchUtils getAttributedString:[WatchUtils getExerciseTotalTime] withFontSize:35 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
-    [[self lblExercises] setAttributedText:[WatchUtils getAttributedString:[WatchUtils getExerciseCount] withFontSize:50 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    [[self lblExercises] setAttributedText:[WatchUtils getAttributedString:[WatchUtils getExerciseCount] withFontSize:55 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
     [self setTitle:@"Click to exit"];
 

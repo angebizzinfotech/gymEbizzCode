@@ -177,14 +177,14 @@
                                                             <items>
                                                                 <group width="0.5" height="1" alignment="left" id="71B-Bs-C2o">
                                                                     <items>
-                                                                        <label width="1" height="1" alignment="left" text="0" minimumScaleFactor="0.5" id="s8T-1h-nMa">
+                                                                        <label width="1" height="1" alignment="center" verticalAlignment="center" text="0" textAlignment="center" minimumScaleFactor="0.5" id="s8T-1h-nMa">
                                                                             <color key="textColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <fontDescription key="font" type="system" pointSize="55"/>
                                                                         </label>
                                                                     </items>
                                                                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="8"/>
                                                                 </group>
-                                                                <group width="0.5" height="0.84999999999999998" alignment="left" layout="overlap" id="6yo-IF-W6k">
+                                                                <group width="0.5" height="1" alignment="left" layout="overlap" id="6yo-IF-W6k">
                                                                     <items>
                                                                         <imageView width="1" height="1" alignment="left" image="Progress100" contentMode="scaleAspectFill" id="vZf-yx-zSR"/>
                                                                         <group width="0.69999999999999996" alignment="center" verticalAlignment="center" layout="vertical" id="xw2-QG-RZf">
