@@ -1235,11 +1235,15 @@
             [dicUserWorkoutHashMap setValue: [arrWorkouts objectAtIndex: i] forKey: [arrDateTimeComponents firstObject]];
         }
         
-        if (IS_IPHONEXR) {
+        // Vsn - 17/02/2020
+//        if (IS_IPHONEXR) {
+//            [self.workoutStatsCalender reloadData];
+//        }
+        if (isCalendarAnimation) {
+            isCalendarAnimation = NO;
             [self.workoutStatsCalender reloadData];
         }
     } else {
-        
         [Utils showToast: [dicResponse valueForKey: @"message"] duration: 3.0];
     }
     

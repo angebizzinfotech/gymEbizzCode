@@ -4191,14 +4191,14 @@ membership</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8V-oO-lHM">
-                                                        <rect key="frame" x="111.33333333333333" y="1" width="7.3333333333333286" height="22"/>
+                                                        <rect key="frame" x="104.66666666666667" y="1" width="14" height="22"/>
                                                         <state key="normal" image="imgPrevGray"/>
                                                         <connections>
                                                             <action selector="previousMonthAction:" destination="cYk-Ty-dzl" eventType="touchUpInside" id="Sbk-KK-lh6"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4B-34-yRy">
-                                                        <rect key="frame" x="224.66666666666666" y="1" width="7.3333333333333428" height="22"/>
+                                                        <rect key="frame" x="224.66666666666666" y="1" width="14" height="22"/>
                                                         <state key="normal" image="imgNextGray"/>
                                                         <connections>
                                                             <action selector="nextMonthAction:" destination="cYk-Ty-dzl" eventType="touchUpInside" id="Yx6-oO-BQj"/>

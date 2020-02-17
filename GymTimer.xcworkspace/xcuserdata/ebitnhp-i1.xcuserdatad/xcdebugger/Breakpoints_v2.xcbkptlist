@@ -7,39 +7,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "378D99B3-0B75-4472-81ED-6FE375AA20E5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GymTimer/Controllers/Workout Screen/WorkoutViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3399"
-            endingLineNumber = "3399"
-            landmarkName = "-setupStartWorkoutLayout"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8B063825-64D6-4198-AE8E-D1A014A615CD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GymTimer/Controllers/Workout Screen/WorkoutViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3891"
-            endingLineNumber = "3891"
-            landmarkName = "-setupStartWorkoutLayout"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DA1B609B-E73C-4477-A097-465B85965A4D"
+            uuid = "667B2296-50ED-429C-9625-95F771D0A9B2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -55,7 +23,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "81FED4A1-D369-4D62-BDD1-396164791F9D"
+            uuid = "D896E413-8786-480E-8288-33997658C0C2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -71,7 +39,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "691404B2-9CEB-4054-9829-5F84361FB27A"
+            uuid = "FBA7FA29-094F-4A55-B59E-64EBB4555497"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -80,6 +48,38 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2900"
             endingLineNumber = "2900"
+            landmarkName = "-setupStartWorkoutLayout"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EEBD9786-A2A2-49A8-B597-2BC1E54C6299"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GymTimer/Controllers/Workout Screen/WorkoutViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3891"
+            endingLineNumber = "3891"
+            landmarkName = "-setupStartWorkoutLayout"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12526DE8-7A0A-4A58-8839-BE218B35D8C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GymTimer/Controllers/Workout Screen/WorkoutViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3399"
+            endingLineNumber = "3399"
             landmarkName = "-setupStartWorkoutLayout"
             landmarkType = "7">
          </BreakpointContent>
