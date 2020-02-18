@@ -22,7 +22,7 @@
                                                     <items>
                                                         <group width="1" height="1" alignment="left" layout="overlap" spacing="0.0" id="bjG-Wc-78q">
                                                             <items>
-                                                                <label width="1" height="1" alignment="center" verticalAlignment="center" text="Choose a rest time" id="Nbp-lV-X6m">
+                                                                <label width="0.94999999999999996" height="1" alignment="right" verticalAlignment="center" text="Choose a rest time" id="Nbp-lV-X6m">
                                                                     <fontDescription key="font" type="system" weight="medium" pointSize="10"/>
                                                                 </label>
                                                             </items>
@@ -116,7 +116,7 @@
             <objects>
                 <controller identifier="WorkoutCompleteController" title="Click to exit" fullBounds="YES" id="qrR-Wd-dFP" customClass="WorkoutCompleteController">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="overlap" spacing="0.0" id="SSU-2l-tCg">
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="overlap" spacing="0.0" id="SSU-2l-tCg">
                             <items>
                                 <group width="0.94999999999999996" height="0.94999999999999996" alignment="center" verticalAlignment="center" layout="vertical" id="meF-lZ-ryA">
                                     <items>
@@ -236,6 +236,7 @@
                         <outlet property="lblTotalTime" destination="nQj-f3-LFe" id="KAU-ib-KEq"/>
                         <outlet property="lblTotalTimeTitle" destination="Dwv-zN-XhR" id="KIj-8H-jEJ"/>
                         <outlet property="lblWorkoutComplete" destination="Dsh-yb-vNI" id="Sir-pK-5Dr"/>
+                        <outlet property="mainGrp" destination="SSU-2l-tCg" id="EFn-dJ-wYD"/>
                     </connections>
                 </controller>
             </objects>
@@ -635,5 +636,5 @@
         <image name="Sound_On" width="23.5" height="20"/>
         <image name="WhiteCircle" width="62" height="62"/>
     </resources>
-    <color key="tintColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
 </document>

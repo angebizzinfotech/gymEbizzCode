@@ -162,9 +162,9 @@
         
         // Show rest group
         [self.setGroup setAlpha:0];
-        [self animateWithDuration:0.2 animations:^{
+//        [self animateWithDuration:0.2 animations:^{
             [self.restGroup setAlpha:1];
-        }];
+//        }];
         
         // Hide title
         [self setTitle:@""];

@@ -94,7 +94,7 @@
     
     [[self lblChooseTime] setAttributedText:[WatchUtils getAttributedString:@"Choose a rest time" withFontSize:9 andFontName:@"System"]];
     
-    [[self lblClickAnyWhereTitle] setAttributedText:[WatchUtils getAttributedString:@"(click anywhere to start workout)" withFontSize:7 andFontName:fFUTURA_MEDIUM]];
+    [[self lblClickAnyWhereTitle] setAttributedText:[WatchUtils getAttributedString:@"(click anywhere to start workout)" withFontSize:9 andFontName:fFUTURA_MEDIUM]];
     
     [[self lblTime] setAttributedText:[WatchUtils getAttributedString:@"00:00" withFontSize:35 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     NSLog(@"User Data: %@", [[NSUserDefaults standardUserDefaults] valueForKey:uWATCH_USER_DATA]);
@@ -138,10 +138,10 @@
 // MARK:- IBAction
 
 - (IBAction)exitTutorialAction {
-    [self animateWithDuration:0.3 animations:^{
+//    [self animateWithDuration:0.3 animations:^{
         [self.homeGroup setAlpha:1.0];
         [self.tutorialGroup setAlpha:0.0];
-    }];
+//    }];
 
     [self.timePicker focus];
 }
@@ -149,6 +149,7 @@
 - (IBAction)timePicker:(NSInteger)value {
     strSelectedTime = arrTime[value];
     [[self lblTime] setAttributedText:[WatchUtils getAttributedString:arrTime[value] withFontSize:35 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeClick];
 }
 
 - (IBAction)startWorkoutAction {
@@ -177,7 +178,8 @@
         
         // Start Workout Timer
         [[WatchManager sharedInstance] startExerciseTimer];
-        
+        [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeClick];
+
         // Display Pages
         [WKInterfaceController reloadRootPageControllersWithNames:@[@"MenuController", @"SetAndRestController", @"WorkoutTimerController"] contexts:@[] orientation:WKPageOrientationHorizontal pageIndex:1];
     }
