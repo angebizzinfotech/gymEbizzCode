@@ -62,13 +62,13 @@
 // MARK:- Custom Methods
 
 - (void)setupLayout {
-    [[self lblWorkoutComplete] setAttributedText:[WatchUtils getAttributedString:@"Workout complete !" withFontSize:15 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    [[self lblWorkoutComplete] setAttributedText:[WatchUtils getAttributedString:@"Workout complete !" withFontSize:13 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
     [[self lblTotalTimeTitle] setAttributedText:[WatchUtils getAttributedString:@"Total time" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
     
-    [[self lblExercisesTitle] setAttributedText:[WatchUtils getAttributedString:@"Exercises" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
+    [[self lblExercisesTitle] setAttributedText:[WatchUtils getAttributedString:@"Exercises" withFontSize:11 andFontName:fFUTURA_MEDIUM]];
     
-    [[self lblQualityTitle] setAttributedText:[WatchUtils getAttributedString:@"  Quality" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
+    [[self lblQualityTitle] setAttributedText:[WatchUtils getAttributedString:@"  Quality" withFontSize:11 andFontName:fFUTURA_MEDIUM]];
     
     // Quality Percentage
     NSAttributedString *quality = [WatchUtils getAttributedString:@"0" withFontSize:18 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD];
