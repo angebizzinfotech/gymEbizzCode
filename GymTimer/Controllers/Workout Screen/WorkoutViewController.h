@@ -53,6 +53,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UILabel *lblGymTimerTitleLabel;
 @property (weak, nonatomic) IBOutlet UIView *viewWorkoutContentView;
+// Vsn - 19/02/2020
+@property (weak, nonatomic) IBOutlet UIImageView *imgWelcomeBack;
+@property (weak, nonatomic) IBOutlet UIView *viewWorkoutContentViewSubView;
+@property (weak, nonatomic) IBOutlet UIView *vw_gymtimer_boost_your_workouts;
+
+// End
 @property (strong, nonatomic) IBOutlet UIImageView *imgHomeBottomGym;
 @property (weak, nonatomic) IBOutlet UILabel *lblChooseDefaultTimeLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerWorkoutRestTimePickerView;

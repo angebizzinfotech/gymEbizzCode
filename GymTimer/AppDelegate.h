@@ -27,5 +27,7 @@
 
 @property (nonatomic) UIBackgroundTaskIdentifier bgTask;
 
+@property BOOL isLoadScreen;
+
 @end
 
