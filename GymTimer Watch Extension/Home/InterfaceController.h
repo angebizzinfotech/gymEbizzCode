@@ -13,6 +13,7 @@
 
 @interface InterfaceController : WKInterfaceController
 
+@property (weak, nonatomic) IBOutlet WKInterfaceGroup *mainGrp;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *lblTime;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *lblChooseTime;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *lblMinTitle;

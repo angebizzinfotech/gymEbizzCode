@@ -158,31 +158,43 @@
     // Set selected workout time
     [WatchUtils setWorkoutSelectedTime:strSelectedTime];
     
-    if (isForChangeRest) {
-        // Stop Rest Timer 
-        [[WatchManager sharedInstance] stopRestTimer];
-        [self popController];
-        
-        // Observer for change page
-        [[NSNotificationCenter defaultCenter] postNotificationName:nCHANGE_PAGE object:nil];
-    } else {
-                
-        // DateFormatter For Workout Start Time
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
-        NSString *formattedDate = [dateFormatter stringFromDate: [NSDate date]];
-        
-        // Save Workout Start Time
-        [WatchUtils setExerciseStartTime:formattedDate];
-        [WatchUtils setExerciseCount:@"1"];
-        
-        // Start Workout Timer
-        [[WatchManager sharedInstance] startExerciseTimer];
-        [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeClick];
-
-        // Display Pages
-        [WKInterfaceController reloadRootPageControllersWithNames:@[@"MenuController", @"SetAndRestController", @"WorkoutTimerController"] contexts:@[] orientation:WKPageOrientationHorizontal pageIndex:1];
+    
+    for (CGFloat i=0; i<100; i++) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(i/400 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.mainGrp setRelativeWidth:1-(i*4/400) withAdjustment:0];
+        });
     }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self->isForChangeRest) {
+            // Stop Rest Timer
+            [[WatchManager sharedInstance] stopRestTimer];
+            // Vsn - 20/02/2020
+    //        [self popController];
+            [WKInterfaceController reloadRootPageControllersWithNames:@[@"MenuController", @"SetAndRestController", @"WorkoutTimerController"] contexts:@[] orientation:WKPageOrientationHorizontal pageIndex:1];
+            
+            // Observer for change page
+            [[NSNotificationCenter defaultCenter] postNotificationName:nCHANGE_PAGE object:nil];
+        } else {
+                    
+            // DateFormatter For Workout Start Time
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
+            NSString *formattedDate = [dateFormatter stringFromDate: [NSDate date]];
+            
+            // Save Workout Start Time
+            [WatchUtils setExerciseStartTime:formattedDate];
+            [WatchUtils setExerciseCount:@"1"];
+            
+            // Start Workout Timer
+            [[WatchManager sharedInstance] startExerciseTimer];
+            [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeClick];
+
+            // Display Pages
+            [WKInterfaceController reloadRootPageControllersWithNames:@[@"MenuController", @"SetAndRestController", @"WorkoutTimerController"] contexts:@[] orientation:WKPageOrientationHorizontal pageIndex:1];
+        }
+    });
+    
 }
 
 @end

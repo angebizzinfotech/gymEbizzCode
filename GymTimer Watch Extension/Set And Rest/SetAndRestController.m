@@ -41,7 +41,12 @@
     // Display Set Tutorial
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (![WatchUtils isSetTutorialDisplayed]) {
-            [self pushControllerWithName:@"TutorialController" context:@"FromWorkoutTimer"];
+            // Vsn - 20/02/2020
+//            [self pushControllerWithName:@"TutorialController" context:@"FromWorkoutTimer"];
+            NSMutableArray* controllerNames = [NSMutableArray new];
+            [controllerNames addObject:@"TutorialController"];
+            [WKInterfaceController reloadRootControllersWithNames:controllerNames contexts: @[@"FromWorkoutTimer"]];
+            
             [WatchUtils setSetTutorialDisplayed:YES];
         }
     });

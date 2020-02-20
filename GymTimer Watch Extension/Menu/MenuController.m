@@ -86,7 +86,12 @@
     [WKInterfaceDevice.currentDevice playHaptic:WKHapticTypeClick];
     
     NSString *context = @"ForChangeRest";
-    [self pushControllerWithName:@"HomeController" context:context];
+    // Vsn - 20/02/2020
+//    [self pushControllerWithName:@"HomeController" context:context];
+    
+    NSMutableArray* controllerNames = [NSMutableArray new];
+    [controllerNames addObject:@"HomeController"];
+    [WKInterfaceController reloadRootControllersWithNames:controllerNames contexts: @[context]];
 }
 
 - (IBAction)soundAction {

@@ -39,7 +39,9 @@
 // MARK:- IBActions
 
 - (IBAction)exitAction {
-    [self popController];
+    // Vsn - 20/02/2020
+//    [self popController];
+    [WKInterfaceController reloadRootPageControllersWithNames:@[@"MenuController", @"SetAndRestController", @"WorkoutTimerController"] contexts:@[] orientation:WKPageOrientationHorizontal pageIndex:1];
 }
 
 @end

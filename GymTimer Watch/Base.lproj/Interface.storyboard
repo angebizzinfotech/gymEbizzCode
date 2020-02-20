@@ -14,7 +14,7 @@
                     <items>
                         <group width="1" height="1" alignment="left" backgroundImage="HomeBG" layout="overlap" spacing="0.0" id="Azs-GK-x5Q">
                             <items>
-                                <group width="1" alignment="left" layout="overlap" id="bPN-AP-A0z">
+                                <group width="1" alignment="left" verticalAlignment="center" layout="overlap" id="bPN-AP-A0z">
                                     <items>
                                         <group width="1" height="1" alignment="left" layout="vertical" id="8tF-8B-Wvo">
                                             <items>
@@ -104,6 +104,7 @@
                         <outlet property="lblMinTitle" destination="2f1-jn-doE" id="1wH-Wh-dWb"/>
                         <outlet property="lblSecTime" destination="10v-ma-ivk" id="iej-5e-R3w"/>
                         <outlet property="lblTime" destination="bV1-Mz-XPi" id="8vV-9y-eJ1"/>
+                        <outlet property="mainGrp" destination="Azs-GK-x5Q" id="wPM-0j-Ccf"/>
                         <outlet property="timePicker" destination="tD4-OO-rMH" id="EXL-S1-vhZ"/>
                         <outlet property="tutorialGroup" destination="n5j-iK-6uA" id="6Ok-ve-gFH"/>
                     </connections>
@@ -116,7 +117,7 @@
             <objects>
                 <controller identifier="WorkoutCompleteController" title="Click to exit" fullBounds="YES" id="qrR-Wd-dFP" customClass="WorkoutCompleteController">
                     <items>
-                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="overlap" spacing="0.0" id="SSU-2l-tCg">
+                        <group width="1" height="1" alignment="center" layout="overlap" spacing="0.0" id="SSU-2l-tCg">
                             <items>
                                 <group width="0.94999999999999996" height="0.94999999999999996" alignment="center" verticalAlignment="center" layout="vertical" id="meF-lZ-ryA">
                                     <items>
@@ -241,6 +242,21 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="1171" y="952"/>
+        </scene>
+        <!--AlertController-->
+        <scene sceneID="IBK-gY-fNn">
+            <objects>
+                <controller identifier="AlertController" id="VsA-VA-kWV" customClass="AlertController">
+                    <items>
+                        <textField width="1" alignment="left" text="Text" id="HLq-e2-4Hb"/>
+                        <label alignment="left" text="Label" id="gNT-n7-mok"/>
+                    </items>
+                    <connections>
+                        <outlet property="lblValShow" destination="gNT-n7-mok" id="N97-QX-AXd"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1310" y="545"/>
         </scene>
         <!--TutorialController-->
         <scene sceneID="zrX-F6-1ae">

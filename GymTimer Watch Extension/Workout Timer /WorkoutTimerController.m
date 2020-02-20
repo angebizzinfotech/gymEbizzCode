@@ -48,6 +48,8 @@
     // Set Exercise Count
     NSString *exerciseText = [NSString stringWithFormat:@" %@.", [WatchUtils getExerciseCount]];
     [[self lblExercise] setAttributedText:[WatchUtils getAttributedString:exerciseText withFontSize:exerciseSize andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    
+//    [self pushControllerWithName:@"AlertController" context:@[@"Vishnu"]];
 }
 
 - (void)didDeactivate {

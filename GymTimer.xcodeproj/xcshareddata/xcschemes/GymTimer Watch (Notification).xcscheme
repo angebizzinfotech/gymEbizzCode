@@ -56,10 +56,17 @@
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "8"
       notificationPayloadFile = "GymTimer Watch Extension/PushNotificationPayload.apns">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/GymTimer">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "03B35233226599AC002C47D9"
+            BuildableName = "GymTimer.app"
+            BlueprintName = "GymTimer"
+            ReferencedContainer = "container:GymTimer.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "031E273E23CC376E0051B56F"
@@ -67,7 +74,7 @@
             BlueprintName = "GymTimer Watch"
             ReferencedContainer = "container:GymTimer.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

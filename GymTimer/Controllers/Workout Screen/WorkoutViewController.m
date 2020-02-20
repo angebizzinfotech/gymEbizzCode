@@ -156,19 +156,21 @@
     }
     isWarmUpFlag = false;
     
+    // Vsn - 19/02/2020
     if(((AppDelegate *)[[UIApplication sharedApplication] delegate]).isLoadScreen)
     {
         [self->_vw_gymtimer_boost_your_workouts setHidden: true];
         [self->_viewWorkoutContentViewSubView setHidden: true];
         [self->_imgWelcomeBack setHidden: false];
         [self.tabBarController.tabBar setHidden: true];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
+            self.viewWorkoutContentView.clipsToBounds = true;
             // Slide left - Welcome back and home contents
             CGPoint viewWorkoutContentViewSubViewCenterPoint = self->_viewWorkoutContentViewSubView.center;
             [self->_viewWorkoutContentViewSubView setHidden: false];
             [self->_viewWorkoutContentViewSubView setCenter:CGPointMake(self->_viewWorkoutContentViewSubView.center.x + UIScreen.mainScreen.bounds.size.width, self->_viewWorkoutContentViewSubView.center.y)];
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.5 animations:^{
                 [self->_imgWelcomeBack setCenter: CGPointMake(self->_imgWelcomeBack.center.x - UIScreen.mainScreen.bounds.size.width, self->_imgWelcomeBack.center.y)];
                 [self->_viewWorkoutContentViewSubView setCenter:viewWorkoutContentViewSubViewCenterPoint];
             }];
@@ -176,7 +178,7 @@
             // Slide down - GymTimer Boost your workouts
             [self->_vw_gymtimer_boost_your_workouts setHidden: false];
             [self->_vw_gymtimer_boost_your_workouts setCenter:CGPointMake(self->_vw_gymtimer_boost_your_workouts.center.x, self->_vw_gymtimer_boost_your_workouts.center.y - self->_vw_gymtimer_boost_your_workouts.frame.size.height - 50)];
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.5 animations:^{
                 [self->_vw_gymtimer_boost_your_workouts setCenter:CGPointMake(self->_vw_gymtimer_boost_your_workouts.center.x, self->_vw_gymtimer_boost_your_workouts.center.y + self->_vw_gymtimer_boost_your_workouts.frame.size.height + 50)];
             }];
             
@@ -184,10 +186,11 @@
             CGPoint tabBarControllerCenterPoint = self.tabBarController.tabBar.center;
             [self.tabBarController.tabBar setHidden:false];
             [self.tabBarController.tabBar setCenter:CGPointMake(self.tabBarController.tabBar.center.x, self.tabBarController.tabBar.center.y + self.tabBarController.tabBar.frame.size.height)];
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.5 animations:^{
                 [self.tabBarController.tabBar setCenter:tabBarControllerCenterPoint];
             }];
             ((AppDelegate *)[[UIApplication sharedApplication] delegate]).isLoadScreen = false;
+            self.viewWorkoutContentView.clipsToBounds = true;
         });
     }
 }
