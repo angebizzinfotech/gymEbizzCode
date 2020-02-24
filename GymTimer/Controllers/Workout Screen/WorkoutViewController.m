@@ -163,7 +163,7 @@
         [self->_viewWorkoutContentViewSubView setHidden: true];
         [self->_imgWelcomeBack setHidden: false];
         [self.tabBarController.tabBar setHidden: true];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
             self.viewWorkoutContentView.clipsToBounds = true;
             // Slide left - Welcome back and home contents

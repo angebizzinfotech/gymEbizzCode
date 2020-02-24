@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LoadingScreenVC : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *imgWelcomback;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIView *vwImgBackgound;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImage;
 
 @end
 

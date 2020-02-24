@@ -106,6 +106,8 @@
 		03CF340122C0DD7B00F80F76 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CF340022C0DD7B00F80F76 /* StoreKit.framework */; };
 		03D6A3A0228EE423009E6649 /* beep_sound_latest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03D6A39F228EE423009E6649 /* beep_sound_latest.mp3 */; };
 		03D94B8F22A8E9CF008A054C /* NewOnBoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D94B8E22A8E9CF008A054C /* NewOnBoardingViewController.m */; };
+		03DB4954240387FE00BB6BCF /* Launch Screen Code.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DB4953240387FE00BB6BCF /* Launch Screen Code.storyboard */; };
+		03DB49792403885E00BB6BCF /* launchScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DB49782403885E00BB6BCF /* launchScreenVC.m */; };
 		03E51D5C23FEA3A200CBA72A /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E51D5B23FEA3A100CBA72A /* AlertController.m */; };
 		03E51D5E23FEB19100CBA72A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E51D5D23FEB19100CBA72A /* Launch Screen.storyboard */; };
 		7D679A05744290339437152C /* Pods_GymTimer_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C26438B6946E65A6063668 /* Pods_GymTimer_Watch_Extension.framework */; };
@@ -524,6 +526,9 @@
 		03D6A39F228EE423009E6649 /* beep_sound_latest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep_sound_latest.mp3; sourceTree = "<group>"; };
 		03D94B8D22A8E9CF008A054C /* NewOnBoardingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewOnBoardingViewController.h; sourceTree = "<group>"; };
 		03D94B8E22A8E9CF008A054C /* NewOnBoardingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewOnBoardingViewController.m; sourceTree = "<group>"; };
+		03DB4953240387FE00BB6BCF /* Launch Screen Code.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen Code.storyboard"; sourceTree = "<group>"; };
+		03DB49772403885E00BB6BCF /* launchScreenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = launchScreenVC.h; sourceTree = "<group>"; };
+		03DB49782403885E00BB6BCF /* launchScreenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = launchScreenVC.m; sourceTree = "<group>"; };
 		03E51D5A23FEA3A100CBA72A /* AlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
 		03E51D5B23FEA3A100CBA72A /* AlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
 		03E51D5D23FEB19100CBA72A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -1114,7 +1119,7 @@
 				0314A5202265CAD5005C80BF /* Service Manager */,
 				03B3525522659D31002C47D9 /* Suppoting files */,
 				0334B8E022941C18000BF326 /* Third-Party Frameworks */,
-				03E51D5D23FEB19100CBA72A /* Launch Screen.storyboard */,
+				03DB49762403883A00BB6BCF /* Launch Screen */,
 			);
 			path = GymTimer;
 			sourceTree = "<group>";
@@ -1259,6 +1264,17 @@
 				03D94B8E22A8E9CF008A054C /* NewOnBoardingViewController.m */,
 			);
 			path = "New OnBoarding";
+			sourceTree = "<group>";
+		};
+		03DB49762403883A00BB6BCF /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				03E51D5D23FEB19100CBA72A /* Launch Screen.storyboard */,
+				03DB4953240387FE00BB6BCF /* Launch Screen Code.storyboard */,
+				03DB49772403885E00BB6BCF /* launchScreenVC.h */,
+				03DB49782403885E00BB6BCF /* launchScreenVC.m */,
+			);
+			path = "Launch Screen";
 			sourceTree = "<group>";
 		};
 		03E51D5923FEA37000CBA72A /* Temp */ = {
@@ -1695,6 +1711,7 @@
 				03CACAC5236A98D100D9B2D8 /* Assets.xcassets in Resources */,
 				03828910226F166400ACA6DB /* CalendarCollectionViewCell.xib in Resources */,
 				0316F46623A0E69D004D47E5 /* DayOfWeekClvCell.xib in Resources */,
+				03DB4954240387FE00BB6BCF /* Launch Screen Code.storyboard in Resources */,
 				03B3524F22659CE1002C47D9 /* Futura.ttc in Resources */,
 				0323C88D23261D7F0028F8F8 /* RequestReceivedCell.xib in Resources */,
 				03B3523F226599AC002C47D9 /* Main.storyboard in Resources */,
@@ -1863,6 +1880,7 @@
 				032C672B232374130087932A /* SearchFriendCell.m in Sources */,
 				0314A5262265CB67005C80BF /* ServiceManager.m in Sources */,
 				0318EFB92355AAA7006B85FB /* MZTimerLabel.m in Sources */,
+				03DB49792403885E00BB6BCF /* launchScreenVC.m in Sources */,
 				0382890F226F166400ACA6DB /* CalendarCollectionViewCell.m in Sources */,
 				0334B92822942126000BF326 /* MCNewCustomLayer.m in Sources */,
 				0316F46523A0E69D004D47E5 /* DayOfWeekClvCell.m in Sources */,

@@ -17,6 +17,7 @@
     Utils *utils;
     WorkoutViewController *workoutVC;
     ServiceManager *serviceManager;
+    UIView *customizedLaunchScreenView;
 }
 
 @end
@@ -35,6 +36,22 @@
     } else {
         
     }
+    
+    // Override point for customization after application launch.
+    application.statusBarHidden = true;
+
+    // customized launch screen
+    customizedLaunchScreenView = [[UIView alloc] initWithFrame: _window.bounds];
+    customizedLaunchScreenView.backgroundColor = [UIColor redColor];
+    [_window makeKeyAndVisible];
+    [_window addSubview: customizedLaunchScreenView];
+    [_window bringSubviewToFront: customizedLaunchScreenView];
+    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self->customizedLaunchScreenView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self->customizedLaunchScreenView removeFromSuperview];
+    }];
+    
     
     _isLoadScreen = true;
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kIsAppInBackGround];
@@ -75,40 +92,40 @@
         }
     }
     
-//    UIViewController *LoadingScreenVC = [storyBoard instantiateViewControllerWithIdentifier: @"LoadingScreenVC"];
-//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: LoadingScreenVC];
-//    [navController setNavigationBarHidden:YES];
-//    [self.window setRootViewController: navController];
-//    [self.window makeKeyAndVisible];
+    UIViewController *LoadingScreenVC = [storyBoard instantiateViewControllerWithIdentifier: @"LoadingScreenVC"];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: LoadingScreenVC];
+    [navController setNavigationBarHidden:YES];
+    [self.window setRootViewController: navController];
+    [self.window makeKeyAndVisible];
     
-    if ([[NSUserDefaults standardUserDefaults] valueForKey: kIS_FIRST_TIME] == nil) {
-
-        //Temp
-        [[NSUserDefaults standardUserDefaults] setValue: @"0" forKey: kIS_FIRST_TIME];
-        [NSUserDefaults.standardUserDefaults setValue:@"YES" forKey:kIS_SEEN_ONBOARDING];
-
-        UIViewController *onboardVC = [storyBoard instantiateViewControllerWithIdentifier: @"NewOnBoardingViewController"];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: onboardVC];
-        [navController setNavigationBarHidden:YES];
-        [self.window setRootViewController: navController];
-        [self.window makeKeyAndVisible];
-
-    } else if ([[NSUserDefaults standardUserDefaults] valueForKey: kIS_USER_LOGGED_IN] == nil) {
-        UIViewController *loginOptionVC = [storyBoard instantiateViewControllerWithIdentifier: @"LoginOptionViewController"];
-//        UIViewController *loginOptionVC = [storyBoard instantiateViewControllerWithIdentifier: @"StatsVC"];
-
-        [loginOptionVC.navigationController setNavigationBarHidden:YES];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: loginOptionVC];
-        [self.window setRootViewController: navController];
-        [self.window makeKeyAndVisible];
-
-    } else {
-
-        UIViewController *homeVC = [storyBoard instantiateViewControllerWithIdentifier: @"HomeScreenViewController"];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: homeVC];
-        [self.window setRootViewController: navController];
-        [self.window makeKeyAndVisible];
-    }
+//    if ([[NSUserDefaults standardUserDefaults] valueForKey: kIS_FIRST_TIME] == nil) {
+//
+//        //Temp
+//        [[NSUserDefaults standardUserDefaults] setValue: @"0" forKey: kIS_FIRST_TIME];
+//        [NSUserDefaults.standardUserDefaults setValue:@"YES" forKey:kIS_SEEN_ONBOARDING];
+//
+//        UIViewController *onboardVC = [storyBoard instantiateViewControllerWithIdentifier: @"NewOnBoardingViewController"];
+//        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: onboardVC];
+//        [navController setNavigationBarHidden:YES];
+//        [self.window setRootViewController: navController];
+//        [self.window makeKeyAndVisible];
+//
+//    } else if ([[NSUserDefaults standardUserDefaults] valueForKey: kIS_USER_LOGGED_IN] == nil) {
+//        UIViewController *loginOptionVC = [storyBoard instantiateViewControllerWithIdentifier: @"LoginOptionViewController"];
+////        UIViewController *loginOptionVC = [storyBoard instantiateViewControllerWithIdentifier: @"StatsVC"];
+//
+//        [loginOptionVC.navigationController setNavigationBarHidden:YES];
+//        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: loginOptionVC];
+//        [self.window setRootViewController: navController];
+//        [self.window makeKeyAndVisible];
+//
+//    } else {
+//
+//        UIViewController *homeVC = [storyBoard instantiateViewControllerWithIdentifier: @"HomeScreenViewController"];
+//        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: homeVC];
+//        [self.window setRootViewController: navController];
+//        [self.window makeKeyAndVisible];
+//    }
     
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
