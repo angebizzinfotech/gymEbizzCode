@@ -174,6 +174,9 @@
     if ([Utils isConnectedToInternet]) {
         selectedItem = @"Month";
         
+        for (UIView* view in self.vwMonth.subviews)
+            [view setHidden: true];
+        
         spinner = [Utils showActivityIndicatorInView: self.vwMonth];
         [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
         spinner.color = [UIColor whiteColor];
@@ -185,6 +188,9 @@
 - (IBAction)yearAction:(UIButton *)sender {
     if ([Utils isConnectedToInternet]) {
         selectedItem = @"Year";
+        
+        for (UIView* view in self.vwYear.subviews)
+            [view setHidden: true];
         
         spinner = [Utils showActivityIndicatorInView: self.vwYear];
         [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
@@ -298,6 +304,14 @@
         [productsRequest start];
         
     } else {
+        
+        for (UIView* view in self.vwMonth.subviews)
+            if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                [view setHidden: false];
+        for (UIView* view in self.vwYear.subviews)
+            if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                [view setHidden: false];
+        
         //Hide Spinner
         [Utils hideActivityIndicator:spinner fromView:self.vwMonth];
         [Utils hideActivityIndicator:spinner fromView:self.vwYear];
@@ -329,6 +343,13 @@
         
         [self purchase:validProduct];
     } else if (!validProduct) {
+        for (UIView* view in self.vwMonth.subviews)
+            if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                [view setHidden: false];
+        for (UIView* view in self.vwYear.subviews)
+            if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                [view setHidden: false];
+        
         //Hide Spinner
         [Utils hideActivityIndicator:spinner fromView:self.vwMonth];
         [Utils hideActivityIndicator:spinner fromView:self.vwYear];
@@ -341,6 +362,13 @@
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
     NSLog(@"Failed to load list of products.");
     NSLog(@"Error: %@",error.localizedDescription);
+    
+    for (UIView* view in self.vwMonth.subviews)
+        if(![view isKindOfClass:[UIActivityIndicatorView class]])
+            [view setHidden: false];
+    for (UIView* view in self.vwYear.subviews)
+        if(![view isKindOfClass:[UIActivityIndicatorView class]])
+            [view setHidden: false];
     
     //Hide Spinner
     [Utils hideActivityIndicator:spinner fromView:self.vwMonth];
@@ -360,6 +388,13 @@
     
     for (SKPaymentTransaction *transaction in queue.transactions) {
         if (transaction.transactionState == SKPaymentTransactionStateRestored) {
+            
+            for (UIView* view in self.vwMonth.subviews)
+                if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                    [view setHidden: false];
+            for (UIView* view in self.vwYear.subviews)
+                if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                    [view setHidden: false];
             
             //Hide Spinner
             [Utils hideActivityIndicator:spinner fromView:self.vwMonth];
@@ -382,6 +417,13 @@
     
     // Check If user is Pro or Free
     if ([Utils isConnectedToInternet]) {
+        for (UIView* view in self.vwMonth.subviews)
+            if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                [view setHidden: false];
+        for (UIView* view in self.vwYear.subviews)
+            if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                [view setHidden: false];
+        
         //Start Spinner
         if ([selectedItem isEqualToString:@"Month"]) {
             spinner = [Utils showActivityIndicatorInView: self.vwMonth];
@@ -406,6 +448,13 @@
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error {
+    for (UIView* view in self.vwMonth.subviews)
+        if(![view isKindOfClass:[UIActivityIndicatorView class]])
+            [view setHidden: false];
+    for (UIView* view in self.vwYear.subviews)
+        if(![view isKindOfClass:[UIActivityIndicatorView class]])
+            [view setHidden: false];
+    
     //Hide Spinner
     [Utils hideActivityIndicator:spinner fromView:self.vwMonth];
     [Utils hideActivityIndicator:spinner fromView:self.vwYear];
@@ -428,6 +477,13 @@
                 break;
                 
             case SKPaymentTransactionStatePurchased:
+                for (UIView* view in self.vwMonth.subviews)
+                    if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                        [view setHidden: false];
+                for (UIView* view in self.vwYear.subviews)
+                    if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                        [view setHidden: false];
+                
                 //Hide Spinner
                 [Utils hideActivityIndicator:spinner fromView:self.vwMonth];
                 [Utils hideActivityIndicator:spinner fromView:self.vwYear];
@@ -443,6 +499,13 @@
                 break;
                 
             case SKPaymentTransactionStateRestored:
+                for (UIView* view in self.vwMonth.subviews)
+                    if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                        [view setHidden: false];
+                for (UIView* view in self.vwYear.subviews)
+                    if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                        [view setHidden: false];
+                
                 //Hide Spinner
                 [Utils hideActivityIndicator:spinner fromView:self.vwMonth];
                 [Utils hideActivityIndicator:spinner fromView:self.vwYear];
@@ -453,6 +516,13 @@
                 break;
                 
             case SKPaymentTransactionStateFailed:
+                for (UIView* view in self.vwMonth.subviews)
+                    if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                        [view setHidden: false];
+                for (UIView* view in self.vwYear.subviews)
+                    if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                        [view setHidden: false];
+                
                 //Hide Spinner
                 [Utils hideActivityIndicator:spinner fromView:self.vwMonth];
                 [Utils hideActivityIndicator:spinner fromView:self.vwYear];
@@ -477,6 +547,13 @@
                 break;
                 
             case SKPaymentTransactionStateDeferred:
+                for (UIView* view in self.vwMonth.subviews)
+                    if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                        [view setHidden: false];
+                for (UIView* view in self.vwYear.subviews)
+                    if(![view isKindOfClass:[UIActivityIndicatorView class]])
+                        [view setHidden: false];
+                
                 //Hide Spinner
                 [Utils hideActivityIndicator:spinner fromView:self.vwMonth];
                 [Utils hideActivityIndicator:spinner fromView:self.vwYear];

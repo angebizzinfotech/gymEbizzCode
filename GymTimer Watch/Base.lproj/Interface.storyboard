@@ -146,7 +146,7 @@
                                                 </group>
                                                 <group width="0.90000000000000002" height="0.80000000000000004" alignment="center" verticalAlignment="bottom" layout="vertical" spacing="0.0" id="LMO-g6-npy">
                                                     <items>
-                                                        <group width="0.80000000000000004" height="0.14000000000000001" alignment="center" layout="vertical" spacing="0.0" id="gZI-k1-dSt">
+                                                        <group width="0.90000000000000002" height="0.17999999999999999" alignment="center" layout="vertical" spacing="0.0" id="gZI-k1-dSt">
                                                             <items>
                                                                 <label alignment="left" verticalAlignment="bottom" text="Total time" textAlignment="left" id="Dwv-zN-XhR">
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,7 +154,7 @@
                                                                 </label>
                                                             </items>
                                                         </group>
-                                                        <group width="0.80000000000000004" height="0.23999999999999999" alignment="center" layout="overlap" id="jc7-yH-BZS">
+                                                        <group width="0.90000000000000002" height="0.23999999999999999" alignment="center" layout="overlap" id="jc7-yH-BZS">
                                                             <items>
                                                                 <label width="1" height="1" alignment="left" text="00:00:00" textAlignment="left" baselineAdjustment="alignCenters" minimumScaleFactor="0.59999999999999998" id="nQj-f3-LFe">
                                                                     <color key="textColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -162,7 +162,7 @@
                                                                 </label>
                                                             </items>
                                                         </group>
-                                                        <group width="0.80000000000000004" height="0.14000000000000001" alignment="center" spacing="0.0" id="nsy-YP-lKQ">
+                                                        <group width="0.90000000000000002" height="0.14000000000000001" alignment="center" spacing="0.0" id="nsy-YP-lKQ">
                                                             <items>
                                                                 <label width="0.5" alignment="left" verticalAlignment="center" text="Exercises" id="FLj-Xd-b2p">
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -174,21 +174,21 @@
                                                                 </label>
                                                             </items>
                                                         </group>
-                                                        <group width="0.80000000000000004" height="0.44" alignment="center" spacing="0.0" id="fmd-N3-Etk">
+                                                        <group width="0.90000000000000002" height="0.44" alignment="center" spacing="0.0" id="fmd-N3-Etk">
                                                             <items>
                                                                 <group width="0.5" height="1" alignment="left" id="71B-Bs-C2o">
                                                                     <items>
-                                                                        <label width="1" height="1" alignment="center" verticalAlignment="center" text="0" textAlignment="center" minimumScaleFactor="0.5" id="s8T-1h-nMa">
+                                                                        <label alignment="left" verticalAlignment="center" text="0" textAlignment="left" minimumScaleFactor="0.5" id="s8T-1h-nMa">
                                                                             <color key="textColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <fontDescription key="font" type="system" pointSize="55"/>
                                                                         </label>
                                                                     </items>
                                                                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="8"/>
                                                                 </group>
-                                                                <group width="0.5" height="1" alignment="left" layout="overlap" id="6yo-IF-W6k">
+                                                                <group width="0.5" height="0.90000000000000002" alignment="left" layout="overlap" id="6yo-IF-W6k">
                                                                     <items>
                                                                         <imageView width="1" height="1" alignment="left" image="Progress100" contentMode="scaleAspectFill" id="vZf-yx-zSR"/>
-                                                                        <group width="0.69999999999999996" alignment="center" verticalAlignment="center" layout="vertical" id="xw2-QG-RZf">
+                                                                        <group width="0.69999999999999996" alignment="center" layout="vertical" id="xw2-QG-RZf">
                                                                             <items>
                                                                                 <label alignment="center" verticalAlignment="center" text="0 " minimumScaleFactor="0.5" id="GPe-KX-ed5">
                                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -314,11 +314,24 @@
                                         </group>
                                         <group width="0.80000000000000004" height="0.46999999999999997" alignment="center" layout="vertical" radius="16" spacing="0.0" id="gn5-2a-bpl">
                                             <items>
-                                                <group width="1" height="0.69999999999999996" alignment="left" spacing="0.0" id="GbF-Ze-VbY">
+                                                <group width="1" height="0.69999999999999996" alignment="left" layout="overlap" spacing="0.0" id="GbF-Ze-VbY">
                                                     <items>
-                                                        <label width="0.90000000000000002" height="0.84999999999999998" alignment="center" verticalAlignment="bottom" text="00:00:00" textAlignment="center" minimumScaleFactor="0.5" id="b7I-dj-B2C">
+                                                        <label width="0.90000000000000002" height="0.84999999999999998" alignment="center" verticalAlignment="bottom" hidden="YES" text="00:00:00" textAlignment="center" minimumScaleFactor="0.5" id="b7I-dj-B2C">
                                                             <fontDescription key="font" type="system" pointSize="40"/>
                                                         </label>
+                                                        <group width="1" height="0.84999999999999998" alignment="center" verticalAlignment="bottom" spacing="0.0" id="iC9-Aj-CEn">
+                                                            <items>
+                                                                <label width="0.45000000000000001" alignment="left" verticalAlignment="bottom" text="00" textAlignment="right" minimumScaleFactor="0.5" id="gec-EO-Rtq">
+                                                                    <fontDescription key="font" type="system" pointSize="40"/>
+                                                                </label>
+                                                                <label width="0.10000000000000001" alignment="center" verticalAlignment="bottom" text=":" textAlignment="center" id="UvC-1Q-CeQ">
+                                                                    <fontDescription key="font" type="system" pointSize="40"/>
+                                                                </label>
+                                                                <label width="0.45000000000000001" alignment="right" verticalAlignment="bottom" text="00" textAlignment="left" minimumScaleFactor="0.5" id="tWK-as-nVw">
+                                                                    <fontDescription key="font" type="system" pointSize="40"/>
+                                                                </label>
+                                                            </items>
+                                                        </group>
                                                     </items>
                                                 </group>
                                                 <group width="1" height="0.20000000000000001" alignment="left" spacing="0.0" id="lJM-wQ-krK">
@@ -343,6 +356,9 @@
                         <outlet property="lblExercise" destination="ffe-X4-VrY" id="HCK-2L-9vX"/>
                         <outlet property="lblExerciseTitle" destination="ocb-TJ-CnD" id="etN-zo-XWT"/>
                         <outlet property="lblTotalTime" destination="b7I-dj-B2C" id="pXc-DE-Dq6"/>
+                        <outlet property="lblTotalTimeDot" destination="UvC-1Q-CeQ" id="iAa-0K-bOa"/>
+                        <outlet property="lblTotalTimeMin" destination="gec-EO-Rtq" id="voA-7Q-3C7"/>
+                        <outlet property="lblTotalTimeSec" destination="tWK-as-nVw" id="zZN-vF-twu"/>
                         <outlet property="lblTotalTimeTitle" destination="nwM-1V-CrF" id="Gcm-H5-oZB"/>
                         <outlet property="totalTimeGroup" destination="gn5-2a-bpl" id="ap2-FQ-ee5"/>
                     </connections>
@@ -397,9 +413,9 @@
                                     <items>
                                         <group width="0.83999999999999997" height="0.90000000000000002" alignment="center" layout="vertical" radius="16" spacing="0.0" id="Rfl-qd-iui">
                                             <items>
-                                                <group width="1" height="0.81999999999999995" alignment="center" verticalAlignment="bottom" layout="vertical" spacing="0.0" id="oxJ-YD-3dI">
+                                                <group width="1" height="0.81999999999999995" heightAdjustment="-5" alignment="center" verticalAlignment="center" layout="vertical" spacing="0.0" id="oxJ-YD-3dI">
                                                     <items>
-                                                        <group width="1" height="0.46000000000000002" alignment="left" verticalAlignment="bottom" layout="overlap" spacing="0.0" id="yJG-24-K7Y">
+                                                        <group width="1" height="0.46000000000000002" alignment="left" verticalAlignment="center" layout="overlap" spacing="0.0" id="yJG-24-K7Y">
                                                             <items>
                                                                 <group width="0.69999999999999996" height="1" alignment="center" layout="vertical" id="o8q-vV-5fB">
                                                                     <items>
@@ -408,9 +424,9 @@
                                                                         </label>
                                                                     </items>
                                                                 </group>
-                                                                <group width="0.17000000000000001" alignment="right" verticalAlignment="center" layout="vertical" id="5lF-zL-IAf">
+                                                                <group width="0.20000000000000001" height="1" alignment="right" verticalAlignment="center" layout="vertical" id="5lF-zL-IAf">
                                                                     <items>
-                                                                        <label alignment="left" verticalAlignment="center" text="min" id="E43-lW-EQn">
+                                                                        <label height="0.84999999999999998" alignment="left" text="min" id="E43-lW-EQn">
                                                                             <color key="textColor" red="0.52156862745098043" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <fontDescription key="font" type="system" pointSize="10"/>
                                                                         </label>
@@ -418,7 +434,7 @@
                                                                 </group>
                                                             </items>
                                                         </group>
-                                                        <group width="1" height="0.44" alignment="left" verticalAlignment="bottom" layout="overlap" spacing="0.0" id="w4h-xn-Lpo">
+                                                        <group width="1" height="0.44" alignment="left" verticalAlignment="center" layout="overlap" spacing="0.0" id="w4h-xn-Lpo">
                                                             <items>
                                                                 <group width="0.69999999999999996" alignment="center" layout="vertical" id="IGi-ct-jAU">
                                                                     <items>
@@ -427,9 +443,9 @@
                                                                         </label>
                                                                     </items>
                                                                 </group>
-                                                                <group width="0.17000000000000001" alignment="right" verticalAlignment="center" layout="vertical" id="N51-Zm-Ly3">
+                                                                <group width="0.20000000000000001" height="1" alignment="right" verticalAlignment="center" layout="vertical" id="N51-Zm-Ly3">
                                                                     <items>
-                                                                        <label alignment="left" verticalAlignment="center" text="sec" id="5Bh-Yi-Z6b">
+                                                                        <label height="0.84999999999999998" alignment="left" text="sec" id="5Bh-Yi-Z6b">
                                                                             <color key="textColor" red="0.52156862745098043" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <fontDescription key="font" type="system" pointSize="10"/>
                                                                         </label>
@@ -452,12 +468,12 @@
                                         </group>
                                         <group width="1" height="0.34999999999999998" alignment="left" verticalAlignment="bottom" spacing="0.0" id="4kg-oj-XaP">
                                             <items>
-                                                <group width="0.34999999999999998" height="1" alignment="left" layout="vertical" spacing="0.0" id="LtF-aa-ilU">
+                                                <group width="0.34999999999999998" height="1" alignment="left" verticalAlignment="bottom" layout="vertical" spacing="0.0" id="LtF-aa-ilU">
                                                     <items>
                                                         <imageView width="1" height="1" alignment="left" image="RestCharacter" contentMode="scaleAspectFill" id="Y2x-5t-OHY"/>
                                                     </items>
                                                 </group>
-                                                <group width="0.34999999999999998" height="1" alignment="right" backgroundImage="WhiteCircle" contentMode="scaleAspectFill" spacing="0.0" id="Gc7-48-213">
+                                                <group width="0.34999999999999998" height="1" alignment="right" verticalAlignment="center" backgroundImage="WhiteCircle" contentMode="scaleAspectFill" spacing="0.0" id="Gc7-48-213">
                                                     <items>
                                                         <label alignment="center" verticalAlignment="center" text="0" textAlignment="center" id="sc6-Cr-MaT">
                                                             <color key="textColor" red="0.90196078430000004" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
@@ -644,7 +660,7 @@
         <image name="GrayCircle" width="61" height="61"/>
         <image name="HomeBG" width="173.5" height="217"/>
         <image name="HomeCharacters" width="348" height="66"/>
-        <image name="HomeTutorial" width="520" height="650"/>
+        <image name="HomeTutorial" width="173.5" height="217"/>
         <image name="Progress100" width="59" height="59"/>
         <image name="RestCharacter" width="62" height="62"/>
         <image name="RightArrow" width="15" height="25.5"/>
@@ -652,5 +668,5 @@
         <image name="Sound_On" width="23.5" height="20"/>
         <image name="WhiteCircle" width="62" height="62"/>
     </resources>
-    <color key="tintColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
 </document>

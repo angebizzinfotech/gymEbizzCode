@@ -13,6 +13,8 @@
     NSTimer *exerciseTimer;
     NSTimer *restTimer;
     
+    NSDate *pauseTimer;
+    
     int exerciseTime;
     int restTime;
     
@@ -31,11 +33,39 @@
 - (id)init {
   if (self = [super init]) {
   }
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resumeTimer) name:@"ResumeTimer" object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pauseTimer) name:@"PauseTimer" object:nil];
+    
+//  [[WKInterfaceDevice currentDevice] playHaptic: WKHapticTypeStop];
   return self;
 }
 
-// MARK:- Exercise Timer
+// MARK:- ResumeTimer and PauseTimer
+- (void)resumeTimer {
+    NSLog(@"Resume");
+    if(pauseTimer != nil)
+    {
+        NSTimeInterval secondsBetween = [[NSDate date] timeIntervalSinceDate: pauseTimer];
+        int numberOfDays = secondsBetween;
+        
+        if(exerciseTimer != nil)
+        {
+            exerciseTime += numberOfDays; // +
+        }
+        if(restTimer != nil)
+        {
+            restTime -= numberOfDays; // -
+        }
+        pauseTimer = nil;
+    }
+}
+- (void)pauseTimer {
+    NSLog(@"Pause");
+    
+    pauseTimer = [NSDate date];
+}
 
+// MARK:- Exercise Timer
 - (void)startExerciseTimer {
     [self stopExerciseTimer];
     exerciseTime = 0;

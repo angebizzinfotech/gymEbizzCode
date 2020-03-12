@@ -23,11 +23,11 @@
     [super awakeWithContext:context];
     
 //    [self.mainGrp setRelativeWidth:1 withAdjustment:0];
-    [self.mainGrp setRelativeHeight:0 withAdjustment:0];
-    [self animateWithDuration:0.5 animations:^{
-//        [self.mainGrp setRelativeWidth:1 withAdjustment:0];
-        [self.mainGrp setRelativeHeight:1 withAdjustment:0];
-    }];
+//    [self.mainGrp setRelativeHeight:0 withAdjustment:0];
+//    [self animateWithDuration:0.5 animations:^{
+////        [self.mainGrp setRelativeWidth:1 withAdjustment:0];
+//        [self.mainGrp setRelativeHeight:1 withAdjustment:0];
+//    }];
     
     // Configure interface objects here.
     [self.groupActivity setHidden:YES];

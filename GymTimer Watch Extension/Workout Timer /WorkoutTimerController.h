@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *lblExercise;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *lblExerciseTitle;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *lblTotalTime;
+// Vsn - 27/02/2020
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *lblTotalTimeMin;
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *lblTotalTimeDot;
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *lblTotalTimeSec;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *lblTotalTimeTitle;
 @property (strong, nonatomic) IBOutlet WKInterfaceGroup *exerciseGroup;
 @property (strong, nonatomic) IBOutlet WKInterfaceGroup *totalTimeGroup;

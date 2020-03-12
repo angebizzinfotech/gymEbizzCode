@@ -73,6 +73,7 @@
                     [[self.bgImage layer] setShadowPath: [workoutViewShadowPath CGPath]];
                 } completion:^(BOOL finished) {
                     [UIView animateWithDuration: self->timeInterval/4 animations:^{
+                        [self.bgImage setContentMode: UIViewContentModeScaleToFill];
                         [self.vwImgBackgound setFrame: CGRectMake(18.0, (lblView.frame.origin.y + lblView.frame.size.height + 24.0), (contentViewWidth - 36.0), (contentViewHeight - (gymtimerY + gymtimerHeight + tabbarHeight + 90.0)))];
                         UIBezierPath *workoutViewShadowPath = [UIBezierPath bezierPathWithRect: self.bgImage.frame];
                         [[self.bgImage layer] setShadowPath: [workoutViewShadowPath CGPath]];
@@ -117,6 +118,7 @@
                     [[self.bgImage layer] setShadowPath: [workoutViewShadowPath CGPath]];
                 } completion:^(BOOL finished) {
                     [UIView animateWithDuration: self->timeInterval/4 animations:^{
+                        [self.bgImage setContentMode: UIViewContentModeScaleToFill];
                         [self.vwImgBackgound setFrame: CGRectMake(18.0, (lblView.frame.origin.y + lblView.frame.size.height + 24.0), (contentViewWidth - 36.0), (contentViewHeight - (gymtimerY + gymtimerHeight + tabbarHeight + 90.0)))];
                         UIBezierPath *workoutViewShadowPath = [UIBezierPath bezierPathWithRect: self.bgImage.frame];
                         [[self.bgImage layer] setShadowPath: [workoutViewShadowPath CGPath]];
@@ -163,6 +165,7 @@
                     [[self.bgImage layer] setShadowPath: [workoutViewShadowPath CGPath]];
                 } completion:^(BOOL finished) {
                     [UIView animateWithDuration: self->timeInterval/4 animations:^{
+                        [self.bgImage setContentMode: UIViewContentModeScaleToFill];
                         [self.vwImgBackgound setFrame: CGRectMake(35.0, (lblView.frame.origin.y + lblView.frame.size.height + 24.0), (contentViewWidth - 70.0), (contentViewHeight - (gymtimerY + gymtimerHeight + tabbarHeight + 50.0)))];
                         UIBezierPath *workoutViewShadowPath = [UIBezierPath bezierPathWithRect: self.bgImage.frame];
                         [[self.bgImage layer] setShadowPath: [workoutViewShadowPath CGPath]];
@@ -207,6 +210,7 @@
                     [[self.bgImage layer] setShadowPath: [workoutViewShadowPath CGPath]];
                 } completion:^(BOOL finished) {
                     [UIView animateWithDuration: self->timeInterval/4 animations:^{
+                        [self.bgImage setContentMode: UIViewContentModeScaleToFill];
                         [self.vwImgBackgound setFrame: CGRectMake(30.0, (lblView.frame.origin.y + lblView.frame.size.height + 10.0), (contentViewWidth - 66.0), (contentViewHeight - (gymtimerY + gymtimerHeight + tabbarHeight + 50.0)))];
                         UIBezierPath *workoutViewShadowPath = [UIBezierPath bezierPathWithRect: self.bgImage.frame];
                         [[self.bgImage layer] setShadowPath: [workoutViewShadowPath CGPath]];
@@ -252,6 +256,7 @@
                     [[self.bgImage layer] setShadowPath: [workoutViewShadowPath CGPath]];
                 } completion:^(BOOL finished) {
                     [UIView animateWithDuration: self->timeInterval/4 animations:^{
+                        [self.bgImage setContentMode: UIViewContentModeScaleToFill];
                         [self.vwImgBackgound setFrame: CGRectMake(18.0, (lblView.frame.origin.y + lblView.frame.size.height), (contentViewWidth - 36.0), (contentViewHeight - (gymtimerY + gymtimerHeight + tabbarHeight + 60.0)))];
                         UIBezierPath *workoutViewShadowPath = [UIBezierPath bezierPathWithRect: self.bgImage.frame];
                         [[self.bgImage layer] setShadowPath: [workoutViewShadowPath CGPath]];

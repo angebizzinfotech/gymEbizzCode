@@ -165,7 +165,7 @@
         [self.tabBarController.tabBar setHidden: true];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
-            self.viewWorkoutContentView.clipsToBounds = true;
+//            self.viewWorkoutContentView.clipsToBounds = true;
             // Slide left - Welcome back and home contents
             CGPoint viewWorkoutContentViewSubViewCenterPoint = self->_viewWorkoutContentViewSubView.center;
             [self->_viewWorkoutContentViewSubView setHidden: false];
@@ -190,7 +190,7 @@
                 [self.tabBarController.tabBar setCenter:tabBarControllerCenterPoint];
             }];
             ((AppDelegate *)[[UIApplication sharedApplication] delegate]).isLoadScreen = false;
-            self.viewWorkoutContentView.clipsToBounds = true;
+//            self.viewWorkoutContentView.clipsToBounds = true;
         });
     }
 }
@@ -1925,12 +1925,12 @@
         CGFloat contentViewHeight = _contentViewWorkoutScreen.frame.size.height;
         
         //GymTimer label
-        [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, -8.0, (_contentViewWorkoutScreen.frame.size.width), 95.0)];
+        [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, -4.0, (_contentViewWorkoutScreen.frame.size.width), 95.0)];
         UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 64.7];
         [_lblGymTimerTitleLabel setFont: fontGymTimer];
         
         // Vsn - 11/02/2020
-        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 174.0, 35.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 174.0, 39.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 146.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
 //        [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
@@ -1946,6 +1946,9 @@
         [_viewWorkoutContentView setFrame: CGRectMake(18.0, (_lblGymTimerTitleLabel.frame.origin.y + _lblGymTimerTitleLabel.frame.size.height + 24.0), (contentViewWidth - 36.0), (contentViewHeight - (gymtimerY + gymtimerHeight + tabbarHeight + 90.0)))];
         // Vsn - 19/02/2020
         [_viewWorkoutContentViewSubView setFrame: CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
+        // Vsn - 25/02/2020
+        [_vwImgWelcomeBack setFrame: CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
+        [_vwWorkoutContentParent setFrame:CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
         [_imgHomeBottomGym setFrame: CGRectMake(-21.0, -19.0, _viewWorkoutContentView.frame.size.width + 42.0, _viewWorkoutContentView.frame.size.height + 45.0)];
         
         //Choose default rest time label
@@ -2121,7 +2124,7 @@
         [_lblDoSetNumberCountLabel setFont: fontDoSetCount];
         [self adjustFontOfDoSetCountLabel];
         
-        [_lblDoSetNumberLabel setFrame: CGRectMake(0.0, (doSetNumberViewHeight - 93.0), (setAndRestBgWidth - _lblDoSetNumberCountLabel.frame.size.width - 10.5), 123.0)];
+        [_lblDoSetNumberLabel setFrame: CGRectMake(-10.0, (doSetNumberViewHeight - 93.0), (setAndRestBgWidth - _lblDoSetNumberCountLabel.frame.size.width - 10.5), 123.0)];
         UIFont *fontDoSetLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 40.0];
         [_lblDoSetNumberLabel setFont: fontDoSetLabel];
         
@@ -2193,8 +2196,8 @@
         CGFloat progressBarWidth = _progressBarSetScreenView.frame.size.width;
         
         // Vsn - 05/02/2020
-        CGFloat greenDumbellsImageWidth = 137.0;
-        CGFloat greenDumbellsImageHeight = 179.0;
+        CGFloat greenDumbellsImageWidth = 114.95; // 104.5*1.1
+        CGFloat greenDumbellsImageHeight = 176.66; // 160.6*1.1
         CGFloat redDumbellsImageWidth = 210.0;
         CGFloat redDumbellsImageHeight = 202.0;
 
@@ -2213,7 +2216,7 @@
         [self.imgSetScreenDumbellsImage setFrame:CGRectMake(47.5, 20, greenDumbellsImageWidth, greenDumbellsImageHeight)];
 
         // Vsn - 05/02/2020
-        self.imgSetScreenDumbellsImage.center = CGPointMake(self.viewSetAndRestScreenProgressBackgroundView.bounds.size.width  / 2, 165.0);
+        self.imgSetScreenDumbellsImage.center = CGPointMake(self.viewSetAndRestScreenProgressBackgroundView.bounds.size.width  / 2, greenDumbellsImageHeight - 17.0);
 //        self.imgSetScreenDumbellsImage.center = CGPointMake(self.viewSetAndRestScreenProgressBackgroundView.bounds.size.width  / 2, 140.0);
 
         // Next Exercise Progress Ring
@@ -2438,12 +2441,12 @@
         CGFloat contentViewHeight = _contentViewWorkoutScreen.frame.size.height;
         
         //GymTimer label
-        [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, -15.0, (_contentViewWorkoutScreen.frame.size.width), 102.0)];
+        [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, -11.0, (_contentViewWorkoutScreen.frame.size.width), 102.0)];
         UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 64.7];
         [_lblGymTimerTitleLabel setFont: fontGymTimer];
         
         // Vsn - 11/02/2020
-        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 154.0, 32.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 154.0, 36.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //        [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 121.0, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //        [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3.4 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
 //        [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
@@ -2458,6 +2461,9 @@
         [_viewWorkoutContentView setFrame: CGRectMake(18.0, (_lblGymTimerTitleLabel.frame.origin.y + _lblGymTimerTitleLabel.frame.size.height + 24.0), (contentViewWidth - 36.0), (contentViewHeight - (gymtimerY + gymtimerHeight + tabbarHeight + 90.0)))];
         // Vsn - 19/02/2020
         [_viewWorkoutContentViewSubView setFrame: CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
+        // Vsn - 25/02/2020
+        [_vwImgWelcomeBack setFrame: CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
+        [_vwWorkoutContentParent setFrame:CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
         // Vsn - 05/02/2020
         [_imgHomeBottomGym setFrame: CGRectMake(-21.0, -19.0, _viewWorkoutContentView.frame.size.width + 42.0, _viewWorkoutContentView.frame.size.height + 45.0)];
         
@@ -2939,12 +2945,12 @@
             CGFloat contentViewHeight = _contentViewWorkoutScreen.frame.size.height;
             
             //GymTimer label
-            [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, -28.0, (_contentViewWorkoutScreen.frame.size.width), 115.0)];
+            [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, -24.0, (_contentViewWorkoutScreen.frame.size.width), 115.0)];
             UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 64.7];
             [_lblGymTimerTitleLabel setFont: fontGymTimer];
 
             // Vsn - 11/02/2020
-            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 173.0, 24.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 173.0, 28.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 140.1, 40.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@3.45 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
@@ -2960,6 +2966,9 @@
             [_viewWorkoutContentView setFrame: CGRectMake(35.0, (_lblGymTimerTitleLabel.frame.origin.y + _lblGymTimerTitleLabel.frame.size.height + 24.0), (contentViewWidth - 70.0), (contentViewHeight - (gymtimerY + gymtimerHeight + tabbarHeight + 50.0)))];
             // Vsn - 19/02/2020
             [_viewWorkoutContentViewSubView setFrame: CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
+            // Vsn - 25/02/2020
+            [_vwImgWelcomeBack setFrame: CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
+            [_vwWorkoutContentParent setFrame:CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
             [_imgHomeBottomGym setFrame: CGRectMake(-21.0, -19.0, _viewWorkoutContentView.frame.size.width + 42.0, _viewWorkoutContentView.frame.size.height + 45.0)];
             
             //Choose default rest time label
@@ -3105,14 +3114,18 @@
             [_lblGymTimerSetScreenLabel setFont: fontGymTimerLabel];
             
             //Set and rest background view
-            CGFloat setAndRestBgViewY = (_lblGymTimerSetScreenLabel.frame.origin.y + _lblGymTimerSetScreenLabel.frame.size.height + 32.0);
-            [_viewSetAndRestBackgroundView setFrame: CGRectMake(18.0, setAndRestBgViewY, (_contentViewSetAndRestScreen.frame.size.width - 36.0), 502.0)];
+            CGFloat setAndRestBgViewY = (_lblGymTimerSetScreenLabel.frame.origin.y + _lblGymTimerSetScreenLabel.frame.size.height + 16.0);
+            // Vsn - 12/03/2020
+//            [_viewSetAndRestBackgroundView setFrame: CGRectMake(18.0, setAndRestBgViewY, (_contentViewSetAndRestScreen.frame.size.width - 36.0), 502.0)];
+            [_viewSetAndRestBackgroundView setFrame: CGRectMake(24.0, setAndRestBgViewY, (_contentViewSetAndRestScreen.frame.size.width - 48.0), 478.0)];
             [[_viewSetAndRestBackgroundView layer] setCornerRadius: 30.0];
             
             //Progress bar background view
             CGFloat setAndRestProgressBarBgViewY = (_viewSetAndRestBackgroundView.frame.size.height - _viewSetAndRestBackgroundView.frame.size.width + 9.0);
             CGFloat setAndRestBgWidth = _viewSetAndRestBackgroundView.frame.size.width;
-            [_viewSetAndRestScreenProgressBackgroundView setFrame: CGRectMake(0.0, setAndRestProgressBarBgViewY, setAndRestBgWidth, setAndRestBgWidth - 9.0)];
+            // Vsn - 12/03/2020
+//            [_viewSetAndRestScreenProgressBackgroundView setFrame: CGRectMake(0.0, setAndRestProgressBarBgViewY, setAndRestBgWidth, setAndRestBgWidth - 9.0)];
+            [_viewSetAndRestScreenProgressBackgroundView setFrame: CGRectMake(0.0, setAndRestProgressBarBgViewY + 18.0, setAndRestBgWidth, setAndRestBgWidth - 27.0)];
             [[_viewSetAndRestScreenProgressBackgroundView layer] setCornerRadius: 30.0];
             
             // Warm up view
@@ -3129,7 +3142,7 @@
             [_lblDoSetNumberCountLabel setFont: fontDoSetCount];
             [self adjustFontOfDoSetCountLabel];
             
-            [_lblDoSetNumberLabel setFrame: CGRectMake(0.0, (doSetNumberViewHeight - 123.0), (setAndRestBgWidth - _lblDoSetNumberCountLabel.frame.size.width - 10.5), 123.0)];
+            [_lblDoSetNumberLabel setFrame: CGRectMake(-10.0, (doSetNumberViewHeight - 123.0), (setAndRestBgWidth - _lblDoSetNumberCountLabel.frame.size.width - 10.5), 123.0)];
             UIFont *fontDoSetLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 40.0];
             [_lblDoSetNumberLabel setFont: fontDoSetLabel];
             
@@ -3141,9 +3154,11 @@
             [_lblRestTimerSecondsLabel setFrame: CGRectMake((_lblRestTimerColonLabel.frame.origin.x + _lblRestTimerColonLabel.frame.size.width), 0.0, restTimerMinSecWidth, doSetNumberViewHeight)];
             
             [self.vwLastExercise setFrame:CGRectMake(0.0, 0.0, setAndRestBgWidth, doSetNumberViewHeight)];
-            [self.lblTimeSinceTitle setFrame:CGRectMake(20.0, 20.0, self.vwLastExercise.frame.size.width - 40.0, 29.0)];
-            [self.lblTimeSince setFrame:CGRectMake(20.0, (self.lblTimeSinceTitle.frame.origin.y + self.lblTimeSinceTitle.frame.size.height) - 8 , self.vwLastExercise.frame.size.width - 40.0, 116.0)];
-            
+            [self.lblTimeSinceTitle setFrame:CGRectMake(20.0, 15.0, self.vwLastExercise.frame.size.width - 40.0, 29.0)];
+            [self.lblTimeSince setFrame:CGRectMake(20.0, (self.lblTimeSinceTitle.frame.origin.y + self.lblTimeSinceTitle.frame.size.height) - 16 , self.vwLastExercise.frame.size.width - 40.0, 116.0)];
+            UIFont *fontTimeSinceLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 80.0];
+            [self.lblTimeSince setFont: fontTimeSinceLabel];
+
             //[_lblRestTimeLabel setFrame: CGRectMake(0.0, 15.0, setAndRestBgWidth, (doSetNumberViewHeight - 15.0))];
             UIFont *fontRestTimeLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 110.0];
             [_lblRestTimerMinutesLabel setFont: fontRestTimeLabel];
@@ -3179,11 +3194,12 @@
             
             //Minutes format
             CGFloat minuteFormatCountWidth = 40.0;
-            UIFont *fontLastExerciseMinuteFormat = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 24.5];
+            // Vsn - 11/03/2020
+            UIFont *fontLastExerciseMinuteFormat = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 23.0]; //24.5
             
             [_viewLastExerciseMinuteFormat setFrame: CGRectMake(-10.0, 18.0, (_viewLastExerciseTimeContentView.frame.size.width), (_viewLastExerciseTimeContentView.frame.size.height - (_lblSinceLastExerciseLabel.frame.origin.y + _lblSinceLastExerciseLabel.frame.size.height)))];
             
-            [_lblLastExerciseSecondMinLabel setFrame: CGRectMake(0.0, 0.0, minuteFormatCountWidth, (_viewLastExerciseMinuteFormat.frame.size.height))];
+            [_lblLastExerciseSecondMinLabel setFrame: CGRectMake(0.0, 1.0, minuteFormatCountWidth, (_viewLastExerciseMinuteFormat.frame.size.height))];
             [_lblLastExerciseSecondColonLabel setFrame: CGRectMake((_lblLastExerciseSecondMinLabel.frame.origin.x + _lblLastExerciseSecondMinLabel.frame.size.width), 0.0, lastExerciseColonWidth, (_viewLastExerciseMinuteFormat.frame.size.height))];
             [_lblLastExerciseSecondSecLabel setFrame: CGRectMake((_lblLastExerciseSecondColonLabel.frame.origin.x + _lblLastExerciseSecondColonLabel.frame.size.width), 0.0, minuteFormatCountWidth, (_viewLastExerciseMinuteFormat.frame.size.height))];
             [_lblLastExerciseSecondMinLabel setFont: fontLastExerciseMinuteFormat];
@@ -3193,20 +3209,27 @@
             
             //Progress bar view and dumbells image
             [self setupProgressBar];
-            [_progressBarSetScreenView setFrame: CGRectMake(47.5, 47.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
-            [_progressBarRestScreenView setFrame: CGRectMake(47.5, 47.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
-            [_progressBarRestBackgroungView setFrame: CGRectMake(47.5, 47.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
-            [_vwRestScreenDumbellsBackgroundImage setFrame: CGRectMake(47.5, 47.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
+            // Vsn - 12/03/2020
+//            [_progressBarSetScreenView setFrame: CGRectMake(47.5, 47.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
+//            [_progressBarRestScreenView setFrame: CGRectMake(47.5, 47.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
+//            [_progressBarRestBackgroungView setFrame: CGRectMake(47.5, 47.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
+//            [_vwRestScreenDumbellsBackgroundImage setFrame: CGRectMake(47.5, 47.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
+            
+            [_progressBarSetScreenView setFrame: CGRectMake(47.5, 42.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
+            [_progressBarRestScreenView setFrame: CGRectMake(47.5, 42.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
+            [_progressBarRestBackgroungView setFrame: CGRectMake(47.5, 42.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
+            [_vwRestScreenDumbellsBackgroundImage setFrame: CGRectMake(47.5, 42.5, (viewProgressBarWidth - 95.0), (viewProgressBarHeight - 95.0))];
+            
             CGFloat progressBarHeight = _progressBarSetScreenView.frame.size.height;
             CGFloat progressBarWidth = _progressBarSetScreenView.frame.size.width;
             
             // Vsn - 05/02/2020
-            CGFloat greenDumbellsImageWidth = 137.0;
-            CGFloat greenDumbellsImageHeight = 179.0;
-            CGFloat redDumbellsImageWidth = 210.0;
+            CGFloat greenDumbellsImageWidth = 109.25; // *1.15
+            CGFloat greenDumbellsImageHeight = 167.9; // *1.15
+            CGFloat redDumbellsImageWidth = 205.0;
             CGFloat redDumbellsImageHeight = 202.0;
 
-            [self.imgRestScreenDumbellsImage setFrame: CGRectMake(((progressBarWidth - redDumbellsImageWidth) / 2.0), ((progressBarHeight - redDumbellsImageHeight) / 2.0) + 23.0, redDumbellsImageWidth, redDumbellsImageHeight)];
+            [self.imgRestScreenDumbellsImage setFrame: CGRectMake(((progressBarWidth - redDumbellsImageWidth) / 2.0), ((progressBarHeight - redDumbellsImageHeight) / 2.0) + 5.0, redDumbellsImageWidth, redDumbellsImageHeight)];
             [self.imgRestScreenDumbellsBackgroundImage setFrame: self.imgRestScreenDumbellsImage.frame];
             
 //            CGFloat greenDumbellsImageWidth = 78.0;
@@ -3221,7 +3244,7 @@
             [self.imgSetScreenDumbellsImage setFrame:CGRectMake(47.5, 20, greenDumbellsImageWidth, greenDumbellsImageHeight)];
             
             // Vsn - 05/02/2020
-            self.imgSetScreenDumbellsImage.center = CGPointMake(self.viewSetAndRestScreenProgressBackgroundView.bounds.size.width  / 2, 165.0);
+            self.imgSetScreenDumbellsImage.center = CGPointMake(self.viewSetAndRestScreenProgressBackgroundView.bounds.size.width  / 2, greenDumbellsImageHeight - 26.0);
 //            self.imgSetScreenDumbellsImage.center = CGPointMake(self.viewSetAndRestScreenProgressBackgroundView.bounds.size.width  / 2, 140.0);
 
             // Next Exercise Progress Ring
@@ -3250,15 +3273,24 @@
             UIFont *fontNextSetLabel = [UIFont fontWithName: fFUTURA_MEDIUM size: 18.0];
             [_lblNextSetLabel setFont: fontNextSetLabel];
             
-            [_viewExerciseAndTotalTimeBackgroundView setFrame: CGRectMake(0.0, (_viewSetAndRestBackgroundView.frame.origin.y + _viewSetAndRestBackgroundView.frame.size.height + 25.0), (_contentViewSetAndRestScreen.frame.size.width), 100.0)];
-            [_viewExerciseContentView setFrame: CGRectMake(18.0, 0.0, (_viewExerciseAndTotalTimeBackgroundView.frame.size.width - 54.0) / 2.0, 100.0)];
+            // Vsn - 12/03/2020
+            [_viewExerciseAndTotalTimeBackgroundView setFrame: CGRectMake(0.0, (_viewSetAndRestBackgroundView.frame.origin.y + _viewSetAndRestBackgroundView.frame.size.height + 15.0), (_contentViewSetAndRestScreen.frame.size.width), 90.0)];
+            [_viewExerciseContentView setFrame: CGRectMake(18.0, 0.0, (_viewExerciseAndTotalTimeBackgroundView.frame.size.width - 54.0) / 2.0, 90.0)];
+            [_viewTotalTimeContentView setFrame: CGRectMake((_viewExerciseContentView.frame.origin.x + _viewExerciseContentView.frame.size.width + 18.0), 0.0, (_viewExerciseAndTotalTimeBackgroundView.frame.size.width - 54.0) / 2.0, 90.0)];
+//            [_viewExerciseAndTotalTimeBackgroundView setFrame: CGRectMake(0.0, (_viewSetAndRestBackgroundView.frame.origin.y + _viewSetAndRestBackgroundView.frame.size.height + 25.0), (_contentViewSetAndRestScreen.frame.size.width), 100.0)];
+//            [_viewExerciseContentView setFrame: CGRectMake(18.0, 0.0, (_viewExerciseAndTotalTimeBackgroundView.frame.size.width - 54.0) / 2.0, 100.0)];
+//            [_viewTotalTimeContentView setFrame: CGRectMake((_viewExerciseContentView.frame.origin.x + _viewExerciseContentView.frame.size.width + 18.0), 0.0, (_viewExerciseAndTotalTimeBackgroundView.frame.size.width - 54.0) / 2.0, 100.0)];
+            
             [_lblExerciseCountLabel setFrame: CGRectMake(0.0, 15.0, (_viewExerciseContentView.frame.size.width), 50.0)];
+            [_lblExerciseCountLabel setCenter: CGPointMake(_lblExerciseCountLabel.center.x, _viewTotalTimeContentView.frame.size.height / 2 - 10.0)];
+
             UIFont *fontExerciseCount = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 40.0];
             [_lblExerciseCountLabel setFont: fontExerciseCount];
             [_lblExerciseLabel setFrame: CGRectMake(0.0, (_lblExerciseCountLabel.frame.origin.y + _lblExerciseCountLabel.frame.size.height - 7.0), (_viewExerciseContentView.frame.size.width), 30.0)];
+            [_lblExerciseLabel setCenter: CGPointMake(_lblExerciseLabel.center.x, _viewTotalTimeContentView.frame.size.height / 2 + 22.0)];
+
             UIFont *fontExerciseLabel = [UIFont fontWithName: fFUTURA_MEDIUM size: 18.1];
             [_lblExerciseLabel setFont: fontExerciseLabel];
-            [_viewTotalTimeContentView setFrame: CGRectMake((_viewExerciseContentView.frame.origin.x + _viewExerciseContentView.frame.size.width + 18.0), 0.0, (_viewExerciseAndTotalTimeBackgroundView.frame.size.width - 54.0) / 2.0, 100.0)];
             [[_viewExerciseContentView layer] setCornerRadius: 30.0];
             [[_viewTotalTimeContentView layer] setCornerRadius: 30.0];
             
@@ -3270,6 +3302,14 @@
             [_lblMinFirstLabel setFrame: CGRectMake((_lblColonFirstLabel.frame.origin.x + _lblColonFirstLabel.frame.size.width), 15.0, timeHoursWidth, 50.0)];
             [_lblColonSecondLabel setFrame: CGRectMake((_lblMinFirstLabel.frame.origin.x + _lblMinFirstLabel.frame.size.width), 15.0, colonWidth, 50.0)];
             [_lblSecondsFirstLabel setFrame: CGRectMake((_lblColonSecondLabel.frame.origin.x + _lblColonSecondLabel.frame.size.width), 15.0, timeHoursWidth, 50.0)];
+            
+            // Vsn - 12/03/2020
+            [_lblHoursFirstLabel setCenter: CGPointMake(_lblHoursFirstLabel.center.x, _viewTotalTimeContentView.frame.size.height / 2 - 10.0)];
+            [_lblColonFirstLabel setCenter:CGPointMake(_lblColonFirstLabel.center.x, _viewTotalTimeContentView.frame.size.height / 2 - 10.0)];
+            [_lblMinFirstLabel setCenter:CGPointMake(_lblMinFirstLabel.center.x, _viewTotalTimeContentView.frame.size.height / 2 - 10.0)];
+            [_lblColonSecondLabel setCenter:CGPointMake(_lblColonSecondLabel.center.x, _viewTotalTimeContentView.frame.size.height / 2 - 10.0)];
+            [_lblSecondsFirstLabel setCenter:CGPointMake(_lblSecondsFirstLabel.center.x, _viewTotalTimeContentView.frame.size.height / 2 - 10.0)];
+            
             UIFont *fontHoursTimeCount = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 28.0];
             
             [_viewMinTimeContentView setFrame: CGRectMake(0.0, 0.0, (_viewTotalTimeContentView.frame.size.width), 65.0)];
@@ -3278,6 +3318,11 @@
             [_lblColonThirdLabel setFrame: CGRectMake((_lblMinSecondLabel.frame.origin.x + _lblMinSecondLabel.frame.size.width), 15.0, colonWidth, 50.0)];
             [_lblSecondsSecondLabel setFrame: CGRectMake((_lblColonThirdLabel.frame.origin.x + _lblColonThirdLabel.frame.size.width), 15.0, timeMinutesWidth, 50.0)];
             
+            // Vsn - 12/02/2020
+            [_lblMinSecondLabel setCenter: CGPointMake(_lblMinSecondLabel.center.x, _viewTotalTimeContentView.frame.size.height / 2 - 10.0)];
+            [_lblColonThirdLabel setCenter: CGPointMake(_lblColonThirdLabel.center.x, _viewTotalTimeContentView.frame.size.height / 2 - 10.0)];
+            [_lblSecondsSecondLabel setCenter: CGPointMake(_lblSecondsSecondLabel.center.x, _viewTotalTimeContentView.frame.size.height / 2 - 10.0)];
+
             [_lblHoursFirstLabel setFont: fontHoursTimeCount];
             [_lblColonFirstLabel setFont: fontHoursTimeCount];
             [_lblMinFirstLabel setFont: fontHoursTimeCount];
@@ -3288,6 +3333,7 @@
             [_lblSecondsSecondLabel setFont: fontExerciseCount];
             
             [_lblTotalTimeLabel setFrame: CGRectMake(0.0, (_viewHoursTimeContentView.frame.origin.y + _viewHoursTimeContentView.frame.size.height - 7.0), (_viewTotalTimeContentView.frame.size.width), 30.0)];
+            [_lblTotalTimeLabel setCenter: CGPointMake(_lblTotalTimeLabel.center.x, _viewTotalTimeContentView.frame.size.height / 2 + 22.0)];
             [_lblTotalTimeLabel setFont: fontExerciseLabel];
             
             [_viewHoursTimeContentView setHidden: YES];
@@ -3295,7 +3341,7 @@
             
             [_btnStartRestButton setFrame: CGRectMake(0.0, 0.0, (_scrollViewSetAndRestScreen.frame.size.width), (_viewExerciseAndTotalTimeBackgroundView.frame.origin.y + _viewExerciseAndTotalTimeBackgroundView.frame.size.height))];
             
-            [_btnSwipeButton setFrame: CGRectMake((_contentViewSetAndRestScreen.frame.size.width - 52.0) / 2.0, (_viewExerciseAndTotalTimeBackgroundView.frame.origin.y + _viewExerciseAndTotalTimeBackgroundView.frame.size.height + 24.0), 52.0, 20.0)];
+            [_btnSwipeButton setFrame: CGRectMake((_contentViewSetAndRestScreen.frame.size.width - 52.0) / 2.0, (_viewExerciseAndTotalTimeBackgroundView.frame.origin.y + _viewExerciseAndTotalTimeBackgroundView.frame.size.height + 13.0), 52.0, 20.0)];
             [self.btnMenu setFrame:CGRectMake((_contentViewSetAndRestScreen.frame.size.width - 52.0) / 2.0, (_btnSwipeButton.frame.origin.y + _btnSwipeButton.frame.size.height + 1.0), 52.0, 17.0)];
             
             //Bottom buttons view
@@ -3350,7 +3396,7 @@
             CGFloat statsContentViewY = (_viewWorkoutStatsBackgroundView.frame.size.height - _viewWorkoutStatsBackgroundView.frame.size.width + 9.0);
             CGFloat statsContentWidth = _viewWorkoutStatsBackgroundView.frame.size.width;
             [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, statsContentViewY, setAndRestBgWidth, statsContentWidth - 9.0)];
-            [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 130, setAndRestBgWidth, 284)];
+            [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 130, setAndRestBgWidth + 12, 284)];
             [[_viewWorkoutStatsContentView layer] setCornerRadius: 30.0];
             
             //Do set number view and Rest time view
@@ -3360,15 +3406,16 @@
             UIFont *fontWorkoutCompleteLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 45.0];
             [_lblWorkoutCompleteLabel setFont: fontWorkoutCompleteLabel];
             
-            [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 32.0, (_viewWorkoutStatsContentView.frame.size.width), 30.0)];
-            UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_MEDIUM size: 16.0];
+            [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 5.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
+            UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 26.0];
             [_lblCurrentDateLabel setFont: currentDateLabel];
             
-            // New Design
-            [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
-            [self.vwCompetedBottom setFrame:CGRectMake(0, 70, setAndRestBgWidth, 214)];
-            [self.vwQuality setFrame:CGRectMake(0, 0, setAndRestBgWidth / 2, 214)];
-            [self.vwTime setFrame:CGRectMake(setAndRestBgWidth / 2, 0, setAndRestBgWidth / 2, 214)];
+            // Vsn - 12/03/2020
+            // New Design            
+            [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth + 12, 70)];
+            [self.vwCompetedBottom setFrame:CGRectMake(0, 70, setAndRestBgWidth + 12, 214)];
+            [self.vwQuality setFrame:CGRectMake(0, 0, (setAndRestBgWidth + 12) / 2, 214)];
+            [self.vwTime setFrame:CGRectMake((setAndRestBgWidth + 12) / 2, 0, (setAndRestBgWidth + 12) / 2, 214)];
             
             [self.lblTotalTimeTitle setFrame:CGRectMake(16, 30, self.vwTime.frame.size.width - 16, 20)];
             
@@ -3440,12 +3487,12 @@
             CGFloat contentViewHeight = _contentViewWorkoutScreen.frame.size.height;
             
             //GymTimer label
-            [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, -27.0, (_contentViewWorkoutScreen.frame.size.width), 113.0)];
+            [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, -23.0, (_contentViewWorkoutScreen.frame.size.width), 113.0)];
             UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 60.7];
             [_lblGymTimerTitleLabel setFont: fontGymTimer];
             
             // Vsn - 11/02/2020
-            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 157.0, 22.5, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 157.0, 26.5, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 130.0, 30.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@2.9 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
@@ -3461,6 +3508,9 @@
             [_viewWorkoutContentView setFrame: CGRectMake(30.0, (_lblGymTimerTitleLabel.frame.origin.y + _lblGymTimerTitleLabel.frame.size.height + 10.0), (contentViewWidth - 66.0), (contentViewHeight - (gymtimerY + gymtimerHeight + tabbarHeight + 50.0)))];
             // Vsn - 19/02/2020
             [_viewWorkoutContentViewSubView setFrame: CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
+            // Vsn - 25/02/2020
+            [_vwImgWelcomeBack setFrame: CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
+            [_vwWorkoutContentParent setFrame:CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
             [_imgHomeBottomGym setFrame: CGRectMake(-21.0, -19.0, _viewWorkoutContentView.frame.size.width + 42.0, _viewWorkoutContentView.frame.size.height + 45.0)];
             
             //Choose default rest time label
@@ -3636,15 +3686,16 @@
             [_lblRestTimerSecondsLabel setFrame: CGRectMake((_lblRestTimerColonLabel.frame.origin.x + _lblRestTimerColonLabel.frame.size.width), 16.0, restTimerMinSecWidth, doSetNumberViewHeight)];
             
             [self.vwLastExercise setFrame:CGRectMake(0.0, 0.0, setAndRestBgWidth, doSetNumberViewHeight)];
-            [self.lblTimeSinceTitle setFrame:CGRectMake(20.0, 20.0, self.vwLastExercise.frame.size.width - 40.0, 29.0)];
-            [self.lblTimeSince setFrame:CGRectMake(20.0, (self.lblTimeSinceTitle.frame.origin.y + self.lblTimeSinceTitle.frame.size.height) - 8 , self.vwLastExercise.frame.size.width - 40.0, 116.0)];
+            [self.lblTimeSinceTitle setFrame:CGRectMake(20.0, 15.0, self.vwLastExercise.frame.size.width - 40.0, 29.0)];
+            [self.lblTimeSince setFrame:CGRectMake(20.0, (self.lblTimeSinceTitle.frame.origin.y + self.lblTimeSinceTitle.frame.size.height) - 16 , self.vwLastExercise.frame.size.width - 40.0, 116.0)];
+            UIFont *fontTimeSinceLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 79.0];
+            [self.lblTimeSince setFont: fontTimeSinceLabel];
             
             //[_lblRestTimeLabel setFrame: CGRectMake(0.0, 15.0, setAndRestBgWidth, (doSetNumberViewHeight - 15.0))];
             UIFont *fontRestTimeLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 110.0];
             [_lblRestTimerMinutesLabel setFont: fontRestTimeLabel];
             [_lblRestTimerColonLabel setFont: fontRestTimeLabel];
             [_lblRestTimerSecondsLabel setFont: fontRestTimeLabel];
-            
             
             //View last exercise
             CGFloat viewProgressBarHeight = _viewSetAndRestScreenProgressBackgroundView.frame.size.height;
@@ -3855,8 +3906,8 @@
             UIFont *fontWorkoutCompleteLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 45.0];
             [_lblWorkoutCompleteLabel setFont: fontWorkoutCompleteLabel];
             
-            [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 0.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
-            UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 21.0];
+            [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 5.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
+            UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 24.0];
             [_lblCurrentDateLabel setFont: currentDateLabel];
             
             // New Design
@@ -3934,12 +3985,12 @@
             CGFloat contentViewHeight = _contentViewWorkoutScreen.frame.size.height;
             
             //GymTimer label
-            [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, -20.0, (_contentViewWorkoutScreen.frame.size.width), 103.0)];
+            [_lblGymTimerTitleLabel setFrame: CGRectMake(0.0, -17.0, (_contentViewWorkoutScreen.frame.size.width), 103.0)];
             UIFont *fontGymTimer = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 50.0];
             [_lblGymTimerTitleLabel setFont: fontGymTimer];
             
             // Vsn - 11/02/2020
-            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 134, 18.5, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
+            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 134, 21.5, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setFrame: CGRectMake((_contentViewWorkoutScreen.frame.size.width / 2.0) - 115.1, 32.0, (_contentViewWorkoutScreen.frame.size.width), 80.0)];
 //            [lblBoostYourWorkoutText addAttribute:NSKernAttributeName value:@2 range:NSMakeRange(0, lblBoostYourWorkoutText.length)];
 //            [_lblBoostYourWorkoutsSetScreenLabel setAttributedText: lblBoostYourWorkoutText];
@@ -3955,6 +4006,9 @@
             [_viewWorkoutContentView setFrame: CGRectMake(18.0, (_lblGymTimerTitleLabel.frame.origin.y + _lblGymTimerTitleLabel.frame.size.height), (contentViewWidth - 36.0), (contentViewHeight - (gymtimerY + gymtimerHeight + tabbarHeight + 60.0)))];
             // Vsn - 19/02/2020
             [_viewWorkoutContentViewSubView setFrame: CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
+            // Vsn - 25/02/2020
+            [_vwImgWelcomeBack setFrame: CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
+            [_vwWorkoutContentParent setFrame:CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
             [_imgHomeBottomGym setFrame: CGRectMake(-21.0, -19.0, _viewWorkoutContentView.frame.size.width + 42.0, _viewWorkoutContentView.frame.size.height + 45.0)];
             
             //Choose default rest time label
@@ -5746,7 +5800,8 @@
         [_lblDoSetNumberCountLabel setFont: fontDoSetCountLabel];
     } else if (IS_IPHONE8PLUS) {
         setCountLabelFrame = ([strCurrentSetCount length] > 1) ? CGRectMake(setCountLabelX, 22.0, setCountLabelWidth, setCountLabelHeight) : CGRectMake(setCountLabelX, setCountLabelY, setCountLabelWidth, setCountLabelHeight);
-        UIFont *fontDoSetCountLabel = ([strCurrentSetCount length] > 1) ? [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 88.0] : [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 142.0];
+        // Vsn - 11/03/2020
+        UIFont *fontDoSetCountLabel = ([strCurrentSetCount length] > 1) ? [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 88.0] : [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 102.0]; // 142.0
         [_lblDoSetNumberCountLabel setFrame: setCountLabelFrame];
         [_lblDoSetNumberCountLabel setFont: fontDoSetCountLabel];
     } else if (IS_IPHONE8) {
@@ -7488,28 +7543,45 @@
     [[NSUserDefaults standardUserDefaults] setValue: @"0" forKey: kTOTAL_EXERCISE_COUNT];
     
     //    [self toogleSetAndRestScreens];
-    [self->_scrollViewWorkoutScreen setFrame: CGRectMake(DEVICE_WIDTH, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
+//    [self->_scrollViewWorkoutScreen setFrame: CGRectMake(DEVICE_WIDTH, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
+    if (IS_IPHONEXR) {
+        [self->_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
+    } else if (IS_IPHONEX) {
+        [self->_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
+    } else if (IS_IPHONE8PLUS) {
+        [self->_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
+    } else if (IS_IPHONE8) {
+        [self->_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
+    } else {
+        [self->_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
+    }
+    
+    // Slide left - Welcome back and home contents
+    CGPoint viewWorkoutContentViewCenterPoint = self->_viewWorkoutContentView.center;
+    [self->_viewWorkoutContentView setCenter:CGPointMake(self->_viewWorkoutContentView.center.x + UIScreen.mainScreen.bounds.size.width, self->_viewWorkoutContentView.center.y)];
+    
+    // Slide down - GymTimer Boost your workouts
+    [self->_vw_gymtimer_boost_your_workouts setCenter:CGPointMake(self->_vw_gymtimer_boost_your_workouts.center.x, self->_vw_gymtimer_boost_your_workouts.center.y - self->_vw_gymtimer_boost_your_workouts.frame.size.height - 50)];
     
     [UIView animateWithDuration: 0.7 delay: 0.0 options: UIViewAnimationOptionTransitionNone animations:^{
         
         [self showTabBar];
+
+        // Slide left - Welcome back and home contents
+        [self->_viewWorkoutContentView setCenter:viewWorkoutContentViewCenterPoint];
+
+        // Slide down - GymTimer Boost your workouts
+        [self->_vw_gymtimer_boost_your_workouts setCenter:CGPointMake(self->_vw_gymtimer_boost_your_workouts.center.x, self->_vw_gymtimer_boost_your_workouts.center.y + self->_vw_gymtimer_boost_your_workouts.frame.size.height + 50)];
         
         if (IS_IPHONEXR) {
-            [self->_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
             [self->_scrollViewWorkoutCompleteScreen setFrame: CGRectMake(-DEVICE_WIDTH, 0.0, DEVICE_WIDTH, DEVICE_HEIGHT)];
         } else if (IS_IPHONEX) {
-            
-            [self->_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
             [self->_scrollViewWorkoutCompleteScreen setFrame: CGRectMake(-DEVICE_WIDTH, 0.0, DEVICE_WIDTH, DEVICE_HEIGHT)];
-            
         } else if (IS_IPHONE8PLUS) {
-            [self->_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
             [self->_scrollViewWorkoutCompleteScreen setFrame: CGRectMake(-DEVICE_WIDTH, 0.0, DEVICE_WIDTH, DEVICE_HEIGHT)];
         } else if (IS_IPHONE8) {
-            [self->_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
             [self->_scrollViewWorkoutCompleteScreen setFrame: CGRectMake(-DEVICE_WIDTH, 0.0, DEVICE_WIDTH, DEVICE_HEIGHT)];
         } else {
-            [self->_scrollViewWorkoutScreen setFrame: CGRectMake(0.0, 44.0, DEVICE_WIDTH, (DEVICE_HEIGHT - 44.0))];
             [self->_scrollViewWorkoutCompleteScreen setFrame: CGRectMake(-DEVICE_WIDTH, 0.0, DEVICE_WIDTH, DEVICE_HEIGHT)];
         }
         

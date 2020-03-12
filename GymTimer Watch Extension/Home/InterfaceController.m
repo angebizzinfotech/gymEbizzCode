@@ -88,15 +88,27 @@
 // MARK:- Custom Methods
 
 - (void)setupLayout {
-    [[self lblMinTitle] setAttributedText:[WatchUtils getAttributedString:@"min" withFontSize:10 andFontName:fFUTURA_MEDIUM]];
+    [[self lblMinTitle] setAttributedText:[WatchUtils getAttributedString:@"min" withFontSize:14 andFontName:fFUTURA_MEDIUM]];
     
-    [[self lblSecTime] setAttributedText:[WatchUtils getAttributedString:@"sec" withFontSize:10 andFontName:fFUTURA_MEDIUM]];
+    [[self lblSecTime] setAttributedText:[WatchUtils getAttributedString:@"sec" withFontSize:14 andFontName:fFUTURA_MEDIUM]];
     
     [[self lblChooseTime] setAttributedText:[WatchUtils getAttributedString:@"Choose a rest time" withFontSize:9 andFontName:@"System"]];
     
-    [[self lblClickAnyWhereTitle] setAttributedText:[WatchUtils getAttributedString:@"(click anywhere to start workout)" withFontSize:9 andFontName:fFUTURA_MEDIUM]];
+    if(isForChangeRest)
+    {
+        [[self lblClickAnyWhereTitle] setAttributedText:[WatchUtils getAttributedString:@"(click anywhere to continue)" withFontSize:9 andFontName:fFUTURA_MEDIUM]];
+        for(int i=0; i<arrTime.count; i++)
+            if([arrTime[i] isEqualToString: [WatchUtils getWorkoutSelectedTime]])
+                [_timePicker setSelectedItemIndex:i];
+        
+//        [[self lblTime] setAttributedText:[WatchUtils getAttributedString: [WatchUtils getWorkoutSelectedTime] withFontSize:35 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    }
+    else
+    {
+        [[self lblClickAnyWhereTitle] setAttributedText:[WatchUtils getAttributedString:@"(click anywhere to start)" withFontSize:9 andFontName:fFUTURA_MEDIUM]];
+        [[self lblTime] setAttributedText:[WatchUtils getAttributedString:@"00:00" withFontSize:35 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    }
     
-    [[self lblTime] setAttributedText:[WatchUtils getAttributedString:@"00:00" withFontSize:35 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     NSLog(@"User Data: %@", [[NSUserDefaults standardUserDefaults] valueForKey:uWATCH_USER_DATA]);
 }
 
@@ -159,13 +171,13 @@
     [WatchUtils setWorkoutSelectedTime:strSelectedTime];
     
     
-    for (CGFloat i=0; i<100; i++) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(i/400 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.mainGrp setRelativeWidth:1-(i*4/400) withAdjustment:0];
-        });
-    }
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//    for (CGFloat i=0; i<100; i++) {
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(i/400 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [self.mainGrp setRelativeWidth:1-(i*4/400) withAdjustment:0];
+//        });
+//    }
+//
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (self->isForChangeRest) {
             // Stop Rest Timer
             [[WatchManager sharedInstance] stopRestTimer];
@@ -193,8 +205,7 @@
             // Display Pages
             [WKInterfaceController reloadRootPageControllersWithNames:@[@"MenuController", @"SetAndRestController", @"WorkoutTimerController"] contexts:@[] orientation:WKPageOrientationHorizontal pageIndex:1];
         }
-    });
-    
+//    });
 }
 
 @end

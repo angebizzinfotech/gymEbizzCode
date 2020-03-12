@@ -48,8 +48,6 @@
     // Set Exercise Count
     NSString *exerciseText = [NSString stringWithFormat:@" %@.", [WatchUtils getExerciseCount]];
     [[self lblExercise] setAttributedText:[WatchUtils getAttributedString:exerciseText withFontSize:exerciseSize andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
-    
-//    [self pushControllerWithName:@"AlertController" context:@[@"Vishnu"]];
 }
 
 - (void)didDeactivate {
@@ -76,11 +74,14 @@
 }
 
 - (void)setupLayout {
-    [[self lblExerciseTitle] setAttributedText:[WatchUtils getAttributedString:@"exercise" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
+    [[self lblExerciseTitle] setAttributedText:[WatchUtils getAttributedString:@"exercise" withFontSize:15 andFontName:fFUTURA_MEDIUM]];
     
     [[self lblTotalTime] setAttributedText:[WatchUtils getAttributedString:@"00:00" withFontSize:38 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    [[self lblTotalTimeMin] setAttributedText:[WatchUtils getAttributedString:@"00" withFontSize:36 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    [[self lblTotalTimeDot] setAttributedText:[WatchUtils getAttributedString:@":" withFontSize:36 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    [[self lblTotalTimeSec] setAttributedText:[WatchUtils getAttributedString:@"00" withFontSize:36 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
-    [[self lblTotalTimeTitle] setAttributedText:[WatchUtils getAttributedString:@"total time" withFontSize:12 andFontName:fFUTURA_MEDIUM]];
+    [[self lblTotalTimeTitle] setAttributedText:[WatchUtils getAttributedString:@"total time" withFontSize:15 andFontName:fFUTURA_MEDIUM]];
 }
 
 - (void)changeColor {
@@ -109,6 +110,10 @@
 
 - (void)totalExerciseTime:(int)time {
     [[self lblTotalTime] setAttributedText:[WatchUtils getAttributedString:[WatchUtils timeStringForSeconds:time] withFontSize:38 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    
+    NSArray *timer = [[WatchUtils timeStringForSeconds:time] componentsSeparatedByString: @":"];
+    [[self lblTotalTimeMin] setAttributedText:[WatchUtils getAttributedString:timer[timer.count-2] withFontSize:36 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
+    [[self lblTotalTimeSec] setAttributedText:[WatchUtils getAttributedString:timer[timer.count-1] withFontSize:36 andFontName:fFUTURA_CONDENSED_EXTRA_BOLD]];
     
     [WatchUtils setExerciseTotalTime:[WatchUtils hourlyFormatFromSeconds:time]];
 }
