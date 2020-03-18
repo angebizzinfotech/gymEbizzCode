@@ -75,7 +75,9 @@
         if (IS_IPHONEXR || IS_IPHONEX ) {
                 
             } else if (IS_IPHONE8PLUS) {
-                [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
+                // Vsn - 13/03/2020
+                [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 75.0), DEVICE_WIDTH, 75.0)];
+                // [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
                 
         //        [tabBarItem0 setImage:[[UIImage imageNamed:@"gray_workout_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         //        [tabBarItem0 setSelectedImage:[[UIImage imageNamed:@"green_workout_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -86,14 +88,14 @@
         //        [tabBarItem3 setImage:[[UIImage imageNamed:@"gray_setting_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         //        [tabBarItem3 setSelectedImage:[[UIImage imageNamed:@"green_setting_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
                 
-                [tabBarItem0 setTitlePositionAdjustment: UIOffsetMake(0.0, -2.0)];
-                [tabBarItem0 setImageInsets: UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)];
-                [tabBarItem1 setTitlePositionAdjustment: UIOffsetMake(0.0, -2.0)];
-                [tabBarItem1 setImageInsets: UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)];
-                [tabBarItem2 setTitlePositionAdjustment: UIOffsetMake(0.0, -2.0)];
-                [tabBarItem2 setImageInsets: UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)];
-                [tabBarItem3 setTitlePositionAdjustment: UIOffsetMake(0.0, -2.0)];
-                [tabBarItem3 setImageInsets: UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)];
+                [tabBarItem0 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+                [tabBarItem0 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+                [tabBarItem1 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+                [tabBarItem1 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+                [tabBarItem2 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+                [tabBarItem2 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+                [tabBarItem3 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+                [tabBarItem3 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
                 
             } else if (IS_IPHONE8) {
                 [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 80.0), DEVICE_WIDTH, 80.0)];
@@ -143,7 +145,9 @@
         if (IS_IPHONEXR || IS_IPHONEX ) {
                
            } else if (IS_IPHONE8PLUS) {
-               [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
+               // Vsn - 13/03/2020
+               [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 75.0), DEVICE_WIDTH, 75.0)];
+               // [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
                
                [tabBarItem0 setImage:[[UIImage imageNamed:@"gray_workout_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
                [tabBarItem0 setSelectedImage:[[UIImage imageNamed:@"green_workout_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -364,7 +368,9 @@
             [tabBarItem2 setTitlePositionAdjustment: UIOffsetMake(-3.0, 12.0)];
             [tabBarItem3 setTitlePositionAdjustment: UIOffsetMake(-15.0, 12.0)];
         } else if (IS_IPHONE8PLUS) {
-            [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
+            // Vsn - 13/03/2020
+            [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 75.0), DEVICE_WIDTH, 75.0)];
+            // [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
             
             [tabBarItem0 setImage:[[UIImage imageNamed:@"gray_workout_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
             [tabBarItem0 setSelectedImage:[[UIImage imageNamed:@"green_workout_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -434,7 +440,9 @@
                [tabBarItem2 setTitlePositionAdjustment: UIOffsetMake(-3.0, 12.0)];
                [tabBarItem3 setTitlePositionAdjustment: UIOffsetMake(-15.0, 12.0)];
            } else if (IS_IPHONE8PLUS) {
-               [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
+               // Vsn - 13/03/2020
+               [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 75.0), DEVICE_WIDTH, 75.0)];
+               // [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
                
                [tabBarItem0 setImage:[[UIImage imageNamed:@"gray_workout_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
                [tabBarItem0 setSelectedImage:[[UIImage imageNamed:@"green_workout_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];

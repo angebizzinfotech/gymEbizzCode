@@ -60,6 +60,25 @@
         [tabBarItem3 setImageInsets: UIEdgeInsetsMake(-20.0, 0.0, 0.0, 0.0)];
 
     }
+    // Vsn - 13/03/2020
+    else if (IS_IPHONE8PLUS)
+    {
+        [self.tabBar setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 75.0), DEVICE_WIDTH, 75.0)];
+        
+        UITabBarItem *tabBarItem0 = [self.tabBarController.tabBar.items objectAtIndex:0];
+        UITabBarItem *tabBarItem1 = [self.tabBarController.tabBar.items objectAtIndex:1];
+        UITabBarItem *tabBarItem2 = [self.tabBarController.tabBar.items objectAtIndex:2];
+        UITabBarItem *tabBarItem3 = [self.tabBarController.tabBar.items objectAtIndex:3];
+
+        [tabBarItem0 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+        [tabBarItem0 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+        [tabBarItem1 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+        [tabBarItem1 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+        [tabBarItem2 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+        [tabBarItem2 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+        [tabBarItem3 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+        [tabBarItem3 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+    }
 }
 
 //MARK:- User defined methods

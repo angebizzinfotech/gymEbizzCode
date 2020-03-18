@@ -388,6 +388,11 @@
             
             [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 80.0), DEVICE_WIDTH, 80.0)];
         }
+        // Vsn - 13/03/2020
+        else if (IS_IPHONE8PLUS)
+        {
+            [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 75.0), DEVICE_WIDTH, 75.0)];
+        }
     }
 }
 
@@ -406,15 +411,17 @@
             [tabBarItem3 setTitlePositionAdjustment: UIOffsetMake(-15.0, 12.0)];
             
         } else if (IS_IPHONE8PLUS) {
-            [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
-            [tabBarItem0 setTitlePositionAdjustment: UIOffsetMake(0.0, -2.0)];
-            [tabBarItem0 setImageInsets: UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)];
-            [tabBarItem1 setTitlePositionAdjustment: UIOffsetMake(0.0, -2.0)];
-            [tabBarItem1 setImageInsets: UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)];
-            [tabBarItem2 setTitlePositionAdjustment: UIOffsetMake(0.0, -2.0)];
-            [tabBarItem2 setImageInsets: UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)];
-            [tabBarItem3 setTitlePositionAdjustment: UIOffsetMake(0.0, -2.0)];
-            [tabBarItem3 setImageInsets: UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)];
+            // Vsn - 13/03/2020
+//            [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
+            [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 75.0), DEVICE_WIDTH, 75.0)];
+            [tabBarItem0 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+            [tabBarItem0 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+            [tabBarItem1 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+            [tabBarItem1 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+            [tabBarItem2 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+            [tabBarItem2 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+            [tabBarItem3 setTitlePositionAdjustment: UIOffsetMake(0.0, -6.0)];
+            [tabBarItem3 setImageInsets: UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
         } else if (IS_IPHONE8) {
             [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 80.0), DEVICE_WIDTH, 80.0)];
             
@@ -449,8 +456,10 @@
             [tabBarItem3 setTitlePositionAdjustment: UIOffsetMake(-15.0, 12.0)];
             
         } else if (IS_IPHONE8PLUS) {
-            [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
-            
+            // Vsn - 13/03/2020
+//            [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 68.0), DEVICE_WIDTH, 68.0)];
+            [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 75.0), DEVICE_WIDTH, 75.0)];
+
             [tabBarItem0 setImage:[[UIImage imageNamed:@"gray_workout_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
             [tabBarItem0 setSelectedImage:[[UIImage imageNamed:@"green_workout_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
             [tabBarItem1 setImage:[[UIImage imageNamed:@"gray_rank_small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -828,6 +837,7 @@
     isStartWorkoutButtonTapped = @"YES";
     isSetScreen = @"YES";
     isBottomButtonsViewOpen = @"NO";
+    isEndWorkoutButtonTapped = @"YES";
     [_btnStartRestButton setUserInteractionEnabled: YES];
     [self toogleSetAndRestScreens];
     
@@ -1458,6 +1468,11 @@
         
     } else {}
     
+    // Vsn - 13/03/2020
+    if(IS_IPHONE8PLUS)
+    {
+//        [[[self tabBarController] tabBar] setFrame: CGRectMake(0.0, (DEVICE_HEIGHT - 75.0), DEVICE_WIDTH, 75.0)];
+    }
 }
 
 
@@ -2961,8 +2976,8 @@
             //Start Workout content view
             CGFloat gymtimerY = _lblGymTimerTitleLabel.frame.origin.y;
             CGFloat gymtimerHeight = _lblGymTimerTitleLabel.frame.size.height;
-            CGFloat tabbarHeight = 53.0;
-            //        CGFloat tabbarHeight = [[[self tabBarController] tabBar] frame].size.height;
+//            CGFloat tabbarHeight = 53.0;
+            CGFloat tabbarHeight = [[[self tabBarController] tabBar] frame].size.height;
             [_viewWorkoutContentView setFrame: CGRectMake(35.0, (_lblGymTimerTitleLabel.frame.origin.y + _lblGymTimerTitleLabel.frame.size.height + 24.0), (contentViewWidth - 70.0), (contentViewHeight - (gymtimerY + gymtimerHeight + tabbarHeight + 50.0)))];
             // Vsn - 19/02/2020
             [_viewWorkoutContentViewSubView setFrame: CGRectMake(0.0, 0.0, _viewWorkoutContentView.frame.size.width, _viewWorkoutContentView.frame.size.height)];
