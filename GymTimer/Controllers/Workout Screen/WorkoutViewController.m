@@ -831,8 +831,11 @@
     NSString *strCurrentDateTime = [dateFormatter stringFromDate: [NSDate date]];
     [dateFormatter setDateFormat:@"HH:mm"];
     
-    [[NSUserDefaults standardUserDefaults] setValue:[dateFormatter stringFromDate:[NSDate date]] forKey:kWORKOUT_TIME];
-    [[NSUserDefaults standardUserDefaults] setValue: strCurrentDateTime forKey: kWORKOUT_START_TIME];
+    if([sender.titleLabel.text isEqualToString:@"Start Workout"])
+    {
+        [[NSUserDefaults standardUserDefaults] setValue:[dateFormatter stringFromDate:[NSDate date]] forKey:kWORKOUT_TIME];
+        [[NSUserDefaults standardUserDefaults] setValue: strCurrentDateTime forKey: kWORKOUT_START_TIME];
+    }
     
     isStartWorkoutButtonTapped = @"YES";
     isSetScreen = @"YES";

@@ -3894,22 +3894,19 @@ membership</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeb-yA-N5h">
-                                                <rect key="frame" x="36" y="240" width="283" height="32"/>
+                                                <rect key="frame" x="36" y="240" width="191" height="32"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mly-th-OfZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="58.333333333333336" height="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="32"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6Z-bF-qdm" customClass="UICountingLabel">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="32"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="40" id="KO1-Ui-cWl"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="32"/>
                                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32.5"/>
                                                                 <color key="textColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-wW-Rc0">
-                                                                <rect key="frame" x="40" y="0.0" width="18.333333333333329" height="32"/>
+                                                                <rect key="frame" x="19.666666666666671" y="0.0" width="18.333333333333329" height="32"/>
                                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32.5"/>
                                                                 <color key="textColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -3928,19 +3925,16 @@ membership</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfs-dl-9U7">
-                                                        <rect key="frame" x="66.333333333333343" y="0.0" width="94.333333333333343" height="32"/>
+                                                        <rect key="frame" x="46" y="0.0" width="74" height="32"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aih-e6-2sS" customClass="UICountingLabel">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="32"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="40" id="HZ0-oZ-UE7"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="32"/>
                                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32.5"/>
                                                                 <color key="textColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-ua-Ya4">
-                                                                <rect key="frame" x="40.000000000000014" y="0.0" width="54.333333333333329" height="32"/>
+                                                                <rect key="frame" x="19.666666666666675" y="0.0" width="54.333333333333343" height="32"/>
                                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32.5"/>
                                                                 <color key="textColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -3960,28 +3954,24 @@ membership</string>
                                                         <viewLayoutGuide key="safeArea" id="fM0-95-uvg"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGn-te-8EV">
-                                                        <rect key="frame" x="168.66666666666666" y="0.0" width="83.333333333333343" height="32"/>
+                                                        <rect key="frame" x="128" y="0.0" width="63" height="32"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-lu-K4y" customClass="UICountingLabel">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="32"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="40" id="PSG-RV-KOu"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="32"/>
                                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32.5"/>
                                                                 <color key="textColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zq7-IH-e56">
-                                                                <rect key="frame" x="40.000000000000028" y="0.0" width="43.333333333333343" height="32"/>
+                                                                <rect key="frame" x="19.666666666666661" y="0.0" width="43.333333333333343" height="32"/>
                                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32.5"/>
                                                                 <color key="textColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstItem="Zq7-IH-e56" firstAttribute="leading" secondItem="ScC-lu-K4y" secondAttribute="trailing" id="3RT-uv-FAc"/>
-                                                            <constraint firstItem="36C-KO-lWo" firstAttribute="trailing" secondItem="Zq7-IH-e56" secondAttribute="trailing" id="HRw-Y8-Hwi"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Zq7-IH-e56" secondAttribute="trailing" id="HRw-Y8-Hwi"/>
                                                             <constraint firstItem="Zq7-IH-e56" firstAttribute="top" secondItem="gGn-te-8EV" secondAttribute="top" id="J0h-Nt-tWK"/>
                                                             <constraint firstItem="ScC-lu-K4y" firstAttribute="top" secondItem="gGn-te-8EV" secondAttribute="top" id="QIZ-jJ-3df"/>
                                                             <constraint firstItem="ScC-lu-K4y" firstAttribute="leading" secondItem="gGn-te-8EV" secondAttribute="leading" id="anL-8l-jRd"/>
@@ -3989,7 +3979,7 @@ membership</string>
                                                             <constraint firstAttribute="height" constant="32" id="opd-MI-uOS"/>
                                                             <constraint firstAttribute="bottom" secondItem="Zq7-IH-e56" secondAttribute="bottom" id="xod-Lm-XPV"/>
                                                         </constraints>
-                                                        <viewLayoutGuide key="safeArea" id="36C-KO-lWo"/>
+                                                        <viewLayoutGuide key="safeArea" id="1YG-CP-swt"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -3999,6 +3989,7 @@ membership</string>
                                                     <constraint firstItem="Mly-th-OfZ" firstAttribute="top" secondItem="oeb-yA-N5h" secondAttribute="top" id="KCe-Sd-tr9"/>
                                                     <constraint firstItem="gGn-te-8EV" firstAttribute="leading" secondItem="Hfs-dl-9U7" secondAttribute="trailing" constant="8" id="MRn-gn-gpe"/>
                                                     <constraint firstItem="Mly-th-OfZ" firstAttribute="leading" secondItem="oeb-yA-N5h" secondAttribute="leading" id="Tab-ug-wC2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gGn-te-8EV" secondAttribute="trailing" id="TiE-De-rKz"/>
                                                     <constraint firstAttribute="bottom" secondItem="gGn-te-8EV" secondAttribute="bottom" id="fbm-ut-wUl"/>
                                                     <constraint firstAttribute="bottom" secondItem="Hfs-dl-9U7" secondAttribute="bottom" id="fe9-GS-Ksw"/>
                                                     <constraint firstItem="Hfs-dl-9U7" firstAttribute="leading" secondItem="Mly-th-OfZ" secondAttribute="trailing" constant="8" id="ha8-Hc-4fh"/>
@@ -4148,7 +4139,7 @@ membership</string>
                                             <constraint firstItem="3AQ-aB-uYD" firstAttribute="leading" secondItem="h6N-2a-nJm" secondAttribute="trailing" constant="-2" id="1m8-UG-dVu"/>
                                             <constraint firstAttribute="trailing" secondItem="TqP-a3-HCP" secondAttribute="trailing" constant="24" id="4JS-I6-Zj3"/>
                                             <constraint firstItem="2xs-ae-12N" firstAttribute="bottom" secondItem="Ulo-aM-csk" secondAttribute="bottom" id="5rN-4S-2A9"/>
-                                            <constraint firstAttribute="trailing" secondItem="oeb-yA-N5h" secondAttribute="trailing" constant="24" id="77o-Q8-W76"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oeb-yA-N5h" secondAttribute="trailing" constant="24" id="77o-Q8-W76"/>
                                             <constraint firstItem="s1l-AZ-07e" firstAttribute="leading" secondItem="Ph3-fJ-fMA" secondAttribute="leading" constant="36" id="AN3-Yo-LTx"/>
                                             <constraint firstAttribute="bottom" secondItem="i76-z9-izA" secondAttribute="bottom" constant="22" id="B32-ui-Qr8"/>
                                             <constraint firstItem="R49-dm-HAS" firstAttribute="top" secondItem="Gph-n3-K3c" secondAttribute="bottom" constant="30" id="BeB-th-BvT"/>
@@ -5267,13 +5258,13 @@ membership</string>
                                                         <rect key="frame" x="16" y="209.99999999999997" width="343" height="322.33333333333326"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="giftgreenbig" translatesAutoresizingMaskIntoConstraints="NO" id="IBp-Vg-A74">
-                                                                <rect key="frame" x="135" y="28" width="73" height="85"/>
+                                                                <rect key="frame" x="153.33333333333334" y="27.999999999999996" width="36.666666666666657" height="42.666666666666657"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="IBp-Vg-A74" secondAttribute="height" multiplier="6:7" id="H1T-Lv-YnL"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get 6 months PRO membership for free !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="i0n-dU-UBr">
-                                                                <rect key="frame" x="10" y="121" width="323" height="93.333333333333314"/>
+                                                                <rect key="frame" x="10" y="78.666666666666671" width="323" height="135.66666666666663"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32"/>
                                                                 <color key="textColor" red="0.082352941176470587" green="0.77254901960784317" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -6986,7 +6977,7 @@ over the last week</string>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift" translatesAutoresizingMaskIntoConstraints="NO" id="pKQ-w4-P9I">
-                                                                                <rect key="frame" x="107" y="5.3333333333333712" width="13" height="15"/>
+                                                                                <rect key="frame" x="107" y="5.3333333333333712" width="13" height="15.000000000000004"/>
                                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="13" id="CB5-x9-Trs"/>

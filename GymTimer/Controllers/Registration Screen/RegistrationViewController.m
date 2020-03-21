@@ -1020,7 +1020,8 @@
         if ([Utils isConnectedToInternet]) {
             
             [self hideScreenContents];
-            spinner = [Utils showActivityIndicatorInView: _viewLoginSignupBgView];
+            // Vsn - 18/03/2020
+            spinner = [Utils showActivityIndicatorInView: self.view]; //_viewLoginSignupBgView
             NSString *webpath = [NSString stringWithFormat:@"%@%@", uBASE_URL, uSIGNUP];
             [serviceManager callWebServiceWithPOST: webpath withTag: tSIGNUP params: arrSignUpParams];
             
@@ -1077,14 +1078,12 @@
         if ([Utils isConnectedToInternet]) {
             
             [self hideScreenContents];
-            spinner = [Utils showActivityIndicatorInView: _viewLoginSignupBgView];
+            // Vsn - 18/03/2020
+            spinner = [Utils showActivityIndicatorInView: self.view]; //_viewLoginSignupBgView
             NSString *webpath = [NSString stringWithFormat:@"%@%@", uBASE_URL, uLOGIN];
             [serviceManager callWebServiceWithPOST: webpath withTag: tLOGIN params: arrLoginParams];
-            
-        } 
-        
+        }
     }
-    
 }
 
 - (void) showScreenContents {
