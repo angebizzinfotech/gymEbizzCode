@@ -1200,7 +1200,6 @@
 }
 
 // MARK:- API Response Parsing
-
 - (void)parseGetExerciseHistoryResponse:(id)response {
     [self.scrView setHidden:NO];
     

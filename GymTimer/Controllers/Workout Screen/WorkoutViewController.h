@@ -70,7 +70,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *lblSecondsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *btnStartWorkoutButton;
 
-
 @property (weak, nonatomic) IBOutlet UIView *viewTabMain;
 @property (weak, nonatomic) IBOutlet UIView *viewTabParent;
 @property (weak, nonatomic) IBOutlet UIView *viewTabTop;
@@ -207,12 +206,27 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *contentViewWorkoutCompleteScreen;
 @property (weak, nonatomic) IBOutlet UILabel *lblGymTimerWorkoutScreenTitleLabel;
 @property (weak, nonatomic) IBOutlet UIView *viewWorkoutStatsBackgroundView;
+@property (weak, nonatomic) IBOutlet UIView *viewPowerPopup;
+@property (weak, nonatomic) IBOutlet UIView *viewPowerPopupInfomation;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPowerPopupInfomationBg;
+@property (weak, nonatomic) IBOutlet UILabel *lblCongratulationsText;
+
 @property (weak, nonatomic) IBOutlet UIView *viewWorkoutCompleteContentVIew;
 @property (weak, nonatomic) IBOutlet UILabel *lblWorkoutCompleteLabel;
 @property (weak, nonatomic) IBOutlet UIView *viewWorkoutStatsContentView;
 @property (weak, nonatomic) IBOutlet UILabel *lblCurrentDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lblTotalWorkoutTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lblTotalWorkoutExercisesLabel;
+
+// Vsn - 09/04/2020
+@property (weak, nonatomic) IBOutlet UIView *vwRandomWorkoutCompleteBackground;
+@property (weak, nonatomic) IBOutlet UIView *vwRandomWorkoutCompleteTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblRandomWorkoutCompleteTitle;
+@property (weak, nonatomic) IBOutlet UIView *vwRandomWorkoutCompleteSubTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblRandomWorkoutCompleteSubTitle;
+@property (weak, nonatomic) IBOutlet UIView *vwRandomWorkoutCompletePro;
+@property (weak, nonatomic) IBOutlet UILabel *lblRandomWorkoutCompleteProText;
+// End
 
 @property (weak, nonatomic) IBOutlet UIView *viewHoursTimeFormatContentView;
 @property (weak, nonatomic) IBOutlet UICountingLabel *lblFirstHoursCountLabel;

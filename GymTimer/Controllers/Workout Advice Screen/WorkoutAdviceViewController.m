@@ -837,7 +837,7 @@
     NSAttributedString *strOne = [[NSAttributedString alloc] initWithString: @"Do " attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubTitleLabel}];
     NSAttributedString *strTwo = [[NSAttributedString alloc] initWithString: @"1-3" attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubSubTitleLabel}];
     NSAttributedString *strThree = [[NSAttributedString alloc] initWithString: @" sets of " attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubTitleLabel}];
-    NSAttributedString *strFour = [[NSAttributedString alloc] initWithString: @"12-20" attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubSubTitleLabel}];
+    NSAttributedString *strFour = [[NSAttributedString alloc] initWithString: @"10-20" attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubSubTitleLabel}];
     NSAttributedString *strFive = [[NSAttributedString alloc] initWithString: @" reps." attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubTitleLabel}];
     
     [strEnduranceSubtitle appendAttributedString: strOne];
@@ -855,9 +855,9 @@
     NSMutableAttributedString *strEnduranceSubtitle = [[NSMutableAttributedString alloc] init];
     
     NSAttributedString *strOne = [[NSAttributedString alloc] initWithString: @"Do " attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubTitleLabel}];
-    NSAttributedString *strTwo = [[NSAttributedString alloc] initWithString: @"4-6" attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubSubTitleLabel}];
+    NSAttributedString *strTwo = [[NSAttributedString alloc] initWithString: @"3-6" attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubSubTitleLabel}];
     NSAttributedString *strThree = [[NSAttributedString alloc] initWithString: @" sets of " attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubTitleLabel}];
-    NSAttributedString *strFour = [[NSAttributedString alloc] initWithString: @"6-12" attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubSubTitleLabel}];
+    NSAttributedString *strFour = [[NSAttributedString alloc] initWithString: @"6-10" attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubSubTitleLabel}];
     NSAttributedString *strFive = [[NSAttributedString alloc] initWithString: @" reps." attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubTitleLabel}];
     
     [strEnduranceSubtitle appendAttributedString: strOne];
@@ -875,9 +875,9 @@
     NSMutableAttributedString *strEnduranceSubtitle = [[NSMutableAttributedString alloc] init];
     
     NSAttributedString *strOne = [[NSAttributedString alloc] initWithString: @"Do " attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubTitleLabel}];
-    NSAttributedString *strTwo = [[NSAttributedString alloc] initWithString: @"6-10" attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubSubTitleLabel}];
+    NSAttributedString *strTwo = [[NSAttributedString alloc] initWithString: @"6-9" attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubSubTitleLabel}];
     NSAttributedString *strThree = [[NSAttributedString alloc] initWithString: @" sets of " attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubTitleLabel}];
-    NSAttributedString *strFour = [[NSAttributedString alloc] initWithString: @"1-5" attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubSubTitleLabel}];
+    NSAttributedString *strFour = [[NSAttributedString alloc] initWithString: @"1-6" attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubSubTitleLabel}];
     NSAttributedString *strFive = [[NSAttributedString alloc] initWithString: @" reps." attributes:  @{ NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: fontSubTitleLabel}];
     
     [strEnduranceSubtitle appendAttributedString: strOne];

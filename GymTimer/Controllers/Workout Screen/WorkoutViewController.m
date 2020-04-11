@@ -25,7 +25,7 @@
     BOOL isFirstpage, isSecondpage, flagFirstPage, flagSecondPage, isEndDraggingMethodCalled;
     int totalCurrentHour, totalCurrentMin, totalCurrentSec, totalTimeHour, totalTimeMin, totalTimeSec, lastExerciseHour, lastExerciseMin, lastExerciseSec;
     int timeMin, timeSec, currentRestTimeMinutes, currentRestTimeSeconds, currentPage;
-    NSDictionary *dicStartButtonAttributes;
+    NSDictionary *dicStartButtonAttributes, *dicSkillAvarage;
     NSURL *urlBeepAudio;
     SystemSoundID soundID;
     AVAudioSession *audioSession;
@@ -753,11 +753,11 @@
     [self.lblRange11 countFrom:[_lblRange11.text integerValue] to:3 withDuration:0.4];
     self.lblRange11.text = @"3";
     
-    [self.lblRange2 countFrom:[_lblRange2.text integerValue] to:6 withDuration:0.4];
-    self.lblRange2.text = @"6";
+    [self.lblRange2 countFrom:[_lblRange2.text integerValue] to:10 withDuration:0.4];
+    self.lblRange2.text = @"10";
     
-    [self.lblRange22 countFrom:[_lblRange22.text integerValue] to:12 withDuration:0.4];
-    self.lblRange22.text = @"12";
+    [self.lblRange22 countFrom:[_lblRange22.text integerValue] to:20 withDuration:0.4];
+    self.lblRange22.text = @"20";
     
     
     [_btnEndurance setTitleColor:colorTabSelect forState:UIControlStateNormal];
@@ -779,13 +779,13 @@
     self.lblRange1.text = @"3";
     
     [self.lblRange11 countFrom:[_lblRange11.text integerValue] to:6 withDuration:0.4];
-    self.lblRange11.text = @"3";
+    self.lblRange11.text = @"6";
     
-    [self.lblRange2 countFrom:[_lblRange2.text integerValue] to:4 withDuration:0.4];
-    self.lblRange2.text = @"4";
+    [self.lblRange2 countFrom:[_lblRange2.text integerValue] to:6 withDuration:0.4];
+    self.lblRange2.text = @"6";
     
-    [self.lblRange22 countFrom:[_lblRange22.text integerValue] to:6 withDuration:0.4];
-    self.lblRange22.text = @"6";
+    [self.lblRange22 countFrom:[_lblRange22.text integerValue] to:10 withDuration:0.4];
+    self.lblRange22.text = @"10";
     
     [_btnEndurance setTitleColor:colorTabUnSelect forState:UIControlStateNormal];
     [_btnMuscle setTitleColor:colorTabSelect forState:UIControlStateNormal];
@@ -806,14 +806,14 @@
     [self.lblRange1 countFrom:[_lblRange1.text integerValue] to:6 withDuration:0.4];
     self.lblRange1.text = @"6";
     
-    [self.lblRange11 countFrom:[_lblRange11.text integerValue] to:10 withDuration:0.4];
-    self.lblRange11.text = @"10";
+    [self.lblRange11 countFrom:[_lblRange11.text integerValue] to:9 withDuration:0.4];
+    self.lblRange11.text = @"9";
     
     [self.lblRange2 countFrom:[_lblRange2.text integerValue] to:1 withDuration:0.4];
     self.lblRange2.text = @"1";
     
-    [self.lblRange22 countFrom:[_lblRange22.text integerValue] to:4 withDuration:0.4];
-    self.lblRange22.text = @"4";
+    [self.lblRange22 countFrom:[_lblRange22.text integerValue] to:6 withDuration:0.4];
+    self.lblRange22.text = @"6";
     
     [_btnEndurance setTitleColor:colorTabUnSelect forState:UIControlStateNormal];
     [_btnMuscle setTitleColor:colorTabUnSelect forState:UIControlStateNormal];
@@ -1216,13 +1216,16 @@
                 }
                 
                 self.lblLevel.text = [NSString stringWithFormat:@"%d",level];
-                [self displayCongrats];
+//                [self displayCongrats];
             }
         }
         NSLog(@"Workout Timer Grater Than Or Equal To 5 Min");
     } else if (result == NSOrderedAscending) {
         NSLog(@"Workout Timer Less Than 5 Min");
-        [self.lblShortWorkoutMsg setHidden:NO];
+        // Vsn - 09/04/2020
+//        [self.lblShortWorkoutMsg setHidden:NO];
+        [self.lblShortWorkoutMsg setHidden:YES];
+        // End
     } else {
         [self.lblShortWorkoutMsg setHidden:YES];
     }
@@ -1293,12 +1296,14 @@
             }
             
         });
-        
     }];
     
     [UIView transitionWithView: _imgAppBackgroundImage duration: 0.3 options: UIViewAnimationOptionTransitionCrossDissolve animations:^{
         [self->_imgAppBackgroundImage setImage: iWELCOME_SCREEN];
     } completion:^(BOOL finished) {}];
+    
+    [_lblRandomWorkoutCompleteSubTitle setAttributedText: [self getWorkoutCompleteLastPopupText]];
+    [Utils setLastRandomWorkoutComplete];
 }
 
 - (IBAction)btnStartRestButtonTapped:(UIButton *)sender {
@@ -1916,8 +1921,11 @@
     
     [_lblGymTimerWorkoutScreenTitleLabel setTextColor: UIColor.whiteColor];
     
-    [_viewWorkoutStatsBackgroundView setClipsToBounds: YES];
-    [_viewWorkoutStatsBackgroundView setBackgroundColor: cDARK_GREEN_BACKGROUND];
+    
+    // Vsn - 09/04/2020
+//    [_viewWorkoutStatsBackgroundView setClipsToBounds: YES];
+//    [_viewWorkoutStatsBackgroundView setBackgroundColor: cDARK_GREEN_BACKGROUND];
+    // End
     
     [_viewWorkoutStatsContentView setClipsToBounds: YES];
     [_viewWorkoutStatsContentView setBackgroundColor: UIColor.whiteColor];
@@ -2045,6 +2053,9 @@
             CGRect frameRange2 = _lblRange2.frame;
             //            frameRange2.size.width = widthParent * 0.0964;
             frameRange2.origin.x = frameSeprator1.origin.x + frameSeprator1.size.width + 7.0;
+            // Vsn - 09/04/2020
+            frameRange2.size.width = frameRange2.size.width + 7.0;
+            // End
             [_lblRange2 setFrame:frameRange2];
             
             CGRect minus2 = _lblMinus2.frame;
@@ -2354,10 +2365,31 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
-        [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 175, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 414.0)];
+        // Vsn - 09/04/2020
+        [_viewPowerPopup setFrame: CGRectMake(23.0, 120, (_contentViewWorkoutCompleteScreen.frame.size.width - 49.0), 70.0)];
+
+        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] init];
+        UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:13.0];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
+        NSDictionary *attrsDict1 = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor blackColor], NSForegroundColorAttributeName, nil];
+        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" for working out today !" attributes:attrsDict1]];
+        _lblCongratulationsText.attributedText = attrString;
+        [_lblCongratulationsText updateConstraints];
+        
+        [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 0.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 14.0))];
+        _viewPowerPopupInfomation.layer.cornerRadius = _viewPowerPopupInfomation.frame.size.height / 2;
+        [_lblCongratulationsText setFrame: CGRectMake(12.0, 7.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
+        // Vsn - 10/04/2020
+            [_imgPowerPopupInfomationBg setFrame: CGRectMake(-16.0, -11.0, _viewPowerPopupInfomation.frame.size.width + 32.0, _viewPowerPopupInfomation.frame.size.height + 26.0)];
+//        [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 175, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 414.0)];
+        [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 155, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 414.0)];
+        [_viewPowerPopup setFrame: CGRectMake(23.0, _viewWorkoutStatsBackgroundView.frame.origin.y + 15 - 70, (_contentViewWorkoutCompleteScreen.frame.size.width - 49.0), 70.0)];
+        // End
+
         [[_viewWorkoutStatsBackgroundView layer] setCornerRadius: 30.0];
         
         
@@ -2365,7 +2397,12 @@
         CGFloat statsContentViewY = (_viewWorkoutStatsBackgroundView.frame.size.height - _viewWorkoutStatsBackgroundView.frame.size.width + 9.0);
         CGFloat statsContentWidth = _viewWorkoutStatsBackgroundView.frame.size.width;
         [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, statsContentViewY, setAndRestBgWidth, statsContentWidth - 9.0)];
-        [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 130, setAndRestBgWidth, 284)];
+        // Vsn - 09/04/2020
+//        [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 130, setAndRestBgWidth, 284)];
+        [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 0.0, setAndRestBgWidth, 284)];
+        [_vwRandomWorkoutCompleteBackground setFrame: CGRectMake(0.0, _viewWorkoutStatsContentView.frame.size.height + 20.0, setAndRestBgWidth, 234)];
+        [[_vwRandomWorkoutCompleteBackground layer] setCornerRadius: 30.0];
+        // End
         [[_viewWorkoutStatsContentView layer] setCornerRadius: 30.0];
         
         //Do set number view and Rest time view
@@ -2378,10 +2415,56 @@
         UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 21.0];
         [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 0.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
         [_lblCurrentDateLabel setFont: currentDateLabel];
+        // Vsn - 10/04/2020
+        [_lblRandomWorkoutCompleteTitle setFrame: _lblCurrentDateLabel.frame];
+        [_lblRandomWorkoutCompleteTitle setFont:currentDateLabel];
+        // End
         
         // New Design
         [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
         [self.vwCompetedBottom setFrame:CGRectMake(0, 70, setAndRestBgWidth, 214)];
+        // Vsn - 09/04/2020
+        [_vwRandomWorkoutCompleteTitle setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
+        [_vwRandomWorkoutCompleteSubTitle setFrame:CGRectMake(0, 70, setAndRestBgWidth, _vwRandomWorkoutCompleteBackground.frame.size.height - 70)];
+        // End
+        // Vsn - 10/04/2020
+        [_lblRandomWorkoutCompleteSubTitle setFrame:CGRectMake(20.0, 20.0, setAndRestBgWidth - 40, _vwRandomWorkoutCompleteSubTitle.frame.size.height - 40)];
+        
+        if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+            [_vwRandomWorkoutCompletePro setHidden: true];
+            [self callGetExerciseHistoryAPI];
+        } else {
+            [_lblRandomWorkoutCompleteSubTitle setAttributedText: [self getWorkoutCompleteLastPopupText]];
+
+            [_vwRandomWorkoutCompletePro setHidden: false];
+            
+            [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 25.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 15.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 50.0, 30.0)];
+            [[_vwRandomWorkoutCompletePro layer] setCornerRadius: 10.0];
+            [[_vwRandomWorkoutCompletePro layer] setMasksToBounds: NO];
+            [[_vwRandomWorkoutCompletePro layer] setShadowColor: [[UIColor blackColor] CGColor]];
+            [[_vwRandomWorkoutCompletePro layer] setShadowOffset: CGSizeMake(1.0, 1.0)];
+            [[_vwRandomWorkoutCompletePro layer] setShadowRadius: 10.0];
+            [[_vwRandomWorkoutCompletePro layer] setShadowOpacity: 0.5];
+            UIBezierPath *workoutViewShadowPathPro = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompletePro bounds]];
+            [[_vwRandomWorkoutCompletePro layer] setShadowPath: [workoutViewShadowPathPro CGPath]];
+            
+            [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(0.0, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
+            
+            NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
+            attachment1.image = [UIImage imageNamed:@"lockgreen"];
+            NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
+            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:12.0];
+            
+            NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+            NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_BOLD size:14.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor greenColor], NSBackgroundColorAttributeName, nil];
+
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"PRO" attributes:attrsBackground]];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+            
+            [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+        }
+        // End
         [self.vwQuality setFrame:CGRectMake(0, 0, setAndRestBgWidth / 2, 214)];
         [self.vwTime setFrame:CGRectMake(setAndRestBgWidth / 2, 0, setAndRestBgWidth / 2, 214)];
         
@@ -2440,8 +2523,12 @@
         [_viewWorkoutStatsContentView addSubview: lblCounting];
         
         [self.lblShortWorkoutMsg setFrame:CGRectMake(20, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 8, self.viewWorkoutStatsBackgroundView.frame.size.width, 32)];
-        [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 70, 80, 80)];
-        [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 70, 80, 80)];
+        // Vsn - 09/04/2020
+//        [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 70, 80, 80)];
+//        [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 70, 80, 80)];
+        [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 40, 80, 80)];
+        [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 40, 80, 80)];
+        // End
                 
     } else if (IS_IPHONEX) {
         
@@ -2562,6 +2649,9 @@
             CGRect frameRange2 = _lblRange2.frame;
             //            frameRange2.size.width = widthParent * 0.0964;
             frameRange2.origin.x = frameSeprator1.origin.x + frameSeprator1.size.width + 5.0;
+            // Vsn - 09/04/2020
+            frameRange2.size.width = frameRange2.size.width + 7.0;
+            // End
             [_lblRange2 setFrame:frameRange2];
             
             CGRect minus2 = _lblMinus2.frame;
@@ -2857,17 +2947,41 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
-        [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 175, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 414.0)];
+        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] init];
+        UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:13.0];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
+        NSDictionary *attrsDict1 = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor blackColor], NSForegroundColorAttributeName, nil];
+        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" for working out today !" attributes:attrsDict1]];
+        _lblCongratulationsText.attributedText = attrString;
+        [_lblCongratulationsText updateConstraints];
+        
+        [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 0.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 14.0))];
+        _viewPowerPopupInfomation.layer.cornerRadius = _viewPowerPopupInfomation.frame.size.height / 2;
+        [_lblCongratulationsText setFrame: CGRectMake(12.0, 7.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
+        [_imgPowerPopupInfomationBg setFrame: CGRectMake(-16.0, -11.0, _viewPowerPopupInfomation.frame.size.width + 32.0, _viewPowerPopupInfomation.frame.size.height + 26.0)];
+        // End
+
+        // Vsn - 10/04/2020
+//        [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 175, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 414.0)];
+        [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 155, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 414.0)];
+        [_viewPowerPopup setFrame: CGRectMake(23.0, _viewWorkoutStatsBackgroundView.frame.origin.y + 15 - 70, (_contentViewWorkoutCompleteScreen.frame.size.width - 49.0), 70.0)];
+        // End
         [[_viewWorkoutStatsBackgroundView layer] setCornerRadius: 30.0];
         
         //Stats content view
         CGFloat statsContentViewY = (_viewWorkoutStatsBackgroundView.frame.size.height - _viewWorkoutStatsBackgroundView.frame.size.width + 9.0);
         CGFloat statsContentWidth = _viewWorkoutStatsBackgroundView.frame.size.width;
         [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, statsContentViewY, setAndRestBgWidth, statsContentWidth - 9.0)];
-        [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 130, setAndRestBgWidth, 284)];
+        // Vsn - 09/04/2020
+//        [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 130, setAndRestBgWidth, 284)];
+        [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 0.0, setAndRestBgWidth, 284)];
+        [_vwRandomWorkoutCompleteBackground setFrame: CGRectMake(0.0, _viewWorkoutStatsContentView.frame.size.height + 20.0, setAndRestBgWidth, 234)];
+        [[_vwRandomWorkoutCompleteBackground layer] setCornerRadius: 30.0];
+        // End
         [[_viewWorkoutStatsContentView layer] setCornerRadius: 30.0];
         
         //Do set number view and Rest time view
@@ -2880,10 +2994,54 @@
         [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 0.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
         UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 21.0];
         [_lblCurrentDateLabel setFont: currentDateLabel];
+        // Vsn - 10/04/2020
+        [_lblRandomWorkoutCompleteTitle setFrame: _lblCurrentDateLabel.frame];
+        [_lblRandomWorkoutCompleteTitle setFont:currentDateLabel];
+        // End
         
         // New Design
         [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
         [self.vwCompetedBottom setFrame:CGRectMake(0, 70, setAndRestBgWidth, 214)];
+        // Vsn - 10/04/2020
+        [_vwRandomWorkoutCompleteTitle setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
+        [_vwRandomWorkoutCompleteSubTitle setFrame:CGRectMake(0, 70, setAndRestBgWidth, _vwRandomWorkoutCompleteBackground.frame.size.height - 70)];
+        [_lblRandomWorkoutCompleteSubTitle setFrame:CGRectMake(20.0, 20.0, setAndRestBgWidth - 40, _vwRandomWorkoutCompleteSubTitle.frame.size.height - 40)];
+        
+        if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+            [_vwRandomWorkoutCompletePro setHidden: true];
+            [self callGetExerciseHistoryAPI];
+        } else {
+            [_lblRandomWorkoutCompleteSubTitle setAttributedText: [self getWorkoutCompleteLastPopupText]];
+
+            [_vwRandomWorkoutCompletePro setHidden: false];
+            
+            [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 25.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 15.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 50.0, 30.0)];
+            [[_vwRandomWorkoutCompletePro layer] setCornerRadius: 10.0];
+            [[_vwRandomWorkoutCompletePro layer] setMasksToBounds: NO];
+            [[_vwRandomWorkoutCompletePro layer] setShadowColor: [[UIColor blackColor] CGColor]];
+            [[_vwRandomWorkoutCompletePro layer] setShadowOffset: CGSizeMake(1.0, 1.0)];
+            [[_vwRandomWorkoutCompletePro layer] setShadowRadius: 10.0];
+            [[_vwRandomWorkoutCompletePro layer] setShadowOpacity: 0.5];
+            UIBezierPath *workoutViewShadowPathPro = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompletePro bounds]];
+            [[_vwRandomWorkoutCompletePro layer] setShadowPath: [workoutViewShadowPathPro CGPath]];
+            
+            [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(0.0, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
+            
+            NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
+            attachment1.image = [UIImage imageNamed:@"lockgreen"];
+            NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
+            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:12.0];
+            
+            NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+            NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_BOLD size:14.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor greenColor], NSBackgroundColorAttributeName, nil];
+
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"PRO" attributes:attrsBackground]];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+            
+            [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+        }
+        // End
         [self.vwQuality setFrame:CGRectMake(0, 0, setAndRestBgWidth / 2, 214)];
         [self.vwTime setFrame:CGRectMake(setAndRestBgWidth / 2, 0, setAndRestBgWidth / 2, 214)];
         
@@ -2943,8 +3101,12 @@
         [_viewWorkoutStatsContentView addSubview: lblCounting];
         
         [self.lblShortWorkoutMsg setFrame:CGRectMake(20, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 8, self.viewWorkoutStatsBackgroundView.frame.size.width, 32)];
-        [_btnShareStatsButton setFrame:CGRectMake(85, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
-        [_btnDoneWorkoutButton setFrame:CGRectMake(self.btnShareStatsButton.frame.origin.x + self.btnShareStatsButton.frame.size.width + 45, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
+        // Vsn - 10/04/2020
+//        [_btnShareStatsButton setFrame:CGRectMake(85, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
+//        [_btnDoneWorkoutButton setFrame:CGRectMake(self.btnShareStatsButton.frame.origin.x + self.btnShareStatsButton.frame.size.width + 45, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
+        [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 20, 80, 80)];
+        [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 20, 80, 80)];
+        // End
         
     } else if (IS_IPHONE8PLUS) {
         {
@@ -3065,6 +3227,9 @@
                 CGRect frameRange2 = _lblRange2.frame;
                 //            frameRange2.size.width = widthParent * 0.0964;
                 frameRange2.origin.x = frameSeprator1.origin.x + frameSeprator1.size.width + 4.0;
+                // Vsn - 09/04/2020
+                frameRange2.size.width = frameRange2.size.width + 7.0;
+                // End
                 [_lblRange2 setFrame:frameRange2];
                 
                 CGRect minus2 = _lblMinus2.frame;
@@ -3403,18 +3568,40 @@
             [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
             UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
             [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-            [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+            // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
             
             //Workout Stats background view
+            // Vsn - 10/04/2020
+            NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] init];
+            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:13.0];
+            NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
+            NSDictionary *attrsDict1 = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor blackColor], NSForegroundColorAttributeName, nil];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" for working out today !" attributes:attrsDict1]];
+            _lblCongratulationsText.attributedText = attrString;
+            [_lblCongratulationsText updateConstraints];
+            
+            [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 0.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 14.0))];
+            _viewPowerPopupInfomation.layer.cornerRadius = _viewPowerPopupInfomation.frame.size.height / 2;
+            [_lblCongratulationsText setFrame: CGRectMake(12.0, 7.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
+            [_imgPowerPopupInfomationBg setFrame: CGRectMake(-16.0, -11.0, _viewPowerPopupInfomation.frame.size.width + 32.0, _viewPowerPopupInfomation.frame.size.height + 26.0)];
+            // End
             CGFloat workoutStatsBgViewY = (_lblGymTimerWorkoutScreenTitleLabel.frame.origin.y + _lblGymTimerWorkoutScreenTitleLabel.frame.size.height );
             [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, workoutStatsBgViewY, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 414.0)];
+            // Vsn - 10/04/2020
+            [_viewPowerPopup setFrame: CGRectMake(23.0, _viewWorkoutStatsBackgroundView.frame.origin.y + 15 - 70 + 60, (_contentViewWorkoutCompleteScreen.frame.size.width - 49.0), 70.0)];
+            // End
             [[_viewWorkoutStatsBackgroundView layer] setCornerRadius: 30.0];
             
             //Stats content view
             CGFloat statsContentViewY = (_viewWorkoutStatsBackgroundView.frame.size.height - _viewWorkoutStatsBackgroundView.frame.size.width + 9.0);
             CGFloat statsContentWidth = _viewWorkoutStatsBackgroundView.frame.size.width;
-            [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, statsContentViewY, setAndRestBgWidth, statsContentWidth - 9.0)];
-            [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 130, setAndRestBgWidth + 12, 284)];
+            // Vsn - 10/04/2020
+//            [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, statsContentViewY, setAndRestBgWidth, statsContentWidth - 9.0)];
+            [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 60.0, setAndRestBgWidth, 244)];
+            [_vwRandomWorkoutCompleteBackground setFrame: CGRectMake(0.0, _viewWorkoutStatsContentView.frame.size.height + _viewWorkoutStatsContentView.frame.origin.y + 20.0, setAndRestBgWidth, 234)];
+            [[_vwRandomWorkoutCompleteBackground layer] setCornerRadius: 30.0];
+            // End
             [[_viewWorkoutStatsContentView layer] setCornerRadius: 30.0];
             
             //Do set number view and Rest time view
@@ -3423,15 +3610,60 @@
             [_lblWorkoutCompleteLabel setFrame: CGRectMake(31.0, (workoutCompleteViewHeight - 120.0), (statsContentWidth - 100.0), 120.0)];
             UIFont *fontWorkoutCompleteLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 45.0];
             [_lblWorkoutCompleteLabel setFont: fontWorkoutCompleteLabel];
+            [_lblWorkoutCompleteLabel setHidden: true];
             
             [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 5.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
             UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 26.0];
             [_lblCurrentDateLabel setFont: currentDateLabel];
+            // Vsn - 10/04/2020
+            [_lblRandomWorkoutCompleteTitle setFrame: _lblCurrentDateLabel.frame];
+            [_lblRandomWorkoutCompleteTitle setFont:currentDateLabel];
+            // End
             
             // Vsn - 12/03/2020
             // New Design            
             [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth + 12, 70)];
-            [self.vwCompetedBottom setFrame:CGRectMake(0, 70, setAndRestBgWidth + 12, 214)];
+            [self.vwCompetedBottom setFrame:CGRectMake(0, 50, setAndRestBgWidth + 12, 184)];
+            // Vsn - 10/04/2020
+            [_vwRandomWorkoutCompleteTitle setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
+            [_vwRandomWorkoutCompleteSubTitle setFrame:CGRectMake(0, 70, setAndRestBgWidth, _vwRandomWorkoutCompleteBackground.frame.size.height - 70)];
+            [_lblRandomWorkoutCompleteSubTitle setFrame:CGRectMake(20.0, 20.0, setAndRestBgWidth - 40, _vwRandomWorkoutCompleteSubTitle.frame.size.height - 40)];
+            
+            if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+                [_vwRandomWorkoutCompletePro setHidden: true];
+                [self callGetExerciseHistoryAPI];
+            } else {
+                [_lblRandomWorkoutCompleteSubTitle setAttributedText: [self getWorkoutCompleteLastPopupText]];
+                
+                [_vwRandomWorkoutCompletePro setHidden: false];
+                
+                [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 25.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 15.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 50.0, 30.0)];
+                [[_vwRandomWorkoutCompletePro layer] setCornerRadius: 10.0];
+                [[_vwRandomWorkoutCompletePro layer] setMasksToBounds: NO];
+                [[_vwRandomWorkoutCompletePro layer] setShadowColor: [[UIColor blackColor] CGColor]];
+                [[_vwRandomWorkoutCompletePro layer] setShadowOffset: CGSizeMake(1.0, 1.0)];
+                [[_vwRandomWorkoutCompletePro layer] setShadowRadius: 10.0];
+                [[_vwRandomWorkoutCompletePro layer] setShadowOpacity: 0.5];
+                UIBezierPath *workoutViewShadowPathPro = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompletePro bounds]];
+                [[_vwRandomWorkoutCompletePro layer] setShadowPath: [workoutViewShadowPathPro CGPath]];
+                
+                [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(0.0, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
+                
+                NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
+                attachment1.image = [UIImage imageNamed:@"lockgreen"];
+                NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
+                UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:12.0];
+                
+                NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+                NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_BOLD size:14.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor greenColor], NSBackgroundColorAttributeName, nil];
+
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"PRO" attributes:attrsBackground]];
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+                
+                [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+            }
+            // End
             [self.vwQuality setFrame:CGRectMake(0, 0, (setAndRestBgWidth + 12) / 2, 214)];
             [self.vwTime setFrame:CGRectMake((setAndRestBgWidth + 12) / 2, 0, (setAndRestBgWidth + 12) / 2, 214)];
             
@@ -3485,8 +3717,13 @@
             [_viewWorkoutStatsContentView addSubview: lblCounting];
             
             [self.lblShortWorkoutMsg setFrame:CGRectMake(20, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 8, self.viewWorkoutStatsBackgroundView.frame.size.width, 32)];
-            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
-            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
+            // Vsn - 10/04/2020
+//            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
+//            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
+            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 10, 80, 80)];
+            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 10, 80, 80)];
+            // End
+
         }
     } else if (IS_IPHONE8) {
         {
@@ -3607,6 +3844,9 @@
                 CGRect frameRange2 = _lblRange2.frame;
                 //            frameRange2.size.width = widthParent * 0.0964;
                 frameRange2.origin.x = frameSeprator1.origin.x + frameSeprator1.size.width + 4.0;
+                // Vsn - 09/04/2020
+                frameRange2.size.width = frameRange2.size.width + 7.0;
+                // End
                 [_lblRange2 setFrame:frameRange2];
                 
                 CGRect minus2 = _lblMinus2.frame;
@@ -3903,18 +4143,43 @@
             [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
             UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
             [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-            [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+            // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
             
             //Workout Stats background view
+            // Vsn - 10/04/2020
+            NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] init];
+            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:13.0];
+            NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
+            NSDictionary *attrsDict1 = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor blackColor], NSForegroundColorAttributeName, nil];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" for working out today !" attributes:attrsDict1]];
+            _lblCongratulationsText.attributedText = attrString;
+            [_lblCongratulationsText updateConstraints];
+            
+            [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 0.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 14.0))];
+            _viewPowerPopupInfomation.layer.cornerRadius = _viewPowerPopupInfomation.frame.size.height / 2;
+            [_lblCongratulationsText setFrame: CGRectMake(12.0, 7.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
+            [_imgPowerPopupInfomationBg setFrame: CGRectMake(-16.0, -11.0, _viewPowerPopupInfomation.frame.size.width + 32.0, _viewPowerPopupInfomation.frame.size.height + 26.0)];
+            // End
+
+            
+            // Vsn - 10/04/2020
             CGFloat workoutStatsBgViewY = (_lblGymTimerWorkoutScreenTitleLabel.frame.origin.y + _lblGymTimerWorkoutScreenTitleLabel.frame.size.height);
-            [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, workoutStatsBgViewY, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 414.0)];
+            [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, workoutStatsBgViewY + 60.0, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 414.0)];
+            [_viewPowerPopup setFrame: CGRectMake(23.0, _viewWorkoutStatsBackgroundView.frame.origin.y + 15 - 70 - 100, (_contentViewWorkoutCompleteScreen.frame.size.width - 49.0), 70.0)];
+            // End
             [[_viewWorkoutStatsBackgroundView layer] setCornerRadius: 30.0];
             
             //Stats content view
             CGFloat statsContentViewY = (_viewWorkoutStatsBackgroundView.frame.size.height - _viewWorkoutStatsBackgroundView.frame.size.width + 9.0);
             CGFloat statsContentWidth = _viewWorkoutStatsBackgroundView.frame.size.width;
             [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, statsContentViewY, setAndRestBgWidth, statsContentWidth - 9.0)];
-            [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 130, setAndRestBgWidth, 284)];
+            // Vsn - 10/04/2020
+            //        [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 130, setAndRestBgWidth, 284)];
+            [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, 0.0, setAndRestBgWidth, 230)];
+            [_vwRandomWorkoutCompleteBackground setFrame: CGRectMake(0.0, _viewWorkoutStatsContentView.frame.size.height + _viewWorkoutStatsContentView.frame.origin.y + 20.0, setAndRestBgWidth, 190)];
+            [[_vwRandomWorkoutCompleteBackground layer] setCornerRadius: 30.0];
+            // End
             [[_viewWorkoutStatsContentView layer] setCornerRadius: 30.0];
             
             //Do set number view and Rest time view
@@ -3927,10 +4192,54 @@
             [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 5.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
             UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 24.0];
             [_lblCurrentDateLabel setFont: currentDateLabel];
+            // Vsn - 10/04/2020
+            [_lblRandomWorkoutCompleteTitle setFrame: _lblCurrentDateLabel.frame];
+            [_lblRandomWorkoutCompleteTitle setFont:currentDateLabel];
+            // End
             
             // New Design
-            [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
-            [self.vwCompetedBottom setFrame:CGRectMake(0, 70, setAndRestBgWidth, 214)];
+            [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth, 65)];
+            [self.vwCompetedBottom setFrame:CGRectMake(0, 45, setAndRestBgWidth, 164)];
+            // Vsn - 10/04/2020
+            [_vwRandomWorkoutCompleteTitle setFrame:CGRectMake(0, 0, setAndRestBgWidth, 65)];
+            [_vwRandomWorkoutCompleteSubTitle setFrame:CGRectMake(0, 65, setAndRestBgWidth, _vwRandomWorkoutCompleteBackground.frame.size.height - 65)];
+            [_lblRandomWorkoutCompleteSubTitle setFrame:CGRectMake(20.0, 20.0, setAndRestBgWidth - 40, _vwRandomWorkoutCompleteSubTitle.frame.size.height - 40)];
+            
+            if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+                [_vwRandomWorkoutCompletePro setHidden: true];
+                [self callGetExerciseHistoryAPI];
+            } else {
+                [_lblRandomWorkoutCompleteSubTitle setAttributedText: [self getWorkoutCompleteLastPopupText]];
+
+                [_vwRandomWorkoutCompletePro setHidden: false];
+                
+                [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 25.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 15.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 50.0, 30.0)];
+                [[_vwRandomWorkoutCompletePro layer] setCornerRadius: 10.0];
+                [[_vwRandomWorkoutCompletePro layer] setMasksToBounds: NO];
+                [[_vwRandomWorkoutCompletePro layer] setShadowColor: [[UIColor blackColor] CGColor]];
+                [[_vwRandomWorkoutCompletePro layer] setShadowOffset: CGSizeMake(1.0, 1.0)];
+                [[_vwRandomWorkoutCompletePro layer] setShadowRadius: 10.0];
+                [[_vwRandomWorkoutCompletePro layer] setShadowOpacity: 0.5];
+                UIBezierPath *workoutViewShadowPathPro = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompletePro bounds]];
+                [[_vwRandomWorkoutCompletePro layer] setShadowPath: [workoutViewShadowPathPro CGPath]];
+                
+                [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(0.0, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
+                
+                NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
+                attachment1.image = [UIImage imageNamed:@"lockgreen"];
+                NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
+                UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:12.0];
+                
+                NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+                NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_BOLD size:14.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor greenColor], NSBackgroundColorAttributeName, nil];
+
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"PRO" attributes:attrsBackground]];
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+                
+                [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+            }
+            // End
             [self.vwQuality setFrame:CGRectMake(0, 0, setAndRestBgWidth / 2, 214)];
             [self.vwTime setFrame:CGRectMake(setAndRestBgWidth / 2, 0, setAndRestBgWidth / 2, 214)];
             
@@ -3984,8 +4293,13 @@
             [_viewWorkoutStatsContentView addSubview: lblCounting];
             
             [self.lblShortWorkoutMsg setFrame:CGRectMake(20, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 8, self.viewWorkoutStatsBackgroundView.frame.size.width, 32)];
-            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
-            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
+            
+            // Vsn - 10/04/2020
+//            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
+//            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
+            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 10, 70, 70)];
+            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 10, 70, 70)];
+            // End
         }
     } else {
         {
@@ -4104,6 +4418,9 @@
                 CGRect frameRange2 = _lblRange2.frame;
                 //            frameRange2.size.width = widthParent * 0.0964;
                 frameRange2.origin.x = frameSeprator1.origin.x + frameSeprator1.size.width + 4.0;
+                // Vsn - 09/04/2020
+                frameRange2.size.width = frameRange2.size.width + 7.0;
+                // End
                 [_lblRange2 setFrame:frameRange2];
                 
                 CGRect minus2 = _lblMinus2.frame;
@@ -4421,7 +4738,7 @@
             [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
             UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
             [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-            [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+            // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
             
             //Workout Stats background view
             CGFloat workoutStatsBgViewY = (_lblGymTimerWorkoutScreenTitleLabel.frame.size.height + 4);
@@ -4443,6 +4760,10 @@
             [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 0.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
             UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 21.0];
             [_lblCurrentDateLabel setFont: currentDateLabel];
+            // Vsn - 10/04/2020
+        [_lblRandomWorkoutCompleteTitle setFrame: _lblCurrentDateLabel.frame];
+        [_lblRandomWorkoutCompleteTitle setFont:currentDateLabel];
+        // End
             
             // New Design
             [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
@@ -4502,6 +4823,10 @@
             [self.lblShortWorkoutMsg setFrame:CGRectMake(20, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 12, self.viewWorkoutStatsBackgroundView.frame.size.width, 32)];
             [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 20, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 60, 60)];
             [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 80, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 60, 60)];
+            
+            [self.viewPowerPopup setHidden: true];
+            [self.vwRandomWorkoutCompleteBackground setHidden: true];
+            [self.lblWorkoutCompleteLabel setHidden: true];
         }
     }
     self.btnShareStatsButton.layer.cornerRadius = self.btnShareStatsButton.frame.size.height / 2;
@@ -4669,7 +4994,23 @@
     
     NSString *timeString = [[NSUserDefaults standardUserDefaults] valueForKey: kWORKOUT_TIME];
     
-    [_lblCurrentDateLabel setText: [NSString stringWithFormat:@"%@, %@",strDate, timeString]];
+    // Vsn - 09/04/2020
+//    [_lblCurrentDateLabel setText: [NSString stringWithFormat:@"%@, %@",strDate, timeString]];
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    attachment.image = [UIImage imageNamed:@"chart"];
+    NSMutableAttributedString *attachmentString = [NSAttributedString attributedStringWithAttachment:attachment].mutableCopy;
+    NSAttributedString *myString= [[NSAttributedString alloc] initWithString:@" Workout summary"];
+    [attachmentString appendAttributedString: myString];
+    [_lblCurrentDateLabel setAttributedText:attachmentString];
+//    [_lblCurrentDateLabel setText: @"Workout summary"];
+    
+    NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
+    attachment1.image = [UIImage imageNamed:@"bulb"];
+    NSMutableAttributedString *attachmentString1 = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
+    NSAttributedString *myString1= [[NSAttributedString alloc] initWithString:@" Post-workout insight"];
+    [attachmentString1 appendAttributedString: myString1];
+    [_lblRandomWorkoutCompleteTitle setAttributedText:attachmentString1];
+    // End
     
     NSString *strTotalTime = [[NSUserDefaults standardUserDefaults] valueForKey: kTOTAL_TIME];
     NSArray *arrTimeComponents = [strTotalTime componentsSeparatedByString: @":"];
@@ -5869,7 +6210,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 0.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
         [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 24, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 800)];
@@ -5895,6 +6236,7 @@
         
         //Stats content view
         [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, self.vwCongrats.frame.origin.y + self.vwCongrats.frame.size.height + 16, setAndRestBgWidth, 284)];
+        [_viewWorkoutStatsContentView setFrame: CGRectMake(0.0, self.vwCongrats.frame.origin.y + self.vwCongrats.frame.size.height + 16, setAndRestBgWidth, 284)];
         [[_viewWorkoutStatsContentView layer] setCornerRadius: 30.0];
         
         //Do set number view and Rest time view
@@ -5906,6 +6248,10 @@
         [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 0.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
         UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 21.0];
         [_lblCurrentDateLabel setFont: currentDateLabel];
+        // Vsn - 10/04/2020
+        [_lblRandomWorkoutCompleteTitle setFrame: _lblCurrentDateLabel.frame];
+        [_lblRandomWorkoutCompleteTitle setFont:currentDateLabel];
+        // End
         
         // New Design
         [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
@@ -5977,7 +6323,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 0.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
         [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 24, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 800)];
@@ -6012,6 +6358,10 @@
         [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 0.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
         UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 21.0];
         [_lblCurrentDateLabel setFont: currentDateLabel];
+        // Vsn - 10/04/2020
+        [_lblRandomWorkoutCompleteTitle setFrame: _lblCurrentDateLabel.frame];
+        [_lblRandomWorkoutCompleteTitle setFont:currentDateLabel];
+        // End
         
         // New Design
         [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
@@ -6084,7 +6434,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 0.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
         [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 24, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 800)];
@@ -6119,6 +6469,10 @@
         [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 0.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
         UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 21.0];
         [_lblCurrentDateLabel setFont: currentDateLabel];
+        // Vsn - 10/04/2020
+        [_lblRandomWorkoutCompleteTitle setFrame: _lblCurrentDateLabel.frame];
+        [_lblRandomWorkoutCompleteTitle setFont:currentDateLabel];
+        // End
         
         // New Design
         [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
@@ -6190,7 +6544,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
         [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 24, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 800)];
@@ -6225,6 +6579,10 @@
         [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 0.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
         UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 21.0];
         [_lblCurrentDateLabel setFont: currentDateLabel];
+        // Vsn - 10/04/2020
+        [_lblRandomWorkoutCompleteTitle setFrame: _lblCurrentDateLabel.frame];
+        [_lblRandomWorkoutCompleteTitle setFont:currentDateLabel];
+        // End
         
         // New Design
         [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
@@ -6296,7 +6654,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         // Congrats View
         [self.vwCongrats setFrame:CGRectMake(0.0, _viewWorkoutCompleteContentVIew.frame.origin.y + _viewWorkoutCompleteContentVIew.frame.size.height + 20, _viewWorkoutStatsBackgroundView.frame.size.width, 284)];
@@ -6331,6 +6689,10 @@
         [_lblCurrentDateLabel setFrame: CGRectMake(0.0, 0.0, (_viewWorkoutStatsContentView.frame.size.width), 70.0)];
         UIFont *currentDateLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 21.0];
         [_lblCurrentDateLabel setFont: currentDateLabel];
+        // Vsn - 10/04/2020
+        [_lblRandomWorkoutCompleteTitle setFrame: _lblCurrentDateLabel.frame];
+        [_lblRandomWorkoutCompleteTitle setFont:currentDateLabel];
+        // End
         
         // New Design
         [self.vwDateTime setFrame:CGRectMake(0, 0, setAndRestBgWidth, 70)];
@@ -7382,6 +7744,19 @@
     }
 }
 
+- (void)callGetExerciseHistoryAPI {
+    NSArray *arrSaveExerciseParams = @[
+        @{ @"user_id" : [dicUserDetails valueForKey: @"id"]}
+    ];
+    
+    NSLog(@"Dic : %@", arrSaveExerciseParams);
+    
+    if ([Utils isConnectedToInternet]) {
+        NSString *webpath = [NSString stringWithFormat:@"%@%@", uBASE_URL, uGET_EXERCISE_HISTORY];
+        [serviceManager callWebServiceWithPOST: webpath withTag: tGET_EXERCISE_HISTORY params: arrSaveExerciseParams];
+    }
+}
+
 - (void)parseGetTotalWorkout:(id)response {
     NSMutableDictionary *dicResponse = (NSMutableDictionary *)response;
     NSLog(@"%@",dicResponse);
@@ -7391,6 +7766,147 @@
         [Utils setTotalWorkout:workout];
     }
 }
+
+- (void)parseGetExerciseHistoryResponse:(id)response {
+    
+    NSMutableDictionary *dicResponse = (NSMutableDictionary *)response;
+    NSLog(@"%@",dicResponse);
+    if ([[dicResponse valueForKey:@"status"] integerValue] == 1) {
+        NSDictionary *dicUserStatsData = [[NSMutableDictionary alloc] initWithDictionary: [dicResponse valueForKey: @"data"]];
+        NSLog(@"%@", dicUserStatsData);
+        
+        dicSkillAvarage = dicUserStatsData;
+        [_lblRandomWorkoutCompleteSubTitle setAttributedText: [self getWorkoutCompleteLastPopupText]];
+    } else {
+        [Utils showToast: [dicResponse valueForKey: @"message"] duration: 3.0];
+    }
+}
+
+// MARK:- Workout Complete last text
+- (NSMutableAttributedString *) getWorkoutCompleteLastPopupText {
+    
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] init];
+    UIFont *font = [UIFont fontWithName:fFUTURA_CONDENSED_EXTRA_BOLD size:22.0];
+    
+    NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+    NSDictionary *attrsBack = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor blackColor], NSForegroundColorAttributeName, nil];
+    
+    
+    switch ([Utils getLastRandomWorkoutComplete]) {
+        case 1:
+            // 1. You trained on average `4.2 times per week` over the last month !
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @"You trained on average" attributes:attrsBack]];
+            if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" %@ times per week", [dicSkillAvarage valueForKeyPath:@"skill.monthly.average"]] attributes:attrsGreen]];
+            } else {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" ? times per week" attributes:attrsGreen]];
+            }
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" over the last month !" attributes:attrsBack]];
+            break;
+        case 2:
+            // 2. The `average duration` of your workouts overall is `?` !
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @"The" attributes:attrsBack]];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" average duration" attributes:attrsGreen]];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" of your workouts overall is" attributes:attrsBack]];
+            if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" %@", [dicSkillAvarage valueForKeyPath:@"average.total.time"]] attributes:attrsGreen]];
+            } else {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" ?" attributes:attrsGreen]];
+            }
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" !" attributes:attrsBack]];
+            break;
+        case 3:
+            // 3. You `trained ? days` during the last month !
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @"You" attributes:attrsBack]];
+            if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" trained %@ days", [dicSkillAvarage valueForKeyPath:@"skill.monthly.total_workout"]] attributes:attrsGreen]];
+            } else {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" trained ? days" attributes:attrsGreen]];
+            }
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" during the last month !" attributes:attrsBack]];
+            break;
+        case 4:
+            // 4. You `trained ?h ?min ?sec in total` since you started using GymTimer !
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @"You" attributes:attrsBack]];
+            if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+                NSString *totalTime = [dicSkillAvarage valueForKeyPath:@"skill.total.total_time"];
+                NSArray *separatedTime = [totalTime componentsSeparatedByString:@":"];
+                
+                int hours = [separatedTime[0] intValue];
+                int minutes = [separatedTime[1] intValue];
+                int sec = [separatedTime[2] intValue];
+                
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" trained %dh %dmin %dsec in total", hours, minutes, sec] attributes:attrsGreen]];
+            } else {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" trained ?h ?min ?sec in total" attributes:attrsGreen]];
+            }
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" since you started using GymTimer !" attributes:attrsBack]];
+            break;
+        case 5:
+            // 5. You did on average `? exercises per workout` last month !
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @"You did on average" attributes:attrsBack]];
+            if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" %@ exercises per workout", [dicSkillAvarage valueForKeyPath:@"average.monthly.exercise"]] attributes:attrsGreen]];
+            } else {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" ? exercises per workout" attributes:attrsGreen]];
+            }
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" last month !" attributes:attrsBack]];
+            break;
+        case 6:
+            // 6. You `trained ? days` since you started using GymTimer !
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @"You" attributes:attrsBack]];
+            if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" trained %@ days", [dicSkillAvarage valueForKeyPath:@"skill.total.total_workout"]] attributes:attrsGreen]];
+            } else {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" trained ? days" attributes:attrsGreen]];
+            }
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" since you started using GymTimer !" attributes:attrsBack]];
+            break;
+        case 7:
+            // 7. The `average duration` of your workouts over the last month is `?` !
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @"The" attributes:attrsBack]];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" average duration" attributes:attrsGreen]];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" of your workouts over the last month is" attributes:attrsBack]];
+            if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" %@", [dicSkillAvarage valueForKeyPath:@"average.monthly.time"]] attributes:attrsGreen]];
+            } else {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" ?" attributes:attrsGreen]];
+            }
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" !" attributes:attrsBack]];
+            break;
+        case 8:
+            // 8. You trained on average `? times per week` since you use GymTimer !
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @"You trained on average" attributes:attrsBack]];
+            if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" %@ times per week", [dicSkillAvarage valueForKeyPath:@"skill.total.average"]] attributes:attrsGreen]];
+            } else {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" ? times per week" attributes:attrsGreen]];
+            }
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" since you use GymTimer !" attributes:attrsBack]];
+            break;
+        case 9:
+            // 9. You `trained ?h ?min ?sec` in total during the last month !
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @"You" attributes:attrsBack]];
+            if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
+                NSString *totalTime = [dicSkillAvarage valueForKeyPath:@"skill.monthly.total_time"];
+                NSArray *separatedTime = [totalTime componentsSeparatedByString:@":"];
+                
+                int hours = [separatedTime[0] intValue];
+                int minutes = [separatedTime[1] intValue];
+                int sec = [separatedTime[2] intValue];
+                
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" trained %dh %dmin %dsec", hours, minutes, sec] attributes:attrsGreen]];
+            } else {
+                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" trained ?h ?min ?sec" attributes:attrsGreen]];
+            }
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @" in total during the last month !" attributes:attrsBack]];
+            break;
+        default:
+            break;
+    }
+    return attrString;
+}
+
 
 - (void)parseMakeProUser:(id)response {
     NSMutableDictionary *dicResponse = (NSMutableDictionary *)response;
@@ -7470,8 +7986,9 @@
         [self parseFriendCountResponse:response];
     } else if ([tagname isEqualToString:tGET_TOTAL_WORKOUT]) {
         [self parseGetTotalWorkout:response];
+    } else if ([tagname isEqualToString: tGET_EXERCISE_HISTORY]) {
+        [self parseGetExerciseHistoryResponse: response];
     }
-    
 }
 
 - (void) parseFriendCountResponse: (id) response {
@@ -7506,7 +8023,8 @@
     
     NSMutableDictionary *dicResponse = (NSMutableDictionary *)response;
     
-    if ([[dicResponse valueForKey:@"status"] integerValue] == 1) {
+    if([[dicResponse valueForKey:@"status"] integerValue] == 1) {
+//    if ([[dicResponse valueForKey:@"status"] integerValue] == 1 && [dicResponse valueForKey: @"data"] != nil) {
         
         NSMutableArray *arrWorkoutsData = [[NSMutableArray alloc] initWithArray: [dicResponse valueForKey: @"data"]];
         

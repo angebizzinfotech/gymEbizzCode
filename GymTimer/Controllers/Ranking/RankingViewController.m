@@ -577,7 +577,7 @@
         self.scrlViewSearch.alpha = 1.0;
     } completion:nil];
 
-    [self getFriendsCountAPI];
+//    [self getFriendsCountAPI];
     
     //Show Get Free popup if not Pro
     if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
@@ -591,7 +591,9 @@
 
     } else {
         //Show
-        [self->_viewProMember setHidden:NO];
+        // Vsn - 09/04/2020
+//        [self->_viewProMember setHidden:NO];
+        // End
         self->_constAddDetailTop.constant = 15.0;
 
         self->_constVwFreeRight.constant = 16.0;
@@ -1068,7 +1070,7 @@
 - (IBAction)btnCloseFriendRequestAction:(UIButton *)sender {
     _viewFriendRequestList.hidden = YES;
     [self.view endEditing:YES];
-    [self getFriendsCountAPI];
+//    [self getFriendsCountAPI];
 }
 
 - (IBAction)btnFriendRequestListAction:(UIButton *)sender {

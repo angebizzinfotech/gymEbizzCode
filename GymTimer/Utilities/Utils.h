@@ -127,4 +127,7 @@
 + (void)setTotalWorkout:(NSString *)workout;
 
 + (NSString *)getTotalWorkout;
+
++ (int)getLastRandomWorkoutComplete;
++ (void)setLastRandomWorkoutComplete;
 @end

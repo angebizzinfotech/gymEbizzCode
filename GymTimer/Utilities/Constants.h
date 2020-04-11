@@ -215,6 +215,8 @@
 #define kIS_FOR_OFFLINE_SAVE    @"ISForOfflineWorkoutsSaveAPICalled"
 #define kTIME_NOW               @"TimeNow"
 #define kIsAppInBackGround      @"ApplicationState"
+#define kGET_RANDOM_WORKOUT_COUNT   @"RandomWorkoutCount"
+
 
 //MARK:-  CollectionView Identifier Constant
 #define cvONBOARDING_CELL       @"OnBoardingCollectionViewCell"

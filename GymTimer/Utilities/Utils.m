@@ -497,5 +497,27 @@ static Color _colors[maxSegmentsCount] = {
     return [UIColor colorWithRed:(color.red / 255.0f) green:(color.green / 255.0f) blue:(color.blue / 255.0f) alpha:1.0f];
 }
 
++ (int)getLastRandomWorkoutComplete
+{
+    if([[NSUserDefaults standardUserDefaults] valueForKey: kGET_RANDOM_WORKOUT_COUNT] == nil || [[NSUserDefaults standardUserDefaults] valueForKey: kGET_RANDOM_WORKOUT_COUNT] == 0)
+    {
+        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kGET_RANDOM_WORKOUT_COUNT];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return 1;
+    }
+    return [[[NSUserDefaults standardUserDefaults] valueForKey: kGET_RANDOM_WORKOUT_COUNT] intValue];
+}
++ (void)setLastRandomWorkoutComplete
+{
+    int i = [[[NSUserDefaults standardUserDefaults] valueForKey: kGET_RANDOM_WORKOUT_COUNT] intValue];
+    if(i < 9)
+    {
+        i++;
+    } else {
+        i = 1;
+    }
+    [[NSUserDefaults standardUserDefaults] setInteger:i forKey:kGET_RANDOM_WORKOUT_COUNT];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 @end
 
