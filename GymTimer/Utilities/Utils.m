@@ -143,7 +143,18 @@
     [view addSubview:spinner];
     [spinner startAnimating];
     return spinner;
+}
+
++ (UIActivityIndicatorView *) showMyActivityIndicatorInView: (UIView *) view withColor: (UIColor *) color {
     
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge];
+    [spinner setFrame: CGRectMake(view.frame.origin.x + 2.0, view.frame.origin.y + 2.0, view.frame.size.width, view.frame.size.height)];
+//    [spinner setCenter: view.center];
+    [spinner setColor: color];
+//    [spinner setTransform: CGAffineTransformMakeScale(1.0, 1.0)];
+    [view.superview addSubview:spinner];
+    [spinner startAnimating];
+    return spinner;
 }
 
 + (void) hideActivityIndicator: (UIActivityIndicatorView *) spinner {

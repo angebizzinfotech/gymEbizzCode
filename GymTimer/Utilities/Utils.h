@@ -46,10 +46,12 @@
 
 + (UIActivityIndicatorView *) showActivityIndicatorInView: (UIView *) view withColor: (UIColor *) color;
 
++ (UIActivityIndicatorView *) showMyActivityIndicatorInView: (UIView *) view withColor: (UIColor *) color;
+
 + (void) hideActivityIndicator: (UIActivityIndicatorView *) spinner;
 
 + (void)hideActivityIndicator:(UIActivityIndicatorView *)spinner fromView:(UIView *)view;
-
+    
 //MARK:- KSToastView method
 + (void)showToast:(NSString *)message duration:(CGFloat)interval;
 

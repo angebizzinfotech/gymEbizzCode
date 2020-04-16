@@ -110,6 +110,8 @@
 		03DB49792403885E00BB6BCF /* launchScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DB49782403885E00BB6BCF /* launchScreenVC.m */; };
 		03E51D5C23FEA3A200CBA72A /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E51D5B23FEA3A100CBA72A /* AlertController.m */; };
 		03E51D5E23FEB19100CBA72A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E51D5D23FEB19100CBA72A /* Launch Screen.storyboard */; };
+		229B5C962445D8F70030203F /* launchCircleScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B5C952445D8F70030203F /* launchCircleScreenVC.m */; };
+		229B5CDC2445E49C0030203F /* LaunchCircleScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229B5CDB2445E49C0030203F /* LaunchCircleScreen.storyboard */; };
 		7D679A05744290339437152C /* Pods_GymTimer_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C26438B6946E65A6063668 /* Pods_GymTimer_Watch_Extension.framework */; };
 		F17F3F74DF1EED174EC1C6E3 /* Pods_GymTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8BB3AB96F5CD42D5D91B93 /* Pods_GymTimer.framework */; };
 /* End PBXBuildFile section */
@@ -534,6 +536,9 @@
 		03E51D5D23FEB19100CBA72A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		03F639A3240F613D00519AD3 /* GymTimer Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GymTimer Watch.entitlements"; sourceTree = "<group>"; };
+		229B5C942445D8F70030203F /* launchCircleScreenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = launchCircleScreenVC.h; sourceTree = "<group>"; };
+		229B5C952445D8F70030203F /* launchCircleScreenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = launchCircleScreenVC.m; sourceTree = "<group>"; };
+		229B5CDB2445E49C0030203F /* LaunchCircleScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchCircleScreen.storyboard; sourceTree = "<group>"; };
 		2C8BB3AB96F5CD42D5D91B93 /* Pods_GymTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C298C3D6D74C95265B59F05 /* Pods-GymTimer Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTimer Watch Extension.release.xcconfig"; path = "Target Support Files/Pods-GymTimer Watch Extension/Pods-GymTimer Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		3F68E798D4CC38F276E2BB1D /* Pods-GymTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTimer.debug.xcconfig"; path = "Target Support Files/Pods-GymTimer/Pods-GymTimer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1275,6 +1280,7 @@
 				03DB4953240387FE00BB6BCF /* Launch Screen Code.storyboard */,
 				03DB49772403885E00BB6BCF /* launchScreenVC.h */,
 				03DB49782403885E00BB6BCF /* launchScreenVC.m */,
+				229B5CB92445D91B0030203F /* Circle */,
 			);
 			path = "Launch Screen";
 			sourceTree = "<group>";
@@ -1347,6 +1353,16 @@
 				3C298C3D6D74C95265B59F05 /* Pods-GymTimer Watch Extension.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		229B5CB92445D91B0030203F /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				229B5C942445D8F70030203F /* launchCircleScreenVC.h */,
+				229B5C952445D8F70030203F /* launchCircleScreenVC.m */,
+				229B5CDB2445E49C0030203F /* LaunchCircleScreen.storyboard */,
+			);
+			path = Circle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1719,6 +1735,7 @@
 				03B3523F226599AC002C47D9 /* Main.storyboard in Resources */,
 				0316F44B23A0CE9B004D47E5 /* AverageWorkoutCell.xib in Resources */,
 				03CE6B82238D3F4800D0EB02 /* GoogleService-Info.plist in Resources */,
+				229B5CDC2445E49C0030203F /* LaunchCircleScreen.storyboard in Resources */,
 				0323C88723261CD20028F8F8 /* RequestAccptedCell.xib in Resources */,
 				03C0235A228D7728004A06B1 /* beep_sound_new.mp3 in Resources */,
 				0328FC5623E3E7AE007965A7 /* WarmUpView.xib in Resources */,
@@ -1842,6 +1859,7 @@
 				03B35247226599AD002C47D9 /* main.m in Sources */,
 				03CACACA236AEE7200D9B2D8 /* OnBoardingCVC.m in Sources */,
 				0346D2662267537200DC607D /* WorkoutViewController.m in Sources */,
+				229B5C962445D8F70030203F /* launchCircleScreenVC.m in Sources */,
 				0316F43F23A0CDB7004D47E5 /* YourSkillLevelCell.m in Sources */,
 				0334B92A22942126000BF326 /* MCNewCustomLayeredView.m in Sources */,
 				0323C88C23261D7F0028F8F8 /* RequestReceivedCell.m in Sources */,

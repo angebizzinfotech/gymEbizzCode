@@ -214,16 +214,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *viewWorkoutCompleteContentVIew;
 @property (weak, nonatomic) IBOutlet UILabel *lblWorkoutCompleteLabel;
 @property (weak, nonatomic) IBOutlet UIView *viewWorkoutStatsContentView;
+@property (weak, nonatomic) IBOutlet UIView *viewWorkoutStatsContentViewShadow;
 @property (weak, nonatomic) IBOutlet UILabel *lblCurrentDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lblTotalWorkoutTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lblTotalWorkoutExercisesLabel;
 
 // Vsn - 09/04/2020
 @property (weak, nonatomic) IBOutlet UIView *vwRandomWorkoutCompleteBackground;
+@property (weak, nonatomic) IBOutlet UIView *vwRandomWorkoutCompleteBackgroundShadow;
 @property (weak, nonatomic) IBOutlet UIView *vwRandomWorkoutCompleteTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblRandomWorkoutCompleteTitle;
 @property (weak, nonatomic) IBOutlet UIView *vwRandomWorkoutCompleteSubTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblRandomWorkoutCompleteSubTitle;
+@property (weak, nonatomic) IBOutlet UIView *vwRandomSeprater;
 @property (weak, nonatomic) IBOutlet UIView *vwRandomWorkoutCompletePro;
 @property (weak, nonatomic) IBOutlet UILabel *lblRandomWorkoutCompleteProText;
 // End

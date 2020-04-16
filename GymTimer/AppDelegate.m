@@ -126,6 +126,11 @@
         [self.window setRootViewController: navController];
         [self.window makeKeyAndVisible];
     }
+//    UIViewController *launchVC = [storyBoard instantiateViewControllerWithIdentifier: @"launchCircleScreenVC"];
+//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: launchVC];
+//    [navController setNavigationBarHidden: true];
+//    [self.window setRootViewController: navController];
+//    [self.window makeKeyAndVisible];
     
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
@@ -576,7 +581,6 @@
 }
 
 // MARK:- API Data Parsing
-
 - (void)parseCheckPro:(id)response {
     NSMutableDictionary *dicResponse = (NSMutableDictionary *)response;
     NSLog(@"%@", dicResponse);
