@@ -59,6 +59,15 @@
     // Vsn - 13/04/2020
     UIActivityIndicatorView *loaderView;
     // End
+    
+    // Vsn - 21/04/2020
+    CGSize scrollViewWorkoutCompleteScreenSize;
+    CGRect viewWorkoutStatsContentViewFrame;
+    CGRect viewWorkoutStatsBackgroundViewFrame;
+    CGRect viewPowerPopupFrame;
+    CGRect btnDoneWorkoutButtonFrame;
+    CGRect btnShareStatsButtonFrame;
+    // End
 }
 
 @end
@@ -1321,6 +1330,23 @@
     
     if (result1 == NSOrderedDescending || result1 == NSOrderedSame) {
         NSLog(@"Workout Timer Grater Than Or Equal To 5 Min");
+        
+//        // Vsn - 21/04/2020
+//        [_scrollViewWorkoutCompleteScreen setContentSize: scrollViewWorkoutCompleteScreenSize];
+//        [_contentViewWorkoutCompleteScreen setFrame: CGRectMake(0.0, 0.0, (_scrollViewWorkoutCompleteScreen.contentSize.width), (_scrollViewWorkoutCompleteScreen.contentSize.height))];
+//
+//        [_vwRandomWorkoutCompleteBackground setHidden: false];
+//        [_vwRandomWorkoutCompleteBackgroundShadow setHidden: false];
+//
+//        [_viewWorkoutStatsBackgroundView setFrame: viewWorkoutStatsBackgroundViewFrame];
+//        [_viewWorkoutStatsContentView setFrame: viewWorkoutStatsContentViewFrame];
+//        [_viewWorkoutStatsContentViewShadow setFrame: _viewWorkoutStatsContentView.frame];
+//        [_viewPowerPopup setFrame: viewPowerPopupFrame];
+//
+//        [self.btnDoneWorkoutButton setFrame: btnDoneWorkoutButtonFrame];
+//        [self.btnShareStatsButton setFrame: btnShareStatsButtonFrame];
+//        // End
+        
         [self callSaveExerciseAPI];
     }
     else {
@@ -1328,8 +1354,29 @@
         _imgEndWorkoutImage.layer.cornerRadius = _imgEndWorkoutImage.frame.size.height / 2;
         [_imgEndWorkoutImage setImage: nil];
         spinner = [Utils showMyActivityIndicatorInView: _imgEndWorkoutImage withColor: [UIColor grayColor]];
+        
+//        // Vsn - 21/04/2020
+//        [_scrollViewWorkoutCompleteScreen setContentSize: CGSizeMake(DEVICE_WIDTH, DEVICE_HEIGHT)];
+//        [_contentViewWorkoutCompleteScreen setFrame: CGRectMake(0.0, 0.0, (_scrollViewWorkoutCompleteScreen.contentSize.width), (_scrollViewWorkoutCompleteScreen.contentSize.height))];
+//
+//        [_vwRandomWorkoutCompleteBackground setHidden: true];
+//        [_vwRandomWorkoutCompleteBackgroundShadow setHidden: true];
+//
+//        [_viewWorkoutStatsBackgroundView setFrame: viewWorkoutStatsBackgroundViewFrame];
+//        CGFloat y = (DEVICE_HEIGHT / 2) - _viewWorkoutStatsBackgroundView.frame.origin.y - (_viewWorkoutStatsContentView.frame.size.height / 2); // (_vwRandomWorkoutCompleteBackground.frame.origin.y + _vwRandomWorkoutCompleteBackground.frame.size.height - _viewWorkoutStatsContentView.frame.size.height) / 2;
+//        [_viewWorkoutStatsContentView setFrame: CGRectMake(_viewWorkoutStatsContentView.frame.origin.x, y, _viewWorkoutStatsContentView.frame.size.width, _viewWorkoutStatsContentView.frame.size.height)];
+//        [_viewWorkoutStatsContentViewShadow setFrame: _viewWorkoutStatsContentView.frame];
+//        [_viewPowerPopup setFrame: CGRectMake(23.0, _viewWorkoutStatsBackgroundView.frame.origin.y + 8 - 70 + _viewWorkoutStatsContentView.frame.origin.y, (_contentViewWorkoutCompleteScreen.frame.size.width - 49.0), 70.0)];
+//
+//        [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsContentView.frame.origin.y + self.viewWorkoutStatsContentView.frame.size.height + 40, 85, 85)];
+//        [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsContentView.frame.origin.y + self.viewWorkoutStatsContentView.frame.size.height + 40, 85, 85)];
+//        // End
     }
 
+    // 21/04/2020
+    [[self viewPowerPopup] setHidden: true];
+    // End
+    
     if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
         [_vwRandomWorkoutCompletePro setHidden: true];
         [_lblRandomWorkoutCompleteSubTitle setHidden: true];
@@ -1385,6 +1432,17 @@
                 }
                 
             });
+            // Vsn - 21/04/2020
+            CGRect viewPowerPopupFrame = self.viewPowerPopup.frame;
+            [[self viewPowerPopup] setFrame: CGRectMake(self.viewPowerPopup.frame.origin.x, self.viewPowerPopup.frame.origin.y + self.viewPowerPopup.frame.size.height + 40.0, self.viewPowerPopup.frame.size.width, self.viewPowerPopup.frame.size.height)];
+            [[self viewPowerPopup] setHidden: false];
+            
+            [UIView animateWithDuration:0.7 delay:0.5 usingSpringWithDamping:0.45 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+                [[self viewPowerPopup] setFrame: viewPowerPopupFrame];
+                [[self view] layoutIfNeeded];
+            } completion:^(BOOL finished) {
+            }];
+            // End
         }];
         
         [UIView transitionWithView: _imgAppBackgroundImage duration: 0.3 options: UIViewAnimationOptionTransitionCrossDissolve animations:^{
@@ -2479,7 +2537,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+         [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
         // Vsn - 09/04/2020
@@ -2524,20 +2582,22 @@
         [_viewWorkoutStatsContentViewShadow setFrame: _viewWorkoutStatsContentView.frame];
         UIBezierPath *workoutViewShadowPath = [UIBezierPath bezierPathWithRect: [_viewWorkoutStatsContentViewShadow bounds]];
         [[_viewWorkoutStatsContentViewShadow layer] setMasksToBounds: NO];
-        [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
-        [[_viewWorkoutStatsContentViewShadow layer] setShadowOffset: CGSizeMake(10.0, 10.0)];
-        [[_viewWorkoutStatsContentViewShadow layer] setShadowRadius: 15.0];
-        [[_viewWorkoutStatsContentViewShadow layer] setShadowOpacity: 0.5];
+//      [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
+        [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [[UIColor blackColor] CGColor]];
+        [[_viewWorkoutStatsContentViewShadow layer] setShadowOffset: CGSizeZero];
+        [[_viewWorkoutStatsContentViewShadow layer] setShadowRadius: 10.0];
+        [[_viewWorkoutStatsContentViewShadow layer] setShadowOpacity: 0.25];
         [[_viewWorkoutStatsContentViewShadow layer] setShadowPath: [workoutViewShadowPath CGPath]];
         [_viewWorkoutStatsContentViewShadow setClipsToBounds: false];
         
         [_vwRandomWorkoutCompleteBackgroundShadow setFrame: _vwRandomWorkoutCompleteBackground.frame];
         UIBezierPath *workoutViewShadowPath1 = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompleteBackgroundShadow bounds]];
         [[_vwRandomWorkoutCompleteBackgroundShadow layer] setMasksToBounds: NO];
-        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
-        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOffset: CGSizeMake(10.0, 10.0)];
-        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowRadius: 30.0];
-        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOpacity: 0.5];
+        // [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
+        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [[UIColor blackColor] CGColor]];
+        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOffset: CGSizeZero];
+        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowRadius: 10.0];
+        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOpacity: 0.25];
         [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowPath: [workoutViewShadowPath1 CGPath]];
         [_vwRandomWorkoutCompleteBackgroundShadow setClipsToBounds: false];
         // End
@@ -2581,7 +2641,7 @@
 
             [_vwRandomWorkoutCompletePro setHidden: false];
             
-            [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 25.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 10.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 50.0, 35.0)];
+            [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 15.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 13.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 30.0, 30.0)];
             [[_vwRandomWorkoutCompletePro layer] setCornerRadius: 10.0];
             [[_vwRandomWorkoutCompletePro layer] setMasksToBounds: NO];
             [[_vwRandomWorkoutCompletePro layer] setShadowColor: [[UIColor grayColor] CGColor]];
@@ -2591,21 +2651,63 @@
             UIBezierPath *workoutViewShadowPathPro = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompletePro bounds]];
             [[_vwRandomWorkoutCompletePro layer] setShadowPath: [workoutViewShadowPathPro CGPath]];
             
-            [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(2.5, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
-            
-            NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
-            attachment1.image = [UIImage imageNamed:@"lockgreen"];
-            NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
-            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:12.0];
-            
-            NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
-            NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_CONDENSED_EXTRA_BOLD size:12.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1], NSBackgroundColorAttributeName, nil];
+            // Vsn - 17/04/2020
+//            [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(2.5, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
+//
+//            NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
+//            attachment1.image = [UIImage imageNamed:@"lockgreen"];
+//            NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
+            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:13.0];
 
-            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
-            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
-            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+            NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+            NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_CONDENSED_EXTRA_BOLD size:16.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor clearColor], NSBackgroundColorAttributeName, nil];
+//
+//            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
+//            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
+//            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+//
+//            [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+            // End
             
-            [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+            CGFloat height = 14.0;
+            UIView *vwLbl = [[UIView alloc] init];
+
+            UIImageView *img = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"lockgreen"]];
+            [img setFrame: CGRectMake(0.0, 0.0, height, height)];
+            [img setContentMode: UIViewContentModeScaleAspectFit];
+//            [img setBackgroundColor: [UIColor blueColor]];
+            [img setFrame: CGRectMake(img.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - img.frame.size.height) / 2, img.frame.size.width, img.frame.size.height)];
+            [vwLbl addSubview: img];
+
+            UILabel *lbl1 = [[UILabel alloc] initWithFrame: CGRectMake(img.frame.origin.x + img.frame.size.width + 5.0, 0.0, 0.0, height)];
+            [lbl1 setAttributedText: [[NSAttributedString alloc] initWithString:@"These are exclusive for the " attributes:attrsGreen]];
+            [lbl1 sizeToFit];
+            [lbl1 setFrame: CGRectMake(lbl1.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - lbl1.frame.size.height) / 2, lbl1.frame.size.width, lbl1.frame.size.height)];
+            [vwLbl addSubview: lbl1];
+
+            UILabel *lbl2 = [[UILabel alloc] initWithFrame: CGRectMake(lbl1.frame.origin.x + lbl1.frame.size.width, -0.8, 0.0, height)];
+            [lbl2 setAttributedText: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
+            [lbl2 sizeToFit];
+            [lbl2 setFrame: CGRectMake(lbl2.frame.origin.x, ((_vwRandomWorkoutCompletePro.frame.size.height - lbl2.frame.size.height) / 2) + 0.5, lbl2.frame.size.width, lbl2.frame.size.height)];;
+
+            CGFloat padding = 1.0;
+            UIView *lbl2Bg = [[UIView alloc] initWithFrame: CGRectMake(lbl2.frame.origin.x - padding, lbl2.frame.origin.y - padding, lbl2.frame.size.width + padding, lbl2.frame.size.height + padding)];
+            [lbl2Bg setBackgroundColor: [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1]];
+            [[lbl2Bg layer] setCornerRadius: 5.0];
+            [lbl2Bg setClipsToBounds: true];
+            [vwLbl addSubview: lbl2Bg];
+            [vwLbl addSubview: lbl2];
+            
+            UILabel *lbl3 = [[UILabel alloc] initWithFrame: CGRectMake(lbl2.frame.origin.x + lbl2.frame.size.width, 0.0, 0.0, height)];
+            [lbl3 setAttributedText: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+            [lbl3 sizeToFit];
+            [lbl3 setFrame: CGRectMake(lbl3.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - lbl3.frame.size.height) / 2, lbl3.frame.size.width, lbl3.frame.size.height)];
+            [vwLbl addSubview: lbl3];
+
+//            [vwLbl setBackgroundColor: [UIColor redColor]];
+            [vwLbl setFrame: CGRectMake((_vwRandomWorkoutCompletePro.frame.size.width - lbl3.frame.origin.x - lbl3.frame.size.width)/2, 0.0, lbl3.frame.origin.x + lbl3.frame.size.width, _vwRandomWorkoutCompletePro.frame.size.height)];
+//            [vwLbl setCenter: _vwRandomWorkoutCompletePro.center];
+            [_vwRandomWorkoutCompletePro addSubview: vwLbl];
         }
         // End
         [self.vwQuality setFrame:CGRectMake(0, 0, setAndRestBgWidth / 2, 214)];
@@ -2669,8 +2771,8 @@
         // Vsn - 09/04/2020
 //        [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 70, 80, 80)];
 //        [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 70, 80, 80)];
-        [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 40, 80, 80)];
-        [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 40, 80, 80)];
+        [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 40, 85, 85)];
+        [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 40, 85, 85)];
         // End
                 
     }
@@ -3092,7 +3194,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+         [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
         NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] init];
@@ -3136,20 +3238,22 @@
         [_viewWorkoutStatsContentViewShadow setFrame: _viewWorkoutStatsContentView.frame];
         UIBezierPath *workoutViewShadowPath = [UIBezierPath bezierPathWithRect: [_viewWorkoutStatsContentViewShadow bounds]];
         [[_viewWorkoutStatsContentViewShadow layer] setMasksToBounds: NO];
-        [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
-        [[_viewWorkoutStatsContentViewShadow layer] setShadowOffset: CGSizeMake(10.0, 10.0)];
-        [[_viewWorkoutStatsContentViewShadow layer] setShadowRadius: 15.0];
-        [[_viewWorkoutStatsContentViewShadow layer] setShadowOpacity: 0.5];
+//      [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
+        [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [[UIColor blackColor] CGColor]];;
+        [[_viewWorkoutStatsContentViewShadow layer] setShadowOffset: CGSizeZero];
+        [[_viewWorkoutStatsContentViewShadow layer] setShadowRadius: 10.0];
+        [[_viewWorkoutStatsContentViewShadow layer] setShadowOpacity: 0.25];
         [[_viewWorkoutStatsContentViewShadow layer] setShadowPath: [workoutViewShadowPath CGPath]];
         [_viewWorkoutStatsContentViewShadow setClipsToBounds: false];
         
         [_vwRandomWorkoutCompleteBackgroundShadow setFrame: _vwRandomWorkoutCompleteBackground.frame];
         UIBezierPath *workoutViewShadowPath1 = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompleteBackgroundShadow bounds]];
         [[_vwRandomWorkoutCompleteBackgroundShadow layer] setMasksToBounds: NO];
-        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
-        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOffset: CGSizeMake(10.0, 10.0)];
-        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowRadius: 30.0];
-        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOpacity: 0.5];
+        // [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
+        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [[UIColor blackColor] CGColor]];
+        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOffset: CGSizeZero];
+        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowRadius: 10.0];
+        [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOpacity: 0.25];
         [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowPath: [workoutViewShadowPath1 CGPath]];
         [_vwRandomWorkoutCompleteBackgroundShadow setClipsToBounds: false];
         // End
@@ -3191,7 +3295,7 @@
 
             [_vwRandomWorkoutCompletePro setHidden: false];
             
-            [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 25.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 10.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 50.0, 35.0)];
+            [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 15.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 13.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 30.0, 30.0)];
             [[_vwRandomWorkoutCompletePro layer] setCornerRadius: 10.0];
             [[_vwRandomWorkoutCompletePro layer] setMasksToBounds: NO];
             [[_vwRandomWorkoutCompletePro layer] setShadowColor: [[UIColor grayColor] CGColor]];
@@ -3201,21 +3305,63 @@
             UIBezierPath *workoutViewShadowPathPro = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompletePro bounds]];
             [[_vwRandomWorkoutCompletePro layer] setShadowPath: [workoutViewShadowPathPro CGPath]];
             
-            [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(2.5, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
-            
-            NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
-            attachment1.image = [UIImage imageNamed:@"lockgreen"];
-            NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
-            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:12.0];
-            
-            NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
-            NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_CONDENSED_EXTRA_BOLD size:12.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1], NSBackgroundColorAttributeName, nil];
+            // Vsn - 17/04/2020
+//            [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(2.5, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
+//
+//            NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
+//            attachment1.image = [UIImage imageNamed:@"lockgreen"];
+//            NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
+            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:13.0];
 
-            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
-            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
-            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+            NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+            NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_CONDENSED_EXTRA_BOLD size:16.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor clearColor], NSBackgroundColorAttributeName, nil];
+//
+//            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
+//            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
+//            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+//
+//            [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+            // End
             
-            [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+            CGFloat height = 14.0;
+            UIView *vwLbl = [[UIView alloc] init];
+
+            UIImageView *img = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"lockgreen"]];
+            [img setFrame: CGRectMake(0.0, 0.0, height, height)];
+            [img setContentMode: UIViewContentModeScaleAspectFit];
+//            [img setBackgroundColor: [UIColor blueColor]];
+            [img setFrame: CGRectMake(img.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - img.frame.size.height) / 2, img.frame.size.width, img.frame.size.height)];
+            [vwLbl addSubview: img];
+
+            UILabel *lbl1 = [[UILabel alloc] initWithFrame: CGRectMake(img.frame.origin.x + img.frame.size.width + 5.0, 0.0, 0.0, height)];
+            [lbl1 setAttributedText: [[NSAttributedString alloc] initWithString:@"These are exclusive for the " attributes:attrsGreen]];
+            [lbl1 sizeToFit];
+            [lbl1 setFrame: CGRectMake(lbl1.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - lbl1.frame.size.height) / 2, lbl1.frame.size.width, lbl1.frame.size.height)];
+            [vwLbl addSubview: lbl1];
+
+            UILabel *lbl2 = [[UILabel alloc] initWithFrame: CGRectMake(lbl1.frame.origin.x + lbl1.frame.size.width, -0.8, 0.0, height)];
+            [lbl2 setAttributedText: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
+            [lbl2 sizeToFit];
+            [lbl2 setFrame: CGRectMake(lbl2.frame.origin.x, ((_vwRandomWorkoutCompletePro.frame.size.height - lbl2.frame.size.height) / 2) + 0.5, lbl2.frame.size.width, lbl2.frame.size.height)];
+            
+            CGFloat padding = 1.0;
+            UIView *lbl2Bg = [[UIView alloc] initWithFrame: CGRectMake(lbl2.frame.origin.x - padding, lbl2.frame.origin.y - padding, lbl2.frame.size.width + padding, lbl2.frame.size.height + padding)];
+            [lbl2Bg setBackgroundColor: [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1]];
+            [[lbl2Bg layer] setCornerRadius: 5.0];
+            [lbl2Bg setClipsToBounds: true];
+            [vwLbl addSubview: lbl2Bg];
+            [vwLbl addSubview: lbl2];
+            
+            UILabel *lbl3 = [[UILabel alloc] initWithFrame: CGRectMake(lbl2.frame.origin.x + lbl2.frame.size.width, 0.0, 0.0, height)];
+            [lbl3 setAttributedText: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+            [lbl3 sizeToFit];
+            [lbl3 setFrame: CGRectMake(lbl3.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - lbl3.frame.size.height) / 2, lbl3.frame.size.width, lbl3.frame.size.height)];
+            [vwLbl addSubview: lbl3];
+
+//            [vwLbl setBackgroundColor: [UIColor redColor]];
+            [vwLbl setFrame: CGRectMake((_vwRandomWorkoutCompletePro.frame.size.width - lbl3.frame.origin.x - lbl3.frame.size.width)/2, 0.0, lbl3.frame.origin.x + lbl3.frame.size.width, _vwRandomWorkoutCompletePro.frame.size.height)];
+//            [vwLbl setCenter: _vwRandomWorkoutCompletePro.center];
+            [_vwRandomWorkoutCompletePro addSubview: vwLbl];
         }
         // End
         [self.vwQuality setFrame:CGRectMake(0, 0, setAndRestBgWidth / 2, 214)];
@@ -3746,7 +3892,7 @@
             [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
             UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
             [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-            // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+             [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
             
             //Workout Stats background view
             // Vsn - 10/04/2020
@@ -3789,20 +3935,22 @@
             [_viewWorkoutStatsContentViewShadow setFrame: _viewWorkoutStatsContentView.frame];
             UIBezierPath *workoutViewShadowPath = [UIBezierPath bezierPathWithRect: [_viewWorkoutStatsContentViewShadow bounds]];
             [[_viewWorkoutStatsContentViewShadow layer] setMasksToBounds: NO];
-            [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
-            [[_viewWorkoutStatsContentViewShadow layer] setShadowOffset: CGSizeMake(10.0, 10.0)];
-            [[_viewWorkoutStatsContentViewShadow layer] setShadowRadius: 15.0];
-            [[_viewWorkoutStatsContentViewShadow layer] setShadowOpacity: 0.5];
+//          [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
+            [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [[UIColor blackColor] CGColor]];;
+            [[_viewWorkoutStatsContentViewShadow layer] setShadowOffset: CGSizeZero];
+            [[_viewWorkoutStatsContentViewShadow layer] setShadowRadius: 10.0];
+            [[_viewWorkoutStatsContentViewShadow layer] setShadowOpacity: 0.25];
             [[_viewWorkoutStatsContentViewShadow layer] setShadowPath: [workoutViewShadowPath CGPath]];
             [_viewWorkoutStatsContentViewShadow setClipsToBounds: false];
             
             [_vwRandomWorkoutCompleteBackgroundShadow setFrame: _vwRandomWorkoutCompleteBackground.frame];
             UIBezierPath *workoutViewShadowPath1 = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompleteBackgroundShadow bounds]];
             [[_vwRandomWorkoutCompleteBackgroundShadow layer] setMasksToBounds: NO];
-            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
-            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOffset: CGSizeMake(10.0, 10.0)];
-            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowRadius: 30.0];
-            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOpacity: 0.5];
+            // // [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
+            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [[UIColor blackColor] CGColor]];
+            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOffset: CGSizeZero];
+            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowRadius: 10.0];
+            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOpacity: 0.25];
             [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowPath: [workoutViewShadowPath1 CGPath]];
             [_vwRandomWorkoutCompleteBackgroundShadow setClipsToBounds: false];
             // End
@@ -3846,7 +3994,7 @@
                 
                 [_vwRandomWorkoutCompletePro setHidden: false];
                 
-                [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 25.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 10.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 50.0, 35.0)];
+                [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 15.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 13.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 30.0, 30.0)];
                 [[_vwRandomWorkoutCompletePro layer] setCornerRadius: 10.0];
                 [[_vwRandomWorkoutCompletePro layer] setShadowColor: [[UIColor grayColor] CGColor]];
                 [[_vwRandomWorkoutCompletePro layer] setShadowOffset: CGSizeMake(-0.5, 0.5)];
@@ -3855,21 +4003,63 @@
                 UIBezierPath *workoutViewShadowPathPro = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompletePro bounds]];
                 [[_vwRandomWorkoutCompletePro layer] setShadowPath: [workoutViewShadowPathPro CGPath]];
                 
-                [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(2.5, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
-                
-                NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
-                attachment1.image = [UIImage imageNamed:@"lockgreen"];
-                NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
-                UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:12.0];
-                
-                NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
-                NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_CONDENSED_EXTRA_BOLD size:12.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1], NSBackgroundColorAttributeName, nil];
+                // Vsn - 17/04/2020
+    //            [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(2.5, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
+    //
+    //            NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
+    //            attachment1.image = [UIImage imageNamed:@"lockgreen"];
+    //            NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
+                UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:13.0];
 
-                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
-                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
-                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+                NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+                NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_CONDENSED_EXTRA_BOLD size:16.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor clearColor], NSBackgroundColorAttributeName, nil];
+    //
+    //            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
+    //            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
+    //            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+    //
+    //            [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+                // End
                 
-                [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+                CGFloat height = 14.0;
+                UIView *vwLbl = [[UIView alloc] init];
+
+                UIImageView *img = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"lockgreen"]];
+                [img setFrame: CGRectMake(0.0, 0.0, height, height)];
+                [img setContentMode: UIViewContentModeScaleAspectFit];
+    //            [img setBackgroundColor: [UIColor blueColor]];
+                [img setFrame: CGRectMake(img.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - img.frame.size.height) / 2, img.frame.size.width, img.frame.size.height)];
+                [vwLbl addSubview: img];
+
+                UILabel *lbl1 = [[UILabel alloc] initWithFrame: CGRectMake(img.frame.origin.x + img.frame.size.width + 5.0, 0.0, 0.0, height)];
+                [lbl1 setAttributedText: [[NSAttributedString alloc] initWithString:@"These are exclusive for the " attributes:attrsGreen]];
+                [lbl1 sizeToFit];
+                [lbl1 setFrame: CGRectMake(lbl1.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - lbl1.frame.size.height) / 2, lbl1.frame.size.width, lbl1.frame.size.height)];
+                [vwLbl addSubview: lbl1];
+
+                UILabel *lbl2 = [[UILabel alloc] initWithFrame: CGRectMake(lbl1.frame.origin.x + lbl1.frame.size.width, -0.8, 0.0, height)];
+                [lbl2 setAttributedText: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
+                [lbl2 sizeToFit];
+                [lbl2 setFrame: CGRectMake(lbl2.frame.origin.x, ((_vwRandomWorkoutCompletePro.frame.size.height - lbl2.frame.size.height) / 2) + 0.5, lbl2.frame.size.width, lbl2.frame.size.height)];;
+
+                CGFloat padding = 1.0;
+                UIView *lbl2Bg = [[UIView alloc] initWithFrame: CGRectMake(lbl2.frame.origin.x - padding, lbl2.frame.origin.y - padding, lbl2.frame.size.width + padding, lbl2.frame.size.height + padding)];
+                [lbl2Bg setBackgroundColor: [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1]];
+                [[lbl2Bg layer] setCornerRadius: 5.0];
+                [lbl2Bg setClipsToBounds: true];
+                [vwLbl addSubview: lbl2Bg];
+                [vwLbl addSubview: lbl2];
+                
+                UILabel *lbl3 = [[UILabel alloc] initWithFrame: CGRectMake(lbl2.frame.origin.x + lbl2.frame.size.width, 0.0, 0.0, height)];
+                [lbl3 setAttributedText: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+                [lbl3 sizeToFit];
+                [lbl3 setFrame: CGRectMake(lbl3.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - lbl3.frame.size.height) / 2, lbl3.frame.size.width, lbl3.frame.size.height)];
+                [vwLbl addSubview: lbl3];
+
+    //            [vwLbl setBackgroundColor: [UIColor redColor]];
+                [vwLbl setFrame: CGRectMake((_vwRandomWorkoutCompletePro.frame.size.width - lbl3.frame.origin.x - lbl3.frame.size.width)/2, 0.0, lbl3.frame.origin.x + lbl3.frame.size.width, _vwRandomWorkoutCompletePro.frame.size.height)];
+    //            [vwLbl setCenter: _vwRandomWorkoutCompletePro.center];
+                [_vwRandomWorkoutCompletePro addSubview: vwLbl];
             }
             // End
             [self.vwQuality setFrame:CGRectMake(0, 0, (setAndRestBgWidth + 12) / 2, 214)];
@@ -3928,8 +4118,8 @@
             // Vsn - 10/04/2020
 //            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
 //            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
-            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 50, 80, 80)];
-            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 50, 80, 80)];
+            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 50, 85, 85)];
+            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 50, 85, 85)];
             // End
         }
     }
@@ -4352,7 +4542,7 @@
             [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
             UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
             [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-            // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+             [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
             
             //Workout Stats background view
             // Vsn - 10/04/2020
@@ -4397,20 +4587,22 @@
             [_viewWorkoutStatsContentViewShadow setFrame: _viewWorkoutStatsContentView.frame];
             UIBezierPath *workoutViewShadowPath = [UIBezierPath bezierPathWithRect: [_viewWorkoutStatsContentViewShadow bounds]];
             [[_viewWorkoutStatsContentViewShadow layer] setMasksToBounds: NO];
-            [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
-            [[_viewWorkoutStatsContentViewShadow layer] setShadowOffset: CGSizeMake(10.0, 10.0)];
-            [[_viewWorkoutStatsContentViewShadow layer] setShadowRadius: 15.0];
-            [[_viewWorkoutStatsContentViewShadow layer] setShadowOpacity: 0.5];
+//          [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
+            [[_viewWorkoutStatsContentViewShadow layer] setShadowColor: [[UIColor blackColor] CGColor]];;
+            [[_viewWorkoutStatsContentViewShadow layer] setShadowOffset: CGSizeZero];
+            [[_viewWorkoutStatsContentViewShadow layer] setShadowRadius: 10.0];
+            [[_viewWorkoutStatsContentViewShadow layer] setShadowOpacity: 0.25];
             [[_viewWorkoutStatsContentViewShadow layer] setShadowPath: [workoutViewShadowPath CGPath]];
             [_viewWorkoutStatsContentViewShadow setClipsToBounds: false];
             
             [_vwRandomWorkoutCompleteBackgroundShadow setFrame: _vwRandomWorkoutCompleteBackground.frame];
             UIBezierPath *workoutViewShadowPath1 = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompleteBackgroundShadow bounds]];
             [[_vwRandomWorkoutCompleteBackgroundShadow layer] setMasksToBounds: NO];
-            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
-            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOffset: CGSizeMake(10.0, 10.0)];
-            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowRadius: 30.0];
-            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOpacity: 0.5];
+            // [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [cGYM_TIMER_LABEL CGColor]];
+            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowColor: [[UIColor blackColor] CGColor]];
+            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOffset: CGSizeZero];
+            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowRadius: 10.0];
+            [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowOpacity: 0.25];
             [[_vwRandomWorkoutCompleteBackgroundShadow layer] setShadowPath: [workoutViewShadowPath1 CGPath]];
             [_vwRandomWorkoutCompleteBackgroundShadow setClipsToBounds: false];
             // End
@@ -4452,7 +4644,7 @@
 
                 [_vwRandomWorkoutCompletePro setHidden: false];
                 
-                [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 25.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 10.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 50.0, 35.0)];
+                [_vwRandomWorkoutCompletePro setFrame: CGRectMake(_vwRandomWorkoutCompleteSubTitle.frame.origin.x + 15.0, _vwRandomWorkoutCompleteSubTitle.frame.origin.y - 13.0, _vwRandomWorkoutCompleteSubTitle.frame.size.width - 30.0, 30.0)];
                 [[_vwRandomWorkoutCompletePro layer] setCornerRadius: 10.0];
                 [[_vwRandomWorkoutCompletePro layer] setMasksToBounds: NO];
                 [[_vwRandomWorkoutCompletePro layer] setShadowColor: [[UIColor grayColor] CGColor]];
@@ -4462,21 +4654,63 @@
                 UIBezierPath *workoutViewShadowPathPro = [UIBezierPath bezierPathWithRect: [_vwRandomWorkoutCompletePro bounds]];
                 [[_vwRandomWorkoutCompletePro layer] setShadowPath: [workoutViewShadowPathPro CGPath]];
                 
-                [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(2.5, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
-                
-                NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
-                attachment1.image = [UIImage imageNamed:@"lockgreen"];
-                NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
-                UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:12.0];
-                
-                NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
-                NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_CONDENSED_EXTRA_BOLD size:12.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1], NSBackgroundColorAttributeName, nil];
+                // Vsn - 17/04/2020
+    //            [_lblRandomWorkoutCompleteProText setFrame: CGRectMake(2.5, (_vwRandomWorkoutCompletePro.frame.size.height / 2) - 12.5, _vwRandomWorkoutCompletePro.frame.size.width, 25.0)];
+    //
+    //            NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
+    //            attachment1.image = [UIImage imageNamed:@"lockgreen"];
+    //            NSMutableAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:attachment1].mutableCopy;
+                UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM size:13.0];
 
-                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
-                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
-                [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+                NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+                NSDictionary *attrsBackground = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:fFUTURA_CONDENSED_EXTRA_BOLD size:16.0], NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, [UIColor clearColor], NSBackgroundColorAttributeName, nil];
+    //
+    //            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"  These are exclusive for the " attributes:attrsGreen]];
+    //            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
+    //            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+    //
+    //            [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+                // End
                 
-                [_lblRandomWorkoutCompleteProText setAttributedText: attrString];
+                CGFloat height = 14.0;
+                UIView *vwLbl = [[UIView alloc] init];
+
+                UIImageView *img = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"lockgreen"]];
+                [img setFrame: CGRectMake(0.0, 0.0, height, height)];
+                [img setContentMode: UIViewContentModeScaleAspectFit];
+    //            [img setBackgroundColor: [UIColor blueColor]];
+                [img setFrame: CGRectMake(img.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - img.frame.size.height) / 2, img.frame.size.width, img.frame.size.height)];
+                [vwLbl addSubview: img];
+
+                UILabel *lbl1 = [[UILabel alloc] initWithFrame: CGRectMake(img.frame.origin.x + img.frame.size.width + 5.0, 0.0, 0.0, height)];
+                [lbl1 setAttributedText: [[NSAttributedString alloc] initWithString:@"These are exclusive for the " attributes:attrsGreen]];
+                [lbl1 sizeToFit];
+                [lbl1 setFrame: CGRectMake(lbl1.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - lbl1.frame.size.height) / 2, lbl1.frame.size.width, lbl1.frame.size.height)];
+                [vwLbl addSubview: lbl1];
+
+                UILabel *lbl2 = [[UILabel alloc] initWithFrame: CGRectMake(lbl1.frame.origin.x + lbl1.frame.size.width, -0.8, 0.0, height)];
+                [lbl2 setAttributedText: [[NSAttributedString alloc] initWithString:@" PRO " attributes:attrsBackground]];
+                [lbl2 sizeToFit];
+                [lbl2 setFrame: CGRectMake(lbl2.frame.origin.x, ((_vwRandomWorkoutCompletePro.frame.size.height - lbl2.frame.size.height) / 2) + 0.5, lbl2.frame.size.width, lbl2.frame.size.height)];;
+
+                CGFloat padding = 1.0;
+                UIView *lbl2Bg = [[UIView alloc] initWithFrame: CGRectMake(lbl2.frame.origin.x - padding, lbl2.frame.origin.y - padding, lbl2.frame.size.width + padding, lbl2.frame.size.height + padding)];
+                [lbl2Bg setBackgroundColor: [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1]];
+                [[lbl2Bg layer] setCornerRadius: 5.0];
+                [lbl2Bg setClipsToBounds: true];
+                [vwLbl addSubview: lbl2Bg];
+                [vwLbl addSubview: lbl2];
+
+                UILabel *lbl3 = [[UILabel alloc] initWithFrame: CGRectMake(lbl2.frame.origin.x + lbl2.frame.size.width, 0.0, 0.0, height)];
+                [lbl3 setAttributedText: [[NSAttributedString alloc] initWithString:@" community" attributes:attrsGreen]];
+                [lbl3 sizeToFit];
+                [lbl3 setFrame: CGRectMake(lbl3.frame.origin.x, (_vwRandomWorkoutCompletePro.frame.size.height - lbl3.frame.size.height) / 2, lbl3.frame.size.width, lbl3.frame.size.height)];
+                [vwLbl addSubview: lbl3];
+
+//                [vwLbl setBackgroundColor: [UIColor redColor]];
+                [vwLbl setFrame: CGRectMake((_vwRandomWorkoutCompletePro.frame.size.width - lbl3.frame.origin.x - lbl3.frame.size.width)/2, 0.0, lbl3.frame.origin.x + lbl3.frame.size.width, _vwRandomWorkoutCompletePro.frame.size.height)];
+    //            [vwLbl setCenter: _vwRandomWorkoutCompletePro.center];
+                [_vwRandomWorkoutCompletePro addSubview: vwLbl];
             }
             // End
             [self.vwQuality setFrame:CGRectMake(0, 0, setAndRestBgWidth / 2, 214)];
@@ -4536,8 +4770,8 @@
             // Vsn - 10/04/2020
 //            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
 //            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsBackgroundView.frame.size.height + 58, 80, 80)];
-            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 50, 70, 70)];
-            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 50, 70, 70)];
+            [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 50, 85, 85)];
+            [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.origin.y + self.vwRandomWorkoutCompleteBackground.frame.size.height + 50, 85, 85)];
             // End
         }
     }
@@ -4979,7 +5213,7 @@
             [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
             UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
             [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-            // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+             [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
             
             //Workout Stats background view
             CGFloat workoutStatsBgViewY = (_lblGymTimerWorkoutScreenTitleLabel.frame.size.height + 4);
@@ -5094,6 +5328,14 @@
     [self.vwWarmUp addSubview:warmUpView.contentView];
     warmUpView.vwWarmUp.frame = self.viewDoSetNumberContentView.frame;
     [self.viewDoSetNumberContentView addSubview:warmUpView.vwWarmUp];
+    
+    
+    scrollViewWorkoutCompleteScreenSize = _scrollViewWorkoutCompleteScreen.contentSize;
+    viewWorkoutStatsContentViewFrame = _viewWorkoutStatsContentView.frame;
+    viewWorkoutStatsBackgroundViewFrame = _viewWorkoutStatsBackgroundView.frame;
+    viewPowerPopupFrame = _viewPowerPopup.frame;
+    btnDoneWorkoutButtonFrame = _btnDoneWorkoutButton.frame;
+    btnShareStatsButtonFrame = _btnShareStatsButton.frame;
 }
 
 - (void)initializeData {
@@ -5264,7 +5506,7 @@
     
     CGFloat lblRandomWorkoutCompleteTitleHeight = _lblRandomWorkoutCompleteTitle.frame.size.height;
     UIImageView *prefixImgvw1 = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"bulb"]];
-    [prefixImgvw1 setFrame: CGRectMake(_lblRandomWorkoutCompleteTitle.frame.origin.x - lblRandomWorkoutCompleteTitleHeight - 10.0, _lblRandomWorkoutCompleteTitle.frame.origin.y - 5.0, lblRandomWorkoutCompleteTitleHeight, lblRandomWorkoutCompleteTitleHeight)];
+    [prefixImgvw1 setFrame: CGRectMake(_lblRandomWorkoutCompleteTitle.frame.origin.x - lblRandomWorkoutCompleteTitleHeight - 10.0, _lblRandomWorkoutCompleteTitle.frame.origin.y - 3.0, lblRandomWorkoutCompleteTitleHeight, lblRandomWorkoutCompleteTitleHeight)];
     [prefixImgvw1 setContentMode: UIViewContentModeScaleAspectFill];
     [_lblRandomWorkoutCompleteTitle.superview addSubview: prefixImgvw1];
     // End
@@ -6496,7 +6738,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 0.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+         [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
         [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 24, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 800)];
@@ -6609,7 +6851,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 0.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+         [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
         [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 24, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 800)];
@@ -6720,7 +6962,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 0.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+         [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
         [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 24, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 800)];
@@ -6830,7 +7072,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+         [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         //Workout Stats background view
         [_viewWorkoutStatsBackgroundView setFrame: CGRectMake(18.0, 24, (_contentViewWorkoutCompleteScreen.frame.size.width - 36.0), 800)];
@@ -6940,7 +7182,7 @@
         [_lblGymTimerWorkoutScreenTitleLabel setFrame: CGRectMake(0.0, 36.0, (_contentViewSetAndRestScreen.frame.size.width), 40.0)];
         UIFont *fontGymTimerWorkoutScreenLabel = [UIFont fontWithName: fFUTURA_CONDENSED_EXTRA_BOLD size: 32.0];
         [_lblGymTimerWorkoutScreenTitleLabel setFont: fontGymTimerWorkoutScreenLabel];
-        // [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
+         [_lblGymTimerWorkoutScreenTitleLabel setHidden: YES];
         
         // Congrats View
         [self.vwCongrats setFrame:CGRectMake(0.0, _viewWorkoutCompleteContentVIew.frame.origin.y + _viewWorkoutCompleteContentVIew.frame.size.height + 20, _viewWorkoutStatsBackgroundView.frame.size.width, 284)];
@@ -8127,6 +8369,18 @@
                 }
                 
             });
+            
+            // Vsn - 21/04/2020
+            CGRect viewPowerPopupFrame = self.viewPowerPopup.frame;
+            [[self viewPowerPopup] setFrame: CGRectMake(self.viewPowerPopup.frame.origin.x, self.viewPowerPopup.frame.origin.y + self.viewPowerPopup.frame.size.height + 40.0, self.viewPowerPopup.frame.size.width, self.viewPowerPopup.frame.size.height)];
+            [[self viewPowerPopup] setHidden: false];
+            
+            [UIView animateWithDuration:0.7 delay:0.5 usingSpringWithDamping:0.45 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+                [[self viewPowerPopup] setFrame: viewPowerPopupFrame];
+                [[self view] layoutIfNeeded];
+            } completion:^(BOOL finished) {
+            }];
+            // End
         }];
         
         [UIView transitionWithView: _imgAppBackgroundImage duration: 0.3 options: UIViewAnimationOptionTransitionCrossDissolve animations:^{
@@ -8151,7 +8405,7 @@
 //    NSDictionary *attrsBack = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor blackColor], NSForegroundColorAttributeName, nil];
     // Seprater
     NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil];
-    NSDictionary *attrsBack = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:60.0/255.0 green:140.0/255.0 blue:44.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+    NSDictionary *attrsBack = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:56.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
     
     switch ([Utils getLastRandomWorkoutComplete]) {
         case 1:
