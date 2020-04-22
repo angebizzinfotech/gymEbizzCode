@@ -1331,21 +1331,22 @@
     if (result1 == NSOrderedDescending || result1 == NSOrderedSame) {
         NSLog(@"Workout Timer Grater Than Or Equal To 5 Min");
         
-//        // Vsn - 21/04/2020
-//        [_scrollViewWorkoutCompleteScreen setContentSize: scrollViewWorkoutCompleteScreenSize];
-//        [_contentViewWorkoutCompleteScreen setFrame: CGRectMake(0.0, 0.0, (_scrollViewWorkoutCompleteScreen.contentSize.width), (_scrollViewWorkoutCompleteScreen.contentSize.height))];
-//
-//        [_vwRandomWorkoutCompleteBackground setHidden: false];
-//        [_vwRandomWorkoutCompleteBackgroundShadow setHidden: false];
-//
-//        [_viewWorkoutStatsBackgroundView setFrame: viewWorkoutStatsBackgroundViewFrame];
-//        [_viewWorkoutStatsContentView setFrame: viewWorkoutStatsContentViewFrame];
-//        [_viewWorkoutStatsContentViewShadow setFrame: _viewWorkoutStatsContentView.frame];
-//        [_viewPowerPopup setFrame: viewPowerPopupFrame];
-//
-//        [self.btnDoneWorkoutButton setFrame: btnDoneWorkoutButtonFrame];
-//        [self.btnShareStatsButton setFrame: btnShareStatsButtonFrame];
-//        // End
+        // Vsn - 21/04/2020
+        [_scrollViewWorkoutCompleteScreen setFrame: CGRectMake(DEVICE_WIDTH, 0.0, DEVICE_WIDTH, DEVICE_HEIGHT)];
+        [_scrollViewWorkoutCompleteScreen setContentSize: scrollViewWorkoutCompleteScreenSize];
+        [_contentViewWorkoutCompleteScreen setFrame: CGRectMake(0.0, 0.0, (_scrollViewWorkoutCompleteScreen.contentSize.width), (_scrollViewWorkoutCompleteScreen.contentSize.height))];
+
+        [_vwRandomWorkoutCompleteBackground setHidden: false];
+        [_vwRandomWorkoutCompleteBackgroundShadow setHidden: false];
+
+        [_viewWorkoutStatsBackgroundView setFrame: viewWorkoutStatsBackgroundViewFrame];
+        [_viewWorkoutStatsContentView setFrame: viewWorkoutStatsContentViewFrame];
+        [_viewWorkoutStatsContentViewShadow setFrame: _viewWorkoutStatsContentView.frame];
+        [_viewPowerPopup setFrame: viewPowerPopupFrame];
+
+        [self.btnDoneWorkoutButton setFrame: btnDoneWorkoutButtonFrame];
+        [self.btnShareStatsButton setFrame: btnShareStatsButtonFrame];
+        // End
         
         [self callSaveExerciseAPI];
     }
@@ -1355,22 +1356,27 @@
         [_imgEndWorkoutImage setImage: nil];
         spinner = [Utils showMyActivityIndicatorInView: _imgEndWorkoutImage withColor: [UIColor grayColor]];
         
-//        // Vsn - 21/04/2020
-//        [_scrollViewWorkoutCompleteScreen setContentSize: CGSizeMake(DEVICE_WIDTH, DEVICE_HEIGHT)];
-//        [_contentViewWorkoutCompleteScreen setFrame: CGRectMake(0.0, 0.0, (_scrollViewWorkoutCompleteScreen.contentSize.width), (_scrollViewWorkoutCompleteScreen.contentSize.height))];
-//
-//        [_vwRandomWorkoutCompleteBackground setHidden: true];
-//        [_vwRandomWorkoutCompleteBackgroundShadow setHidden: true];
-//
-//        [_viewWorkoutStatsBackgroundView setFrame: viewWorkoutStatsBackgroundViewFrame];
-//        CGFloat y = (DEVICE_HEIGHT / 2) - _viewWorkoutStatsBackgroundView.frame.origin.y - (_viewWorkoutStatsContentView.frame.size.height / 2); // (_vwRandomWorkoutCompleteBackground.frame.origin.y + _vwRandomWorkoutCompleteBackground.frame.size.height - _viewWorkoutStatsContentView.frame.size.height) / 2;
-//        [_viewWorkoutStatsContentView setFrame: CGRectMake(_viewWorkoutStatsContentView.frame.origin.x, y, _viewWorkoutStatsContentView.frame.size.width, _viewWorkoutStatsContentView.frame.size.height)];
-//        [_viewWorkoutStatsContentViewShadow setFrame: _viewWorkoutStatsContentView.frame];
-//        [_viewPowerPopup setFrame: CGRectMake(23.0, _viewWorkoutStatsBackgroundView.frame.origin.y + 8 - 70 + _viewWorkoutStatsContentView.frame.origin.y, (_contentViewWorkoutCompleteScreen.frame.size.width - 49.0), 70.0)];
-//
-//        [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsContentView.frame.origin.y + self.viewWorkoutStatsContentView.frame.size.height + 40, 85, 85)];
-//        [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsContentView.frame.origin.y + self.viewWorkoutStatsContentView.frame.size.height + 40, 85, 85)];
-//        // End
+        // Vsn - 21/04/2020
+        [_scrollViewWorkoutCompleteScreen setFrame: CGRectMake(DEVICE_WIDTH, 0.0, DEVICE_WIDTH, DEVICE_HEIGHT)];
+        [_scrollViewWorkoutCompleteScreen setContentSize: CGSizeMake(DEVICE_WIDTH, DEVICE_HEIGHT)];
+        [_contentViewWorkoutCompleteScreen setFrame: CGRectMake(0.0, 0.0, (_scrollViewWorkoutCompleteScreen.contentSize.width), (_scrollViewWorkoutCompleteScreen.contentSize.height))];
+
+        [_vwRandomWorkoutCompleteBackground setHidden: true];
+        [_vwRandomWorkoutCompleteBackgroundShadow setHidden: true];
+
+        [_viewWorkoutStatsBackgroundView setFrame: viewWorkoutStatsBackgroundViewFrame];
+        CGFloat y = (DEVICE_HEIGHT / 2) - _viewWorkoutStatsBackgroundView.frame.origin.y - (viewWorkoutStatsContentViewFrame.size.height / 2); // (_vwRandomWorkoutCompleteBackground.frame.origin.y + _vwRandomWorkoutCompleteBackground.frame.size.height - _viewWorkoutStatsContentView.frame.size.height) / 2;
+        [_viewWorkoutStatsContentView setFrame: CGRectMake(_viewWorkoutStatsContentView.frame.origin.x, y, _viewWorkoutStatsContentView.frame.size.width, _viewWorkoutStatsContentView.frame.size.height)];
+        [_viewWorkoutStatsContentViewShadow setFrame: _viewWorkoutStatsContentView.frame];
+        if (IS_IPHONE8) {
+            [_viewPowerPopup setFrame: CGRectMake(23.0, _viewWorkoutStatsBackgroundView.frame.origin.y + 8 - 70 + _viewWorkoutStatsContentView.frame.origin.y - 100, (_contentViewWorkoutCompleteScreen.frame.size.width - 49.0), 70.0)];
+        } else {
+            [_viewPowerPopup setFrame: CGRectMake(23.0, _viewWorkoutStatsBackgroundView.frame.origin.y + 8 - 70 + _viewWorkoutStatsContentView.frame.origin.y, (_contentViewWorkoutCompleteScreen.frame.size.width - 49.0), 70.0)];
+        }
+        
+        [self.btnDoneWorkoutButton setFrame:CGRectMake(self.view.frame.size.width / 2 + 40, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsContentView.frame.origin.y + self.viewWorkoutStatsContentView.frame.size.height + 40, 85, 85)];
+        [self.btnShareStatsButton setFrame:CGRectMake(self.view.frame.size.width / 2 - 120, self.viewWorkoutStatsBackgroundView.frame.origin.y + self.viewWorkoutStatsContentView.frame.origin.y + self.viewWorkoutStatsContentView.frame.size.height + 40, 85, 85)];
+        // End
     }
 
     // 21/04/2020
@@ -1437,7 +1443,7 @@
             [[self viewPowerPopup] setFrame: CGRectMake(self.viewPowerPopup.frame.origin.x, self.viewPowerPopup.frame.origin.y + self.viewPowerPopup.frame.size.height + 40.0, self.viewPowerPopup.frame.size.width, self.viewPowerPopup.frame.size.height)];
             [[self viewPowerPopup] setHidden: false];
             
-            [UIView animateWithDuration:0.7 delay:0.5 usingSpringWithDamping:0.45 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+            [UIView animateWithDuration:0.7 delay:0.9 usingSpringWithDamping:0.45 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
                 [[self viewPowerPopup] setFrame: viewPowerPopupFrame];
                 [[self view] layoutIfNeeded];
             } completion:^(BOOL finished) {
@@ -2542,18 +2548,18 @@
         //Workout Stats background view
         // Vsn - 09/04/2020
         NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] init];
-        UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:13.0];
+        UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:16.0];
         NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
-        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
+//        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
         NSDictionary *attrsDict1 = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor blackColor], NSForegroundColorAttributeName, nil];
-        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" for working out today !" attributes:attrsDict1]];
+        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Workout complete, good job !" attributes:attrsDict1]];
         _lblCongratulationsText.attributedText = attrString;
         [_lblCongratulationsText updateConstraints];
         
         // Vsn - 14/04/2020
         //        [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 0.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 14.0))];
         //        [_lblCongratulationsText setFrame: CGRectMake(12.0, 7.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
-        [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 6.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 22.0))];
+        [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 6.0, (_lblCongratulationsText.frame.size.width + 15.0), (_lblCongratulationsText.frame.size.height + 22.0))];
         [_lblCongratulationsText setFrame: CGRectMake(12.0, 11.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
 //        [_lblCongratulationsText setCenter: _viewPowerPopupInfomation.center];
         // End
@@ -3198,18 +3204,18 @@
         
         //Workout Stats background view
         NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] init];
-        UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:13.0];
+        UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:16.0];
         NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
-        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
+//        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
         NSDictionary *attrsDict1 = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor blackColor], NSForegroundColorAttributeName, nil];
-        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" for working out today !" attributes:attrsDict1]];
+        [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Workout complete, good job !" attributes:attrsDict1]];
         _lblCongratulationsText.attributedText = attrString;
         [_lblCongratulationsText updateConstraints];
         
         // Vsn - 14/04/2020
 //        [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 0.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 14.0))];
 //        [_lblCongratulationsText setFrame: CGRectMake(12.0, 7.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
-        [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 6.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 22.0))];
+        [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 6.0, (_lblCongratulationsText.frame.size.width + 15.0), (_lblCongratulationsText.frame.size.height + 22.0))];
         [_lblCongratulationsText setFrame: CGRectMake(12.0, 11.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
 //        [_lblCongratulationsText setCenter: _viewPowerPopupInfomation.center];
         // End
@@ -3897,18 +3903,18 @@
             //Workout Stats background view
             // Vsn - 10/04/2020
             NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] init];
-            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:13.0];
+            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:16.0];
             NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
-            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
+//            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
             NSDictionary *attrsDict1 = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor blackColor], NSForegroundColorAttributeName, nil];
-            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" for working out today !" attributes:attrsDict1]];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Workout complete, good job !" attributes:attrsDict1]];
             _lblCongratulationsText.attributedText = attrString;
             [_lblCongratulationsText updateConstraints];
             
             // Vsn - 14/04/2020
             //        [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 0.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 14.0))];
             //        [_lblCongratulationsText setFrame: CGRectMake(12.0, 7.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
-            [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 6.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 22.0))];
+            [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 6.0, (_lblCongratulationsText.frame.size.width + 15.0), (_lblCongratulationsText.frame.size.height + 22.0))];
             [_lblCongratulationsText setFrame: CGRectMake(12.0, 11.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
 //            [_lblCongratulationsText setCenter: _viewPowerPopupInfomation.center];
             // End
@@ -4547,18 +4553,18 @@
             //Workout Stats background view
             // Vsn - 10/04/2020
             NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] init];
-            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:13.0];
+            UIFont *font = [UIFont fontWithName:fFUTURA_MEDIUM_ITALIC size:16.0];
             NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:0.0/255.0 green:220.0/255.0 blue:93.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
-            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
+//            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Congratulations" attributes:attrsDictionary]];
             NSDictionary *attrsDict1 = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor blackColor], NSForegroundColorAttributeName, nil];
-            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@" for working out today !" attributes:attrsDict1]];
+            [attrString appendAttributedString: [[NSAttributedString alloc] initWithString:@"Workout complete, good job !" attributes:attrsDict1]];
             _lblCongratulationsText.attributedText = attrString;
             [_lblCongratulationsText updateConstraints];
             
             // Vsn - 14/04/2020
             //        [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 0.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 14.0))];
             //        [_lblCongratulationsText setFrame: CGRectMake(12.0, 7.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
-            [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 6.0, (_lblCongratulationsText.frame.size.width + 24.0), (_lblCongratulationsText.frame.size.height + 22.0))];
+            [_viewPowerPopupInfomation setFrame: CGRectMake(40.0, 6.0, (_lblCongratulationsText.frame.size.width + 15.0), (_lblCongratulationsText.frame.size.height + 22.0))];
             [_lblCongratulationsText setFrame: CGRectMake(12.0, 11.0, _lblCongratulationsText.frame.size.width, _lblCongratulationsText.frame.size.height)];
 //            [_lblCongratulationsText setCenter: _viewPowerPopupInfomation.center];
             // End
@@ -8375,7 +8381,7 @@
             [[self viewPowerPopup] setFrame: CGRectMake(self.viewPowerPopup.frame.origin.x, self.viewPowerPopup.frame.origin.y + self.viewPowerPopup.frame.size.height + 40.0, self.viewPowerPopup.frame.size.width, self.viewPowerPopup.frame.size.height)];
             [[self viewPowerPopup] setHidden: false];
             
-            [UIView animateWithDuration:0.7 delay:0.5 usingSpringWithDamping:0.45 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+            [UIView animateWithDuration:0.7 delay:0.9 usingSpringWithDamping:0.45 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
                 [[self viewPowerPopup] setFrame: viewPowerPopupFrame];
                 [[self view] layoutIfNeeded];
             } completion:^(BOOL finished) {
@@ -8635,12 +8641,12 @@
 
 - (void)parseSaveExerciseResponse:(id) response {
     
-    [self hideLoaderView];
-    // Vsn - 14/04/2020
-//    [Utils hideActivityIndicator:spinner fromView:_btnDoneWorkoutButton];
-    [_imgEndWorkoutImage setImage: [UIImage imageNamed:@"imgCloseGreen"]];
-    [Utils hideActivityIndicator:spinner fromView:_imgEndWorkoutImage];
-    // End
+//    [self hideLoaderView];
+//    // Vsn - 14/04/2020
+////    [Utils hideActivityIndicator:spinner fromView:_btnDoneWorkoutButton];
+//    [_imgEndWorkoutImage setImage: [UIImage imageNamed:@"imgCloseGreen"]];
+//    [Utils hideActivityIndicator:spinner fromView:_imgEndWorkoutImage];
+//    // End
     
     NSMutableDictionary *dicResponse = (NSMutableDictionary *)response;
     

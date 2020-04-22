@@ -2572,6 +2572,51 @@ beetween sets for this workout</string>
                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="70"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                     </imageView>
+                                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgn-wy-eNh">
+                                                        <rect key="frame" x="35" y="8" width="253" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chatInfo" translatesAutoresizingMaskIntoConstraints="NO" id="l6F-Cj-idK">
+                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVL-jb-hzw">
+                                                                <rect key="frame" x="0.0" y="1" width="253" height="38"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="This Workout">
+                                                                        <attributes>
+                                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <font key="NSFont" size="14" name="Futura-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" wasn’t long enough, ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.098039215686274508" green="0.8784313725490196" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <font key="NSFont" size="14" name="Futura-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="it won’t br added to your">
+                                                                        <attributes>
+                                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <font key="NSFont" size="14" name="Futura-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" statistics.">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.098039215686274508" green="0.8784313725490196" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <font key="NSFont" size="14" name="Futura-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </view>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FiC-gx-RLa">
                                                         <rect key="frame" x="35" y="8" width="253" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3377,21 +3422,33 @@ it won’t be added to your statistics.</string>
                                             <constraint firstAttribute="height" constant="64" id="llk-cB-rfu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="50"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlock all your workout statistics !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zc-ir-C2x">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View your workout stats and insights !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zc-ir-C2x">
                                         <rect key="frame" x="30" y="171" width="325" height="23"/>
                                         <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="18"/>
-                                        <color key="textColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.078431372549019607" green="0.80000000000000004" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljN-0n-TSU">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljN-0n-TSU">
                                         <rect key="frame" x="30" y="198" width="329" height="33"/>
-                                        <string key="text">Our insightful data will give you clarity on 
-all your workout history.</string>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12.699999809265137"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Our beautiful graphs will give you clarity on your workout habits ">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="12.699999999999999" name="Futura-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="(since day 1).">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.078431372549019607" green="0.80000000000000004" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="12.699999999999999" name="Futura-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-FK-dNc">
@@ -3420,6 +3477,19 @@ all your workout history.</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="Edb-2X-N2K"/>
                                             <constraint firstAttribute="width" constant="39" id="vd3-jq-sUY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusWithoutBg" translatesAutoresizingMaskIntoConstraints="NO" id="lvi-1I-nba">
+                                        <rect key="frame" x="85" y="134" width="16" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="8nq-Xj-JMB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bulb_light_green" translatesAutoresizingMaskIntoConstraints="NO" id="RPb-dj-f4k">
+                                        <rect key="frame" x="109" y="134" width="39" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="39" id="3J2-UI-w1i"/>
+                                            <constraint firstAttribute="height" constant="29" id="mW7-vV-tIL"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzW-mQ-lLj">
@@ -3467,26 +3537,34 @@ all your workout history.</string>
                                         <color key="pageIndicatorTintColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="currentPageIndicatorTintColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pageControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 month free trial with any option !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Da-UF-O51">
-                                        <rect key="frame" x="92" y="661" width="191" height="13"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First month 100% FREE with any option !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Da-UF-O51">
+                                        <rect key="frame" x="85" y="735" width="205" height="25"/>
+                                        <color key="backgroundColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="13" id="VCn-7j-EVY"/>
+                                            <constraint firstAttribute="height" constant="25" id="JC4-dY-WXy"/>
+                                            <constraint firstAttribute="width" constant="205" id="XTJ-5c-SYK"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="10"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvM-dT-y2e">
-                                        <rect key="frame" x="12" y="694" width="168.66666666666666" height="60"/>
+                                        <rect key="frame" x="12" y="663" width="168.66666666666666" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 month :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Y9W-Kn-lFe">
-                                                <rect key="frame" x="25.666666666666657" y="17" width="87" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Y9W-Kn-lFe">
+                                                <rect key="frame" x="26.333333333333336" y="17" width="85.666666666666657" height="26"/>
                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="19.899999618530273"/>
                                                 <color key="textColor" red="0.0" green="0.65098039215686276" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" $2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4w-kM-dEr">
-                                                <rect key="frame" x="112.66666666666667" y="17" width="30.000000000000014" height="26"/>
+                                                <rect key="frame" x="112" y="17" width="30" height="26"/>
                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="19.899999618530273"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -3514,16 +3592,16 @@ all your workout history.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gq-7X-1cB">
-                                        <rect key="frame" x="194.66666666666663" y="694" width="168.33333333333337" height="60"/>
+                                        <rect key="frame" x="194.66666666666663" y="663" width="168.33333333333337" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Year :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="pv7-5x-UZx">
-                                                <rect key="frame" x="28" y="17" width="70" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yearly :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="pv7-5x-UZx">
+                                                <rect key="frame" x="29" y="17" width="68.333333333333329" height="26"/>
                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="19.899999618530273"/>
                                                 <color key="textColor" red="0.0" green="0.65098039220000004" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" $20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfv-X6-huN">
-                                                <rect key="frame" x="98.000000000000028" y="17" width="42" height="26"/>
+                                                <rect key="frame" x="97.333333333333343" y="17" width="42" height="26"/>
                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="19.899999618530273"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -3551,7 +3629,7 @@ all your workout history.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZy-sC-kZ1">
-                                        <rect key="frame" x="231.66666666666666" y="686" width="94.333333333333343" height="16"/>
+                                        <rect key="frame" x="231.66666666666666" y="655" width="94.333333333333343" height="16"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOST POPULAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UP1-Sq-hKq">
                                                 <rect key="frame" x="0.0" y="0.0" width="94.333333333333329" height="16"/>
@@ -3570,14 +3648,14 @@ all your workout history.</string>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee" translatesAutoresizingMaskIntoConstraints="NO" id="JKj-l6-rnt">
-                                        <rect key="frame" x="174" y="774" width="27" height="34"/>
+                                        <rect key="frame" x="174" y="780" width="27" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="27" id="XF8-3Z-F3v"/>
                                             <constraint firstAttribute="height" constant="34" id="rZw-SK-Vub"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Small cost, big difference." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veC-tb-rWq">
-                                        <rect key="frame" x="85.666666666666686" y="816" width="204" height="23"/>
+                                        <rect key="frame" x="85.666666666666686" y="822" width="204" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="aMA-X4-9m0"/>
                                         </constraints>
@@ -3586,7 +3664,7 @@ all your workout history.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crazy insights for literally the price of a Coffee !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HG-Fd-IxC">
-                                        <rect key="frame" x="47.666666666666657" y="847" width="280" height="17"/>
+                                        <rect key="frame" x="47.666666666666657" y="853" width="280" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="Efx-FO-iC5"/>
                                         </constraints>
@@ -3595,7 +3673,7 @@ all your workout history.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-od-cep">
-                                        <rect key="frame" x="38" y="888" width="299" height="10"/>
+                                        <rect key="frame" x="38" y="894" width="299" height="10"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2A-Pb-CdE">
                                                 <rect key="frame" x="0.0" y="0.0" width="284" height="10"/>
@@ -3632,7 +3710,7 @@ all your workout history.</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyB-un-QuO" customClass="UICountingLabel">
-                                        <rect key="frame" x="62.666666666666657" y="908" width="94" height="67"/>
+                                        <rect key="frame" x="62.666666666666657" y="914" width="94" height="67"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="67" id="Sac-kJ-o9s"/>
                                             <constraint firstAttribute="width" constant="94" id="rh5-f4-kN9"/>
@@ -3642,7 +3720,7 @@ all your workout history.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-rE-y51">
-                                        <rect key="frame" x="186.66666666666666" y="920" width="1.6666666666666572" height="88"/>
+                                        <rect key="frame" x="186.66666666666666" y="926" width="1.6666666666666572" height="88"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1.5" id="HsU-dJ-uPd"/>
@@ -3650,7 +3728,7 @@ all your workout history.</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U9-DO-sX6">
-                                        <rect key="frame" x="49.666666666666657" y="971" width="120" height="46"/>
+                                        <rect key="frame" x="49.666666666666657" y="977" width="120" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="7Ca-ky-m0b"/>
                                             <constraint firstAttribute="height" constant="46" id="Jfs-OL-21W"/>
@@ -3662,7 +3740,7 @@ membership</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vv-R8-GzX">
-                                        <rect key="frame" x="199.66666666666663" y="971" width="120" height="46"/>
+                                        <rect key="frame" x="199.66666666666663" y="977" width="120" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="kWh-2K-uAM"/>
                                             <constraint firstAttribute="height" constant="46" id="qTF-O5-bft"/>
@@ -3674,7 +3752,7 @@ membership</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xv-8r-aXc">
-                                        <rect key="frame" x="158.66666666666666" y="1049" width="58" height="13"/>
+                                        <rect key="frame" x="158.66666666666666" y="1055" width="58" height="13"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Use" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IV-XO-fLr">
                                                 <rect key="frame" x="0.0" y="0.0" width="58" height="13"/>
@@ -3714,14 +3792,14 @@ membership</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fs8-ln-JZ7">
-                                        <rect key="frame" x="25" y="1067" width="325" height="65"/>
+                                        <rect key="frame" x="25" y="1073" width="325" height="65"/>
                                         <string key="text">Payment will be charged to your Apple ID account 1 month after the confirmation of purchase. Subscriptions will automatically renew unless canceled at least 24 hours before the end of the current period. You can cancel anytime with your iTunes account settings. Any unused portion of a free trial will be forfeited if you purchase a subscription.</string>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqu-1i-pqF" customClass="UICountingLabel">
-                                        <rect key="frame" x="228.33333333333337" y="908" width="63" height="67"/>
+                                        <rect key="frame" x="228.33333333333337" y="914" width="63" height="67"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="67" id="Rfc-y4-Dpp"/>
                                             <constraint firstAttribute="width" constant="63" id="jTv-RN-qat"/>
@@ -3738,24 +3816,27 @@ membership</string>
                                     <constraint firstItem="4zc-ir-C2x" firstAttribute="leading" secondItem="PeO-BH-PpE" secondAttribute="leading" constant="30" id="2dy-Xb-9gI"/>
                                     <constraint firstItem="fZy-sC-kZ1" firstAttribute="centerX" secondItem="2gq-7X-1cB" secondAttribute="centerX" id="4oL-d7-009"/>
                                     <constraint firstItem="wmN-Iv-EkY" firstAttribute="leading" secondItem="PeO-BH-PpE" secondAttribute="leading" constant="24" id="616-ye-eiN"/>
-                                    <constraint firstItem="gvM-dT-y2e" firstAttribute="top" secondItem="9Da-UF-O51" secondAttribute="bottom" constant="20" id="6lK-Fj-uY8"/>
+                                    <constraint firstItem="gvM-dT-y2e" firstAttribute="top" secondItem="ppF-ap-uve" secondAttribute="bottom" constant="20" id="6lK-Fj-uY8"/>
                                     <constraint firstItem="ljN-0n-TSU" firstAttribute="top" secondItem="4zc-ir-C2x" secondAttribute="bottom" constant="4" id="8CX-ZW-zKo"/>
                                     <constraint firstAttribute="trailing" secondItem="tzW-mQ-lLj" secondAttribute="trailing" id="9cv-dU-FmK"/>
                                     <constraint firstItem="veC-tb-rWq" firstAttribute="top" secondItem="JKj-l6-rnt" secondAttribute="bottom" constant="8" id="A8W-el-zw0"/>
                                     <constraint firstItem="Rqu-1i-pqF" firstAttribute="top" secondItem="dt2-rE-y51" secondAttribute="top" constant="-12" id="BFP-bu-JVS"/>
                                     <constraint firstItem="WMx-cs-hUK" firstAttribute="centerX" secondItem="PeO-BH-PpE" secondAttribute="centerX" id="CSb-xz-dPK"/>
                                     <constraint firstItem="WMx-cs-hUK" firstAttribute="top" secondItem="PeO-BH-PpE" secondAttribute="top" constant="60" id="D7H-o9-Hzs"/>
+                                    <constraint firstItem="9Da-UF-O51" firstAttribute="top" secondItem="gvM-dT-y2e" secondAttribute="bottom" constant="12" id="DIa-3M-KiF"/>
                                     <constraint firstItem="MLc-Jy-EzW" firstAttribute="top" secondItem="wmN-Iv-EkY" secondAttribute="bottom" constant="60" id="Dmc-us-vR1"/>
                                     <constraint firstItem="Fs8-ln-JZ7" firstAttribute="top" secondItem="9xv-8r-aXc" secondAttribute="bottom" constant="5" id="E9V-yQ-osC"/>
                                     <constraint firstItem="1vv-R8-GzX" firstAttribute="top" secondItem="Rqu-1i-pqF" secondAttribute="bottom" constant="-4" id="Hob-TQ-WKe"/>
+                                    <constraint firstItem="lvi-1I-nba" firstAttribute="bottom" secondItem="MLc-Jy-EzW" secondAttribute="bottom" id="IDR-Yc-PST"/>
                                     <constraint firstItem="MLc-Jy-EzW" firstAttribute="leading" secondItem="PeO-BH-PpE" secondAttribute="leading" constant="38" id="Iho-g9-XAn"/>
                                     <constraint firstItem="2gq-7X-1cB" firstAttribute="leading" secondItem="gvM-dT-y2e" secondAttribute="trailing" constant="14" id="LQG-2b-1T9"/>
                                     <constraint firstItem="Owh-FK-dNc" firstAttribute="top" secondItem="WMx-cs-hUK" secondAttribute="bottom" constant="-21" id="LTx-Bt-220"/>
-                                    <constraint firstItem="2gq-7X-1cB" firstAttribute="top" secondItem="9Da-UF-O51" secondAttribute="bottom" constant="20" id="Mpp-pA-CnY"/>
+                                    <constraint firstItem="2gq-7X-1cB" firstAttribute="top" secondItem="ppF-ap-uve" secondAttribute="bottom" constant="20" id="Mpp-pA-CnY"/>
                                     <constraint firstItem="ljN-0n-TSU" firstAttribute="leading" secondItem="PeO-BH-PpE" secondAttribute="leading" constant="30" id="OVt-O1-MDr"/>
                                     <constraint firstAttribute="bottom" secondItem="Fs8-ln-JZ7" secondAttribute="bottom" constant="44" id="P7D-Cr-r4o"/>
                                     <constraint firstItem="4HG-Fd-IxC" firstAttribute="centerX" secondItem="PeO-BH-PpE" secondAttribute="centerX" id="P9G-Bi-Ana"/>
                                     <constraint firstItem="fZy-sC-kZ1" firstAttribute="width" secondItem="2gq-7X-1cB" secondAttribute="width" multiplier="0.56" id="PKL-eK-qlQ"/>
+                                    <constraint firstItem="lvi-1I-nba" firstAttribute="top" secondItem="MLc-Jy-EzW" secondAttribute="top" id="PiC-ak-Gtd"/>
                                     <constraint firstItem="dt2-rE-y51" firstAttribute="leading" secondItem="fyB-un-QuO" secondAttribute="trailing" constant="30" id="Pxv-hd-CqK"/>
                                     <constraint firstItem="9Da-UF-O51" firstAttribute="centerX" secondItem="PeO-BH-PpE" secondAttribute="centerX" id="QMG-fn-ggF"/>
                                     <constraint firstItem="dt2-rE-y51" firstAttribute="centerX" secondItem="PeO-BH-PpE" secondAttribute="centerX" id="QU7-KA-rza"/>
@@ -3763,23 +3844,26 @@ membership</string>
                                     <constraint firstItem="gvM-dT-y2e" firstAttribute="leading" secondItem="PeO-BH-PpE" secondAttribute="leading" constant="12" id="R47-M8-Kqt"/>
                                     <constraint firstItem="veC-tb-rWq" firstAttribute="centerX" secondItem="PeO-BH-PpE" secondAttribute="centerX" id="TeZ-c4-hRb"/>
                                     <constraint firstItem="gvM-dT-y2e" firstAttribute="width" secondItem="2gq-7X-1cB" secondAttribute="width" id="WTP-dj-Y31"/>
-                                    <constraint firstItem="9Da-UF-O51" firstAttribute="top" secondItem="ppF-ap-uve" secondAttribute="bottom" constant="18" id="YFA-XV-c4r"/>
                                     <constraint firstItem="4HG-Fd-IxC" firstAttribute="top" secondItem="veC-tb-rWq" secondAttribute="bottom" constant="8" id="ZEB-u1-6yU"/>
                                     <constraint firstItem="fZy-sC-kZ1" firstAttribute="top" secondItem="2gq-7X-1cB" secondAttribute="top" constant="-8" id="ZsI-eT-Hwr"/>
+                                    <constraint firstItem="RPb-dj-f4k" firstAttribute="top" secondItem="MLc-Jy-EzW" secondAttribute="top" id="aWm-Gc-69t"/>
                                     <constraint firstAttribute="trailing" secondItem="4zc-ir-C2x" secondAttribute="trailing" constant="20" symbolic="YES" id="eFR-0x-6Vv"/>
                                     <constraint firstItem="fyB-un-QuO" firstAttribute="top" secondItem="dt2-rE-y51" secondAttribute="top" constant="-12" id="f8B-Xe-lRm"/>
                                     <constraint firstItem="Fs8-ln-JZ7" firstAttribute="leading" secondItem="PeO-BH-PpE" secondAttribute="leading" constant="25" id="fIV-eJ-rse"/>
                                     <constraint firstItem="ppF-ap-uve" firstAttribute="centerX" secondItem="PeO-BH-PpE" secondAttribute="centerX" id="fTJ-pK-nNU"/>
                                     <constraint firstItem="tzW-mQ-lLj" firstAttribute="centerX" secondItem="PeO-BH-PpE" secondAttribute="centerX" id="fnr-RA-RAZ"/>
                                     <constraint firstItem="Rqu-1i-pqF" firstAttribute="leading" secondItem="dt2-rE-y51" secondAttribute="trailing" constant="40" id="gMa-G3-G3G"/>
+                                    <constraint firstItem="RPb-dj-f4k" firstAttribute="bottom" secondItem="MLc-Jy-EzW" secondAttribute="bottom" id="gdP-AF-qsM"/>
                                     <constraint firstItem="dt2-rE-y51" firstAttribute="top" secondItem="MgV-od-cep" secondAttribute="bottom" constant="22" id="ghC-G8-1S0"/>
                                     <constraint firstItem="JKj-l6-rnt" firstAttribute="centerX" secondItem="PeO-BH-PpE" secondAttribute="centerX" id="jIU-gT-c6T"/>
                                     <constraint firstItem="3U9-DO-sX6" firstAttribute="centerX" secondItem="fyB-un-QuO" secondAttribute="centerX" id="kkP-W8-YzL"/>
+                                    <constraint firstItem="lvi-1I-nba" firstAttribute="leading" secondItem="MLc-Jy-EzW" secondAttribute="trailing" constant="8" id="oke-Cp-QMJ"/>
                                     <constraint firstItem="4zc-ir-C2x" firstAttribute="top" secondItem="MLc-Jy-EzW" secondAttribute="bottom" constant="8" id="poQ-Jx-2er"/>
                                     <constraint firstItem="MgV-od-cep" firstAttribute="top" secondItem="4HG-Fd-IxC" secondAttribute="bottom" constant="24" id="qjp-sF-pv5"/>
                                     <constraint firstItem="9xv-8r-aXc" firstAttribute="centerX" secondItem="PeO-BH-PpE" secondAttribute="centerX" id="rTQ-hO-B3o"/>
                                     <constraint firstItem="9xv-8r-aXc" firstAttribute="top" secondItem="3U9-DO-sX6" secondAttribute="bottom" constant="32" id="rTX-8p-edw"/>
-                                    <constraint firstItem="JKj-l6-rnt" firstAttribute="top" secondItem="gvM-dT-y2e" secondAttribute="bottom" constant="20" id="svJ-Xh-eYq"/>
+                                    <constraint firstItem="JKj-l6-rnt" firstAttribute="top" secondItem="9Da-UF-O51" secondAttribute="bottom" constant="20" id="svJ-Xh-eYq"/>
+                                    <constraint firstItem="RPb-dj-f4k" firstAttribute="leading" secondItem="lvi-1I-nba" secondAttribute="trailing" constant="8" id="tHT-ti-Ik1"/>
                                     <constraint firstItem="MgV-od-cep" firstAttribute="leading" secondItem="PeO-BH-PpE" secondAttribute="leading" constant="38" id="uDG-rZ-E3K"/>
                                     <constraint firstItem="3U9-DO-sX6" firstAttribute="top" secondItem="fyB-un-QuO" secondAttribute="bottom" constant="-4" id="uE4-Yf-aWt"/>
                                     <constraint firstItem="Owh-FK-dNc" firstAttribute="trailing" secondItem="WMx-cs-hUK" secondAttribute="trailing" constant="6" id="uUT-7B-ie9"/>
@@ -5378,20 +5462,20 @@ membership</string>
                                                         <rect key="frame" x="16" y="210" width="343" height="0.0"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="giftgreenbig" translatesAutoresizingMaskIntoConstraints="NO" id="IBp-Vg-A74">
-                                                                <rect key="frame" x="153.33333333333334" y="27.999999999999996" width="36.666666666666657" height="42.666666666666657"/>
+                                                                <rect key="frame" x="135" y="27.999999999999993" width="73" height="85.333333333333314"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="IBp-Vg-A74" secondAttribute="height" multiplier="6:7" id="H1T-Lv-YnL"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get 6 months PRO membership for free !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="i0n-dU-UBr">
-                                                                <rect key="frame" x="10" y="78.666666666666686" width="323" height="122.33333333333331"/>
+                                                                <rect key="frame" x="10" y="121.33333333333331" width="323" height="122.33333333333331"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32"/>
                                                                 <color key="textColor" red="0.082352941176470587" green="0.77254901960784317" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ert-Pp-U6j">
-                                                                <rect key="frame" x="10" y="209" width="323" height="90"/>
+                                                                <rect key="frame" x="10" y="251.66666666666669" width="323" height="90"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simply add five friends !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfO-vK-Mfp">
                                                                         <rect key="frame" x="84.666666666666686" y="5" width="154" height="25"/>
@@ -5432,7 +5516,7 @@ membership</string>
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/5" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ds-vi-upd">
-                                                                        <rect key="frame" x="5.6666666666666696" y="62" width="28.333333333333329" height="20"/>
+                                                                        <rect key="frame" x="5.6666666666666696" y="61.999999999999943" width="28.333333333333329" height="20"/>
                                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="1p7-FG-sPw"/>
@@ -7272,7 +7356,7 @@ over the last week</string>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift" translatesAutoresizingMaskIntoConstraints="NO" id="pKQ-w4-P9I">
-                                                                                <rect key="frame" x="107" y="5.3333333333333712" width="13" height="15.000000000000004"/>
+                                                                                <rect key="frame" x="107" y="5.3333333333333712" width="13" height="15"/>
                                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="13" id="CB5-x9-Trs"/>
@@ -7692,6 +7776,7 @@ over the last week</string>
         <image name="add" width="31" height="31"/>
         <image name="arrow" width="37.333332061767578" height="34.666667938232422"/>
         <image name="boyCompleteWorkout" width="42.333332061767578" height="89.333335876464844"/>
+        <image name="bulb_light_green" width="94.666664123535156" height="91"/>
         <image name="chatInfo" width="338.66665649414062" height="79.333335876464844"/>
         <image name="clos" width="20" height="20"/>
         <image name="close" width="18.666666030883789" height="18.666666030883789"/>
@@ -7727,6 +7812,7 @@ over the last week</string>
         <image name="l3" width="16.666666030883789" height="11"/>
         <image name="muscle" width="150" height="300"/>
         <image name="plus" width="42" height="42"/>
+        <image name="plusWithoutBg" width="45" height="45"/>
         <image name="power1" width="150" height="300"/>
         <image name="rest-time" width="111" height="111"/>
         <image name="searchw" width="19" height="19.666666030883789"/>
