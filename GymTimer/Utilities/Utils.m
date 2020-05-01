@@ -530,5 +530,24 @@ static Color _colors[maxSegmentsCount] = {
     [[NSUserDefaults standardUserDefaults] setInteger:i forKey:kGET_RANDOM_WORKOUT_COUNT];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
++(NSAttributedString *)getLastWorkout
+{
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] init];
+    UIFont *font = [UIFont fontWithName:fFUTURA_CONDENSED_EXTRA_BOLD size: 16.0];
+    NSDictionary *attrsBlack = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:77.0/255.0 green:77.0/255.0 blue:77.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+    NSDictionary *attrsGreen = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [UIColor colorWithRed:20.0/255.0 green:204.0/255.0 blue:100.0/255.0 alpha:1], NSForegroundColorAttributeName, nil];
+
+    [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @"Your last workout was" attributes:attrsBlack]];
+    [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: [NSString stringWithFormat: @" %@", [[NSUserDefaults standardUserDefaults] valueForKey: kLAST_WORKOUT_ATTRIBUTE]] attributes:attrsGreen]];
+    [attrString appendAttributedString: [[NSAttributedString alloc] initWithString: @"." attributes:attrsBlack]];
+    
+    return attrString;
+}
++(void)setLastWorkout:(NSString *)message
+{
+    [[NSUserDefaults standardUserDefaults] setObject:message forKey:kLAST_WORKOUT_ATTRIBUTE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 @end
 

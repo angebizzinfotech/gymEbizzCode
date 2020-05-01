@@ -74,6 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *viewTabParent;
 @property (weak, nonatomic) IBOutlet UIView *viewTabTop;
 @property (weak, nonatomic) IBOutlet UIView *viewTabMovable;
+@property (weak, nonatomic) IBOutlet UILabel *lblLastWorkout;
 
 @property (weak, nonatomic) IBOutlet UIImageView *characterEndurance;
 @property (weak, nonatomic) IBOutlet UIImageView *characterMuscle;
@@ -206,10 +207,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *contentViewWorkoutCompleteScreen;
 @property (weak, nonatomic) IBOutlet UILabel *lblGymTimerWorkoutScreenTitleLabel;
 @property (weak, nonatomic) IBOutlet UIView *viewWorkoutStatsBackgroundView;
+
 @property (weak, nonatomic) IBOutlet UIView *viewPowerPopup;
 @property (weak, nonatomic) IBOutlet UIView *viewPowerPopupInfomation;
 @property (weak, nonatomic) IBOutlet UIImageView *imgPowerPopupInfomationBg;
 @property (weak, nonatomic) IBOutlet UILabel *lblCongratulationsText;
+
+@property (weak, nonatomic) IBOutlet UIView *viewPowerPopupMaxInfomation;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPowerPopupMaxInfomationBg;
+@property (weak, nonatomic) IBOutlet UILabel *lblCongratulationsMaxText;
+
 
 @property (weak, nonatomic) IBOutlet UIView *viewWorkoutCompleteContentVIew;
 @property (weak, nonatomic) IBOutlet UILabel *lblWorkoutCompleteLabel;

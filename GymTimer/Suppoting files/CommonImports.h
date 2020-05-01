@@ -76,5 +76,6 @@
 #import "TimeOfTheDayCell.h"
 #import "DaysOfTheWeekCell.h"
 #import "WarmUpView.h"
+#import "insightClvCell.h"
 
 #endif /* CommonImports_h */

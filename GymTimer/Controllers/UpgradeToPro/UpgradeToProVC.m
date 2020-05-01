@@ -62,6 +62,9 @@
     UINib *skillLevelNib = [UINib nibWithNibName:@"YourSkillLevelCell" bundle:nil];
     [self.clvCards registerNib:skillLevelNib forCellWithReuseIdentifier:@"YourSkillLevelCell"];
     
+    UINib *insightNib = [UINib nibWithNibName:@"insightClvCell" bundle:nil];
+    [self.clvCards registerNib:insightNib forCellWithReuseIdentifier:@"insightClvCell"];
+    
     UINib *calendarNib = [UINib nibWithNibName:@"WorkoutCalendarCell" bundle:nil];
     [self.clvCards registerNib:calendarNib forCellWithReuseIdentifier:@"WorkoutCalendarCell"];
     
@@ -137,7 +140,7 @@
     displayTime += 1;
     
     // Manage scroll index
-    if (scrollIndex == 5) {
+    if (scrollIndex == 6) {
         scrollIndex = 0;
     }
         
@@ -216,7 +219,7 @@
 // MARK:- UICollectionView Delegate & Datasource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return 6;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -225,18 +228,22 @@
         return skillCell;
         
     } else if (indexPath.row == 1) {
+        insightClvCell *insightCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"insightClvCell" forIndexPath: indexPath];
+        return insightCell;
+    }
+    else if (indexPath.row == 2) {
         WorkoutCalendarCell *calendarCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WorkoutCalendarCell" forIndexPath:indexPath];
         return calendarCell;
 
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.row == 3) {
         AverageWorkoutCell *averageCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AverageWorkoutCell" forIndexPath:indexPath];
         return averageCell;
 
-    } else if (indexPath.row == 3) {
+    } else if (indexPath.row == 4) {
         TimeOfDayClvCell *timeCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TimeOfDayClvCell" forIndexPath:indexPath];
         return timeCell;
 
-    } else if (indexPath.row == 4) {
+    } else if (indexPath.row == 5) {
         DayOfWeekClvCell *weekCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DayOfWeekClvCell" forIndexPath:indexPath];
         return weekCell;
 
@@ -254,11 +261,11 @@
         YourSkillLevelCell *skillCell = (YourSkillLevelCell *)cell;
         [skillCell animateNumbers];
         
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.row == 2) {
         WorkoutCalendarCell *calendarCell = (WorkoutCalendarCell *)cell;
         [calendarCell reloadCalendar];
         
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.row == 3) {
         AverageWorkoutCell *averageCell = (AverageWorkoutCell *)cell;
         [averageCell animateNumbers];
         
@@ -267,11 +274,11 @@
             [averageCell.vwQuality setValue:74.0];
             [averageCell layoutIfNeeded];
         }];
-    } else if (indexPath.row == 3) {
+    } else if (indexPath.row == 4) {
         TimeOfDayClvCell *timeCell = (TimeOfDayClvCell *)cell;
         [timeCell.tblTimeOfDay reloadData];
         
-    } else if (indexPath.row == 4) {
+    } else if (indexPath.row == 5) {
         DayOfWeekClvCell *weekCell = (DayOfWeekClvCell *)cell;
         [weekCell.clvDayOfWeek reloadData];
     }
@@ -279,7 +286,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 2) {
+    if (indexPath.row == 3) {
         AverageWorkoutCell *averageCell = (AverageWorkoutCell *)cell;
         averageCell.vwQuality.value = 0.0;
     }

@@ -132,4 +132,8 @@
 
 + (int)getLastRandomWorkoutComplete;
 + (void)setLastRandomWorkoutComplete;
+
++(NSAttributedString *)getLastWorkout;
++(void)setLastWorkout:(NSString *)message;
+
 @end

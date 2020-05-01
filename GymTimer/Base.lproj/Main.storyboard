@@ -2362,8 +2362,22 @@ beetween sets for this workout</string>
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </view>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5n3-jA-2IU">
+                                                                                <rect key="frame" x="19" y="2" width="234" height="21"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                                <attributedString key="attributedText">
+                                                                                    <fragment content="Your last workout was 0 days ago.">
+                                                                                        <attributes>
+                                                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                                            <font key="NSFont" size="16" name="Futura-CondensedExtraBold"/>
+                                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                        </attributes>
+                                                                                    </fragment>
+                                                                                </attributedString>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
                                                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O17-NU-Ga4">
-                                                                                <rect key="frame" x="19" y="9" width="234" height="56"/>
+                                                                                <rect key="frame" x="19" y="41" width="234" height="56"/>
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SGK-AV-wOZ">
@@ -2568,48 +2582,69 @@ beetween sets for this workout</string>
                                                 <rect key="frame" x="40" y="85" width="240" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boyCompleteWorkout" translatesAutoresizingMaskIntoConstraints="NO" id="pa8-nF-Ib8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="35" height="70"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boyCompleteWorkoutLong" translatesAutoresizingMaskIntoConstraints="NO" id="pa8-nF-Ib8">
+                                                        <rect key="frame" x="0.0" y="-3" width="35" height="91"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgn-wy-eNh">
-                                                        <rect key="frame" x="35" y="8" width="253" height="21"/>
+                                                        <rect key="frame" x="35" y="8" width="253" height="42"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chatInfo" translatesAutoresizingMaskIntoConstraints="NO" id="l6F-Cj-idK">
-                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="21"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chatLargeInfo" translatesAutoresizingMaskIntoConstraints="NO" id="l6F-Cj-idK">
+                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="42"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVL-jb-hzw">
                                                                 <rect key="frame" x="0.0" y="1" width="253" height="38"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <attributedString key="attributedText">
-                                                                    <fragment content="This Workout">
+                                                                    <fragment content="This workout">
                                                                         <attributes>
                                                                             <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <font key="NSFont" size="14" name="Futura-Medium"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            <font key="NSFont" size="14" name="Futura-CondensedExtraBold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
-                                                                    <fragment content=" wasn’t long enough, ">
+                                                                    <fragment content=" ">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.098039215686274508" green="0.8784313725490196" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" size="14" name="Futura-Medium"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            <font key="NSFont" size="14" name="Futura-CondensedExtraBold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
-                                                                    <fragment content="it won’t br added to your">
+                                                                    <fragment content="wasn’t long enough,">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.078431372549019607" green="0.80000000000000004" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <font key="NSFont" size="14" name="Futura-CondensedExtraBold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.098039215686274508" green="0.8784313725490196" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <font key="NSFont" size="14" name="Futura-CondensedExtraBold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="it won’t be added to your">
                                                                         <attributes>
                                                                             <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <font key="NSFont" size="14" name="Futura-Medium"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            <font key="NSFont" size="14" name="Futura-CondensedExtraBold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
-                                                                    <fragment content=" statistics.">
+                                                                    <fragment content=" ">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.098039215686274508" green="0.8784313725490196" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" size="14" name="Futura-Medium"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            <font key="NSFont" size="14" name="Futura-CondensedExtraBold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="statistics.">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.078431372549019607" green="0.80000000000000004" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <font key="NSFont" size="14" name="Futura-CondensedExtraBold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
@@ -2626,21 +2661,13 @@ beetween sets for this workout</string>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ID2-Fj-yZs">
-                                                                <rect key="frame" x="0.0" y="1" width="253" height="19"/>
+                                                                <rect key="frame" x="32" y="1" width="213" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <attributedString key="attributedText">
-                                                                    <fragment content="Congratulations">
+                                                                    <fragment content="Workout complete, good job !">
                                                                         <attributes>
-                                                                            <color key="NSColor" red="0.098039215686274508" green="0.8784313725490196" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" size="14" name="Futura-Medium"/>
-                                                                            <font key="NSOriginalFont" size="13" name="Futura-Medium"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                    <fragment content=" for working out today !">
-                                                                        <attributes>
-                                                                            <font key="NSFont" size="14" name="Futura-Medium"/>
-                                                                            <font key="NSOriginalFont" size="13" name="Futura-Medium"/>
+                                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                            <font key="NSFont" size="16" name="Futura-CondensedExtraBold"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
@@ -3000,7 +3027,7 @@ beetween sets for this workout</string>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.078431372549019607" green="0.80000000000000004" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3145,6 +3172,7 @@ it won’t be added to your statistics.</string>
                         <outlet property="imgNextExerciseImage" destination="oL4-Np-Vu8" id="BGW-KQ-ZJQ"/>
                         <outlet property="imgPower" destination="YQh-K0-sJR" id="NPY-9J-hs0"/>
                         <outlet property="imgPowerPopupInfomationBg" destination="hZN-H6-FSi" id="idA-hH-lX4"/>
+                        <outlet property="imgPowerPopupMaxInfomationBg" destination="l6F-Cj-idK" id="eef-5R-fxk"/>
                         <outlet property="imgRestScreenDumbellsBackgroundImage" destination="0C2-Jm-oWf" id="G3h-hZ-geX"/>
                         <outlet property="imgRestScreenDumbellsImage" destination="g6o-8B-y6n" id="eGE-8g-j1n"/>
                         <outlet property="imgSetScreenDumbellsImage" destination="qdr-HU-5K8" id="rRJ-db-O8K"/>
@@ -3159,6 +3187,7 @@ it won’t be added to your statistics.</string>
                         <outlet property="lblColonSecondLabel" destination="PGW-pc-hWQ" id="XsE-nw-USf"/>
                         <outlet property="lblColonThirdLabel" destination="Oci-bH-yvZ" id="7TI-jc-cYg"/>
                         <outlet property="lblCongrats" destination="k1q-rJ-Ney" id="sUr-jz-Q2A"/>
+                        <outlet property="lblCongratulationsMaxText" destination="QVL-jb-hzw" id="rCp-2W-WeA"/>
                         <outlet property="lblCongratulationsText" destination="ID2-Fj-yZs" id="Rey-or-dX6"/>
                         <outlet property="lblCurrentDateLabel" destination="VuN-Ap-Yvy" id="V1Y-GW-Zbe"/>
                         <outlet property="lblDoSetNumberCountLabel" destination="53c-DZ-btE" id="HVL-FL-VW6"/>
@@ -3186,6 +3215,7 @@ it won’t be added to your statistics.</string>
                         <outlet property="lblLastExerciseSecondColonLabel" destination="5Y6-RX-Hj1" id="EtT-7V-7ig"/>
                         <outlet property="lblLastExerciseSecondMinLabel" destination="GNd-Vp-qX9" id="hM9-4l-7Yi"/>
                         <outlet property="lblLastExerciseSecondSecLabel" destination="N19-Xq-Hbd" id="DBM-MO-1ri"/>
+                        <outlet property="lblLastWorkout" destination="5n3-jA-2IU" id="DTN-ej-NLI"/>
                         <outlet property="lblLevel" destination="nyZ-0i-2lZ" id="qtC-1x-5Pk"/>
                         <outlet property="lblLoaderGymTimerLabel" destination="FLj-e9-Q3V" id="9wJ-zx-04p"/>
                         <outlet property="lblMinFirstLabel" destination="YGD-mv-ey9" id="Pld-62-tW1"/>
@@ -3267,6 +3297,7 @@ it won’t be added to your statistics.</string>
                         <outlet property="viewNextSetContentView" destination="j90-PI-g9X" id="WFJ-ex-Fee"/>
                         <outlet property="viewPowerPopup" destination="Yfj-EL-GvB" id="cnK-pj-pGq"/>
                         <outlet property="viewPowerPopupInfomation" destination="FiC-gx-RLa" id="iAB-xk-YIu"/>
+                        <outlet property="viewPowerPopupMaxInfomation" destination="tgn-wy-eNh" id="3mh-Ti-Gdv"/>
                         <outlet property="viewRestTimeContentView" destination="Uvv-50-zMT" id="pA6-Ab-iAJ"/>
                         <outlet property="viewSetAndRestBackgroundView" destination="R5B-5J-9nC" id="FFp-tl-Reu"/>
                         <outlet property="viewSetAndRestScreenProgressBackgroundView" destination="2KY-Sj-aga" id="1I4-js-sAR"/>
@@ -3417,7 +3448,7 @@ it won’t be added to your statistics.</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GymTimer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMx-cs-hUK">
-                                        <rect key="frame" x="75.666666666666686" y="60" width="224" height="64"/>
+                                        <rect key="frame" x="75.666666666666686" y="55" width="224" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="llk-cB-rfu"/>
                                         </constraints>
@@ -3452,7 +3483,7 @@ it won’t be added to your statistics.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-FK-dNc">
-                                        <rect key="frame" x="225.66666666666663" y="103" width="80" height="36"/>
+                                        <rect key="frame" x="225.66666666666663" y="98" width="80" height="36"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9Z-n6-0yQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="36"/>
@@ -3529,8 +3560,8 @@ it won’t be added to your statistics.</string>
                                             <constraint firstAttribute="trailing" secondItem="rmz-wP-M6W" secondAttribute="trailing" id="Wta-hX-Dxw"/>
                                         </constraints>
                                     </view>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="ppF-ap-uve">
-                                        <rect key="frame" x="152" y="631" width="71" height="12"/>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="ppF-ap-uve">
+                                        <rect key="frame" x="144" y="631" width="87" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="0tu-Lr-dvN"/>
                                         </constraints>
@@ -3538,18 +3569,18 @@ it won’t be added to your statistics.</string>
                                         <color key="currentPageIndicatorTintColor" red="0.077283613380000005" green="0.79986816640000002" blue="0.3909629583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pageControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First month 100% FREE with any option !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Da-UF-O51">
-                                        <rect key="frame" x="85" y="735" width="205" height="25"/>
+                                        <rect key="frame" x="47.666666666666657" y="735" width="280" height="28"/>
                                         <color key="backgroundColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="JC4-dY-WXy"/>
-                                            <constraint firstAttribute="width" constant="205" id="XTJ-5c-SYK"/>
+                                            <constraint firstAttribute="height" constant="28" id="JC4-dY-WXy"/>
+                                            <constraint firstAttribute="width" constant="280" id="XTJ-5c-SYK"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
+                                                <integer key="value" value="7"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
@@ -3648,14 +3679,14 @@ it won’t be added to your statistics.</string>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee" translatesAutoresizingMaskIntoConstraints="NO" id="JKj-l6-rnt">
-                                        <rect key="frame" x="174" y="780" width="27" height="34"/>
+                                        <rect key="frame" x="174" y="783" width="27" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="27" id="XF8-3Z-F3v"/>
                                             <constraint firstAttribute="height" constant="34" id="rZw-SK-Vub"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Small cost, big difference." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veC-tb-rWq">
-                                        <rect key="frame" x="85.666666666666686" y="822" width="204" height="23"/>
+                                        <rect key="frame" x="85.666666666666686" y="825" width="204" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="aMA-X4-9m0"/>
                                         </constraints>
@@ -3664,7 +3695,7 @@ it won’t be added to your statistics.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crazy insights for literally the price of a Coffee !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HG-Fd-IxC">
-                                        <rect key="frame" x="47.666666666666657" y="853" width="280" height="17"/>
+                                        <rect key="frame" x="47.666666666666657" y="856" width="280" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="Efx-FO-iC5"/>
                                         </constraints>
@@ -3673,7 +3704,7 @@ it won’t be added to your statistics.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-od-cep">
-                                        <rect key="frame" x="38" y="894" width="299" height="10"/>
+                                        <rect key="frame" x="38" y="897" width="299" height="10"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2A-Pb-CdE">
                                                 <rect key="frame" x="0.0" y="0.0" width="284" height="10"/>
@@ -3710,7 +3741,7 @@ it won’t be added to your statistics.</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyB-un-QuO" customClass="UICountingLabel">
-                                        <rect key="frame" x="62.666666666666657" y="914" width="94" height="67"/>
+                                        <rect key="frame" x="62.666666666666657" y="917" width="94" height="67"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="67" id="Sac-kJ-o9s"/>
                                             <constraint firstAttribute="width" constant="94" id="rh5-f4-kN9"/>
@@ -3720,7 +3751,7 @@ it won’t be added to your statistics.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-rE-y51">
-                                        <rect key="frame" x="186.66666666666666" y="926" width="1.6666666666666572" height="88"/>
+                                        <rect key="frame" x="186.66666666666666" y="929" width="1.6666666666666572" height="88"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1.5" id="HsU-dJ-uPd"/>
@@ -3728,7 +3759,7 @@ it won’t be added to your statistics.</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U9-DO-sX6">
-                                        <rect key="frame" x="49.666666666666657" y="977" width="120" height="46"/>
+                                        <rect key="frame" x="49.666666666666657" y="980" width="120" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="7Ca-ky-m0b"/>
                                             <constraint firstAttribute="height" constant="46" id="Jfs-OL-21W"/>
@@ -3740,7 +3771,7 @@ membership</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vv-R8-GzX">
-                                        <rect key="frame" x="199.66666666666663" y="977" width="120" height="46"/>
+                                        <rect key="frame" x="199.66666666666663" y="980" width="120" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="kWh-2K-uAM"/>
                                             <constraint firstAttribute="height" constant="46" id="qTF-O5-bft"/>
@@ -3752,7 +3783,7 @@ membership</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xv-8r-aXc">
-                                        <rect key="frame" x="158.66666666666666" y="1055" width="58" height="13"/>
+                                        <rect key="frame" x="158.66666666666666" y="1058" width="58" height="13"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Use" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IV-XO-fLr">
                                                 <rect key="frame" x="0.0" y="0.0" width="58" height="13"/>
@@ -3792,14 +3823,14 @@ membership</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fs8-ln-JZ7">
-                                        <rect key="frame" x="25" y="1073" width="325" height="65"/>
+                                        <rect key="frame" x="25" y="1076" width="325" height="65"/>
                                         <string key="text">Payment will be charged to your Apple ID account 1 month after the confirmation of purchase. Subscriptions will automatically renew unless canceled at least 24 hours before the end of the current period. You can cancel anytime with your iTunes account settings. Any unused portion of a free trial will be forfeited if you purchase a subscription.</string>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqu-1i-pqF" customClass="UICountingLabel">
-                                        <rect key="frame" x="228.33333333333337" y="914" width="63" height="67"/>
+                                        <rect key="frame" x="228.33333333333337" y="917" width="63" height="67"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="67" id="Rfc-y4-Dpp"/>
                                             <constraint firstAttribute="width" constant="63" id="jTv-RN-qat"/>
@@ -3822,7 +3853,7 @@ membership</string>
                                     <constraint firstItem="veC-tb-rWq" firstAttribute="top" secondItem="JKj-l6-rnt" secondAttribute="bottom" constant="8" id="A8W-el-zw0"/>
                                     <constraint firstItem="Rqu-1i-pqF" firstAttribute="top" secondItem="dt2-rE-y51" secondAttribute="top" constant="-12" id="BFP-bu-JVS"/>
                                     <constraint firstItem="WMx-cs-hUK" firstAttribute="centerX" secondItem="PeO-BH-PpE" secondAttribute="centerX" id="CSb-xz-dPK"/>
-                                    <constraint firstItem="WMx-cs-hUK" firstAttribute="top" secondItem="PeO-BH-PpE" secondAttribute="top" constant="60" id="D7H-o9-Hzs"/>
+                                    <constraint firstItem="WMx-cs-hUK" firstAttribute="top" secondItem="PeO-BH-PpE" secondAttribute="top" constant="55" id="D7H-o9-Hzs"/>
                                     <constraint firstItem="9Da-UF-O51" firstAttribute="top" secondItem="gvM-dT-y2e" secondAttribute="bottom" constant="12" id="DIa-3M-KiF"/>
                                     <constraint firstItem="MLc-Jy-EzW" firstAttribute="top" secondItem="wmN-Iv-EkY" secondAttribute="bottom" constant="60" id="Dmc-us-vR1"/>
                                     <constraint firstItem="Fs8-ln-JZ7" firstAttribute="top" secondItem="9xv-8r-aXc" secondAttribute="bottom" constant="5" id="E9V-yQ-osC"/>
@@ -4419,14 +4450,14 @@ membership</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8V-oO-lHM">
-                                                        <rect key="frame" x="111.33333333333333" y="1" width="7.3333333333333286" height="22"/>
+                                                        <rect key="frame" x="104.66666666666667" y="1" width="14" height="22"/>
                                                         <state key="normal" image="imgPrevGray"/>
                                                         <connections>
                                                             <action selector="previousMonthAction:" destination="cYk-Ty-dzl" eventType="touchUpInside" id="Sbk-KK-lh6"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4B-34-yRy">
-                                                        <rect key="frame" x="224.66666666666666" y="1" width="7.3333333333333428" height="22"/>
+                                                        <rect key="frame" x="224.66666666666666" y="1" width="14" height="22"/>
                                                         <state key="normal" image="imgNextGray"/>
                                                         <connections>
                                                             <action selector="nextMonthAction:" destination="cYk-Ty-dzl" eventType="touchUpInside" id="Yx6-oO-BQj"/>
@@ -7356,7 +7387,7 @@ over the last week</string>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift" translatesAutoresizingMaskIntoConstraints="NO" id="pKQ-w4-P9I">
-                                                                                <rect key="frame" x="107" y="5.3333333333333712" width="13" height="15"/>
+                                                                                <rect key="frame" x="107" y="5.3333333333333712" width="13" height="15.000000000000004"/>
                                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="13" id="CB5-x9-Trs"/>
@@ -7776,8 +7807,10 @@ over the last week</string>
         <image name="add" width="31" height="31"/>
         <image name="arrow" width="37.333332061767578" height="34.666667938232422"/>
         <image name="boyCompleteWorkout" width="42.333332061767578" height="89.333335876464844"/>
+        <image name="boyCompleteWorkoutLong" width="42.333332061767578" height="110.33333587646484"/>
         <image name="bulb_light_green" width="94.666664123535156" height="91"/>
         <image name="chatInfo" width="338.66665649414062" height="79.333335876464844"/>
+        <image name="chatLargeInfo" width="311" height="107.66666412353516"/>
         <image name="clos" width="20" height="20"/>
         <image name="close" width="18.666666030883789" height="18.666666030883789"/>
         <image name="coffee" width="26.333333969116211" height="33.666667938232422"/>

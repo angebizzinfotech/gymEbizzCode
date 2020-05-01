@@ -49,6 +49,7 @@
 #define uDELETE_FRIEND              @"delete_friend.php"
 #define uHIDDEN_MODE_SETTING        @"setting.php"
 #define uCHECK_PRO                  @"check_pro.php"
+#define uGET_LAST_WORKOUT           @"lastworkoutduration.php"
 
 //MARK:- API tags
 
@@ -76,6 +77,7 @@
 #define tCHECK_PRO                  @"CheckPro"
 #define tSAVE_EXERCISE_DATA         @"SaveExerciseData"
 #define tSAVE_REMAINING_DATA        @"SaveRemainingData"
+#define tGET_LAST_WORKOUT           @"lastworkoutduration.php"
 
 //MARK:- Sound files name constants
 
@@ -216,7 +218,8 @@
 #define kTIME_NOW               @"TimeNow"
 #define kIsAppInBackGround      @"ApplicationState"
 #define kGET_RANDOM_WORKOUT_COUNT   @"RandomWorkoutCount"
-
+#define kLAST_WORKOUT           @"LastWorkout"
+#define kLAST_WORKOUT_ATTRIBUTE @"LastWorkoutMessage"
 
 //MARK:-  CollectionView Identifier Constant
 #define cvONBOARDING_CELL       @"OnBoardingCollectionViewCell"

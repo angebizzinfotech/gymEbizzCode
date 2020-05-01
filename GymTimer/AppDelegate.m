@@ -36,7 +36,7 @@
     } else {
         
     }
-    
+        
     // Override point for customization after application launch.
 //    application.statusBarHidden = true;
 
@@ -386,7 +386,7 @@
 
 - (void)generateLocalNotification: (id) sender withTimeInterval:(NSTimeInterval) timeInterval {
     int nextSetCount = [[[NSUserDefaults standardUserDefaults] valueForKey: kSET_COUNT] intValue];
-    NSString *strNotificationTitle = [NSString stringWithFormat: @"Get ready for SET %d", (nextSetCount)];
+    NSString *strNotificationTitle = [NSString stringWithFormat: @"Get ready for SET %d 🔥", (nextSetCount)];
     
     UNMutableNotificationContent *localNotification = [UNMutableNotificationContent new];
     localNotification.title = [NSString localizedUserNotificationStringForKey: strNotificationTitle arguments:nil];
