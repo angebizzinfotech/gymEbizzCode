@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak) NSTimer *scrollTimer;
 @property (strong, nonatomic) NSString *isFromSetting;
+@property BOOL isStats;
 
 @end
 

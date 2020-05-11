@@ -73,6 +73,8 @@
     // Vsn - 25/04/2020
     bool isShowRatingPopup;
     // End
+    
+    int workoutQualityGloble;
 }
 
 @end
@@ -1263,6 +1265,44 @@
     
     [_timerTotalTime invalidate];
     _timerTotalTime = nil;
+    
+    // Vsn - 06/05/2020
+    // Set workout quality data
+    int setCount = 0;
+    int workoutQuality = 0;
+    
+    if ([NSUserDefaults.standardUserDefaults.dictionaryRepresentation.allKeys containsObject:kQUALITY_SET_COUNT]) {
+        setCount = [[[NSUserDefaults standardUserDefaults] valueForKey:kQUALITY_SET_COUNT] intValue];
+    }
+    
+    // Workout quality calculation
+    
+    for (int i = 1; i <= setCount; i++) {
+        if (i >= 1 && i <= 5) {
+            workoutQuality = workoutQuality + 7;
+            
+        } else if (i >= 6 && i <= 10) {
+            workoutQuality = workoutQuality + 6;
+            
+        } else if (i >= 11 && i <= 15) {
+            workoutQuality = workoutQuality + 4;
+            
+        } else if (i >= 16 && i <= 20) {
+            workoutQuality = workoutQuality + 2;
+            
+        } else if (i >= 21 && i <= 26) {
+            workoutQuality = workoutQuality + 1;
+            
+        } else if (i >= 27) {
+            workoutQuality = 100;
+        }
+        
+        if (workoutQuality > 100) {
+            workoutQuality = 100;
+        }
+    }
+    workoutQualityGloble = workoutQuality;
+    // End
 
 //    [self initializeWorkoutCompleteScreen];
     
@@ -6251,6 +6291,7 @@
     
     // Animation for workout quality progress
     self.vwQualityProgress.value = 0.0;
+    workoutQualityGloble = workoutQuality;
     [UIView animateWithDuration:animateFirst delay:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
         self.vwQualityProgress.value = valueFirst;
     } completion:^(BOOL finished) {
@@ -7980,7 +8021,9 @@
     }
     
     NSString *totalTime = [NSString stringWithFormat:@"%02d:%02d:%02d", totalTimeHour, totalTimeMin, totalTimeSec];
+    NSLog(@"Vishnu Store total %@", totalTime);
     [[NSUserDefaults standardUserDefaults] setValue: totalTime forKey: kTOTAL_TIME];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     // Check Workout Time: If More Than 5 Min Then Save In UserDefalut
     if (totalTimeMin >= 5) {
@@ -8227,7 +8270,9 @@
     NSString *time = [NSString stringWithFormat:@"%02d:%02d:%02d", lastExerciseHour, lastExerciseMin, lastExerciseSec];
 
     if(![[NSUserDefaults standardUserDefaults] boolForKey:kIsAppInBackGround]){
+        NSLog(@"Vishnu Last workout: %@", time);
         [[NSUserDefaults standardUserDefaults] setValue: time forKey: kLAST_EXERCISE_TIME];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 
@@ -8245,7 +8290,7 @@
 //MARK:- Service manager delegate and parser methods
 
 - (void)callSaveExerciseAPI {
-    NSString *strSetCount = [NSString stringWithFormat:@"%d",(int)self.vwQualityProgress.value];
+    NSString *strSetCount = [NSString stringWithFormat:@"%d", workoutQualityGloble]; //(int)self.vwQualityProgress.value
     
     NSString *strTotalExercise = [[NSUserDefaults standardUserDefaults] valueForKey: kTOTAL_EXERCISE_COUNT];
     

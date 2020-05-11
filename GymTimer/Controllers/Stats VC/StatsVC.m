@@ -38,7 +38,7 @@
     });
     
     //Temp Vishnu
-//    [Utils setIsPaidUser:@"YES"];
+    [Utils setIsPaidUser:@"YES"];
     
     if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
         // API Calling if user is paid
@@ -49,6 +49,7 @@
         [self.scrView setHidden:YES];
         
         UpgradeToProVC *loginView = [self.storyboard instantiateViewControllerWithIdentifier:@"UpgradeToProVC"];
+        loginView.isStats = true;
         [self addChildViewController:loginView];
 
         [loginView.view setFrame:CGRectMake(0.0f, 0.0f, self.vwParent.frame.size.width, self.vwParent.frame.size.height)];

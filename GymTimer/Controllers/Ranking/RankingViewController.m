@@ -34,6 +34,12 @@
     CGFloat KeyboardHgt, IsBounced;
     
     BOOL isSearchClicked;
+    
+    // Vsn - 05/04/2020
+    int page_token;
+    UIActivityIndicatorView *loader;
+    NSTimer *searchTimer;
+    // End
 }
 
 @end
@@ -42,6 +48,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Vsn - 05/04/2020
+    page_token = 0;
+    arrSearchFriend = [[NSMutableArray alloc] init];
+    loader = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleLarge];
+    loader.frame = CGRectMake(0.0, 0.0, DEVICE_WIDTH, DEVICE_HEIGHT);
+    [loader setHidesWhenStopped: true];
+    [self.view addSubview: loader];
+    // End
     
     isSearchClicked = NO;
     IsBounced = NO;
@@ -345,6 +360,15 @@
     } else if (scrollView == _scrSearch) {
         if (self.constTblSearchHeight.constant < self.scrSearch.frame.size.height) {
             [self.scrSearch setContentOffset:CGPointMake(0, 0) animated:YES];
+        }
+        if(scrollView.contentOffset.y > 0)
+        {
+            NSLog(@"end scroll");
+            if(page_token != -1)
+            {
+                [loader startAnimating];
+                [self SearchFriendAPI: _txtSearch.text];
+            }
         }
     } else if (scrollView == _scrFriendRequest) {
         if (self.constTblFriendsHeight.constant < self.scrFriendRequest.frame.size.height) {
@@ -1139,10 +1163,21 @@
         [arrSearchFriend removeAllObjects];
         [_tblSearchFriends reloadData];
     }  else {
-        [self SearchFriendAPI:searchStr];
+        if(searchTimer == nil)
+        {
+            searchTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(searchTextDelay) userInfo:nil repeats:NO];
+        }
     }
     [self setTableHeight];
     return YES;
+}
+
+-(void)searchTextDelay
+{
+    searchTimer = nil;
+    page_token = 0;
+    [arrSearchFriend removeAllObjects];
+    [self SearchFriendAPI: _txtSearch.text];
 }
 
 //MARK:- API call
@@ -1228,7 +1263,8 @@
 
     NSArray *SearchFriendParams = @[
                                     @{ @"user_id" : [dicUserDetails valueForKey: @"id"]},
-                                    @{ @"name" : friend}
+                                    @{ @"name" : friend},
+                                    @{ @"page_token": [NSString stringWithFormat:@"%d", page_token]}
                                     ];
     
     NSLog(@"Dic : %@", SearchFriendParams);
@@ -1497,17 +1533,26 @@
     
     NSMutableDictionary *dicResponse = (NSMutableDictionary *)response;
     NSLog(@"%@", dicResponse);
-    arrSearchFriend = [[NSMutableArray alloc] init];
+//    arrSearchFriend = [[NSMutableArray alloc] init];
 
     if ([[dicResponse valueForKey:@"status"] integerValue] == 1) {
+        
+        page_token = [[dicResponse valueForKey:@"page_token"] intValue];
+
         //success
-        arrSearchFriend = [[dicResponse valueForKey:@"data"] mutableCopy];
+        [arrSearchFriend addObjectsFromArray: [[dicResponse valueForKey:@"data"] mutableCopy]];
         
         //Setting Search Table Height
         [self setTableHeight];
         
         [_tblSearchFriends reloadData];
+    }
+    else
+    {
+        [arrSearchFriend removeAllObjects];
+        [self setTableHeight];
         
+        [_tblSearchFriends reloadData];
     }
     
     if (arrSearchFriend.count == 0) {
@@ -1516,6 +1561,7 @@
         _viewSearchFriend.hidden = NO;
     }
     
+    [loader stopAnimating];
 }
 
 @end

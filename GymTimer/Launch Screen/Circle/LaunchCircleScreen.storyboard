@@ -18,11 +18,14 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GymTimer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6X-11-6h1">
                                 <rect key="frame" x="137.5" y="49" width="139" height="39.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39.5" id="CUA-2K-mhp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="31"/>
                                 <color key="textColor" red="0.078431372550000003" green="0.80000000000000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGF-Zu-2FV">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGF-Zu-2FV">
                                 <rect key="frame" x="18" y="100.5" width="378" height="70"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyCompleteWorkout" translatesAutoresizingMaskIntoConstraints="NO" id="nyV-rY-5WP">
@@ -90,9 +93,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgw-85-bCZ">
                                 <rect key="frame" x="0.0" y="165.5" width="414" height="730.5"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenbg" translatesAutoresizingMaskIntoConstraints="NO" id="xRl-uz-VBS">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="730.5"/>
+                                    </imageView>
                                     <view contentMode="scaleToFill" restorationIdentifier="MBCircularProgressBarView" translatesAutoresizingMaskIntoConstraints="NO" id="8Rp-Q4-dNY">
                                         <rect key="frame" x="123.5" y="282" width="167" height="167"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-circle" translatesAutoresizingMaskIntoConstraints="NO" id="PQk-6J-r53">
+                                                <rect key="frame" x="5" y="5" width="157" height="157"/>
+                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dumbels" translatesAutoresizingMaskIntoConstraints="NO" id="a5c-p0-hLE">
                                                 <rect key="frame" x="36.5" y="61" width="94" height="45"/>
                                                 <constraints>
@@ -104,17 +113,24 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="PQk-6J-r53" firstAttribute="top" secondItem="8Rp-Q4-dNY" secondAttribute="top" constant="5" id="06X-6f-Hq7"/>
                                             <constraint firstAttribute="height" constant="167" id="0vY-vc-v1r"/>
+                                            <constraint firstItem="PQk-6J-r53" firstAttribute="leading" secondItem="8Rp-Q4-dNY" secondAttribute="leading" constant="5" id="227-b0-bdr"/>
                                             <constraint firstAttribute="width" constant="167" id="7R8-WR-Sue"/>
                                             <constraint firstItem="a5c-p0-hLE" firstAttribute="centerY" secondItem="8Rp-Q4-dNY" secondAttribute="centerY" id="Ezq-n9-HXk"/>
+                                            <constraint firstAttribute="bottom" secondItem="PQk-6J-r53" secondAttribute="bottom" constant="5" id="pap-JS-s4e"/>
+                                            <constraint firstAttribute="trailing" secondItem="PQk-6J-r53" secondAttribute="trailing" constant="5" id="sLa-Z7-K2o"/>
                                             <constraint firstItem="a5c-p0-hLE" firstAttribute="centerX" secondItem="8Rp-Q4-dNY" secondAttribute="centerX" id="tTi-km-eBj"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.23529411759999999" green="0.54901960780000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="8Rp-Q4-dNY" firstAttribute="centerX" secondItem="qgw-85-bCZ" secondAttribute="centerX" id="V7Q-vU-Cx2"/>
+                                    <constraint firstItem="xRl-uz-VBS" firstAttribute="leading" secondItem="qgw-85-bCZ" secondAttribute="leading" id="WEZ-Gv-J8L"/>
+                                    <constraint firstAttribute="bottom" secondItem="xRl-uz-VBS" secondAttribute="bottom" id="fKg-X1-JrN"/>
                                     <constraint firstItem="8Rp-Q4-dNY" firstAttribute="centerY" secondItem="qgw-85-bCZ" secondAttribute="centerY" id="pZS-j7-ALh"/>
+                                    <constraint firstItem="xRl-uz-VBS" firstAttribute="top" secondItem="qgw-85-bCZ" secondAttribute="top" id="qyM-J4-meC"/>
+                                    <constraint firstAttribute="trailing" secondItem="xRl-uz-VBS" secondAttribute="trailing" id="r24-OV-T2h"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -142,5 +158,7 @@
         <image name="Dumbels" width="94.5" height="45"/>
         <image name="boyCompleteWorkout" width="42.5" height="89.5"/>
         <image name="chatInfo" width="339" height="79.5"/>
+        <image name="greenbg" width="414" height="698"/>
+        <image name="white-circle" width="183" height="183"/>
     </resources>
 </document>

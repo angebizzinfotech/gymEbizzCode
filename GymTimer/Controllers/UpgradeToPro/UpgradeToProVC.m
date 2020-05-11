@@ -25,6 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if(_isStats)
+    {
+        [self.tabBarController.tabBar setHidden: true];
+    }
+    
     [self initialization];
     [self setupLayout];
 }
@@ -210,7 +215,10 @@
 
 - (IBAction)closeAction:(UIButton *)sender {
     if (self.tabBarController.selectedIndex == 2) {
+        [self.tabBarController.tabBar setHidden: false];
         [self.tabBarController setSelectedIndex: 0];
+//        [self.tabBarController.viewControllers[0] viewDidLoad];
+//        [self.tabBarController.viewControllers[0] viewWillAppear: true];
     } else {
         [self.navigationController popViewControllerAnimated:YES];
     }

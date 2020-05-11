@@ -126,11 +126,11 @@
         [self.window setRootViewController: navController];
         [self.window makeKeyAndVisible];
     }
-//    UIViewController *launchVC = [storyBoard instantiateViewControllerWithIdentifier: @"launchCircleScreenVC"];
-//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: launchVC];
-//    [navController setNavigationBarHidden: true];
-//    [self.window setRootViewController: navController];
-//    [self.window makeKeyAndVisible];
+    UIViewController *launchVC = [storyBoard instantiateViewControllerWithIdentifier: @"launchCircleScreenVC"];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: launchVC];
+    [navController setNavigationBarHidden: true];
+    [self.window setRootViewController: navController];
+    [self.window makeKeyAndVisible];
     
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
@@ -243,12 +243,16 @@
     //For Total Timer
     workoutVC.timerTotalTime = nil;
     [workoutVC.timerTotalTime invalidate];
+    NSLog(@"Vishnu Start time TotalTimer %@", [NSDate date]);
     [[NSUserDefaults standardUserDefaults] setValue: [NSDate date] forKey: @"TotalTimerStopDate"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     //For Last Exercise Timer
     workoutVC.timerLastExerciseTime = nil;
     [workoutVC.timerLastExerciseTime invalidate];
+    NSLog(@"Vishnu Start time LastExercise %@", [NSDate date]);
     [[NSUserDefaults standardUserDefaults] setValue: [NSDate date] forKey: @"LastExerciseTimerStopDate"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -278,7 +282,6 @@
     
     if ([[[NSUserDefaults standardUserDefaults] valueForKey: kREST_TIMER_STATUS] isEqualToString: @"YES"]) {
         _restTimerStopDate = [[NSUserDefaults standardUserDefaults] valueForKey: @"RestTimerStopDate"];
-        NSLog(@"Get Rest Timer Stop Date : %@", _restTimerStopDate);
 
 //        NSTimeInterval restTimeDifference = [[NSDate date] timeIntervalSinceDate: _restTimerStopDate];
 //        NSLog(@"Rest time difference : %f", restTimeDifference);
@@ -299,14 +302,19 @@
     if (![[[NSUserDefaults standardUserDefaults] valueForKey: @"isEndWOButtonClicked"] isEqualToString: @"YES"]) {
         
         _totalTimerStopDate = [[NSUserDefaults standardUserDefaults] valueForKey: @"TotalTimerStopDate"];
+        NSLog(@"Vishnu Stop time TotalTimer %@", [NSDate date]);
 
         NSTimeInterval totalTimeDifference = [[NSDate date] timeIntervalSinceDate: _totalTimerStopDate];
+        NSLog(@"Vishnu Diff time TotalTimer %f", totalTimeDifference);
 
         totalTimeDifference += [Utils convertTotalTimeToSecondsFrom: [[NSUserDefaults standardUserDefaults] valueForKey: kTOTAL_TIME]];
 
         NSString *strTotalTime = [Utils stringFromTotalTimeInterval: totalTimeDifference - 1];
+        NSLog(@"Vishnu Diff time TotalTimer %@", [[NSUserDefaults standardUserDefaults] valueForKey: kTOTAL_TIME]);
+        NSLog(@"Vishnu End time TotalTimer %@", strTotalTime);
 
         [[NSUserDefaults standardUserDefaults] setValue: strTotalTime forKey: kTOTAL_TIME];
+        [[NSUserDefaults standardUserDefaults] synchronize];
 
         [[NSNotificationCenter defaultCenter] postNotificationName: nSET_TOTAL_TIME object: nil];
         
@@ -317,14 +325,19 @@
     //Calculate last ecercise time difference and set new last exercise time...
     
     _lastExerciseTimerStopDate = [[NSUserDefaults standardUserDefaults] valueForKey: @"LastExerciseTimerStopDate"];
+    NSLog(@"Vishnu Stop time LastExercise %@", [NSDate date]);
     
     NSTimeInterval lastExerciseTimeDifference = [[NSDate date] timeIntervalSinceDate: _lastExerciseTimerStopDate];
+    NSLog(@"Vishnu Diff time LastExercise %f", lastExerciseTimeDifference);
 
     lastExerciseTimeDifference += [Utils convertTotalTimeToSecondsFrom: [[NSUserDefaults standardUserDefaults] valueForKey: kLAST_EXERCISE_TIME]];
 
     NSString *strLastExerciseTime = [Utils stringFromTotalTimeInterval: lastExerciseTimeDifference - 1];
-    
+    NSLog(@"Vishnu Diff time LastExercise %@", [[NSUserDefaults standardUserDefaults] valueForKey: kLAST_EXERCISE_TIME]);
+    NSLog(@"Vishnu End time LastExercise %@", strLastExerciseTime);
+
     [[NSUserDefaults standardUserDefaults] setValue: strLastExerciseTime forKey: kLAST_EXERCISE_TIME];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
     [[NSNotificationCenter defaultCenter] postNotificationName: nSET_LAST_EXERCISE_TIME object: nil];
     

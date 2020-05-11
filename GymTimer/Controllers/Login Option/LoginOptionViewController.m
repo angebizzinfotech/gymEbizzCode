@@ -103,7 +103,7 @@
             if (result.token) {
                 
                 [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me"
-                                                   parameters:@{@"fields": @"picture, name, email"}]
+                                                   parameters:@{@"fields": @"id, picture, name, email"}]
                  startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id userinfo, NSError *error) {
                     if (!error) {
                         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
@@ -169,6 +169,7 @@
     }
     
     NSString *profileUrl = [userInfo valueForKeyPath:@"picture.data.url"];
+    profileUrl = [NSString stringWithFormat: @"http://graph.facebook.com/%@/picture?type=large", [userInfo valueForKey:@"id"]];
     if (profileUrl.length <= 0 || profileUrl == nil) {
         profileUrl = @"";
     }
