@@ -220,6 +220,7 @@
 #define kGET_RANDOM_WORKOUT_COUNT   @"RandomWorkoutCount"
 #define kLAST_WORKOUT           @"LastWorkout"
 #define kLAST_WORKOUT_ATTRIBUTE @"LastWorkoutMessage"
+#define kNOTIFICATION_PERMISSION    @"NotificationPermission"
 
 //MARK:-  CollectionView Identifier Constant
 #define cvONBOARDING_CELL       @"OnBoardingCollectionViewCell"

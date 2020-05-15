@@ -538,6 +538,7 @@
 		03E51D5D23FEB19100CBA72A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		03EDB6612369A4D700A23FE2 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		03F639A3240F613D00519AD3 /* GymTimer Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GymTimer Watch.entitlements"; sourceTree = "<group>"; };
+		223FB9A1246D434F006B1AD0 /* GymTimer Watch ExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GymTimer Watch ExtensionDebug.entitlements"; sourceTree = "<group>"; };
 		229B5C942445D8F70030203F /* launchCircleScreenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = launchCircleScreenVC.h; sourceTree = "<group>"; };
 		229B5C952445D8F70030203F /* launchCircleScreenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = launchCircleScreenVC.m; sourceTree = "<group>"; };
 		229B5CDB2445E49C0030203F /* LaunchCircleScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchCircleScreen.storyboard; sourceTree = "<group>"; };
@@ -762,6 +763,7 @@
 		031E274F23CC376F0051B56F /* GymTimer Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				223FB9A1246D434F006B1AD0 /* GymTimer Watch ExtensionDebug.entitlements */,
 				03E51D5923FEA37000CBA72A /* Temp */,
 				031ABB2823D6F3BC001DB98D /* Tutorial */,
 				031ABB2323D6CF3F001DB98D /* Menu */,
@@ -1966,7 +1968,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "GymTimer Watch/GymTimer Watch.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tristan Boutin (VDF53454H3)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Tristan Boutin (VDF53454H3)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VDF53454H3;
@@ -1975,7 +1977,7 @@
 				MARKETING_VERSION = 5.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_AppStore;
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_AdHoc;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1988,7 +1990,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "GymTimer Watch/GymTimer Watch.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tristan Boutin (VDF53454H3)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Tristan Boutin (VDF53454H3)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VDF53454H3;
@@ -1997,7 +1999,7 @@
 				MARKETING_VERSION = 5.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_AppStore;
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_AdHoc;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -2010,7 +2012,8 @@
 			baseConfigurationReference = FDE51FB7DCEC7C62AFCC7E6D /* Pods-GymTimer Watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tristan Boutin (VDF53454H3)";
+				CODE_SIGN_ENTITLEMENTS = "GymTimer Watch Extension/GymTimer Watch ExtensionDebug.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Tristan Boutin (VDF53454H3)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VDF53454H3;
@@ -2023,7 +2026,7 @@
 				MARKETING_VERSION = 5.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_Extension_AppStore;
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_Extension_AdHoc;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -2036,7 +2039,7 @@
 			baseConfigurationReference = 3C298C3D6D74C95265B59F05 /* Pods-GymTimer Watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tristan Boutin (VDF53454H3)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Tristan Boutin (VDF53454H3)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VDF53454H3;
@@ -2049,7 +2052,7 @@
 				MARKETING_VERSION = 5.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_Extension_AppStore;
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_Watch_Extension_AdHoc;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -2176,7 +2179,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GymTimer/GymTimer.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tristan Boutin (VDF53454H3)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Tristan Boutin (VDF53454H3)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VDF53454H3;
@@ -2263,7 +2266,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = GymTimer_AppStore_profile_17/4/19;
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_dis_profile_17/4/19;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -2278,7 +2281,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GymTimer/GymTimer.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tristan Boutin (VDF53454H3)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Tristan Boutin (VDF53454H3)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VDF53454H3;
@@ -2365,7 +2368,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.gymtimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = GymTimer_AppStore_profile_17/4/19;
+				PROVISIONING_PROFILE_SPECIFIER = GymTimer_dis_profile_17/4/19;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

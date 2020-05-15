@@ -640,8 +640,9 @@
     
     if ([[dicResponse valueForKey:@"status"] integerValue] == 1) {
         
-        UIViewController *registerVC = [self.storyboard instantiateViewControllerWithIdentifier: @"LoginOptionViewController"];
+        UIViewController *registerVC = [self.storyboard instantiateViewControllerWithIdentifier: @"launchCircleScreenVC"]; //LoginOptionViewController
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: registerVC];
+        [navController.navigationBar setHidden: true];
         [[[[UIApplication sharedApplication] delegate] window] setRootViewController: navController];
         [[[[UIApplication sharedApplication] delegate] window] makeKeyAndVisible];
         

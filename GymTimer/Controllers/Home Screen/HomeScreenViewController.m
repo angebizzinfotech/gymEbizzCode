@@ -21,7 +21,10 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(hideTabbar) name: @"HideTabBar" object: nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName: nNOTIFICATION_PERMISSION object: nil];
+    if([[[NSUserDefaults standardUserDefaults] valueForKey: kNOTIFICATION_PERMISSION] isEqualToString: @"YES"])
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName: nNOTIFICATION_PERMISSION object: nil];
+    }
     [self setupLayout];
     
 }

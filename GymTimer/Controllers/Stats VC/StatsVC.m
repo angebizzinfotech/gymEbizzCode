@@ -38,7 +38,7 @@
     });
     
     //Temp Vishnu
-    [Utils setIsPaidUser:@"YES"];
+//    [Utils setIsPaidUser:@"YES"];
     
     if ([[Utils getIsPaidUser] isEqualToString: @"YES"]) {
         // API Calling if user is paid

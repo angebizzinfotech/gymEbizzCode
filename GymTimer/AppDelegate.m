@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "CommonImports.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "launchCircleScreenVC.h"
 @import StoreKit;
 @import Firebase;
 
@@ -98,39 +99,50 @@
 //    [self.window setRootViewController: navController];
 //    [self.window makeKeyAndVisible];
     
-    if ([[NSUserDefaults standardUserDefaults] valueForKey: kIS_FIRST_TIME] == nil) {
+//    if ([[NSUserDefaults standardUserDefaults] valueForKey: kIS_FIRST_TIME] == nil) {
 
-        //Temp
-        [[NSUserDefaults standardUserDefaults] setValue: @"0" forKey: kIS_FIRST_TIME];
-        [NSUserDefaults.standardUserDefaults setValue:@"YES" forKey:kIS_SEEN_ONBOARDING];
+//        //Temp
+//        [[NSUserDefaults standardUserDefaults] setValue: @"0" forKey: kIS_FIRST_TIME];
+//        [NSUserDefaults.standardUserDefaults setValue:@"YES" forKey:kIS_SEEN_ONBOARDING];
+//
+//        UIViewController *onboardVC = [storyBoard instantiateViewControllerWithIdentifier: @"NewOnBoardingViewController"];
+//        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: onboardVC];
+//        [navController setNavigationBarHidden:YES];
+//        [self.window setRootViewController: navController];
+//        [self.window makeKeyAndVisible];
 
-        UIViewController *onboardVC = [storyBoard instantiateViewControllerWithIdentifier: @"NewOnBoardingViewController"];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: onboardVC];
-        [navController setNavigationBarHidden:YES];
-        [self.window setRootViewController: navController];
-        [self.window makeKeyAndVisible];
-
-    } else if ([[NSUserDefaults standardUserDefaults] valueForKey: kIS_USER_LOGGED_IN] == nil) {
-        UIViewController *loginOptionVC = [storyBoard instantiateViewControllerWithIdentifier: @"LoginOptionViewController"];
-//        UIViewController *loginOptionVC = [storyBoard instantiateViewControllerWithIdentifier: @"StatsVC"];
-
-        [loginOptionVC.navigationController setNavigationBarHidden:YES];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: loginOptionVC];
+//    } else
+    if ([[NSUserDefaults standardUserDefaults] valueForKey: kIS_USER_LOGGED_IN] == nil) {
+//        UIViewController *loginOptionVC = [storyBoard instantiateViewControllerWithIdentifier: @"LoginOptionViewController"];
+////        UIViewController *loginOptionVC = [storyBoard instantiateViewControllerWithIdentifier: @"StatsVC"];
+//
+//        [loginOptionVC.navigationController setNavigationBarHidden:YES];
+//        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: loginOptionVC];
+//        [self.window setRootViewController: navController];
+//        [self.window makeKeyAndVisible];
+        
+        launchCircleScreenVC *launchVC = [storyBoard instantiateViewControllerWithIdentifier: @"launchCircleScreenVC"];
+        launchVC.withLaunch = true;
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: launchVC];
+        [navController setNavigationBarHidden: true];
         [self.window setRootViewController: navController];
         [self.window makeKeyAndVisible];
 
     } else {
 
+//        launchCircleScreenVC *launchVC = [storyBoard instantiateViewControllerWithIdentifier: @"launchCircleScreenVC"];
+//        launchVC.withLaunch = true;
+//        launchVC.isHome = true;
+//        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: launchVC];
+//        [navController setNavigationBarHidden: true];
+//        [self.window setRootViewController: navController];
+//        [self.window makeKeyAndVisible];
+        
         UIViewController *homeVC = [storyBoard instantiateViewControllerWithIdentifier: @"HomeScreenViewController"];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: homeVC];
         [self.window setRootViewController: navController];
         [self.window makeKeyAndVisible];
     }
-    UIViewController *launchVC = [storyBoard instantiateViewControllerWithIdentifier: @"launchCircleScreenVC"];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: launchVC];
-    [navController setNavigationBarHidden: true];
-    [self.window setRootViewController: navController];
-    [self.window makeKeyAndVisible];
     
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
