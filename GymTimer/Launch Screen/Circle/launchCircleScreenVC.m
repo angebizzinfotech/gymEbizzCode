@@ -40,6 +40,8 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
     [serviceManager setDelegate: self];
     utils = [[Utils alloc] init];
     
+    [self manageGYMTimerLabelHeight];
+    
     [self.vwProgress setTransform: CGAffineTransformMakeScale(-1.0, 1.0)];
     
     if(!_withLaunch)
@@ -63,6 +65,27 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
     if(_withLaunch)
     {
         [self onboardLaunching];
+    }
+}
+-(void)manageGYMTimerLabelHeight
+{
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        switch ((int)[[UIScreen mainScreen] nativeBounds].size.height) {
+            case 1136:
+            case 1334:
+            case 1920:
+            case 2208:
+                _cnsGymtimerHeight.constant = 0.0;
+                break;
+            case 2436:
+            case 2688:
+            case 1792:
+                _cnsGymtimerHeight.constant = -8.0;
+                break;
+            default:
+                _cnsGymtimerHeight.constant = -8.0;
+                break;
+        }
     }
 }
 
@@ -714,7 +737,7 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
         [self.vwSigninFacebook setFrame:CGRectMake(self.vwSigninFacebook.frame.origin.x + self.vwSigninFacebook.frame.size.width, self.vwSigninFacebook.frame.origin.y, self.vwSigninFacebook.frame.size.width, self.vwSigninFacebook.frame.size.height)];
         [self.vwSigninFacebook setHidden: false];
         
-        [UIView animateWithDuration:0.4 delay: 1.5 options:UIViewAnimationOptionShowHideTransitionViews animations:^{
+        [UIView animateWithDuration:0.5 delay: 1.5 options:UIViewAnimationOptionShowHideTransitionViews animations:^{
             [self.vwLaunch setFrame: CGRectMake(self.vwLaunch.frame.origin.x - self.vwLaunch.frame.size.width, self.vwLaunch.frame.origin.y, self.vwLaunch.frame.size.width, self.vwLaunch.frame.size.height)];
             [self.vwSigninFacebook setFrame: viewSigninFbFrame];
         } completion:^(BOOL finished) {
@@ -728,7 +751,7 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
     CGRect viewBouncingFrame = _vwBouncing.frame;
     [_vwBouncing setFrame: CGRectMake(viewBouncingFrame.origin.x, viewBouncingFrame.origin.y + viewBouncingFrame.size.height + 10.0, viewBouncingFrame.size.width, viewBouncingFrame.size.height)];
     [_vwBouncing setHidden: false];
-    [UIView animateWithDuration:1.0 delay:0.2 usingSpringWithDamping:0.45 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:0.8 delay:0.2 usingSpringWithDamping:0.45 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
            [[self vwBouncing] setFrame: viewBouncingFrame];
            [[self view] layoutIfNeeded];
        } completion:^(BOOL finished) {

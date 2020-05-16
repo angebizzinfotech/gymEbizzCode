@@ -37,6 +37,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UIButton *btnForgot;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cnsGymtimerHeight;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

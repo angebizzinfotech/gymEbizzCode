@@ -2181,7 +2181,7 @@
 				CODE_SIGN_ENTITLEMENTS = GymTimer/GymTimer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Tristan Boutin (VDF53454H3)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = VDF53454H3;
 				INFOPLIST_FILE = "$(SRCROOT)/GymTimer/Suppoting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2283,7 +2283,7 @@
 				CODE_SIGN_ENTITLEMENTS = GymTimer/GymTimer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Tristan Boutin (VDF53454H3)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = VDF53454H3;
 				INFOPLIST_FILE = "$(SRCROOT)/GymTimer/Suppoting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

@@ -7307,7 +7307,7 @@ you agree to our </string>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xe9-1X-5EY">
-                                                <rect key="frame" x="97.666666666666686" y="232" width="180" height="50"/>
+                                                <rect key="frame" x="97.666666666666686" y="222" width="180" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="8Mb-gI-Kls"/>
@@ -7333,7 +7333,7 @@ you agree to our </string>
                                             <constraint firstAttribute="trailing" secondItem="EsT-xF-kX2" secondAttribute="trailing" id="PIn-uR-IAv"/>
                                             <constraint firstItem="6Sw-Ap-9aA" firstAttribute="top" secondItem="ZjN-81-M0Q" secondAttribute="top" constant="20" id="bGb-UB-9Lb"/>
                                             <constraint firstItem="EsT-xF-kX2" firstAttribute="leading" secondItem="ZjN-81-M0Q" secondAttribute="leading" constant="30" id="cE8-wL-A3K"/>
-                                            <constraint firstItem="xe9-1X-5EY" firstAttribute="top" secondItem="EsT-xF-kX2" secondAttribute="bottom" constant="30" id="jVN-Db-Org"/>
+                                            <constraint firstItem="xe9-1X-5EY" firstAttribute="top" secondItem="EsT-xF-kX2" secondAttribute="bottom" constant="20" id="jVN-Db-Org"/>
                                             <constraint firstItem="xe9-1X-5EY" firstAttribute="centerX" secondItem="ZjN-81-M0Q" secondAttribute="centerX" id="lKu-ac-cff"/>
                                             <constraint firstItem="6Sw-Ap-9aA" firstAttribute="leading" secondItem="ZjN-81-M0Q" secondAttribute="leading" constant="12" id="u2a-n9-REu"/>
                                         </constraints>
@@ -7346,7 +7346,7 @@ you agree to our </string>
                                             </imageView>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fg-GW-jEg">
                                                 <rect key="frame" x="50" y="353.66666666666663" width="275" height="70"/>
-                                                <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.0" green="0.5490196078431373" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="4fb-pa-J6r"/>
                                                 </constraints>
@@ -7364,7 +7364,7 @@ you agree to our </string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJz-Go-jVV">
-                                                <rect key="frame" x="97.666666666666686" y="453.66666666666663" width="180" height="45"/>
+                                                <rect key="frame" x="97.666666666666686" y="443.66666666666663" width="180" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="180" id="BkU-wm-ySq"/>
                                                     <constraint firstAttribute="height" constant="45" id="M0t-sx-qdV"/>
@@ -7388,7 +7388,7 @@ you agree to our </string>
                                             <constraint firstItem="2Cw-4H-EYb" firstAttribute="leading" secondItem="rCw-Ff-i5p" secondAttribute="leading" constant="30" id="CuP-Bs-iDj"/>
                                             <constraint firstItem="0fg-GW-jEg" firstAttribute="centerX" secondItem="rCw-Ff-i5p" secondAttribute="centerX" id="DPq-wn-j8F"/>
                                             <constraint firstItem="TJz-Go-jVV" firstAttribute="centerX" secondItem="rCw-Ff-i5p" secondAttribute="centerX" id="RwV-qj-tiw"/>
-                                            <constraint firstItem="TJz-Go-jVV" firstAttribute="top" secondItem="0fg-GW-jEg" secondAttribute="bottom" constant="30" id="bHD-9T-kyG"/>
+                                            <constraint firstItem="TJz-Go-jVV" firstAttribute="top" secondItem="0fg-GW-jEg" secondAttribute="bottom" constant="20" id="bHD-9T-kyG"/>
                                             <constraint firstItem="0fg-GW-jEg" firstAttribute="top" secondItem="2Cw-4H-EYb" secondAttribute="bottom" constant="20" id="jtW-Qx-iNT"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TJz-Go-jVV" secondAttribute="bottom" constant="8" id="mTw-Pn-n3U"/>
                                             <constraint firstItem="2Cw-4H-EYb" firstAttribute="top" secondItem="rCw-Ff-i5p" secondAttribute="top" constant="20" id="rip-eP-S29"/>
@@ -7424,7 +7424,7 @@ you agree to our </string>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="MHj-da-rGf" secondAttribute="trailing" id="BOB-Fd-cwE"/>
                             <constraint firstItem="MHj-da-rGf" firstAttribute="leading" secondItem="kj2-aP-BP5" secondAttribute="leading" id="GPV-NG-eFF"/>
-                            <constraint firstItem="hx3-xz-gnv" firstAttribute="top" secondItem="kj2-aP-BP5" secondAttribute="top" constant="36" id="LaU-A0-laJ"/>
+                            <constraint firstItem="hx3-xz-gnv" firstAttribute="top" secondItem="rzG-l8-xTE" secondAttribute="top" constant="-8" id="LaU-A0-laJ"/>
                             <constraint firstItem="5ko-Ko-nz7" firstAttribute="top" secondItem="hx3-xz-gnv" secondAttribute="bottom" constant="32" id="MBx-Xp-97Z"/>
                             <constraint firstAttribute="bottom" secondItem="MHj-da-rGf" secondAttribute="bottom" id="QeH-e2-nw0"/>
                             <constraint firstItem="hx3-xz-gnv" firstAttribute="centerX" secondItem="kj2-aP-BP5" secondAttribute="centerX" id="cTL-cS-cHx"/>
@@ -7436,6 +7436,7 @@ you agree to our </string>
                     </view>
                     <connections>
                         <outlet property="btnForgot" destination="Cdz-qQ-QHE" id="6i7-bj-w1d"/>
+                        <outlet property="cnsGymtimerHeight" destination="LaU-A0-laJ" id="IxP-Wd-LDH"/>
                         <outlet property="lblLogin" destination="Cgf-ZM-0Rb" id="AM7-1d-fLO"/>
                         <outlet property="lblSignup" destination="aJX-ku-g0h" id="ksJ-dI-wkA"/>
                         <outlet property="txtEmail" destination="4xk-OK-VhH" id="fak-cj-yMw"/>
